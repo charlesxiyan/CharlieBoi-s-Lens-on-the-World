@@ -1,5 +1,7 @@
 # Day 1 · Race to Ace
 
+*Edited by Charles*
+
 | Study record | Value |
 | --- | --- |
 | Question | 2 of 4 |

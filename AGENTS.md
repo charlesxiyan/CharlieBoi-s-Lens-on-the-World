@@ -18,6 +18,9 @@ Personal knowledge base and blog for CharlieBoi, built with MkDocs Material.
 
 ## Working conventions
 
+- Credit question editors below the title with `*Edited by Charles*` or
+  `*Edited by Sophia*`, using confirmed contributions rather than the Git uploader.
+  If both contributed, use `*Edited by Charles and Sophia*`.
 - Keep content in Markdown. Preserve the author's voice and do not invent personal facts.
 - Add new notes to `nav` in `mkdocs.yml`. Blog posts are discovered automatically.
 - Use fenced `python` and `cpp` code blocks and `$...$` / `$$...$$` for math.

@@ -5,12 +5,12 @@ The focus is on symmetry, counting, and expectation.
 
 ## Questions
 
-| Question | Difficulty | Attempts | Latest attempt |
-| --- | --- | --- | --- |
-| [1. Even Before Odd](question-1.md) | Easy | 1 | October 22, 2026 |
-| [2. Race to Ace](question-2.md) | Medium | 1 | October 22, 2026 |
-| [3. Highest Roll EV](question-3.md) | Medium | 1 | October 22, 2026 |
-| [4. Dot Placement](question-4.md) | Easy | 1 | October 22, 2026 |
+| Question | Difficulty | Attempts | Latest attempt | Edited by |
+| --- | --- | --- | --- | --- |
+| [1. Even Before Odd](question-1.md) | Easy | 1 | October 22, 2026 | Sophia |
+| [2. Race to Ace](question-2.md) | Medium | 1 | October 22, 2026 | Charles |
+| [3. Highest Roll EV](question-3.md) | Medium | 1 | October 22, 2026 | Sophia |
+| [4. Dot Placement](question-4.md) | Easy | 1 | October 22, 2026 | Charles |
 
 ## Ideas to revisit
 

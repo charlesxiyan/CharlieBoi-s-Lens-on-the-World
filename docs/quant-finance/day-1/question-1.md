@@ -1,5 +1,7 @@
 # Day 1 · Even Before Odd
 
+*Edited by Sophia*
+
 | Study record | Value |
 | --- | --- |
 | Question | 1 of 4 |

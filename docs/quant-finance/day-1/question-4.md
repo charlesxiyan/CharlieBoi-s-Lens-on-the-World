@@ -1,5 +1,7 @@
 # Day 1 · Dot Placement
 
+*Edited by Charles*
+
 | Study record | Value |
 | --- | --- |
 | Question | 4 of 4 |

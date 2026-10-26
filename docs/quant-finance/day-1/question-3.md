@@ -1,5 +1,7 @@
 # Day 1 · Highest Roll EV
 
+*Edited by Sophia*
+
 | Study record | Value |
 | --- | --- |
 | Question | 3 of 4 |

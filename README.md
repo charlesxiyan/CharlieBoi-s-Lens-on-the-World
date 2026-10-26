@@ -111,3 +111,20 @@ collections, and custom-domain media paths. Decap is not active in this starter.
 - [Blog setup](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/)
 - [Math support](https://squidfunk.github.io/mkdocs-material/reference/math/)
 - [Decap GitHub backend](https://decapcms.org/docs/github-backend/)
+
+## Collaborating and editor credits
+
+Invite contributors through GitHub Settings → Collaborators → Add people.
+Contributors should use their own GitHub accounts. For shared editing, create a
+branch and a pull request, check the build, then merge into `main` to publish.
+GitHub's web editor can edit Markdown without a local Python installation.
+
+Question pages credit the confirmed content editor directly below the title:
+
+```markdown
+*Edited by Sophia*
+```
+
+Use `Charles`, `Sophia`, or `Charles and Sophia` as appropriate, and update the
+day overview's editor column too. This credit records content contributions and
+is independent of the account that imports or commits the file.
