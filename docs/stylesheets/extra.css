@@ -1,0 +1,6 @@
+/* Quiet, readable styling on top of Material's responsive layout. */
+:root { --md-text-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --md-code-font: ui-monospace, SFMono-Regular, Consolas, monospace; }
+.md-typeset h1 { font-weight: 750; letter-spacing: -0.035em; }
+.md-typeset .md-button { border-radius: 0.4rem; margin: 0.2rem 0.35rem 0.2rem 0; }
+.md-typeset .grid.cards > ul > li { border-radius: 0.6rem; }

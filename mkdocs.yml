@@ -1,0 +1,99 @@
+site_name: "CharlieBoi's Lens on the World"
+site_description: LeetCode explanations, quantitative finance interview notes, and life through Charles's lens.
+site_author: Charles
+site_url: https://charlieboi.com/
+repo_url: https://github.com/charlesxiyan/CharlieBoi-s-Lens-on-the-World
+repo_name: charlesxiyan/CharlieBoi-s-Lens-on-the-World
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  font: false
+  icon:
+    logo: material/camera-iris
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+nav:
+  - Home: index.md
+  - LeetCode:
+      - leetcode/index.md
+  - Quant Finance:
+      - quant-finance/index.md
+      - Day 1:
+          - quant-finance/day-1/index.md
+          - '1. Even Before Odd': quant-finance/day-1/question-1.md
+          - '2. Race to Ace': quant-finance/day-1/question-2.md
+          - '3. Highest Roll EV': quant-finance/day-1/question-3.md
+          - '4. Dot Placement': quant-finance/day-1/question-4.md
+      - Day 2:
+          - quant-finance/day-2/index.md
+          - Question 1: quant-finance/day-2/question-1.md
+          - Question 2: quant-finance/day-2/question-2.md
+          - Question 3: quant-finance/day-2/question-3.md
+          - Question 4: quant-finance/day-2/question-4.md
+      - Day 3:
+          - quant-finance/day-3/index.md
+          - Question 1: quant-finance/day-3/question-1.md
+          - Question 2: quant-finance/day-3/question-2.md
+          - Question 3: quant-finance/day-3/question-3.md
+          - Question 4: quant-finance/day-3/question-4.md
+  - Technical Notes:
+      - notes/index.md
+      - Python: notes/python.md
+      - C++: notes/cpp.md
+      - Mathematics: notes/mathematics.md
+  - Life:
+      - blog/index.md
+  - About: about.md
+
+plugins:
+  - search
+  - blog:
+      post_readtime: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+extra_css:
+  - stylesheets/extra.css
