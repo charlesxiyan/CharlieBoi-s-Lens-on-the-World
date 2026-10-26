@@ -1,10 +1,17 @@
-name: Build website
+name: Build and deploy website
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
+
 permissions:
   contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,6 +21,32 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
+      - name: Read Pages configuration
+        if: github.event_name != 'pull_request'
+        id: pages
+        uses: actions/configure-pages@v5
       - run: python -m pip install -r requirements.lock
-      - run: python -m mkdocs build --strict
-# Deliberately build-only: no publishing job or Pages permissions.
+      - name: Build website
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url || 'https://charlieboi.com' }}/
+        run: python -m mkdocs build --strict
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

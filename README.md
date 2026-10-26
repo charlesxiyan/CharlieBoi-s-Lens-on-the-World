@@ -30,7 +30,8 @@ python -m mkdocs build --strict
 ```
 
 Generated HTML goes into `site/` (ignored by Git). CI runs the same strict build
-on pushes and pull requests and **does not deploy**.
+on main pushes and pull requests. Main pushes deploy to GitHub Pages; pull
+requests only build.
 
 `requirements.txt` records supported direct dependency ranges;
 `requirements.lock` records the exact versions used for the verified build.
@@ -86,19 +87,18 @@ The rest of the post.
 Blog archives and categories are generated automatically. Avoid future dates
 unless you intend the blog plugin to treat the entry as a future post.
 
-## GitHub Pages later
+## GitHub Pages deployment
 
-The configured canonical URL is
-`https://charlieboi.com/`.
-It describes the intended custom-domain root; it does not publish anything.
+The intended custom domain is `https://charlieboi.com/`. The workflow reads the
+current Pages base URL and passes it through `SITE_URL`, so links and canonical
+URLs work on the initial GitHub Pages project URL and after domain binding.
+Local builds default to the intended custom domain.
 
-When ready, confirm `site_url` and the repository's default branch (`edit_uri`
-currently assumes `main`). Then choose a GitHub Pages Actions deployment that
-builds with the locked dependencies and uploads `site/` as the Pages artifact.
-That later workflow will need Pages and OIDC permissions plus the repository's
-Pages source set to GitHub Actions. At that point, configure `charlieboi.com` as
-the Pages custom domain and verify its DNS. No deployment workflow, Pages
-settings, domain binding, CNAME file, or DNS changes are included here.
+Pushes to `main` build and deploy `site/` through GitHub Actions. Pull requests
+build without deploying. Repository Pages must use GitHub Actions as its source.
+The deploy job uses the `github-pages` environment with Pages and OIDC permissions.
+
+Domain binding and DNS are separate setup steps. No CMS authentication is enabled.
 
 ## Browser editing later
 

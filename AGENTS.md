@@ -29,7 +29,8 @@ Personal knowledge base and blog for CharlieBoi, built with MkDocs Material.
 
 ## Deployment boundary
 
-GitHub Pages is the intended future host, with `https://charlieboi.com/` as the
-canonical site URL. Do not deploy, add an active deployment
-workflow, change repository Pages settings, configure DNS, or enable CMS
-credentials unless the user explicitly requests it. Current CI only builds.
+GitHub Pages deployment is authorized and runs on pushes to `main` through
+GitHub Actions. Pull requests build without deploying. The intended custom domain
+is `https://charlieboi.com/`; CI uses the current Pages URL through `SITE_URL`
+until domain setup is complete. Do not modify DNS or enable CMS credentials
+without explicit user instructions for those changes.
