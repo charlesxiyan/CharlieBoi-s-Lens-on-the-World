@@ -49,7 +49,7 @@ $$
 
 together with $\sum_{n=0}^{\infty}\pi_n=1$ and $\pi_n\ge0$.
 
-### 2. Solve for pi_1 in terms of pi_0
+### 2. Solve for π₁ in terms of π₀
 
 The first equation gives
 
@@ -62,7 +62,7 @@ $$
 This is a relation, not yet a numerical value. We will determine $\pi_0$
 using normalization after finding the remaining probabilities.
 
-### 3. Use the state-one equation to find pi_2
+### 3. Use the state-one equation to find π₂
 
 Rearrange the second equation and substitute $\pi_1=\frac23\pi_0$:
 
@@ -83,7 +83,7 @@ $$
 =\frac49\pi_0.
 $$
 
-### 4. Use the state-two equation to find pi_3
+### 4. Use the state-two equation to find π₃
 
 Similarly,
 
@@ -135,7 +135,7 @@ $$
 \pi_n=\left(\frac23\right)^n\pi_0,\qquad n\ge0.
 $$
 
-### 6. Normalize to determine pi_0
+### 6. Normalize to determine π₀
 
 All state probabilities must sum to one:
 
