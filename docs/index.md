@@ -4,6 +4,10 @@ description: Learning reflections, study plans, everyday finds, and practical ex
 
 # CharlieBoi's Lens on the World
 
+<div class="home-intro" markdown>
+
+<div class="home-intro__text" markdown>
+
 **Welcome to CharlieBoi's world!**
 
 This is my little corner of the internet, where I share what I’m learning,
@@ -15,6 +19,14 @@ or something useful to take into your own life.
 
 [Explore Algorithm](leetcode/index.md){ .md-button .md-button--primary }
 [Explore Life](blog/index.md){ .md-button }
+
+</div>
+
+<figure class="home-intro__portrait">
+  <img src="assets/images/charles-portrait.jpg" alt="Charles wearing glasses and a backwards cap at a restaurant" width="768" height="1024" fetchpriority="high" decoding="async">
+</figure>
+
+</div>
 
 ## Through the lens
 

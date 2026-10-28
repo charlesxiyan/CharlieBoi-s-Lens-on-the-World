@@ -4,3 +4,26 @@
 .md-typeset h1 { font-weight: 750; letter-spacing: -0.035em; }
 .md-typeset .md-button { border-radius: 0.4rem; margin: 0.2rem 0.35rem 0.2rem 0; }
 .md-typeset .grid.cards > ul > li { border-radius: 0.6rem; }
+
+/* Homepage portrait: full photo alongside the introduction, stacked on mobile. */
+.md-typeset .home-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 1.8rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.md-typeset .home-intro__text > :first-child { margin-top: 0; }
+.md-typeset .home-intro__text > :last-child { margin-bottom: 0; }
+.md-typeset .home-intro__portrait { margin: 0; width: 100%; }
+.md-typeset .home-intro__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.3rem 1rem rgb(0 0 0 / 12%);
+}
+@media (max-width: 700px) {
+  .md-typeset .home-intro { grid-template-columns: 1fr; gap: 1.2rem; }
+  .md-typeset .home-intro__portrait { max-width: 280px; justify-self: center; }
+}
