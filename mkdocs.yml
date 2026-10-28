@@ -41,6 +41,333 @@ nav:
   - Home: index.md
   - LeetCode:
       - leetcode/index.md
+      - "Arrays":
+          - "Day 1 Array I":
+              - leetcode/day-1/index.md
+              - "704. Binary Search": leetcode/day-1/704-binary-search.md
+              - "27. Remove Element": leetcode/day-1/27-remove-element.md
+              - "977. Squares of a Sorted Array": leetcode/day-1/977-squares-of-a-sorted-array.md
+          - "Day 2 Array II":
+              - leetcode/day-2/index.md
+              - "59. Spiral Matrix II": leetcode/day-2/59-spiral-matrix-ii.md
+              - "209. Minimum Size Subarray Sum": leetcode/day-2/209-minimum-size-subarray-sum.md
+              - "Sum of All Numbers in the Interval": leetcode/day-2/sum-of-all-numbers-in-the-interval.md
+              - "Purchase Lands": leetcode/day-2/purchase-lands.md
+          - "Bonus Array":
+              - leetcode/bonus-array/index.md
+              - "4. Median of Two Sorted Arrays": leetcode/bonus-array/4-median-of-two-sorted-arrays.md
+              - "33. Search in Rotated Sorted Array": leetcode/bonus-array/33-search-in-rotated-sorted-array.md
+              - "35. Search Insert Position": leetcode/bonus-array/35-search-insert-position.md
+              - "34. Find First and Last Position of Element in Sorted Array": leetcode/bonus-array/34-find-first-and-last-position-of-element-in-sorted-array.md
+              - "153. Find Minimum in Rotated Sorted Array": leetcode/bonus-array/153-find-minimum-in-rotated-sorted-array.md
+              - "74. Search a 2D Matrix": leetcode/bonus-array/74-search-a-2d-matrix.md
+              - "124. Binary Tree Maximum Path Sum": leetcode/bonus-array/124-binary-tree-maximum-path-sum.md
+              - "392. Is Subsequence": leetcode/bonus-array/392-is-subsequence.md
+      - "Linked Lists":
+          - "Day 3 Linked List I":
+              - leetcode/day-3/index.md
+              - "203. Remove Linked List Elements": leetcode/day-3/203-remove-linked-list-elements.md
+              - "707. Design Linked List": leetcode/day-3/707-design-linked-list.md
+              - "206. Reverse Linked List": leetcode/day-3/206-reverse-linked-list.md
+          - "Day 4 Linked List II":
+              - leetcode/day-4/index.md
+              - "24. Swap Nodes in Pairs": leetcode/day-4/24-swap-nodes-in-pairs.md
+              - "19. Remove Nth Node From End of List": leetcode/day-4/19-remove-nth-node-from-end-of-list.md
+              - "142. Linked List Cycle II": leetcode/day-4/142-linked-list-cycle-ii.md
+              - "160. Intersection of Two Linked Lists": leetcode/day-4/160-intersection-of-two-linked-lists.md
+      - "Hash Tables":
+          - "Day 5 Hash Table I":
+              - leetcode/day-5/index.md
+              - "202. Happy Number": leetcode/day-5/202-happy-number.md
+              - "1. Two Sum": leetcode/day-5/1-two-sum.md
+              - "242. Valid Anagram": leetcode/day-5/242-valid-anagram.md
+              - "349. Intersection of Two Arrays": leetcode/day-5/349-intersection-of-two-arrays.md
+          - "Day 6 Hash Table II":
+              - leetcode/day-6/index.md
+              - "454. 4Sum II": leetcode/day-6/454-4sum-ii.md
+              - "15. 3Sum": leetcode/day-6/15-3sum.md
+              - "18. 4Sum": leetcode/day-6/18-4sum.md
+              - "383. Ransom Note": leetcode/day-6/383-ransom-note.md
+      - "Strings":
+          - "Day 7 String I":
+              - leetcode/day-7/index.md
+              - "344. Reverse String": leetcode/day-7/344-reverse-string.md
+              - "541. Reverse String II": leetcode/day-7/541-reverse-string-ii.md
+              - "Substitute Numbers": leetcode/day-7/substitute-numbers.md
+          - "Day 8 String II":
+              - leetcode/day-8/index.md
+              - "Right Rotation of a String": leetcode/day-8/right-rotation-of-a-string.md
+              - "28. Find the Index of the First Occurrence in a String": leetcode/day-8/28-find-the-index-of-the-first-occurrence-in-a-string.md
+              - "459. Repeated Substring Pattern": leetcode/day-8/459-repeated-substring-pattern.md
+              - "151. Reverse Words in a String": leetcode/day-8/151-reverse-words-in-a-string.md
+      - "Stacks & Queues":
+          - "Day 9 Stack & Queue I":
+              - leetcode/day-9/index.md
+              - "225. Implement Stack Using Queues": leetcode/day-9/225-implement-stack-using-queues.md
+              - "1047. Remove All Adjacent Duplicates In String": leetcode/day-9/1047-remove-all-adjacent-duplicates-in-string.md
+              - "232. Implement Queue Using Stacks": leetcode/day-9/232-implement-queue-using-stacks.md
+              - "20. Valid Parentheses": leetcode/day-9/20-valid-parentheses.md
+          - "Day 10 Stack & Queue II":
+              - leetcode/day-10/index.md
+              - "239. Sliding Window Maximum": leetcode/day-10/239-sliding-window-maximum.md
+              - "150. Evaluate Reverse Polish Notation": leetcode/day-10/150-evaluate-reverse-polish-notation.md
+              - "347. Top K Frequent Elements": leetcode/day-10/347-top-k-frequent-elements.md
+      - "Binary Trees":
+          - "Day 11 Binary Tree I":
+              - leetcode/day-11/index.md
+              - "145. Binary Tree Postorder Traversal": leetcode/day-11/145-binary-tree-postorder-traversal.md
+              - "102. Binary Tree Level Order Traversal": leetcode/day-11/102-binary-tree-level-order-traversal.md
+              - "144. Binary Tree Preorder Traversal": leetcode/day-11/144-binary-tree-preorder-traversal.md
+              - "94. Binary Tree Inorder Traversal": leetcode/day-11/94-binary-tree-inorder-traversal.md
+          - "Day 12 Binary Tree II":
+              - leetcode/day-12/index.md
+              - "226. Invert Binary Tree": leetcode/day-12/226-invert-binary-tree.md
+              - "101. Symmetric Tree": leetcode/day-12/101-symmetric-tree.md
+              - "104. Maximum Depth of Binary Tree": leetcode/day-12/104-maximum-depth-of-binary-tree.md
+              - "111. Minimum Depth of Binary Tree": leetcode/day-12/111-minimum-depth-of-binary-tree.md
+          - "Day 13 Binary Tree III":
+              - leetcode/day-13/index.md
+              - "257. Binary Tree Paths": leetcode/day-13/257-binary-tree-paths.md
+              - "222. Count Complete Tree Nodes": leetcode/day-13/222-count-complete-tree-nodes.md
+              - "110. Balanced Binary Tree": leetcode/day-13/110-balanced-binary-tree.md
+              - "404. Sum of Left Leaves": leetcode/day-13/404-sum-of-left-leaves.md
+          - "Day 14 Binary Tree IV":
+              - leetcode/day-14/index.md
+              - "513. Find Bottom Left Tree Value": leetcode/day-14/513-find-bottom-left-tree-value.md
+              - "112. Path Sum": leetcode/day-14/112-path-sum.md
+              - "113. Path Sum II": leetcode/day-14/113-path-sum-ii.md
+              - "106. Construct Binary Tree from Inorder and Postorder Traversal": leetcode/day-14/106-construct-binary-tree-from-inorder-and-postorder-traversal.md
+              - "105. Construct Binary Tree from Preorder and Inorder Traversal": leetcode/day-14/105-construct-binary-tree-from-preorder-and-inorder-traversal.md
+          - "Day 15 Binary Tree V":
+              - leetcode/day-15/index.md
+              - "98. Validate Binary Search Tree": leetcode/day-15/98-validate-binary-search-tree.md
+              - "700. Search in a Binary Search Tree": leetcode/day-15/700-search-in-a-binary-search-tree.md
+              - "617. Merge Two Binary Trees": leetcode/day-15/617-merge-two-binary-trees.md
+              - "654. Maximum Binary Tree": leetcode/day-15/654-maximum-binary-tree.md
+          - "Day 16 Binary Tree VI":
+              - leetcode/day-16/index.md
+              - "530. Minimum Absolute Difference in BST": leetcode/day-16/530-minimum-absolute-difference-in-bst.md
+              - "501. Find Modes in Binary Search Tree": leetcode/day-16/501-find-modes-in-binary-search-tree.md
+              - "236. Lowest Common Ancestor of a Binary Tree": leetcode/day-16/236-lowest-common-ancestor-of-a-binary-tree.md
+          - "Day 17 Binary Tree VII":
+              - leetcode/day-17/index.md
+              - "450. Delete Node in a BST": leetcode/day-17/450-delete-node-in-a-bst.md
+              - "235. Lowest Common Ancestor of a Binary Search Tree": leetcode/day-17/235-lowest-common-ancestor-of-a-binary-search-tree.md
+              - "701. Insert into a Binary Search Tree": leetcode/day-17/701-insert-into-a-binary-search-tree.md
+          - "Day 18 Binary Tree VIII":
+              - leetcode/day-18/index.md
+              - "538. Convert BST to Greater Tree": leetcode/day-18/538-convert-bst-to-greater-tree.md
+              - "669. Trim a Binary Search Tree": leetcode/day-18/669-trim-a-binary-search-tree.md
+              - "108. Convert Sorted Array to Binary Search Tree": leetcode/day-18/108-convert-sorted-array-to-binary-search-tree.md
+          - "Bonus Binary Tree":
+              - leetcode/bonus-binary-tree/index.md
+              - "114. Flatten Binary Tree to Linked List": leetcode/bonus-binary-tree/114-flatten-binary-tree-to-linked-list.md
+              - "199. Binary Tree Right Side View": leetcode/bonus-binary-tree/199-binary-tree-right-side-view.md
+              - "437. Path Sum III": leetcode/bonus-binary-tree/437-path-sum-iii.md
+              - "543. Diameter of Binary Tree": leetcode/bonus-binary-tree/543-diameter-of-binary-tree.md
+      - "Backtracking":
+          - "Day 19 Backtrack I":
+              - leetcode/day-19/index.md
+              - "216. Combination Sum III": leetcode/day-19/216-combination-sum-iii.md
+              - "17. Letter Combination of a Phone Number": leetcode/day-19/17-letter-combination-of-a-phone-number.md
+              - "77. Combinations": leetcode/day-19/77-combinations.md
+          - "Day 20 Backtrack II":
+              - leetcode/day-20/index.md
+              - "39. Combination Sum": leetcode/day-20/39-combination-sum.md
+              - "40. Combination Sum II": leetcode/day-20/40-combination-sum-ii.md
+              - "131. Palindrome Partitioning": leetcode/day-20/131-palindrome-partitioning.md
+          - "Day 21 Backtrack III":
+              - leetcode/day-21/index.md
+              - "93. Restore IP Addresses": leetcode/day-21/93-restore-ip-addresses.md
+              - "90. Subsets II": leetcode/day-21/90-subsets-ii.md
+              - "78. Subsets": leetcode/day-21/78-subsets.md
+          - "Day 22 Backtrack IV":
+              - leetcode/day-22/index.md
+              - "491. Non-decreasing Subsequences": leetcode/day-22/491-non-decreasing-subsequences.md
+              - "46. Permutations": leetcode/day-22/46-permutations.md
+              - "47. Permutations II": leetcode/day-22/47-permutations-ii.md
+              - "51. N-Queens": leetcode/day-22/51-n-queens.md
+              - "37. Sudoku Solver": leetcode/day-22/37-sudoku-solver.md
+          - "Bonus Backtrack":
+              - leetcode/bonus-backtrack/index.md
+              - "79. Word Search": leetcode/bonus-backtrack/79-word-search.md
+      - "Greedy Algorithms":
+          - "Day 23 Greedy Algorithm I":
+              - leetcode/day-23/index.md
+              - "53. Maximum Subarray": leetcode/day-23/53-maximum-subarray.md
+              - "455. Assign Cookies": leetcode/day-23/455-assign-cookies.md
+              - "376. Wiggle Subsequence": leetcode/day-23/376-wiggle-subsequence.md
+          - "Day 24 Greedy Algorithm II":
+              - leetcode/day-24/index.md
+              - "122. Best Time to Buy and Sell Stock II": leetcode/day-24/122-best-time-to-buy-and-sell-stock-ii.md
+              - "55. Jump Game": leetcode/day-24/55-jump-game.md
+              - "1005. Maximize Sum of Array after K Negations": leetcode/day-24/1005-maximize-sum-of-array-after-k-negations.md
+              - "45. Jump Game II": leetcode/day-24/45-jump-game-ii.md
+          - "Day 25 Greedy Algorithm III":
+              - leetcode/day-25/index.md
+              - "406. Queue Reconstruction by Height": leetcode/day-25/406-queue-reconstruction-by-height.md
+              - "135. Candy": leetcode/day-25/135-candy.md
+              - "134. Gas Station": leetcode/day-25/134-gas-station.md
+              - "860. Lemonade Change": leetcode/day-25/860-lemonade-change.md
+          - "Day 26 Greedy Algorithm IV":
+              - leetcode/day-26/index.md
+              - "435. Non-overlapping Intervals": leetcode/day-26/435-non-overlapping-intervals.md
+              - "763. Partition Labels": leetcode/day-26/763-partition-labels.md
+              - "452. Minimum Number of Arrows to Burst Balloons": leetcode/day-26/452-minimum-number-of-arrows-to-burst-balloons.md
+          - "Day 27 Greedy Algorithm V":
+              - leetcode/day-27/index.md
+              - "968. Binary Tree Cameras": leetcode/day-27/968-binary-tree-cameras.md
+              - "56. Merge Intervals": leetcode/day-27/56-merge-intervals.md
+              - "738. Monotone Increasing Digits": leetcode/day-27/738-monotone-increasing-digits.md
+          - "Bonus Greedy Algorithm":
+              - leetcode/bonus-greedy-algorithm/index.md
+              - "121. Best Time to Buy and Sell Stock": leetcode/bonus-greedy-algorithm/121-best-time-to-buy-and-sell-stock.md
+      - "Dynamic Programming":
+          - "Day 28 Dynamic Programming I":
+              - leetcode/day-28/index.md
+              - "509. Fibonacci Number": leetcode/day-28/509-fibonacci-number.md
+              - "746. Min Cost Climbing Stairs": leetcode/day-28/746-min-cost-climbing-stairs.md
+              - "70. Climbing Stairs": leetcode/day-28/70-climbing-stairs.md
+          - "Day 29 Dynamic Programming II":
+              - leetcode/day-29/index.md
+              - "62. Unique Paths": leetcode/day-29/62-unique-paths.md
+              - "96. Unique Binary Search Trees": leetcode/day-29/96-unique-binary-search-trees.md
+              - "343. Integer Break": leetcode/day-29/343-integer-break.md
+              - "63. Unique Paths II": leetcode/day-29/63-unique-paths-ii.md
+          - "Day 30 Dynamic Programming III":
+              - leetcode/day-30/index.md
+              - "416. Partition Equal Subset Sum": leetcode/day-30/416-partition-equal-subset-sum.md
+              - "0/1 Knapsack Problem": leetcode/day-30/0-1-knapsack-problem.md
+          - "Day 31 Dynamic Programming IV":
+              - leetcode/day-31/index.md
+              - "1049. Last Stone Weight II": leetcode/day-31/1049-last-stone-weight-ii.md
+              - "474. Ones and Zeroes": leetcode/day-31/474-ones-and-zeroes.md
+              - "494. Target Sum": leetcode/day-31/494-target-sum.md
+          - "Day 32 Dynamic Programming V":
+              - leetcode/day-32/index.md
+              - "518. Coin Change II": leetcode/day-32/518-coin-change-ii.md
+              - "377. Combination Sum IV": leetcode/day-32/377-combination-sum-iv.md
+          - "Day 33 Dynamic Programming VI":
+              - leetcode/day-33/index.md
+              - "139. Word Break": leetcode/day-33/139-word-break.md
+              - "322. Coin Change": leetcode/day-33/322-coin-change.md
+              - "279. Perfect Squares": leetcode/day-33/279-perfect-squares.md
+          - "Day 34 Dynamic Programming VII":
+              - leetcode/day-34/index.md
+              - "198. House Robber": leetcode/day-34/198-house-robber.md
+              - "213. House Robber II": leetcode/day-34/213-house-robber-ii.md
+              - "337. House Robber III": leetcode/day-34/337-house-robber-iii.md
+          - "Day 35 Dynamic Programming VIII":
+              - leetcode/day-35/index.md
+              - "122. Best Time to Buy and Sell Stock II": leetcode/day-35/122-best-time-to-buy-and-sell-stock-ii.md
+              - "121. Best Time to Buy and Sell Stock": leetcode/day-35/121-best-time-to-buy-and-sell-stock.md
+              - "123. Best Time to Buy and Sell Stock III": leetcode/day-35/123-best-time-to-buy-and-sell-stock-iii.md
+          - "Day 36 Dynamic Programming IX":
+              - leetcode/day-36/index.md
+              - "188. Best Time to Buy and Sell Stock IV": leetcode/day-36/188-best-time-to-buy-and-sell-stock-iv.md
+              - "714. Best Time to Buy and Sell Stock with Transaction Fee": leetcode/day-36/714-best-time-to-buy-and-sell-stock-with-transaction-fee.md
+              - "309. Best Time to Buy and Sell Stock with Cooldown": leetcode/day-36/309-best-time-to-buy-and-sell-stock-with-cooldown.md
+          - "Day 37 Dynamic Programming X":
+              - leetcode/day-37/index.md
+              - "300. Longest Increasing Subsequence": leetcode/day-37/300-longest-increasing-subsequence.md
+              - "674. Longest Continuous Increasing Subsequence": leetcode/day-37/674-longest-continuous-increasing-subsequence.md
+              - "718. Maximum Length of Repeated Array": leetcode/day-37/718-maximum-length-of-repeated-array.md
+          - "Day 38 Dynamic Programming XI":
+              - leetcode/day-38/index.md
+              - "1143. Longest Common Subsequence": leetcode/day-38/1143-longest-common-subsequence.md
+              - "392. Is Subsequence": leetcode/day-38/392-is-subsequence.md
+              - "53. Maximum Subarray": leetcode/day-38/53-maximum-subarray.md
+              - "1035. Uncrossed Lines": leetcode/day-38/1035-uncrossed-lines.md
+          - "Day 39 Dynamic Programming XII":
+              - leetcode/day-39/index.md
+              - "72. Edit Distance": leetcode/day-39/72-edit-distance.md
+              - "115. Distinct Subsequence": leetcode/day-39/115-distinct-subsequence.md
+              - "583. Delete Operation for Two String": leetcode/day-39/583-delete-operation-for-two-string.md
+          - "Day 40 Dynamic Programming XIII":
+              - leetcode/day-40/index.md
+              - "647. Palindromic Substrings": leetcode/day-40/647-palindromic-substrings.md
+              - "516. Longest Palindromic Subsequence": leetcode/day-40/516-longest-palindromic-subsequence.md
+          - "Bonus Dynamic Programming":
+              - leetcode/bonus-dynamic-programming/index.md
+              - "5. Longest Palindromic Substring": leetcode/bonus-dynamic-programming/5-longest-palindromic-substring.md
+              - "32. Longest Valid Parentheses": leetcode/bonus-dynamic-programming/32-longest-valid-parentheses.md
+              - "64. Minimum Path Sum": leetcode/bonus-dynamic-programming/64-minimum-path-sum.md
+              - "118. Pascal\u2019s Triangle": leetcode/bonus-dynamic-programming/118-pascals-triangle.md
+              - "152. Maximum Product Subarray": leetcode/bonus-dynamic-programming/152-maximum-product-subarray.md
+      - "Monotonic Stacks":
+          - "Day 41 Monotonic Stack I":
+              - leetcode/day-41/index.md
+              - "739. Daily Temperatures": leetcode/day-41/739-daily-temperatures.md
+              - "503. Next Greater Element II": leetcode/day-41/503-next-greater-element-ii.md
+              - "496. Next Greater Element I": leetcode/day-41/496-next-greater-element-i.md
+          - "Day 42 Monotonic Stack II":
+              - leetcode/day-42/index.md
+              - "42. Trapping Rain Water": leetcode/day-42/42-trapping-rain-water.md
+              - "84. Largest Rectangle in Histogram": leetcode/day-42/84-largest-rectangle-in-histogram.md
+      - "Graphs":
+          - "Day 43 Graph I":
+              - leetcode/day-43/index.md
+              - "797. All Paths from Source to Target": leetcode/day-43/797-all-paths-from-source-to-target.md
+          - "Day 44 Graph II":
+              - leetcode/day-44/index.md
+              - "695. Max Area of Island": leetcode/day-44/695-max-area-of-island.md
+              - "200. Number of Islands (BFS)": leetcode/day-44/200-number-of-islands-bfs.md
+              - "200. Number of Islands (DFS)": leetcode/day-44/200-number-of-islands-dfs.md
+          - "Day 45 Graph III":
+              - leetcode/day-45/index.md
+              - "417. Pacific Atlantic Water Flow": leetcode/day-45/417-pacific-atlantic-water-flow.md
+              - "827. Making a Large Island": leetcode/day-45/827-making-a-large-island.md
+              - "1254. Number of Closed Islands": leetcode/day-45/1254-number-of-closed-islands.md
+              - "Total Area of Islands": leetcode/day-45/total-area-of-islands.md
+          - "Day 46 Graph IV":
+              - leetcode/day-46/index.md
+              - "463. Island Perimeter": leetcode/day-46/463-island-perimeter.md
+              - "Full Reachability in a Directed Graph": leetcode/day-46/full-reachability-in-a-directed-graph.md
+              - "127. Word Ladder": leetcode/day-46/127-word-ladder.md
+          - "Day 47 Graph V":
+              - leetcode/day-47/index.md
+              - "1971. Find if Path Exists in Graph": leetcode/day-47/1971-find-if-path-exists-in-graph.md
+              - "Union-Find": leetcode/day-47/union-find.md
+          - "Day 48 Graph VI":
+              - leetcode/day-48/index.md
+              - "685. Redundant Connection II": leetcode/day-48/685-redundant-connection-ii.md
+              - "684. Redundant Connection": leetcode/day-48/684-redundant-connection.md
+          - "Day 49 Graph VII":
+              - leetcode/day-49/index.md
+              - "1584. Min Cost to Connect All Points (Kruskal)": leetcode/day-49/1584-min-cost-to-connect-all-points-kruskal.md
+              - "1584. Min Cost to Connect All Points (Prim)": leetcode/day-49/1584-min-cost-to-connect-all-points-prim.md
+          - "Day 50 Graph VIII":
+              - leetcode/day-50/index.md
+              - "802. Find Eventual Safe States (Topological Sort)": leetcode/day-50/802-find-eventual-safe-states-topological-sort.md
+              - "207. Course Schedule (Topological Sort)": leetcode/day-50/207-course-schedule-topological-sort.md
+              - "2115. Find All Possible Recipes from Given Supplies (Topological Sort)": leetcode/day-50/2115-find-all-possible-recipes-from-given-supplies-topological-sort.md
+              - "210. Course Schedule II (Topological Sort)": leetcode/day-50/210-course-schedule-ii-topological-sort.md
+          - "Day 51 Graph IX":
+              - leetcode/day-51/index.md
+              - "743. Network Delay Time (Naive Dijkstra)": leetcode/day-51/743-network-delay-time-naive-dijkstra.md
+          - "Day 52 Graph X":
+              - leetcode/day-52/index.md
+              - "1631. Path with Minimum Effort (Dijkstra + minHeap)": leetcode/day-52/1631-path-with-minimum-effort-dijkstra-minheap.md
+              - "743. Network Delay Time (Dijkstra + minHeap)": leetcode/day-52/743-network-delay-time-dijkstra-minheap.md
+              - "1514. Path with Maximum Probability (Dijkstra + maxHeap)": leetcode/day-52/1514-path-with-maximum-probability-dijkstra-maxheap.md
+          - "Day 53 Graph XI":
+              - leetcode/day-53/index.md
+              - "Minimum Transportation Cost (Naive Bellman-Ford)": leetcode/day-53/minimum-transportation-cost-naive-bellman-ford.md
+              - "787. Cheapest Flights Within K Stops (Bellman-Ford, Single-Source Shortest Path with a Limited Number of Edges)": leetcode/day-53/787-cheapest-flights-within-k-stops-bellman-ford-single-source-shortest-path-with-a-limited-number-of-edges.md
+          - "Day 54 Graph XII":
+              - leetcode/day-54/index.md
+              - "Minimum Transportation Cost (SPFA, Bellman-Ford)": leetcode/day-54/minimum-transportation-cost-spfa-bellman-ford.md
+              - "743. Network Delay Time (Shortest Path Faster Algorithm, Bellman-Ford)": leetcode/day-54/743-network-delay-time-shortest-path-faster-algorithm-bellman-ford.md
+              - "Minimum Transportation Cost (Negative Cycles, Bellman-Ford)": leetcode/day-54/minimum-transportation-cost-negative-cycles-bellman-ford.md
+          - "Day 55 Graph XIII":
+              - leetcode/day-55/index.md
+              - "1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance (Floyd-Warshall)": leetcode/day-55/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance-floyd-warshall.md
+              - "2976. Minimum Cost to Convert String I (Floyd-Warshall)": leetcode/day-55/2976-minimum-cost-to-convert-string-i-floyd-warshall.md
+              - "1091. Shortest Path in Binary Matrix (A Star)": leetcode/day-55/1091-shortest-path-in-binary-matrix-a-star.md
+              - "Knight Shortest Path (A Star)": leetcode/day-55/knight-shortest-path-a-star.md
+          - "Bonus Graph":
+              - leetcode/bonus-graph/index.md
+              - "994. Rotting Oranges": leetcode/bonus-graph/994-rotting-oranges.md
   - Quant Finance:
       - quant-finance/index.md
       - Day 1:

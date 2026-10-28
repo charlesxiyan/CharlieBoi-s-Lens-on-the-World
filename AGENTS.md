@@ -7,7 +7,8 @@ Personal knowledge base and blog for CharlieBoi, built with MkDocs Material.
 ## Layout
 
 - `mkdocs.yml`: site configuration and explicit navigation.
-- `docs/leetcode/`: LeetCode explanations.
+- `docs/leetcode/`: Python solutions in `day-N/` and `bonus-*/` modules; keep
+  same-problem variants in their original modules. Assets are in `assets/`.
 - `docs/quant-finance/`: Quant self-study plan; each `day-N/` has an overview
   and four separate `question-N.md` pages. Register new days and questions in `nav`.
 - `docs/notes/`: supporting technical references.
@@ -21,6 +22,11 @@ Personal knowledge base and blog for CharlieBoi, built with MkDocs Material.
 - Credit question editors below the title with `*Edited by Charles*` or
   `*Edited by Sophia*`, using confirmed contributions rather than the Git uploader.
   If both contributed, use `*Edited by Charles and Sophia*`.
+- For imported LeetCode notes, use an editor credit, compact difficulty/topic
+  line, source link, core-idea callout, main Python code, folded detailed notes
+  and study records. Preserve source images and repair relative links. Sudoku
+  Solver (37) uses Charles's supplied complete solution. Do not claim that a
+  syntax check verifies algorithm correctness.
 - For Charles-edited Quant pages, follow `planning/charles-question-style.md`.
   Keep new draft solutions outside `docs/` until Charles approves publication.
 - Keep content in Markdown. Preserve the author's voice and do not invent personal facts.

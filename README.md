@@ -50,7 +50,7 @@ planning/decap-cms.md      Future browser editing integration
 docs/
   index.md                Homepage
   about.md                About page
-  leetcode/               LeetCode explanations
+  leetcode/               194 Python write-ups: Day 1–55 and 6 bonus modules
   quant-finance/          Quant self-study plan: day modules and question pages
   notes/                  Python, C++, and mathematics references
   blog/index.md           Life journal listing
