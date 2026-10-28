@@ -53,8 +53,8 @@ nav:
           - quant-finance/day-2/index.md
           - Question 1: quant-finance/day-2/question-1.md
           - Question 2: quant-finance/day-2/question-2.md
-          - Question 3: quant-finance/day-2/question-3.md
-          - Question 4: quant-finance/day-2/question-4.md
+          - '3. First Steps': quant-finance/day-2/question-3.md
+          - '4. Dice Game 1': quant-finance/day-2/question-4.md
       - Day 3:
           - quant-finance/day-3/index.md
           - Question 1: quant-finance/day-3/question-1.md

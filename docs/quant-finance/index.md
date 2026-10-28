@@ -9,7 +9,7 @@ my reasoning, and lessons to revisit.
 | Module | Questions | Status |
 | --- | --- | --- |
 | [Day 1 · Probability](day-1/index.md) | 4 questions with solutions | Notes imported |
-| [Day 2](day-2/index.md) | 4 individual question pages | Awaiting questions |
+| [Day 2 · Probability](day-2/index.md) | Questions 3–4 with solutions; 1–2 pending | In progress |
 | [Day 3](day-3/index.md) | 4 individual question pages | Awaiting questions |
 
 ## How I will use this notebook
@@ -20,8 +20,9 @@ my reasoning, and lessons to revisit.
 4. Note the key takeaway and return to questions that need more practice.
 
 Day 1 contains the questions and solutions imported from my Notion study notes.
-Day 2 and Day 3 are ready for future additions. Day numbers describe study
-sessions rather than calendar dates.
+Day 2 includes two new worked solutions, with two more questions to come.
+Day 3 is ready for future additions. Day numbers describe study sessions rather
+than calendar dates.
 
 ## Mathematical references
 

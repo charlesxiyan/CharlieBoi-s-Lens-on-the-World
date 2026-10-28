@@ -2,85 +2,71 @@
 
 *Edited by Charles*
 
-| Study record | Value |
-| --- | --- |
-| Question | 2 of 4 |
-| Topic | Probability |
-| Difficulty | Medium |
-| Attempts | 1 |
-| Mastery (Notion notation) | ❚ |
-| Latest attempt | October 22, 2026 |
-| Source | [OpenQuant: Race to Ace](https://openquant.co/questions/race-to-ace) |
+**Probability · Symmetry & expectation**
 
-## Expected Number of Draws Until the First Ace
+[Original question on OpenQuant](https://openquant.co/questions/race-to-ace)
 
-### Problem
+## Problem
 
-What is the expected number of cards drawn from a standard 52-card deck until the first ace appears (including the ace)?
+Draw cards from a uniformly shuffled standard 52-card deck, without replacement.
+How many draws do you expect to need to reach the first ace, **including the ace**?
 
-### Solution: Symmetry + Linearity of Expectation
+!!! tip "Core idea"
+    The four aces split the 48 other cards into five gaps. By symmetry,
+    each gap has the same expected number of cards.
 
-A deck contains **4 aces** and **48 non-ace cards**.
+## Short solution
 
-The 4 aces divide the 48 non-ace cards into **5 gaps**:
+**1. Split the deck into gaps.** Let $G_i$ be the number of non-ace cards in gap $i$:
 
-`Gap 1 | A₁ | Gap 2 | A₂ | Gap 3 | A₃ | Gap 4 | A₄ | Gap 5`
+$$
+G_1\;|\;A\;|\;G_2\;|\;A\;|\;G_3\;|\;A\;|\;G_4\;|\;A\;|\;G_5.
+$$
 
-Let Gᵢ denote the number of non-ace cards in the i-th gap.
+**2. Use symmetry.** The gaps sum to 48, and their expectations are equal:
 
-**Step 1: Apply Symmetry**
+$$
+\sum_{i=1}^{5}G_i=48
+\quad\Longrightarrow\quad
+\mathbb{E}[G_1]=\frac{48}{5}.
+$$
 
-Since the deck is randomly shuffled, all five gaps have the same expected length:
+**3. Count the ace itself.** The first ace arrives after the first gap:
 
-E[G₁] = E[G₂] = ... = E[G₅]
+$$
+\mathbb{E}[X]=\mathbb{E}[G_1]+1=\frac{48}{5}+1.
+$$
 
-**Step 2: Apply Linearity of Expectation**
+!!! success "Answer"
+    $$\boxed{\mathbb{E}[X]=\frac{53}{5}=10.6\text{ draws}}$$
 
-The total number of non-ace cards is 48:
+!!! warning "Watch out"
+    $9.6$ counts only the cards **before** the first ace. The question includes
+    the ace, so add one.
 
-G₁ + G₂ + G₃ + G₄ + G₅ = 48
+??? note "Generalization: the r-th special card"
+    For a uniformly shuffled deck of $N$ cards with $K$ special cards,
+    the expected position of the $r$-th special card is
 
-Therefore:
+    $$
+    \mathbb{E}[X_r]
+    =r\frac{N-K}{K+1}+r
+    =\frac{r(N+1)}{K+1},\qquad 1\le r\le K.
+    $$
 
-E[G₁] = 48/5 = 9.6
+    For the second ace, $\mathbb{E}[X_2]=2\cdot53/5=21.2$.
 
-**Step 3: Include the First Ace**
+??? note "Study record"
 
-The number of draws includes all cards in the first gap plus the first ace.
-
-**E[X] = E[G₁] + 1 = 10.6**
-
-### General Formula
-
-For N cards containing K special cards, the expected number of draws until the first special card is:
-
-**E[X] = (N + 1)/(K + 1)**
-
-For the first ace:
-
-E[X] = 53/5 = 10.6
-
-### Follow-up: Expected Draws Until the r-th Ace
-
-To reach the r-th ace, we pass through r gaps and draw r aces.
-
-E[Xᵣ] = r × (N − K)/(K + 1) + r
-
-Therefore:
-
-**E[Xᵣ] = r(N + 1)/(K + 1)**
-
-For the second ace:
-
-E[X₂] = 2 × 53/5 = 21.2
-
-### Key Takeaways
-
-- **Technique:** Symmetry + Linearity of Expectation
-- **Concept:** Order Statistics / Expected Waiting Time
-- **General Formula:** E[Xᵣ] = r(N + 1)/(K + 1)
-- **Interview Tip:** Use the gap argument instead of calculating the full probability distribution.
-- **Important:** Excluding the first ace gives 9.6; including it gives 10.6.
+    | Study record | Value |
+    | --- | --- |
+    | Question | 2 of 4 |
+    | Topic | Probability |
+    | Difficulty | Medium |
+    | Attempts | 1 |
+    | Mastery (Notion notation) | ❚ |
+    | Latest attempt | October 22, 2026 |
+    | Source | [OpenQuant: Race to Ace](https://openquant.co/questions/race-to-ace) |
 
 ---
 
