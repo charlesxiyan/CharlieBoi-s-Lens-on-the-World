@@ -51,7 +51,7 @@ docs/
   index.md                Homepage
   about.md                About page
   leetcode/               194 Python write-ups: Day 1–55 and 6 bonus modules
-  quant-finance/          Quant self-study plan: day modules and question pages
+  quant-finance/          Interview study plan, day modules, and project showcase
   notes/                  Python, C++, and mathematics references
   blog/index.md           Life journal listing
   blog/posts/             Dated Markdown posts

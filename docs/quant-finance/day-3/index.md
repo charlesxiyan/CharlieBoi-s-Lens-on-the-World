@@ -21,4 +21,4 @@ look and any connections between the problems.
 
 *Session notes to be added.*
 
-[Back to the study plan](../index.md)
+[Back to the study plan](../study-plan/index.md)

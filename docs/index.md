@@ -28,9 +28,9 @@ or something useful to take into your own life.
 
 - **Quant Finance**
 
-    Interview questions, worked solutions, and ideas worth revisiting.
+    Interview preparation, worked solutions, and quantitative finance projects.
 
-    [Open the interview notebook](quant-finance/index.md)
+    [Explore Quant Finance](quant-finance/index.md)
 
 - **Life**
 

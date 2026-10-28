@@ -22,4 +22,4 @@ The focus is on symmetry, counting, and expectation.
 These pages retain the solutions and study records from the Notion export.
 The mastery symbol is preserved as recorded, without assigning it a new meaning.
 
-[Back to the study plan](../index.md)
+[Back to the study plan](../study-plan/index.md)

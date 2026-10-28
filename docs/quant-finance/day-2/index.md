@@ -18,4 +18,4 @@ worked solutions; questions 1 and 2 are reserved for Sophia's upcoming additions
   and normalize to obtain long-run probabilities.
 - **Dice Game 1:** recognize when a failed round returns the game to its starting state.
 
-[Back to the study plan](../index.md)
+[Back to the study plan](../study-plan/index.md)
