@@ -761,4 +761,4 @@ class Solution:
 
 ---
 
-[Back to Bonus Binary Tree](index.md) · [All LeetCode notes](../index.md)
+[Back to Bonus Binary Tree](index.md) · [All Algorithm notes](../index.md)

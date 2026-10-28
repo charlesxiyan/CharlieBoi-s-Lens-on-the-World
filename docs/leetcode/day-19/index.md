@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [17. Letter Combination of a Phone Number](17-letter-combination-of-a-phone-number.md) | Medium |
 | [77. Combinations](77-combinations.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

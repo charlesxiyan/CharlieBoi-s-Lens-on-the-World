@@ -6,4 +6,4 @@ Python solutions and study notes by Charles.
 | --- | --- |
 | [79. Word Search](79-word-search.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

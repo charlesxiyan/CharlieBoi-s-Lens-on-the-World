@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [53. Maximum Subarray](53-maximum-subarray.md) | Medium |
 | [1035. Uncrossed Lines](1035-uncrossed-lines.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

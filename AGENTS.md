@@ -7,7 +7,7 @@ Personal knowledge base and blog for CharlieBoi, built with MkDocs Material.
 ## Layout
 
 - `mkdocs.yml`: site configuration and explicit navigation.
-- `docs/leetcode/`: Python solutions in `day-N/` and `bonus-*/` modules; keep
+- `docs/leetcode/`: Algorithm section (retain these URLs); Python solutions in `day-N/` and `bonus-*/` modules; keep
   same-problem variants in their original modules. Assets are in `assets/`.
 - `docs/quant-finance/`: landing page for `study-plan/` and `projects/`.
   The interview plan links to the existing `day-N/` modules (keep their URLs);

@@ -682,4 +682,4 @@ class Solution:
 
 ---
 
-[Back to Bonus Dynamic Programming](index.md) · [All LeetCode notes](../index.md)
+[Back to Bonus Dynamic Programming](index.md) · [All Algorithm notes](../index.md)

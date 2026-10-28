@@ -59,4 +59,4 @@ class Solution:
 
 ---
 
-[Back to Day 6 Hash Table II](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 6 Hash Table II](index.md) · [All Algorithm notes](../index.md)

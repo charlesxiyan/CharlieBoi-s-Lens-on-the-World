@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [437. Path Sum III](437-path-sum-iii.md) | Medium |
 | [543. Diameter of Binary Tree](543-diameter-of-binary-tree.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

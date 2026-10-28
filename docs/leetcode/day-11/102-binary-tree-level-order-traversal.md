@@ -118,4 +118,4 @@ class Solution:
 
 ---
 
-[Back to Day 11 Binary Tree I](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 11 Binary Tree I](index.md) · [All Algorithm notes](../index.md)

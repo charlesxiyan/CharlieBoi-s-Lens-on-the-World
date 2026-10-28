@@ -358,4 +358,4 @@ class Solution:
 
 ---
 
-[Back to Day 45 Graph III](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 45 Graph III](index.md) · [All Algorithm notes](../index.md)

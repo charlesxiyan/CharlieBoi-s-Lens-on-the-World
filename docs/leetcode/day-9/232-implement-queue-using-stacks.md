@@ -72,4 +72,4 @@ class MyQueue:
 
 ---
 
-[Back to Day 9 Stack & Queue I](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 9 Stack & Queue I](index.md) · [All Algorithm notes](../index.md)

@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [343. Integer Break](343-integer-break.md) | Medium |
 | [63. Unique Paths II](63-unique-paths-ii.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

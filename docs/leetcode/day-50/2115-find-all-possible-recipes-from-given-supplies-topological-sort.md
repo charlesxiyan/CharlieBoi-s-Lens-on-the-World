@@ -553,4 +553,4 @@ class Solution:
 
 ---
 
-[Back to Day 50 Graph VIII](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 50 Graph VIII](index.md) · [All Algorithm notes](../index.md)

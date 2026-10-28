@@ -422,4 +422,4 @@ class Solution:
 
 ---
 
-[Back to Day 46 Graph IV](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 46 Graph IV](index.md) · [All Algorithm notes](../index.md)

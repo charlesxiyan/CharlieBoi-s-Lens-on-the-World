@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [763. Partition Labels](763-partition-labels.md) | Medium |
 | [452. Minimum Number of Arrows to Burst Balloons](452-minimum-number-of-arrows-to-burst-balloons.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [674. Longest Continuous Increasing Subsequence](674-longest-continuous-increasing-subsequence.md) | Easy |
 | [718. Maximum Length of Repeated Array](718-maximum-length-of-repeated-array.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

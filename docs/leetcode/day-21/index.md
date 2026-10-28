@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [90. Subsets II](90-subsets-ii.md) | Medium |
 | [78. Subsets](78-subsets.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

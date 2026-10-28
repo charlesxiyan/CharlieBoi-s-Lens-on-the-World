@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [200. Number of Islands (BFS)](200-number-of-islands-bfs.md) | Medium |
 | [200. Number of Islands (DFS)](200-number-of-islands-dfs.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

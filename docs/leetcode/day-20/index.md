@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [40. Combination Sum II](40-combination-sum-ii.md) | Medium |
 | [131. Palindrome Partitioning](131-palindrome-partitioning.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

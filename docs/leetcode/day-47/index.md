@@ -7,4 +7,4 @@ Python solutions and study notes by Charles.
 | [1971. Find if Path Exists in Graph](1971-find-if-path-exists-in-graph.md) | Easy |
 | [Union-Find](union-find.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

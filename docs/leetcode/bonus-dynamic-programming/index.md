@@ -10,4 +10,4 @@ Python solutions and study notes by Charles.
 | [118. Pascal’s Triangle](118-pascals-triangle.md) | Easy |
 | [152. Maximum Product Subarray](152-maximum-product-subarray.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

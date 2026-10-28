@@ -6,4 +6,4 @@ Python solutions and study notes by Charles.
 | --- | --- |
 | [797. All Paths from Source to Target](797-all-paths-from-source-to-target.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

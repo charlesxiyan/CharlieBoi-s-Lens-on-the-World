@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [714. Best Time to Buy and Sell Stock with Transaction Fee](714-best-time-to-buy-and-sell-stock-with-transaction-fee.md) | Medium |
 | [309. Best Time to Buy and Sell Stock with Cooldown](309-best-time-to-buy-and-sell-stock-with-cooldown.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

@@ -171,4 +171,4 @@ class Solution:
 
 ---
 
-[Back to Day 35 Dynamic Programming VIII](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 35 Dynamic Programming VIII](index.md) · [All Algorithm notes](../index.md)

@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [617. Merge Two Binary Trees](617-merge-two-binary-trees.md) | Easy |
 | [654. Maximum Binary Tree](654-maximum-binary-tree.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

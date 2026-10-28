@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [242. Valid Anagram](242-valid-anagram.md) | Easy |
 | [349. Intersection of Two Arrays](349-intersection-of-two-arrays.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

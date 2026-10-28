@@ -65,4 +65,4 @@ class Solution:
 
 ---
 
-[Back to Day 10 Stack & Queue II](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 10 Stack & Queue II](index.md) · [All Algorithm notes](../index.md)

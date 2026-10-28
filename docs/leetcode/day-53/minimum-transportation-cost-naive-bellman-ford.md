@@ -780,4 +780,4 @@ class Solution:
 
 ---
 
-[Back to Day 53 Graph XI](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 53 Graph XI](index.md) · [All Algorithm notes](../index.md)

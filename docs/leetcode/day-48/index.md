@@ -7,4 +7,4 @@ Python solutions and study notes by Charles.
 | [685. Redundant Connection II](685-redundant-connection-ii.md) | Hard |
 | [684. Redundant Connection](684-redundant-connection.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

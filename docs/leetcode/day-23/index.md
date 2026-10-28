@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [455. Assign Cookies](455-assign-cookies.md) | Easy |
 | [376. Wiggle Subsequence](376-wiggle-subsequence.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

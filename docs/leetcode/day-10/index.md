@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [150. Evaluate Reverse Polish Notation](150-evaluate-reverse-polish-notation.md) | Medium |
 | [347. Top K Frequent Elements](347-top-k-frequent-elements.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

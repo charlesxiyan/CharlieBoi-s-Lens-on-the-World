@@ -303,4 +303,4 @@ class Solution:
 
 ---
 
-[Back to Bonus Backtrack](index.md) · [All LeetCode notes](../index.md)
+[Back to Bonus Backtrack](index.md) · [All Algorithm notes](../index.md)

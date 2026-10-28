@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [Full Reachability in a Directed Graph](full-reachability-in-a-directed-graph.md) | Medium |
 | [127. Word Ladder](127-word-ladder.md) | Hard |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

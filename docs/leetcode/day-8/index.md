@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [459. Repeated Substring Pattern](459-repeated-substring-pattern.md) | Easy |
 | [151. Reverse Words in a String](151-reverse-words-in-a-string.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

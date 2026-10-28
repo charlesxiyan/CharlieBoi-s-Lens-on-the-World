@@ -92,4 +92,4 @@ class Solution:
 
 ---
 
-[Back to Day 16 Binary Tree VI](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 16 Binary Tree VI](index.md) · [All Algorithm notes](../index.md)

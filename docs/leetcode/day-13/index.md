@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [110. Balanced Binary Tree](110-balanced-binary-tree.md) | Easy |
 | [404. Sum of Left Leaves](404-sum-of-left-leaves.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

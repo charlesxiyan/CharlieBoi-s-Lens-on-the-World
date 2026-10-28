@@ -74,4 +74,4 @@ class Solution:
 
 ---
 
-[Back to Day 19 Backtrack I](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 19 Backtrack I](index.md) · [All Algorithm notes](../index.md)

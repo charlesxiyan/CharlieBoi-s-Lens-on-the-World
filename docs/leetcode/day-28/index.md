@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [746. Min Cost Climbing Stairs](746-min-cost-climbing-stairs.md) | Easy |
 | [70. Climbing Stairs](70-climbing-stairs.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

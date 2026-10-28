@@ -433,4 +433,4 @@ class Solution:
 
 ---
 
-[Back to Day 39 Dynamic Programming XII](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 39 Dynamic Programming XII](index.md) · [All Algorithm notes](../index.md)

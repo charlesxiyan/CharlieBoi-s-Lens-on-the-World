@@ -48,4 +48,4 @@ class Solution:
 
 ---
 
-[Back to Day 5 Hash Table I](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 5 Hash Table I](index.md) · [All Algorithm notes](../index.md)

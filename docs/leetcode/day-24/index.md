@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [1005. Maximize Sum of Array after K Negations](1005-maximize-sum-of-array-after-k-negations.md) | Easy |
 | [45. Jump Game II](45-jump-game-ii.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

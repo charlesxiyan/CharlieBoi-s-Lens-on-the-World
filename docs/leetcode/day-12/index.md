@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [104. Maximum Depth of Binary Tree](104-maximum-depth-of-binary-tree.md) | Easy |
 | [111. Minimum Depth of Binary Tree](111-minimum-depth-of-binary-tree.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

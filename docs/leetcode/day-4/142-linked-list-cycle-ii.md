@@ -82,4 +82,4 @@ class Solution:
 
 ---
 
-[Back to Day 4 Linked List II](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 4 Linked List II](index.md) · [All Algorithm notes](../index.md)

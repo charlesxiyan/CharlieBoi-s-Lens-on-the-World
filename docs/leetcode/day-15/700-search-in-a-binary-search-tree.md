@@ -86,4 +86,4 @@ class Solution:
 
 ---
 
-[Back to Day 15 Binary Tree V](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 15 Binary Tree V](index.md) · [All Algorithm notes](../index.md)

@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [235. Lowest Common Ancestor of a Binary Search Tree](235-lowest-common-ancestor-of-a-binary-search-tree.md) | Medium |
 | [701. Insert into a Binary Search Tree](701-insert-into-a-binary-search-tree.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

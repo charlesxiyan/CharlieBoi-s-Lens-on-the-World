@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [134. Gas Station](134-gas-station.md) | Medium |
 | [860. Lemonade Change](860-lemonade-change.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

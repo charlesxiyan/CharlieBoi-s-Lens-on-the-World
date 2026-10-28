@@ -6,4 +6,4 @@ Python solutions and study notes by Charles.
 | --- | --- |
 | [121. Best Time to Buy and Sell Stock](121-best-time-to-buy-and-sell-stock.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

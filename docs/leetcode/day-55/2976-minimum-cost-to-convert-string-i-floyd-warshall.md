@@ -642,4 +642,4 @@ class Solution:
 
 ---
 
-[Back to Day 55 Graph XIII](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 55 Graph XIII](index.md) · [All Algorithm notes](../index.md)

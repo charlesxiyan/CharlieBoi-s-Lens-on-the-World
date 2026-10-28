@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [669. Trim a Binary Search Tree](669-trim-a-binary-search-tree.md) | Medium |
 | [108. Convert Sorted Array to Binary Search Tree](108-convert-sorted-array-to-binary-search-tree.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

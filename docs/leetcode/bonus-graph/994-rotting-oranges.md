@@ -896,4 +896,4 @@ class Solution:
 
 ---
 
-[Back to Bonus Graph](index.md) · [All LeetCode notes](../index.md)
+[Back to Bonus Graph](index.md) · [All Algorithm notes](../index.md)

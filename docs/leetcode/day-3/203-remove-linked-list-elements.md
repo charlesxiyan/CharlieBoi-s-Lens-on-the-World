@@ -64,4 +64,4 @@ class Solution:
 
 ---
 
-[Back to Day 3 Linked List I](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 3 Linked List I](index.md) · [All Algorithm notes](../index.md)

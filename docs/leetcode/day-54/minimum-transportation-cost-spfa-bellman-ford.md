@@ -681,4 +681,4 @@ class Solution:
 
 ---
 
-[Back to Day 54 Graph XII](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 54 Graph XII](index.md) · [All Algorithm notes](../index.md)

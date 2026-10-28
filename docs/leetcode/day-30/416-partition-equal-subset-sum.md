@@ -107,4 +107,4 @@ class Solution:
 
 ---
 
-[Back to Day 30 Dynamic Programming III](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 30 Dynamic Programming III](index.md) · [All Algorithm notes](../index.md)

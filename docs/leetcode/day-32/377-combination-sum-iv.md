@@ -54,4 +54,4 @@ class Solution:
 
 ---
 
-[Back to Day 32 Dynamic Programming V](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 32 Dynamic Programming V](index.md) · [All Algorithm notes](../index.md)

@@ -119,4 +119,4 @@ class Solution:
 
 ---
 
-[Back to Day 34 Dynamic Programming VII](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 34 Dynamic Programming VII](index.md) · [All Algorithm notes](../index.md)

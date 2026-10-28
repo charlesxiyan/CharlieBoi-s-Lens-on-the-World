@@ -6,4 +6,4 @@ Python solutions and study notes by Charles.
 | --- | --- |
 | [743. Network Delay Time (Naive Dijkstra)](743-network-delay-time-naive-dijkstra.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

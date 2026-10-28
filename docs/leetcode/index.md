@@ -1,4 +1,4 @@
-# LeetCode
+# Algorithm
 
 My Python problem-solving notebook: **194 write-ups and study notes**,
 organized into **55 daily modules** and **6 bonus modules**.

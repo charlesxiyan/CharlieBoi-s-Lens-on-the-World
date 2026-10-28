@@ -53,4 +53,4 @@ class Solution:
 
 ---
 
-[Back to Day 26 Greedy Algorithm IV](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 26 Greedy Algorithm IV](index.md) · [All Algorithm notes](../index.md)

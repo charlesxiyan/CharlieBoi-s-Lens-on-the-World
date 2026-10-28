@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [743. Network Delay Time (Dijkstra + minHeap)](743-network-delay-time-dijkstra-minheap.md) | Medium |
 | [1514. Path with Maximum Probability (Dijkstra + maxHeap)](1514-path-with-maximum-probability-dijkstra-maxheap.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

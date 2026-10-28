@@ -65,4 +65,4 @@ class Solution:
 
 ---
 
-[Back to Day 13 Binary Tree III](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 13 Binary Tree III](index.md) · [All Algorithm notes](../index.md)

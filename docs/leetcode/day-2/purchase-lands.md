@@ -155,4 +155,4 @@ if __name__ == "__main__":
 
 ---
 
-[Back to Day 2 Array II](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 2 Array II](index.md) · [All Algorithm notes](../index.md)

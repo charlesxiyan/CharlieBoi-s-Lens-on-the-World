@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [144. Binary Tree Preorder Traversal](144-binary-tree-preorder-traversal.md) | Easy |
 | [94. Binary Tree Inorder Traversal](94-binary-tree-inorder-traversal.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

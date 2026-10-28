@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [213. House Robber II](213-house-robber-ii.md) | Medium |
 | [337. House Robber III](337-house-robber-iii.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

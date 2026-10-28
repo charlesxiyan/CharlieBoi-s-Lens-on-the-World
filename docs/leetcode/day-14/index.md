@@ -10,4 +10,4 @@ Python solutions and study notes by Charles.
 | [106. Construct Binary Tree from Inorder and Postorder Traversal](106-construct-binary-tree-from-inorder-and-postorder-traversal.md) | Medium |
 | [105. Construct Binary Tree from Preorder and Inorder Traversal](105-construct-binary-tree-from-preorder-and-inorder-traversal.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

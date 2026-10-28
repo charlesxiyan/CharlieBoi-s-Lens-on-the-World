@@ -660,4 +660,4 @@ class UnionFind:
 
 ---
 
-[Back to Day 47 Graph V](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 47 Graph V](index.md) · [All Algorithm notes](../index.md)

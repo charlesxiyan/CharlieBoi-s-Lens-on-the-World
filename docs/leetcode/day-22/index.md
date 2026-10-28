@@ -10,4 +10,4 @@ Python solutions and study notes by Charles.
 | [51. N-Queens](51-n-queens.md) | Hard |
 | [37. Sudoku Solver](37-sudoku-solver.md) | Hard |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

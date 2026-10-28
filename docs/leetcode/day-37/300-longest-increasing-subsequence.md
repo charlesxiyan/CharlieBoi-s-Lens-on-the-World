@@ -337,4 +337,4 @@ class Solution:
 
 ---
 
-[Back to Day 37 Dynamic Programming X](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 37 Dynamic Programming X](index.md) · [All Algorithm notes](../index.md)

@@ -7,4 +7,4 @@ Python solutions and study notes by Charles.
 | [416. Partition Equal Subset Sum](416-partition-equal-subset-sum.md) | Medium |
 | [0/1 Knapsack Problem](0-1-knapsack-problem.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

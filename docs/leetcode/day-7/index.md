@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [541. Reverse String II](541-reverse-string-ii.md) | Easy |
 | [Substitute Numbers](substitute-numbers.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

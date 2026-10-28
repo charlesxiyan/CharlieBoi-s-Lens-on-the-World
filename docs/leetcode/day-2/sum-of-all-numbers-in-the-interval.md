@@ -84,4 +84,4 @@ def IntervalSum():
 
 ---
 
-[Back to Day 2 Array II](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 2 Array II](index.md) · [All Algorithm notes](../index.md)

@@ -313,4 +313,4 @@ class Solution:
 
 ---
 
-[Back to Day 52 Graph X](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 52 Graph X](index.md) · [All Algorithm notes](../index.md)

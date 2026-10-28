@@ -129,4 +129,4 @@ class Solution:
 
 ---
 
-[Back to Day 14 Binary Tree IV](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 14 Binary Tree IV](index.md) · [All Algorithm notes](../index.md)

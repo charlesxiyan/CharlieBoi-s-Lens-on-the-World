@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [501. Find Modes in Binary Search Tree](501-find-modes-in-binary-search-tree.md) | Easy |
 | [236. Lowest Common Ancestor of a Binary Tree](236-lowest-common-ancestor-of-a-binary-tree.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

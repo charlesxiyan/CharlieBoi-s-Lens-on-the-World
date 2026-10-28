@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [1254. Number of Closed Islands](1254-number-of-closed-islands.md) | Medium |
 | [Total Area of Islands](total-area-of-islands.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

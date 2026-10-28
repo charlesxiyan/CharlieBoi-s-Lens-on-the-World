@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [2115. Find All Possible Recipes from Given Supplies (Topological Sort)](2115-find-all-possible-recipes-from-given-supplies-topological-sort.md) | Medium |
 | [210. Course Schedule II (Topological Sort)](210-course-schedule-ii-topological-sort.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

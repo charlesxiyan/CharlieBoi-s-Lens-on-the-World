@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [232. Implement Queue Using Stacks](232-implement-queue-using-stacks.md) | Easy |
 | [20. Valid Parentheses](20-valid-parentheses.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

@@ -311,4 +311,4 @@ class Solution:
 
 ---
 
-[Back to Bonus Array](index.md) · [All LeetCode notes](../index.md)
+[Back to Bonus Array](index.md) · [All Algorithm notes](../index.md)

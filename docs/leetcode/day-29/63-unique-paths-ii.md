@@ -94,4 +94,4 @@ class Solution:
 
 ---
 
-[Back to Day 29 Dynamic Programming II](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 29 Dynamic Programming II](index.md) · [All Algorithm notes](../index.md)

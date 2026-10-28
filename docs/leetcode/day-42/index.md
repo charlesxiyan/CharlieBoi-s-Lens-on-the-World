@@ -7,4 +7,4 @@ Python solutions and study notes by Charles.
 | [42. Trapping Rain Water](42-trapping-rain-water.md) | Hard |
 | [84. Largest Rectangle in Histogram](84-largest-rectangle-in-histogram.md) | Hard |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

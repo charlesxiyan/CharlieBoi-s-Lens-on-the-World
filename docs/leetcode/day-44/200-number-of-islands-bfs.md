@@ -447,4 +447,4 @@ class Solution:
 
 ---
 
-[Back to Day 44 Graph II](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 44 Graph II](index.md) · [All Algorithm notes](../index.md)

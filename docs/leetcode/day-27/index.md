@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [56. Merge Intervals](56-merge-intervals.md) | Medium |
 | [738. Monotone Increasing Digits](738-monotone-increasing-digits.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

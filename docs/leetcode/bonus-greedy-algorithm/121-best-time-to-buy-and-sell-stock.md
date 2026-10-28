@@ -683,4 +683,4 @@ class Solution:
 
 ---
 
-[Back to Bonus Greedy Algorithm](index.md) · [All LeetCode notes](../index.md)
+[Back to Bonus Greedy Algorithm](index.md) · [All Algorithm notes](../index.md)

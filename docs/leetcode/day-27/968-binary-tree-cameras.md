@@ -103,4 +103,4 @@ class Solution:
 
 ---
 
-[Back to Day 27 Greedy Algorithm V](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 27 Greedy Algorithm V](index.md) · [All Algorithm notes](../index.md)

@@ -70,4 +70,4 @@ class Solution:
 
 ---
 
-[Back to Day 8 String II](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 8 String II](index.md) · [All Algorithm notes](../index.md)

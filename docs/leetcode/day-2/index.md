@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [Sum of All Numbers in the Interval](sum-of-all-numbers-in-the-interval.md) | Easy |
 | [Purchase Lands](purchase-lands.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [503. Next Greater Element II](503-next-greater-element-ii.md) | Medium |
 | [496. Next Greater Element I](496-next-greater-element-i.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

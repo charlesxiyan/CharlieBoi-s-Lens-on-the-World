@@ -419,4 +419,4 @@ class Solution:
 
 ---
 
-[Back to Day 41 Monotonic Stack I](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 41 Monotonic Stack I](index.md) · [All Algorithm notes](../index.md)

@@ -13,4 +13,4 @@ Python solutions and study notes by Charles.
 | [124. Binary Tree Maximum Path Sum](124-binary-tree-maximum-path-sum.md) | Hard |
 | [392. Is Subsequence](392-is-subsequence.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

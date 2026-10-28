@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [322. Coin Change](322-coin-change.md) | Medium |
 | [279. Perfect Squares](279-perfect-squares.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

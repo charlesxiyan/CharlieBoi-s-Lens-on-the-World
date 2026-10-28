@@ -7,4 +7,4 @@ Python solutions and study notes by Charles.
 | [518. Coin Change II](518-coin-change-ii.md) | Medium |
 | [377. Combination Sum IV](377-combination-sum-iv.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

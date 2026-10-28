@@ -13,14 +13,14 @@ to practical tips and personal experiences.
 I hope these pages capture my growth and offer you a little inspiration
 or something useful to take into your own life.
 
-[Explore LeetCode](leetcode/index.md){ .md-button .md-button--primary }
+[Explore Algorithm](leetcode/index.md){ .md-button .md-button--primary }
 [Explore Life](blog/index.md){ .md-button }
 
 ## Through the lens
 
 <div class="grid cards" markdown>
 
-- **LeetCode**
+- **Algorithm**
 
     Solutions, explanations, and the reasoning behind each approach.
 

@@ -1,5 +1,5 @@
 site_name: "CharlieBoi's Lens on the World"
-site_description: LeetCode explanations, quantitative finance interview notes, and life through Charles's lens.
+site_description: Algorithm explanations, quantitative finance interview notes, and life through Charles's lens.
 site_author: Charles
 site_url: !ENV [SITE_URL, "https://charlieboi.com/"]
 repo_url: https://github.com/charlesxiyan/CharlieBoi-s-Lens-on-the-World
@@ -39,7 +39,7 @@ theme:
 
 nav:
   - Home: index.md
-  - LeetCode:
+  - Algorithm:
       - leetcode/index.md
       - "Arrays":
           - "Day 1 Array I":

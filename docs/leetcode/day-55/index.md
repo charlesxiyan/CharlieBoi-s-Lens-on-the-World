@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [1091. Shortest Path in Binary Matrix (A Star)](1091-shortest-path-in-binary-matrix-a-star.md) | Medium |
 | [Knight Shortest Path (A Star)](knight-shortest-path-a-star.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

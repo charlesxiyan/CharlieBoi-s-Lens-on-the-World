@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [115. Distinct Subsequence](115-distinct-subsequence.md) | Hard |
 | [583. Delete Operation for Two String](583-delete-operation-for-two-string.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

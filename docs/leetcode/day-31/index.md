@@ -8,4 +8,4 @@ Python solutions and study notes by Charles.
 | [474. Ones and Zeroes](474-ones-and-zeroes.md) | Medium |
 | [494. Target Sum](494-target-sum.md) | Medium |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

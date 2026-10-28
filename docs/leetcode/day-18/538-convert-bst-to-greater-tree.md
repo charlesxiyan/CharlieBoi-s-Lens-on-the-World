@@ -99,4 +99,4 @@ class Solution:
 
 ---
 
-[Back to Day 18 Binary Tree VIII](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 18 Binary Tree VIII](index.md) · [All Algorithm notes](../index.md)

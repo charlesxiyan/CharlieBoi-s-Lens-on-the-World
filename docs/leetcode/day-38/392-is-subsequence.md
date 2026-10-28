@@ -335,4 +335,4 @@ class Solution:
 
 ---
 
-[Back to Day 38 Dynamic Programming XI](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 38 Dynamic Programming XI](index.md) · [All Algorithm notes](../index.md)

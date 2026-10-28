@@ -737,4 +737,4 @@ class Solution:
 
 ---
 
-[Back to Day 48 Graph VI](index.md) · [All LeetCode notes](../index.md)
+[Back to Day 48 Graph VI](index.md) · [All Algorithm notes](../index.md)

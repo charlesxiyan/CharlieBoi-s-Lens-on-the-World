@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [18. 4Sum](18-4sum.md) | Medium |
 | [383. Ransom Note](383-ransom-note.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)

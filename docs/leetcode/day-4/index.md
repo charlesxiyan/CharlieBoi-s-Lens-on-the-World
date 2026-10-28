@@ -9,4 +9,4 @@ Python solutions and study notes by Charles.
 | [142. Linked List Cycle II](142-linked-list-cycle-ii.md) | Medium |
 | [160. Intersection of Two Linked Lists](160-intersection-of-two-linked-lists.md) | Easy |
 
-[All LeetCode notes](../index.md)
+[All Algorithm notes](../index.md)
