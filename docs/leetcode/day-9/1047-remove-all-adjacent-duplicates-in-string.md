@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Stack**
 
-[Original problem](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

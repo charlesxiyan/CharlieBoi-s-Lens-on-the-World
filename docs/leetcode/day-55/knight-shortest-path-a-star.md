@@ -9,58 +9,7 @@ hide:
 
 **Medium · Python · Graph**
 
-!!! tip "Core idea"
-
-    You are given a chessboard of size `1000 x 1000`.
-
-    The coordinates of the chessboard range from `1` to `1000` on both the `x`-axis and the `y`-axis.
-
-## Python solution
-
-```python
-import heapq
-
-class Solution:
-    def minKnightMoves(
-        self,
-        startX: int,
-        startY: int,
-        targetX: int,
-        targetY: int
-    ) -> int:
-
-        moves = [(1, 2), (-1, 2), (1, -2), (-1, -2), (2, 1), (2, -1), (-2, 1), (-2, -1)]
-        queue = [(self.dist((startX, startY), (targetX, targetY)), (startX, startY))]
-        minSteps = {(startX, startY): 0}
-
-        while queue:
-            d, cur = heapq.heappop(queue)
-
-            if cur == (targetX, targetY):
-                return minSteps[cur]
-
-            for move in moves:
-                nextP = (cur[0] + move[0], cur[1] + move[1])
-                if 1 <= nextP[0] <= 1000 and 1 <= nextP[1] <= 1000:
-                    newSteps = minSteps[cur] + 1
-                    if newSteps < minSteps.get(nextP, float('inf')):
-                        minSteps[nextP] = newSteps
-                        heapq.heappush(queue, (self.dist(nextP, (targetX, targetY)) + newSteps, nextP))
-
-        return -1
-
-    def dist(self, p1, p2):
-        acc = 0
-        for i in range(len(p1)):
-            acc += (p1[i] - p2[i]) ** 2
-        return acc ** 0.5
-```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    ## Problem Description
+??? question "Problem"
 
     You are given a chessboard of size `1000 x 1000`.
 
@@ -247,6 +196,57 @@ class Solution:
     - The chessboard size is fixed at `1000 x 1000`.
     - The knight may only move according to standard chess knight movement.
     - Every move must stay inside the chessboard.
+
+!!! tip "Core idea"
+
+    You are given a chessboard of size `1000 x 1000`.
+
+    The coordinates of the chessboard range from `1` to `1000` on both the `x`-axis and the `y`-axis.
+
+## Python solution
+
+```python
+import heapq
+
+class Solution:
+    def minKnightMoves(
+        self,
+        startX: int,
+        startY: int,
+        targetX: int,
+        targetY: int
+    ) -> int:
+
+        moves = [(1, 2), (-1, 2), (1, -2), (-1, -2), (2, 1), (2, -1), (-2, 1), (-2, -1)]
+        queue = [(self.dist((startX, startY), (targetX, targetY)), (startX, startY))]
+        minSteps = {(startX, startY): 0}
+
+        while queue:
+            d, cur = heapq.heappop(queue)
+
+            if cur == (targetX, targetY):
+                return minSteps[cur]
+
+            for move in moves:
+                nextP = (cur[0] + move[0], cur[1] + move[1])
+                if 1 <= nextP[0] <= 1000 and 1 <= nextP[1] <= 1000:
+                    newSteps = minSteps[cur] + 1
+                    if newSteps < minSteps.get(nextP, float('inf')):
+                        minSteps[nextP] = newSteps
+                        heapq.heappush(queue, (self.dist(nextP, (targetX, targetY)) + newSteps, nextP))
+
+        return -1
+
+    def dist(self, p1, p2):
+        acc = 0
+        for i in range(len(p1)):
+            acc += (p1[i] - p2[i]) ** 2
+        return acc ** 0.5
+```
+
+??? note "Explanation, examples & other approaches"
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     ## Starter Code
 

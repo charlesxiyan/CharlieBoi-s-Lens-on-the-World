@@ -9,54 +9,7 @@ hide:
 
 **Medium · Python · Graphs**
 
-!!! tip "Core idea"
-
-    This problem is very similar to **LeetCode 695. Max Area of Island**.
-
-    The main difference is that we only want to count islands that **do not touch the boundary**.
-
-## Python solution
-
-```python
-from typing import List
-
-class Solution:
-    def closedIslandArea(self, grid: List[List[int]]) -> int:
-        m, n = len(grid), len(grid[0])
-        res = 0
-
-        def dfs(i, j):
-            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == 0:
-                return 0
-
-            grid[i][j] = 0
-            return 1 + dfs(i - 1, j) + dfs(i + 1, j) + dfs(i, j - 1) + dfs(i, j + 1)
-
-        for i in range(m):
-            if grid[i][0] == 1:
-                dfs(i, 0)
-            if grid[i][n - 1] == 1:
-                dfs(i, n - 1)
-
-        for j in range(n):
-            if grid[0][j] == 1:
-                dfs(0, j)
-            if grid[m - 1][j] == 1:
-                dfs(m - 1, j)
-
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == 1:
-                    res += dfs(i, j)
-
-        return res
-```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    ## Description
+??? question "Problem"
 
     You are given an `m x n` binary matrix `grid`, where:
 
@@ -157,6 +110,53 @@ class Solution:
 
     grid[i][j] is either 0 or 1.
     ```
+
+!!! tip "Core idea"
+
+    This problem is very similar to **LeetCode 695. Max Area of Island**.
+
+    The main difference is that we only want to count islands that **do not touch the boundary**.
+
+## Python solution
+
+```python
+from typing import List
+
+class Solution:
+    def closedIslandArea(self, grid: List[List[int]]) -> int:
+        m, n = len(grid), len(grid[0])
+        res = 0
+
+        def dfs(i, j):
+            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == 0:
+                return 0
+
+            grid[i][j] = 0
+            return 1 + dfs(i - 1, j) + dfs(i + 1, j) + dfs(i, j - 1) + dfs(i, j + 1)
+
+        for i in range(m):
+            if grid[i][0] == 1:
+                dfs(i, 0)
+            if grid[i][n - 1] == 1:
+                dfs(i, n - 1)
+
+        for j in range(n):
+            if grid[0][j] == 1:
+                dfs(0, j)
+            if grid[m - 1][j] == 1:
+                dfs(m - 1, j)
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    res += dfs(i, j)
+
+        return res
+```
+
+??? note "Explanation, examples & other approaches"
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     ## Python
 

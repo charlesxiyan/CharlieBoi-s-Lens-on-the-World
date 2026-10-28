@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · LinkedList**
 
-[Original problem](https://leetcode.com/problems/swap-nodes-in-pairs/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/swap-nodes-in-pairs/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

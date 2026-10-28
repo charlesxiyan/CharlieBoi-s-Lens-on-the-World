@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Array**
 
-[Original problem](https://leetcode.com/problems/search-insert-position/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/search-insert-position/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

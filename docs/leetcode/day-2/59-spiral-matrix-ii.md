@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Array**
 
-[Original problem](https://leetcode.com/problems/spiral-matrix-ii/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/spiral-matrix-ii/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

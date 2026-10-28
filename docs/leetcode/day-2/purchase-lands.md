@@ -9,7 +9,51 @@ hide:
 
 **Medium · Python · Array**
 
-[Original problem](https://www.programmercarl.com/kamacoder/0044.%E5%BC%80%E5%8F%91%E5%95%86%E8%B4%AD%E4%B9%B0%E5%9C%9F%E5%9C%B0.html)
+??? question "Problem"
+
+    [Original source](https://www.programmercarl.com/kamacoder/0044.%E5%BC%80%E5%8F%91%E5%95%86%E8%B4%AD%E4%B9%B0%E5%9C%9F%E5%9C%B0.html)
+
+    Question:
+
+    A city has been divided into n*m tiles, with different weight on each tile as its value. A and B are real estate companies, hoping to purchase lands in the city.
+
+    Now, distribute these tiles to A and B.
+
+    However, there is a rule that only allows a vertical or horizontal partition to the whole land, and each sub-area cannot be empty.
+
+    In order to guarantee the fairness, find a solution to ensure the values of sub-areas that A and B obtain have the minimal difference.
+
+    **Sample input**
+
+    ```text
+    3
+    3
+    1 2 3
+    2 1 3
+    1 2 3
+    ```
+
+    Explanation:
+
+    The first 2 rows are respectively n and m.
+
+    The following n rows are weights of tiles in the land.
+
+    **Sample output**
+
+    ```text
+    0
+    ```
+
+    Explanation:
+
+    ```text
+    1 2 | 3
+    2 1 | 3
+    1 2 | 3
+    ```
+
+    A vertical partition.
 
 !!! tip "Core idea"
 
@@ -53,49 +97,7 @@ if __name__ == "__main__":
 
 ??? note "Explanation, examples & other approaches"
 
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Question:
-
-    A city has been divided into n*m tiles, with different weight on each tile as its value. A and B are real estate companies, hoping to purchase lands in the city.
-
-    Now, distribute these tiles to A and B.
-
-    However, there is a rule that only allows a vertical or horizontal partition to the whole land, and each sub-area cannot be empty.
-
-    In order to guarantee the fairness, find a solution to ensure the values of sub-areas that A and B obtain have the minimal difference.
-
-    Input Sample (rows):
-
-    3
-
-    3
-
-    1 2 3
-
-    2 1 3
-
-    1 2 3
-
-    Explanation:
-
-    The first 2 rows are respectively n and m.
-
-    The following n rows are weights of tiles in the land.
-
-    Output Sample:
-
-    0
-
-    Explanation:
-
-    1 2 | 3
-
-    2 1 | 3
-
-    1 2 | 3
-
-    A vertical partition.
+    The problem statement is available in the **Problem** block above.
 
 ??? note "Original implementation draft"
 

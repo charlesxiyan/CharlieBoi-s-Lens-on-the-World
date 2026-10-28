@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Array**
 
-[Original problem](https://leetcode.com/problems/search-a-2d-matrix/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/search-a-2d-matrix/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

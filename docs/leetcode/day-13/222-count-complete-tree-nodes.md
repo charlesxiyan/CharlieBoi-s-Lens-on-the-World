@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Binary Tree**
 
-[Original problem](https://leetcode.com/problems/count-complete-tree-nodes/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/count-complete-tree-nodes/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

@@ -9,7 +9,11 @@ hide:
 
 **Hard · Python · Backtrack**
 
-[Original problem](https://leetcode.com/problems/sudoku-solver/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/sudoku-solver/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

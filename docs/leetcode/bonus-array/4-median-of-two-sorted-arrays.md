@@ -9,7 +9,11 @@ hide:
 
 **Hard · Python · Array**
 
-[Original problem](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/median-of-two-sorted-arrays/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

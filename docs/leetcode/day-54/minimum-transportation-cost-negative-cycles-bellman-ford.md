@@ -9,48 +9,7 @@ hide:
 
 **Medium · Python · Graph**
 
-!!! tip "Core idea"
-
-    Bellman-Ford is a shortest-path algorithm that can handle:
-
-    - Positive edge weights
-    - Zero edge weights
-    - Negative edge weights
-
-## Python solution
-
-```python
-from typing import List
-
-class Solution:
-    def minimumCost(self, n: int, roads: List[List[int]]):
-        minCost = [float('inf')] * (n + 1)
-        minCost[1] = 0
-
-        for _ in range(n - 1):
-            for u, v, w in roads:
-                if (
-                    minCost[u] != float('inf')
-                    and minCost[v] > minCost[u] + w
-                ):
-                    minCost[v] = minCost[u] + w
-
-        # One more iteration to detect a negative cycle
-        for u, v, w in roads:
-            if (
-                minCost[u] != float('inf')
-                and minCost[v] > minCost[u] + w
-            ):
-                return 'circle'
-
-        return 'unconnected' if minCost[n] == float('inf') else minCost[n]
-```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    ## Problem Description
+??? question "Problem"
 
     A country wants to promote economic exchange between cities by providing subsidies for cargo transportation.
 
@@ -203,6 +162,47 @@ class Solution:
     - The graph may contain negative-weight cycles.
     - Multiple paths may exist between two cities.
     - City `n` may be unreachable from city `1`.
+
+!!! tip "Core idea"
+
+    Bellman-Ford is a shortest-path algorithm that can handle:
+
+    - Positive edge weights
+    - Zero edge weights
+    - Negative edge weights
+
+## Python solution
+
+```python
+from typing import List
+
+class Solution:
+    def minimumCost(self, n: int, roads: List[List[int]]):
+        minCost = [float('inf')] * (n + 1)
+        minCost[1] = 0
+
+        for _ in range(n - 1):
+            for u, v, w in roads:
+                if (
+                    minCost[u] != float('inf')
+                    and minCost[v] > minCost[u] + w
+                ):
+                    minCost[v] = minCost[u] + w
+
+        # One more iteration to detect a negative cycle
+        for u, v, w in roads:
+            if (
+                minCost[u] != float('inf')
+                and minCost[v] > minCost[u] + w
+            ):
+                return 'circle'
+
+        return 'unconnected' if minCost[n] == float('inf') else minCost[n]
+```
+
+??? note "Explanation, examples & other approaches"
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     ## Approach: Bellman-Ford + Negative Cycle Detection
 

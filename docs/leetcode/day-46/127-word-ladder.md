@@ -9,7 +9,11 @@ hide:
 
 **Hard · Python · Graph**
 
-[Original problem](https://leetcode.com/problems/word-ladder/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/word-ladder/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

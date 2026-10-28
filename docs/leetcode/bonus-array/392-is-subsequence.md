@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Array**
 
-[Original problem](https://leetcode.com/problems/is-subsequence/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/is-subsequence/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Dynamic Programming**
 
-[Original problem](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

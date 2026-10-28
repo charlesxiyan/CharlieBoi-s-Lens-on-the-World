@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Dynamic Programming**
 
-[Original problem](https://leetcode.com/problems/word-break/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/word-break/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

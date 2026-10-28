@@ -9,6 +9,19 @@ hide:
 
 **Medium · Python · Dynamic Programming**
 
+??? question "Problem"
+
+    **Problem:**
+
+    There is a knapsack of size **`sum`** . Given **`N`** items, with the weight of the **`i`** -th item **`w[i]`** and value **`v[i]`**, where **`0 <= i < N`** , and there is only one item for each **`i`**. What is the largest value of the combination of items that can be stuffed into the knapsack? See the example below.
+
+    | Item | Weight | Value |
+    | --- | --- | --- |
+    | Item 0 | 0 | 0 |
+    | Item 1 | 1 | 10 |
+    | Item 2 | 2 | 20 |
+    | Item 3 | 3 | 30 |
+
 !!! tip "Core idea"
 
     Let `dp[j]` be the best value with capacity `j`. Process each item once and update capacities in descending order so the same item cannot be reused.
@@ -31,17 +44,6 @@ def zero_one_knapsack(size, w, v):
 ??? note "Explanation, examples & other approaches"
 
     Original study notes follow, including intermediate snippets and earlier attempts.
-
-    **Problem:**
-
-    There is a knapsack of size **`sum`** . Given **`N`** items, with the weight of the **`i`** -th item **`w[i]`** and value **`v[i]`**, where **`0 <= i < N`** , and there is only one item for each **`i`**. What is the largest value of the combination of items that can be stuffed into the knapsack? See the example below.
-
-    | Item | Weight | Value |
-    | --- | --- | --- |
-    | Item 0 | 0 | 0 |
-    | Item 1 | 1 | 10 |
-    | Item 2 | 2 | 20 |
-    | Item 3 | 3 | 30 |
 
     **Solution:**
 

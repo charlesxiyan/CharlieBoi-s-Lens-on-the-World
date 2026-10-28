@@ -9,7 +9,11 @@ hide:
 
 **Hard · Python · Binary Search**
 
-[Original problem](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/binary-tree-maximum-path-sum/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

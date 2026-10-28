@@ -9,7 +9,21 @@ hide:
 
 **Easy · Python · Array**
 
-[Original problem](https://www.programmercarl.com/kamacoder/0058.%E5%8C%BA%E9%97%B4%E5%92%8C.html)
+??? question "Problem"
+
+    [Original source](https://www.programmercarl.com/kamacoder/0058.%E5%8C%BA%E9%97%B4%E5%92%8C.html)
+
+    Question:
+
+    Given an array of integers, calculate the sum of numbers in the input interval.
+
+    The input and output sample:
+
+    ![Input Sample.png](../assets/day-2-array-ii/sum-of-all-numbers-in-the-interval/Input_Sample.png)
+
+    ![Output Sample.png](../assets/day-2-array-ii/sum-of-all-numbers-in-the-interval/Output_Sample.png)
+
+    The first row is the length of the integer array, n. The following n rows are elements of the array. Then, the interval start and end indices in the array are given. For example, (0, 1) → [1, 2] → 3; (1, 3) → [2, 3, 4] → 9.
 
 !!! tip "Core idea"
 
@@ -60,19 +74,7 @@ def IntervalSum():
 
 ??? note "Explanation, examples & other approaches"
 
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Question:
-
-    Given an array of integers, calculate the sum of numbers in the input interval.
-
-    The input and output sample:
-
-    ![Input Sample.png](../assets/day-2-array-ii/sum-of-all-numbers-in-the-interval/Input_Sample.png)
-
-    ![Output Sample.png](../assets/day-2-array-ii/sum-of-all-numbers-in-the-interval/Output_Sample.png)
-
-    The first row is the length of the integer array, n. The following n rows are elements of the array. Then, the interval start and end indices in the array are given. For example, (0, 1) → [1, 2] → 3; (1, 3) → [2, 3, 4] → 9.
+    The problem statement is available in the **Problem** block above.
 
 ??? note "Study record"
 

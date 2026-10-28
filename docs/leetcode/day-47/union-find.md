@@ -9,6 +9,19 @@ hide:
 
 **Easy · Python · Graph**
 
+??? question "Problem"
+
+    This is a data-structure study note rather than a single programming problem.
+
+    Maintain a collection of disjoint sets with these operations:
+
+    - `find(x)`: return the representative of the set containing `x`.
+    - `union(u, v)`: merge the sets containing `u` and `v`.
+    - `is_same(u, v)`: determine whether `u` and `v` belong to the same set.
+
+    Initially, each of the `n` elements belongs to its own set. The note covers
+    path compression and union by rank, with examples of connectivity queries.
+
 !!! tip "Core idea"
 
     Union Find, also called **Disjoint Set Union (DSU)**, is a data structure used to manage multiple disjoint sets.

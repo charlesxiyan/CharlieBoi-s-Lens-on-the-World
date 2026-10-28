@@ -25,8 +25,12 @@ Personal knowledge base and blog for CharlieBoi, built with MkDocs Material.
   `*Edited by Sophia*`, using confirmed contributions rather than the Git uploader.
   If both contributed, use `*Edited by Charles and Sophia*`.
 - For imported LeetCode notes, use an editor credit, compact difficulty/topic
-  line, source link, core-idea callout, main Python code, folded detailed notes
-  and study records. Preserve source images and repair relative links. Sudoku
+  line, a collapsed `??? question "Problem"` block before the core idea, main
+  Python code, and folded detailed notes
+  and study records. For LeetCode problems, link the official statement inside
+  the Problem block; for custom exercises, include the supplied statement,
+  examples, and constraints directly. Topic notes should describe their scope
+  instead of inventing a problem. Preserve source images and repair relative links. Sudoku
   Solver (37) uses Charles's supplied complete solution. Do not claim that a
   syntax check verifies algorithm correctness.
 - For Charles-edited Quant pages, follow `planning/charles-question-style.md`.

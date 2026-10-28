@@ -9,47 +9,7 @@ hide:
 
 **Medium · Python · Graph**
 
-!!! tip "Core idea"
-
-    This problem is a basic **directed graph traversal** problem.
-
-## Python solution
-
-```python
-from typing import List
-
-class Solution:
-    def canReachAllNodes(self, n: int, edges: List[List[int]]) -> int:
-        graph = [[] for _ in range(n + 1)]
-
-        for s, t in edges:
-            graph[s].append(t)
-
-        visit = [False] * (n + 1)
-
-        def dfs(i):
-            if visit[i]:
-                return
-
-            visit[i] = True
-
-            for neighbor in graph[i]:
-                dfs(neighbor)
-
-        dfs(1)
-
-        for i in range(1, n + 1):
-            if not visit[i]:
-                return -1
-
-        return 1
-```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    ## Description
+??? question "Problem"
 
     You are given a **directed graph** with `n` nodes labeled from `1` to `n`.
 
@@ -199,6 +159,46 @@ class Solution:
     ```
 
     Each edge `[s, t]` represents a **directed edge** from node `s` to node `t`.
+
+!!! tip "Core idea"
+
+    This problem is a basic **directed graph traversal** problem.
+
+## Python solution
+
+```python
+from typing import List
+
+class Solution:
+    def canReachAllNodes(self, n: int, edges: List[List[int]]) -> int:
+        graph = [[] for _ in range(n + 1)]
+
+        for s, t in edges:
+            graph[s].append(t)
+
+        visit = [False] * (n + 1)
+
+        def dfs(i):
+            if visit[i]:
+                return
+
+            visit[i] = True
+
+            for neighbor in graph[i]:
+                dfs(neighbor)
+
+        dfs(1)
+
+        for i in range(1, n + 1):
+            if not visit[i]:
+                return -1
+
+        return 1
+```
+
+??? note "Explanation, examples & other approaches"
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     ## Python
 

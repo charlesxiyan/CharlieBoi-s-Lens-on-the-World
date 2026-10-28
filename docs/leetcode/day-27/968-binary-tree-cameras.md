@@ -9,7 +9,11 @@ hide:
 
 **Hard · Python · Greedy**
 
-[Original problem](https://leetcode.com/problems/binary-tree-cameras/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/binary-tree-cameras/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

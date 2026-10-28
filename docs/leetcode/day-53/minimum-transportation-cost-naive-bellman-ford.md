@@ -9,44 +9,7 @@ hide:
 
 **Medium · Python · Graph**
 
-!!! tip "Core idea"
-
-    Bellman-Ford is a shortest-path algorithm that can handle graphs containing **negative edge weights**.
-
-    Unlike Dijkstra, Bellman-Ford does not require all edge weights to be non-negative.
-
-## Python solution
-
-```python
-from typing import List
-
-class Solution:
-    def minimumCost(self, n: int, roads: List[List[int]]):
-        minCost = [float('inf')] * (n + 1)
-        minCost[1] = 0
-
-        for _ in range(n - 1):
-            updated = False
-            for u, v, w in roads:
-                if (
-                    minCost[u] != float('inf')
-                    and minCost[v] > minCost[u] + w
-                ):
-                    minCost[v] = minCost[u] + w
-                    updated = True
-
-            # 如果已经不往更小的值更新了，那就是找到最小路径了，退出迭代
-            if not updated:
-                break
-
-        return 'unconnected' if minCost[n] == float('inf') else minCost[n]
-```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    ## Problem Description
+??? question "Problem"
 
     A country wants to promote economic exchange between cities by providing subsidies for cargo transportation.
 
@@ -194,6 +157,43 @@ class Solution:
     - The graph does **not** contain negative-weight cycles.
     - Multiple paths may exist between two cities.
     - City `n` may be unreachable from city `1`.
+
+!!! tip "Core idea"
+
+    Bellman-Ford is a shortest-path algorithm that can handle graphs containing **negative edge weights**.
+
+    Unlike Dijkstra, Bellman-Ford does not require all edge weights to be non-negative.
+
+## Python solution
+
+```python
+from typing import List
+
+class Solution:
+    def minimumCost(self, n: int, roads: List[List[int]]):
+        minCost = [float('inf')] * (n + 1)
+        minCost[1] = 0
+
+        for _ in range(n - 1):
+            updated = False
+            for u, v, w in roads:
+                if (
+                    minCost[u] != float('inf')
+                    and minCost[v] > minCost[u] + w
+                ):
+                    minCost[v] = minCost[u] + w
+                    updated = True
+
+            # 如果已经不往更小的值更新了，那就是找到最小路径了，退出迭代
+            if not updated:
+                break
+
+        return 'unconnected' if minCost[n] == float('inf') else minCost[n]
+```
+
+??? note "Explanation, examples & other approaches"
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     ## Approach: Naive Bellman-Ford
 

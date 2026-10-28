@@ -9,35 +9,9 @@ hide:
 
 **Medium · Python · String**
 
-[Original problem](https://programmercarl.com/kamacoder/0055.%E5%8F%B3%E6%97%8B%E5%AD%97%E7%AC%A6%E4%B8%B2.html)
+??? question "Problem"
 
-!!! tip "Core idea"
-
-    Move the last `k` characters to the front with slicing. Reduce `k` modulo the string length to support rotations larger than the string.
-
-## Python solution
-
-```python
-def rotate_right(s: str, k: int) -> str:
-    if not s:
-        return s
-    k %= len(s)
-    return s[-k:] + s[:-k]
-
-
-if __name__ == "__main__":
-    k = int(input())
-    s = input()
-    print(rotate_right(s, k))
-```
-
-!!! note "Import correction"
-
-    The main implementation turns the original slicing idea into a runnable function, with modulo handling for large rotations. The original sketch is retained below.
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
+    [Original source](https://programmercarl.com/kamacoder/0055.%E5%8F%B3%E6%97%8B%E5%AD%97%E7%AC%A6%E4%B8%B2.html)
 
     ### **Problem Title: Right Rotation of a String**
 
@@ -70,6 +44,34 @@ if __name__ == "__main__":
 
     - `1 <= k < 10000`
     - `1 <= s.length < 10000`
+
+!!! tip "Core idea"
+
+    Move the last `k` characters to the front with slicing. Reduce `k` modulo the string length to support rotations larger than the string.
+
+## Python solution
+
+```python
+def rotate_right(s: str, k: int) -> str:
+    if not s:
+        return s
+    k %= len(s)
+    return s[-k:] + s[:-k]
+
+
+if __name__ == "__main__":
+    k = int(input())
+    s = input()
+    print(rotate_right(s, k))
+```
+
+!!! note "Import correction"
+
+    The main implementation turns the original slicing idea into a runnable function, with modulo handling for large rotations. The original sketch is retained below.
+
+??? note "Explanation, examples & other approaches"
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     String in Python is immutable, and this means we still need extra space.
 

@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Graph**
 
-[Original problem](https://leetcode.com/problems/minimum-cost-to-convert-string-i/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/minimum-cost-to-convert-string-i/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

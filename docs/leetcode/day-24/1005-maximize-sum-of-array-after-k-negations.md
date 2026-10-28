@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Greedy**
 
-[Original problem](https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

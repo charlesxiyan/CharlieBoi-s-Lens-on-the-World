@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Graph**
 
-[Original problem](https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

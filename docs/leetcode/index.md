@@ -3,7 +3,9 @@
 My Python problem-solving notebook: **194 write-ups and study notes**,
 organized into **55 daily modules** and **6 bonus modules**.
 
-Each page puts the main Python implementation up front. Expand the explanation
+Each page starts with a collapsible **Problem** block: official LeetCode links
+for numbered problems, or a local statement for custom exercises. The main
+Python implementation follows the core idea. Expand the explanation
 for the original reasoning, hand simulations, and alternative approaches, or
 open the study record to revisit practice history.
 

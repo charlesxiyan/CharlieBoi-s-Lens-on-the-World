@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Backtrack**
 
-[Original problem](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

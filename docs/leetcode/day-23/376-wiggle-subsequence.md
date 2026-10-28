@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Greedy**
 
-[Original problem](https://leetcode.com/problems/wiggle-subsequence/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/wiggle-subsequence/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

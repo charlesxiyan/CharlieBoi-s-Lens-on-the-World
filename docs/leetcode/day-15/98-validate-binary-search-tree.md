@@ -9,6 +9,12 @@ hide:
 
 **Medium · Python · Binary Trees**
 
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/validate-binary-search-tree/).
+
+    The official page contains the problem statement, examples, and constraints.
+
 !!! tip "Core idea"
 
     Recursion:

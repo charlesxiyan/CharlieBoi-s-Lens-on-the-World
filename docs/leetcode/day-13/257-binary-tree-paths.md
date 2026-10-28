@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Binary Tree**
 
-[Original problem](https://leetcode.com/problems/binary-tree-paths/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/binary-tree-paths/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Binary Tree**
 
-[Original problem](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

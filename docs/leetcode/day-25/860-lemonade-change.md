@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Greedy**
 
-[Original problem](https://leetcode.com/problems/lemonade-change/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/lemonade-change/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

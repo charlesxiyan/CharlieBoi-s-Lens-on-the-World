@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Dynamic Programming**
 
-[Original problem](https://leetcode.com/problems/combination-sum-iv/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/combination-sum-iv/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

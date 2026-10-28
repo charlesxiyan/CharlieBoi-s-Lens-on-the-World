@@ -9,7 +9,11 @@ hide:
 
 **Hard · Python · Stack**
 
-[Original problem](https://leetcode.com/problems/sliding-window-maximum/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/sliding-window-maximum/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

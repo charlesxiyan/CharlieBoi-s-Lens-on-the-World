@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Array**
 
-[Original problem](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

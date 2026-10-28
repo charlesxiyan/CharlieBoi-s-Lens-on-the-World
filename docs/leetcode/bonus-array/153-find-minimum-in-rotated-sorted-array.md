@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Array**
 
-[Original problem](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/2136833837/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/2136833837/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

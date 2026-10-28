@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Backtrack**
 
-[Original problem](https://leetcode.com/problems/combination-sum-ii/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/combination-sum-ii/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

@@ -9,7 +9,13 @@ hide:
 
 **Easy · Python · String**
 
-[Original problem](https://programmercarl.com/0028.%E5%AE%9E%E7%8E%B0strStr.html)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/).
+
+    [Additional reference](https://programmercarl.com/0028.%E5%AE%9E%E7%8E%B0strStr.html)
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

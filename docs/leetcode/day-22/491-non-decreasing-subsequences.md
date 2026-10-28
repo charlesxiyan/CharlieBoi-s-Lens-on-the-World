@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Backtrack**
 
-[Original problem](https://leetcode.com/problems/non-decreasing-subsequences/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/non-decreasing-subsequences/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

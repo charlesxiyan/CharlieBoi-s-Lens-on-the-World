@@ -9,7 +9,11 @@ hide:
 
 **Hard · Python · Monotonic Stack**
 
-[Original problem](https://leetcode.com/problems/largest-rectangle-in-histogram/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/largest-rectangle-in-histogram/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

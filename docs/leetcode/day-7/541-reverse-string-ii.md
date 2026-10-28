@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · String**
 
-[Original problem](https://leetcode.com/problems/reverse-string-ii/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/reverse-string-ii/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

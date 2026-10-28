@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Graph**
 
-[Original problem](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

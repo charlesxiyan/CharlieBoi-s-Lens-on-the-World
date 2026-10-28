@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Dynamic Programming**
 
-[Original problem](https://leetcode.com/problems/pascals-triangle/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/pascals-triangle/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

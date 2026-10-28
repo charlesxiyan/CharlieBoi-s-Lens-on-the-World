@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Dynamic Programming**
 
-[Original problem](https://leetcode.com/problems/min-cost-climbing-stairs/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/min-cost-climbing-stairs/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

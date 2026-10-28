@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Dynamic Programming**
 
-[Original problem](https://leetcode.com/problems/delete-operation-for-two-strings/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/delete-operation-for-two-strings/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

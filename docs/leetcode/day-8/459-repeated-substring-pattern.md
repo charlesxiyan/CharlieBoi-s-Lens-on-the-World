@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · String**
 
-[Original problem](https://leetcode.com/problems/repeated-substring-pattern/description/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/repeated-substring-pattern/description/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

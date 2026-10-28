@@ -9,7 +9,11 @@ hide:
 
 **Hard · Python · Dynamic Programming**
 
-[Original problem](https://leetcode.com/problems/longest-valid-parentheses/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/longest-valid-parentheses/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

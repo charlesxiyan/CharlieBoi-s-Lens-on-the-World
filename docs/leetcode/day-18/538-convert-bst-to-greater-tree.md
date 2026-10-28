@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Binary Tree**
 
-[Original problem](https://leetcode.com/problems/convert-bst-to-greater-tree/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/convert-bst-to-greater-tree/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

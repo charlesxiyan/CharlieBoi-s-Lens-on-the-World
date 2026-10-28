@@ -9,7 +9,36 @@ hide:
 
 **Easy · Python · String**
 
-[Original problem](https://kamacoder.com/problempage.php)
+??? question "Problem"
+
+    [Original source](https://kamacoder.com/problempage.php)
+
+    ### **Problem Description: Replace Numbers into a String**
+
+    **Goal:**
+    Given a string `s` containing lowercase letters and digits, write a function that keeps the alphabetical characters unchanged but replaces every numeric character with the word **"number"**.
+
+    **Example 1:**
+
+    - **Input:** `"a1b2c3"`
+    - **Output:** `"anumberbnumbercnumber"`
+
+    **Example 2:**
+
+    - **Input:** `"a5b"`
+    - **Output:** `"anumberb"`
+
+    **Input Format:**
+    A string `s` consisting only of lowercase letters and digits.
+
+    **Output Format:**
+    Print a new string where each digit is replaced by the string `"number"`.
+
+    **Sample Input:**`a1b2c3`
+
+    **Sample Output:**`anumberbnumbercnumber`
+
+    **Constraints:**`1 <= s.length < 10000`
 
 !!! tip "Core idea"
 
@@ -46,33 +75,6 @@ class Solution:
 ??? note "Explanation, examples & other approaches"
 
     Original study notes follow, including intermediate snippets and earlier attempts.
-
-    ### **Problem Description: Replace Numbers into a String**
-
-    **Goal:**
-    Given a string `s` containing lowercase letters and digits, write a function that keeps the alphabetical characters unchanged but replaces every numeric character with the word **"number"**.
-
-    **Example 1:**
-
-    - **Input:** `"a1b2c3"`
-    - **Output:** `"anumberbnumbercnumber"`
-
-    **Example 2:**
-
-    - **Input:** `"a5b"`
-    - **Output:** `"anumberb"`
-
-    **Input Format:**
-    A string `s` consisting only of lowercase letters and digits.
-
-    **Output Format:**
-    Print a new string where each digit is replaced by the string `"number"`.
-
-    **Sample Input:**`a1b2c3`
-
-    **Sample Output:**`anumberbnumbercnumber`
-
-    **Constraints:**`1 <= s.length < 10000`
 
     Note:
 

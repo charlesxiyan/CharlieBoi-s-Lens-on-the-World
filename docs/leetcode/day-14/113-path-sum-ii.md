@@ -9,7 +9,11 @@ hide:
 
 **Medium · Python · Binary Tree**
 
-[Original problem](https://leetcode.com/problems/path-sum-ii/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/path-sum-ii/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 

@@ -9,7 +9,11 @@ hide:
 
 **Easy · Python · Binary Tree**
 
-[Original problem](https://leetcode.com/problems/minimum-absolute-difference-in-bst/)
+??? question "Problem"
+
+    [Read the original problem on LeetCode](https://leetcode.com/problems/minimum-absolute-difference-in-bst/).
+
+    The official page contains the problem statement, examples, and constraints.
 
 !!! tip "Core idea"
 
