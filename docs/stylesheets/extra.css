@@ -27,3 +27,20 @@
   .md-typeset .home-intro { grid-template-columns: 1fr; gap: 1.2rem; }
   .md-typeset .home-intro__portrait { max-width: 280px; justify-self: center; }
 }
+
+/* Personal profile link uses the bundled GitHub brand icon. */
+.md-typeset .profile-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.45rem;
+  font-weight: 600;
+}
+.md-typeset .profile-github svg { flex: none; fill: currentColor; }
+.md-typeset .profile-github:hover,
+.md-typeset .profile-github:focus-visible {
+  border-color: currentColor;
+  background: var(--md-accent-fg-color--transparent);
+}
