@@ -1,6 +1,6 @@
 # Algorithm
 
-My Python problem-solving notebook: **198 write-ups and study notes**,
+My Python problem-solving notebook: **199 write-ups and study notes**,
 organized into **55 daily modules** and **6 bonus modules**.
 
 Each page starts with collapsible **Problem** and **Explanation** blocks.
@@ -127,7 +127,7 @@ Use the site search to find a problem number, title, or algorithm.
 | [Day 53 Graph XI](day-53/index.md) | 2 |
 | [Day 54 Graph XII](day-54/index.md) | 3 |
 | [Day 55 Graph XIII](day-55/index.md) | 4 |
-| [Bonus Graph](bonus-graph/index.md) | 5 |
+| [Bonus Graph](bonus-graph/index.md) | 6 |
 
 ## Programming references
 

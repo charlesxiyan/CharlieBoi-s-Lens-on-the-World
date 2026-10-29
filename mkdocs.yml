@@ -371,6 +371,7 @@ nav:
               - "133. Clone Graph": leetcode/bonus-graph/133-clone-graph.md
               - "138. Copy List with Random Pointer": leetcode/bonus-graph/138-copy-list-with-random-pointer.md
               - "399. Evaluate Division": leetcode/bonus-graph/399-evaluate-division.md
+              - "909. Snakes and Ladders": leetcode/bonus-graph/909-snakes-and-ladders.md
               - "994. Rotting Oranges": leetcode/bonus-graph/994-rotting-oranges.md
   - Quant Finance:
       - quant-finance/index.md
