@@ -15,32 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    **Don't Overcomplicate**: Keep the logic simple and avoid unnecessary complexity. **Edge Case**: Consider the scenario where the array contains only one element.
-
-## Python solution
-
-```python
-class Solution:
-    def sortedSquares(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        res = [0 for _ in range(n)]
-
-        l, r, k = 0, n - 1, n - 1
-        while l <= r:
-            if nums[l] + nums[r] < 0:
-                res[k] = nums[l] ** 2
-                l += 1
-            else:
-                res[k] = nums[r] ** 2
-                r -= 1
-            k -= 1
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        **Don't Overcomplicate**: Keep the logic simple and avoid unnecessary complexity. **Edge Case**: Consider the scenario where the array contains only one element.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -63,6 +42,27 @@ class Solution:
     | Mastery | ❚❚❚❚ |
     | The Latest Attempt | December 31, 2025 |
     | Feedback | 完全没想到用左右双指针，需要多练 |
+
+## Python solution
+
+```python
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        res = [0 for _ in range(n)]
+
+        l, r, k = 0, n - 1, n - 1
+        while l <= r:
+            if nums[l] + nums[r] < 0:
+                res[k] = nums[l] ** 2
+                l += 1
+            else:
+                res[k] = nums[r] ** 2
+                r -= 1
+            k -= 1
+
+        return res
+```
 
 ---
 

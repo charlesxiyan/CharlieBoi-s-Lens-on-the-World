@@ -15,11 +15,27 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recursion:
+
+        Attention: in self.result.append(list(path)), it has to be list(path), since this creates a copy and saves the copy in self.result. No matter what later operation to path, the copy would not be influenced; otherwise, if we use self.result.append(path), path.pop() will also change the list saved in self.result, even though “append” operation is done before path.pop().
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     Recursion:
 
-    Attention: in self.result.append(list(path)), it has to be list(path), since this creates a copy and saves the copy in self.result. No matter what later operation to path, the copy would not be influenced; otherwise, if we use self.result.append(path), path.pop() will also change the list saved in self.result, even though “append” operation is done before path.pop().
+    1. Attention: in self.result.append(list(path)), it has to be list(path), since this creates a copy and saves the copy in self.result. No matter what later operation to path, the copy would not be influenced; otherwise, if we use self.result.append(path), path.pop() will also change the list saved in self.result, even though “append” operation is done before path.pop().
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 15, 2026 |
 
 ## Python solution
 
@@ -51,22 +67,6 @@ class Solution:
 
         path.pop()
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Recursion:
-
-    1. Attention: in self.result.append(list(path)), it has to be list(path), since this creates a copy and saves the copy in self.result. No matter what later operation to path, the copy would not be influenced; otherwise, if we use self.result.append(path), path.pop() will also change the list saved in self.result, even though “append” operation is done before path.pop().
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 15, 2026 |
 
 ---
 

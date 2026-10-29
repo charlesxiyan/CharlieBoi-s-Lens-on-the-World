@@ -15,46 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Use **Topological Sort + Kahn's Algorithm**.
-
-    Each recipe depends on several ingredients.
-
-## Python solution
-
-```python
-from collections import defaultdict, deque
-
-class Solution:
-    def findAllRecipes(self, recipes: List[str], ingredients: List[List[str]], supplies: List[str]) -> List[str]:
-        graph = defaultdict(list)
-        indegree = {}
-
-        for i in range(len(recipes)):
-            recipe = recipes[i]
-            indegree[recipe] = len(ingredients[i])
-
-            for ingredient in ingredients[i]:
-                graph[ingredient].append(recipe)
-
-        queue = deque(supplies)
-        res = []
-
-        while queue:
-            material = queue.popleft()
-
-            for recipe in graph[material]:
-                indegree[recipe] -= 1
-
-                if indegree[recipe] == 0:
-                    res.append(recipe)
-                    queue.append(recipe)
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Use **Topological Sort + Kahn's Algorithm**.
+
+        Each recipe depends on several ingredients.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -554,6 +521,39 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 27, 2026 |
+
+## Python solution
+
+```python
+from collections import defaultdict, deque
+
+class Solution:
+    def findAllRecipes(self, recipes: List[str], ingredients: List[List[str]], supplies: List[str]) -> List[str]:
+        graph = defaultdict(list)
+        indegree = {}
+
+        for i in range(len(recipes)):
+            recipe = recipes[i]
+            indegree[recipe] = len(ingredients[i])
+
+            for ingredient in ingredients[i]:
+                graph[ingredient].append(recipe)
+
+        queue = deque(supplies)
+        res = []
+
+        while queue:
+            material = queue.popleft()
+
+            for recipe in graph[material]:
+                indegree[recipe] -= 1
+
+                if indegree[recipe] == 0:
+                    res.append(recipe)
+                    queue.append(recipe)
+
+        return res
+```
 
 ---
 

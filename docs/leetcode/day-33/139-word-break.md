@@ -15,34 +15,14 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    - This is a **Complete Knapsack** problem.
-    - The **string `s` is the knapsack**, and each **word is an item**.
-    - Since a word can be used multiple times, it is a **Complete Knapsack**.
-    - Goal: determine whether the entire string can be segmented into words from the dictionary.
-
-## Python solution
-
-```python
-class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        l = len(s)
-
-        dp = [False] * (l + 1)
-        dp[0] = True
-
-        for i in range(1, l + 1):
-            for word in wordDict:
-                if i >= len(word):
-                    # 1. One true permutation has popped up.
-                    # 2. The current suffix + dp[i - len(word)] permutation is either correct.
-                    dp[i] = dp[i] or (dp[i - len(word)] and s[i - len(word): i] == word)
-
-        return dp[-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        - This is a **Complete Knapsack** problem.
+        - The **string `s` is the knapsack**, and each **word is an item**.
+        - Since a word can be used multiple times, it is a **Complete Knapsack**.
+        - Goal: determine whether the entire string can be segmented into words from the dictionary.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -143,6 +123,26 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | February 9, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        l = len(s)
+
+        dp = [False] * (l + 1)
+        dp[0] = True
+
+        for i in range(1, l + 1):
+            for word in wordDict:
+                if i >= len(word):
+                    # 1. One true permutation has popped up.
+                    # 2. The current suffix + dp[i - len(word)] permutation is either correct.
+                    dp[i] = dp[i] or (dp[i - len(word)] and s[i - len(word): i] == word)
+
+        return dp[-1]
+```
 
 ---
 

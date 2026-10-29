@@ -15,40 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Iteration:
-
-    This question is quite fabulous!
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        self.prevVal = 0
-        self.traverse(root)
-        return root
-
-    def traverse(self, node):
-        if not node:
-            return
-
-        self.traverse(node.right)
-
-        node.val += self.prevVal
-        self.prevVal = node.val
-
-        self.traverse(node.left)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Iteration:
+
+        This question is quite fabulous!
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -100,6 +73,33 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 20, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        self.prevVal = 0
+        self.traverse(root)
+        return root
+
+    def traverse(self, node):
+        if not node:
+            return
+
+        self.traverse(node.right)
+
+        node.val += self.prevVal
+        self.prevVal = node.val
+
+        self.traverse(node.left)
+```
 
 ---
 

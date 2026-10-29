@@ -15,11 +15,29 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recursion:3
+
+        The core idea is to just focus on creating the current node and letting the creation of the left and right children to the next recursions. The terminal condition is the input list is empty.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     Recursion:3
 
     The core idea is to just focus on creating the current node and letting the creation of the left and right children to the next recursions. The terminal condition is the input list is empty.
+
+    The list is sorted, and thus we partition the list in every recursion by the middle [704. Binary Search](https://app.notion.com/p/704-Binary-Search-2ec3d95ea5be804fafb8f2ea6e69db67?pvs=21) .
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 19, 2026 |
 
 ## Python solution
 
@@ -43,24 +61,6 @@ class Solution:
 
         return root
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Recursion:3
-
-    The core idea is to just focus on creating the current node and letting the creation of the left and right children to the next recursions. The terminal condition is the input list is empty.
-
-    The list is sorted, and thus we partition the list in every recursion by the middle [704. Binary Search](https://app.notion.com/p/704-Binary-Search-2ec3d95ea5be804fafb8f2ea6e69db67?pvs=21) .
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 19, 2026 |
 
 ---
 

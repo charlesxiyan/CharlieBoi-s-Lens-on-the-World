@@ -15,31 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    - This is a **Complete Knapsack** problem.
-    - Each coin can be used **unlimited times**.
-    - Goal: minimize the number of coins needed to make `amount`.
-
-## Python solution
-
-```python
-class Solution:
-    def coinChange(self, coins: List[int], amount: int) -> int:
-        l = len(coins)
-
-        dp = [float('inf')] * (amount + 1)
-        dp[0] = 0
-
-        for i in range(l):
-            for j in range(coins[i], amount + 1):
-                if dp[j - coins[i]] != float('inf'):
-                    dp[j] = min(dp[j], dp[j - coins[i]] + 1)
-
-        return -1 if dp[-1] == float('inf') else dp[-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        - This is a **Complete Knapsack** problem.
+        - Each coin can be used **unlimited times**.
+        - Goal: minimize the number of coins needed to make `amount`.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -99,6 +81,24 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | February 9, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        l = len(coins)
+
+        dp = [float('inf')] * (amount + 1)
+        dp[0] = 0
+
+        for i in range(l):
+            for j in range(coins[i], amount + 1):
+                if dp[j - coins[i]] != float('inf'):
+                    dp[j] = min(dp[j], dp[j - coins[i]] + 1)
+
+        return -1 if dp[-1] == float('inf') else dp[-1]
+```
 
 ---
 

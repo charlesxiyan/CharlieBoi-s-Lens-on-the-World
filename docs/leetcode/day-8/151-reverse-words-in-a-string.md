@@ -15,9 +15,23 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Reference to [344. Reverse String](../day-7/344-reverse-string.md)
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     Reference to [344. Reverse String](../day-7/344-reverse-string.md)
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 7, 2026 |
 
 ## Python solution
 
@@ -38,20 +52,6 @@ class Solution:
 
         # return ' '.join(words)
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Reference to [344. Reverse String](../day-7/344-reverse-string.md)
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 7, 2026 |
 
 ---
 

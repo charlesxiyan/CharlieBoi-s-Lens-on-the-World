@@ -15,29 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    DP Steps:
-
-    **Step 1**: Define DP array states
-
-## Python solution
-
-```python
-class Solution:
-    def climbStairs(self, n: int, m: int) -> int:
-        dp = [0] * (n + 1)
-        dp[0] = 1
-
-        for i in range(1, n + 1):
-		        for j in range(i, m + 1):
-				        if i >= j:
-						        dp[i] += dp[i - j]
-
-        return dp[-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        DP Steps:
+
+        **Step 1**: Define DP array states
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -97,6 +81,22 @@ class Solution:
     | Attempts | 2 |
     | Mastery | ❚❚ |
     | The Latest Attempt | January 31, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def climbStairs(self, n: int, m: int) -> int:
+        dp = [0] * (n + 1)
+        dp[0] = 1
+
+        for i in range(1, n + 1):
+		        for j in range(i, m + 1):
+				        if i >= j:
+						        dp[i] += dp[i - j]
+
+        return dp[-1]
+```
 
 ---
 

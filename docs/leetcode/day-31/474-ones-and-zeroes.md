@@ -15,9 +15,26 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    dp[i][j]: the size of the largest subset with at most number i of 0s and number j of 1s. dp[i][j] = max(dp[i][j], dp[i - numZero][j - numOne] + 1), where numZero and numOne are nubmers of 0s and 1s in the last iterated string (for s in strs).
+    !!! tip "Core idea"
+
+        dp[i][j]: the size of the largest subset with at most number i of 0s and number j of 1s. dp[i][j] = max(dp[i][j], dp[i - numZero][j - numOne] + 1), where numZero and numOne are nubmers of 0s and 1s in the last iterated string (for s in strs).
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. dp[i][j]: the size of the largest subset with at most number i of 0s and number j of 1s.
+    2. dp[i][j] = max(dp[i][j], dp[i - numZero][j - numOne] + 1), where numZero and numOne are nubmers of 0s and 1s in the last iterated string (for s in strs).
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | February 5, 2026 |
 
 ## Python solution
 
@@ -35,23 +52,6 @@ class Solution:
 
         return dp[-1][-1]
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. dp[i][j]: the size of the largest subset with at most number i of 0s and number j of 1s.
-    2. dp[i][j] = max(dp[i][j], dp[i - numZero][j - numOne] + 1), where numZero and numOne are nubmers of 0s and 1s in the last iterated string (for s in strs).
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | February 5, 2026 |
 
 ---
 

@@ -15,29 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Sort the numbers and flip negative values first. If an odd number of flips remains, flip the value with the smallest absolute magnitude.
-
-## Python solution
-
-```python
-class Solution:
-    def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
-        nums.sort(key = lambda x: abs(x), reverse = True)
-
-        for i in range(len(nums)):
-            if nums[i] < 0 and k > 0:
-                nums[i] *= -1
-                k -= 1
-
-        if k % 2:
-            nums[-1] *= -1
-
-        return sum(nums)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Sort the numbers and flip negative values first. If an odd number of flips remains, flip the value with the smallest absolute magnitude.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -57,6 +39,24 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 27, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
+        nums.sort(key = lambda x: abs(x), reverse = True)
+
+        for i in range(len(nums)):
+            if nums[i] < 0 and k > 0:
+                nums[i] *= -1
+                k -= 1
+
+        if k % 2:
+            nums[-1] *= -1
+
+        return sum(nums)
+```
 
 ---
 

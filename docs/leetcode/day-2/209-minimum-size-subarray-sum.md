@@ -15,35 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    A typical sliding window problem!
-
-    The object is the length of **a subarray that contains contiguous elements with sum greater than a given target number**.
-
-## Python solution
-
-```python
-class Solution:
-    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        n = len(nums)
-        start, end = 0, 0
-        s = 0
-        length = float('inf')
-
-        while end < n:
-            s += nums[end]
-            end += 1
-
-            while s >= target and start <= end:
-                length = min(end - start, length)
-                s -= nums[start]
-                start += 1
-
-        return 0 if length == float('inf') else length
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        A typical sliding window problem!
+
+        The object is the length of **a subarray that contains contiguous elements with sum greater than a given target number**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -72,6 +50,28 @@ class Solution:
     | Attempts | 4 |
     | Mastery | ❚❚❚❚ |
     | The Latest Attempt | January 2, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        n = len(nums)
+        start, end = 0, 0
+        s = 0
+        length = float('inf')
+
+        while end < n:
+            s += nums[end]
+            end += 1
+
+            while s >= target and start <= end:
+                length = min(end - start, length)
+                s -= nums[start]
+                start += 1
+
+        return 0 if length == float('inf') else length
+```
 
 ---
 

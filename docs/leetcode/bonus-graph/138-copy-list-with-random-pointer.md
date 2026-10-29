@@ -9,8 +9,6 @@ hide:
 
 **Medium · Python · Graph · Two-pass HashMap**
 
-## 1. Problem Description
-
 ??? question "Problem"
 
     [Read the original problem on LeetCode](https://leetcode.com/problems/copy-list-with-random-pointer/description/).
@@ -23,114 +21,123 @@ hide:
     but make every copied pointer refer to a copied node, never an original node.
     An empty list should produce `None`.
 
-## 2. Approach and Core Idea
+??? note "Explanation, examples & other approaches"
 
-!!! tip "Create the nodes first; connect the pointers second"
-    Store `copies[original] = clone`. Once all clones exist, translating either
-    pointer is a dictionary lookup, even when it points forward in the list.
+    ## Approach and Core Idea
 
-A `random` pointer can point to a node we have not reached yet. Creating and
-connecting everything in a single straightforward left-to-right pass would
-therefore require extra handling. Two passes separate these concerns cleanly.
+    !!! tip "Create the nodes first; connect the pointers second"
+        Store `copies[original] = clone`. Once all clones exist, translating either
+        pointer is a dictionary lookup, even when it points forward in the list.
 
-**Why it works:** the first pass creates a one-to-one correspondence between
-original and copied nodes. The second pass replaces each original pointer target
-with its corresponding clone, reproducing both pointer structures.
+    A `random` pointer can point to a node we have not reached yet. Creating and
+    connecting everything in a single straightforward left-to-right pass would
+    therefore require extra handling. Two passes separate these concerns cleanly.
 
-Although we traverse a linked list, the extra `random` references make this a
-small graph-cloning problem, so it fits the Graph bonus collection.
+    **Why it works:** the first pass creates a one-to-one correspondence between
+    original and copied nodes. The second pass replaces each original pointer target
+    with its corresponding clone, reproducing both pointer structures.
 
-## 3. Algorithm Steps
+    Although we traverse a linked list, the extra `random` references make this a
+    small graph-cloning problem, so it fits the Graph bonus collection.
 
-1. If `head` is `None`, return `None`.
-2. **First pass:** follow `next` from the head. Create one new node for each
-   original and record it in `copies`.
-3. **Second pass:** traverse the originals again. For each `current`, set:
-   - `copies[current].next = copies.get(current.next)`
-   - `copies[current].random = copies.get(current.random)`
-4. Return `copies[head]`.
+    ## Algorithm Steps
 
-## 4. Hand Simulation
+    1. If `head` is `None`, return `None`.
+    2. **First pass:** follow `next` from the head. Create one new node for each
+       original and record it in `copies`.
+    3. **Second pass:** traverse the originals again. For each `current`, set:
+       - `copies[current].next = copies.get(current.next)`
+       - `copies[current].random = copies.get(current.random)`
+    4. Return `copies[head]`.
 
-Use three distinct original nodes. A and B deliberately have the same value:
+    ## Hand Simulation
 
-```text
-next:    A(7) → B(7) → C(9) → None
-random:  A → C, B → A, C → B
-```
+    Use three distinct original nodes. A and B deliberately have the same value:
 
-An index-based representation of this example is `[[7, 2], [7, 0], [9, 1]]`.
-The indices describe the example; the function itself receives node objects.
+    ```text
+    next:    A(7) → B(7) → C(9) → None
+    random:  A → C, B → A, C → B
+    ```
 
-**Pass 1: create only the nodes.**
+    An index-based representation of this example is `[[7, 2], [7, 0], [9, 1]]`.
+    The indices describe the example; the function itself receives node objects.
 
-| Original object | New object | Value |
-| --- | --- | --- |
-| A | A' | 7 |
-| B | B' | 7 |
-| C | C' | 9 |
+    **Pass 1: create only the nodes.**
 
-All copied pointers are initially `None`.
+    | Original object | New object | Value |
+    | --- | --- | --- |
+    | A | A' | 7 |
+    | B | B' | 7 |
+    | C | C' | 9 |
 
-**Pass 2: connect them using the mapping.**
+    All copied pointers are initially `None`.
 
-| Current original | Copied `next` | Copied `random` |
-| --- | --- | --- |
-| A | `copies[B] = B'` | `copies[C] = C'` |
-| B | `copies[C] = C'` | `copies[A] = A'` |
-| C | `None` | `copies[B] = B'` |
+    **Pass 2: connect them using the mapping.**
 
-The final result is:
+    | Current original | Copied `next` | Copied `random` |
+    | --- | --- | --- |
+    | A | `copies[B] = B'` | `copies[C] = C'` |
+    | B | `copies[C] = C'` | `copies[A] = A'` |
+    | C | `None` | `copies[B] = B'` |
 
-```text
-next:    A'(7) → B'(7) → C'(9) → None
-random:  A' → C', B' → A', C' → B'
-```
+    The final result is:
 
-No copied pointer points to A, B, or C. Changing a cloned node's value will not
-change the corresponding original node's value.
+    ```text
+    next:    A'(7) → B'(7) → C'(9) → None
+    random:  A' → C', B' → A', C' → B'
+    ```
 
-## 5. Important Implementation Details
+    No copied pointer points to A, B, or C. Changing a cloned node's value will not
+    change the corresponding original node's value.
 
-### Dictionary keys must identify nodes, not their values
+    ## Important Implementation Details
 
-A and B both have value `7`, yet they are different nodes with different pointers.
-A mapping such as `copies[7] = ...` would collapse them into one entry.
+    ### Dictionary keys must identify nodes, not their values
 
-Use the **original node object as the key**. With the default node class, hashing
-and equality distinguish objects by identity. If you define a custom equality
-method, take care not to lose that identity-based behavior.
+    A and B both have value `7`, yet they are different nodes with different pointers.
+    A mapping such as `copies[7] = ...` would collapse them into one entry.
 
-### Every possible pointer target exists before pass 2
+    Use the **original node object as the key**. With the default node class, hashing
+    and equality distinguish objects by identity. If you define a custom equality
+    method, take care not to lose that identity-based behavior.
 
-The problem guarantees that a non-null `random` target is inside the list.
-Following the `next` chain in pass 1 therefore creates a clone for every possible
-target, including targets ahead of the current node.
+    ### Every possible pointer target exists before pass 2
 
-### Null pointers need no special cloned node
+    The problem guarantees that a non-null `random` target is inside the list.
+    Following the `next` chain in pass 1 therefore creates a clone for every possible
+    target, including targets ahead of the current node.
 
-`copies.get(None)` returns `None`, correctly preserving a missing `next` or
-`random` pointer. All non-null pointer targets are present in the dictionary.
+    ### Null pointers need no special cloned node
 
-### Do not follow random pointers to drive the traversal
+    `copies.get(None)` returns `None`, correctly preserving a missing `next` or
+    `random` pointer. All non-null pointer targets are present in the dictionary.
 
-Move with `current = current.next`. The `next` chain ends at `None`, whereas
-random pointers may create cycles or self-references. Both passes leave the
-original list unchanged.
+    ### Do not follow random pointers to drive the traversal
 
-## 6. Time and Space Complexity
+    Move with `current = current.next`. The `next` chain ends at `None`, whereas
+    random pointers may create cycles or self-references. Both passes leave the
+    original list unchanged.
 
-For a list of $n$ nodes:
+    ## Time and Space Complexity
 
-| Resource | Complexity | Reason |
-| --- | --- | --- |
-| Time | $O(n)$ | Two linear passes with average constant-time dictionary operations. |
-| Auxiliary space | $O(n)$ | One mapping entry per original node. |
-| Output space | $O(n)$ | Exactly one new node per original node. |
+    For a list of $n$ nodes:
 
-A two-pass traversal is still linear: $O(2n)=O(n)$.
+    | Resource | Complexity | Reason |
+    | --- | --- | --- |
+    | Time | $O(n)$ | Two linear passes with average constant-time dictionary operations. |
+    | Auxiliary space | $O(n)$ | One mapping entry per original node. |
+    | Output space | $O(n)$ | Exactly one new node per original node. |
 
-## 7. Complete Python Solution
+    A two-pass traversal is still linear: $O(2n)=O(n)$.
+
+    ## Key Takeaways
+
+    - Separate object creation from pointer wiring.
+    - Node values are data; node identities are dictionary keys.
+    - A random-pointer cycle is harmless when traversal follows only `next`.
+    - Deep copying requires translating every reference into the copied structure.
+
+## Python solution
 
 LeetCode provides `Node`; this equivalent definition makes the example runnable
 on its own as well.
@@ -169,13 +176,6 @@ class Solution:
 
         return copies[head]
 ```
-
-## 8. Key Takeaways
-
-- Separate object creation from pointer wiring.
-- Node values are data; node identities are dictionary keys.
-- A random-pointer cycle is harmless when traversal follows only `next`.
-- Deep copying requires translating every reference into the copied structure.
 
 ---
 

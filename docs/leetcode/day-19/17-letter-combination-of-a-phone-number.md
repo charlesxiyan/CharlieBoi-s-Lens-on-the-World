@@ -15,9 +15,26 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Recall [77. Combinations](77-combinations.md) for the core idea. The trick part in the solution is to initiate a list of letters: parse empty strings to 0 and 1, so that the rest index correspond to letters shown on the keys.
+    !!! tip "Core idea"
+
+        Recall [77. Combinations](77-combinations.md) for the core idea. The trick part in the solution is to initiate a list of letters: parse empty strings to 0 and 1, so that the rest index correspond to letters shown on the keys.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. Recall [77. Combinations](77-combinations.md) for the core idea.
+    2. The trick part in the solution is to initiate a list of letters: parse empty strings to 0 and 1, so that the rest index correspond to letters shown on the keys.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 21, 2026 |
 
 ## Python solution
 
@@ -58,23 +75,6 @@ class Solution:
             self.backtrack(digits, startIndex + 1, path, result)
             path.pop()
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. Recall [77. Combinations](77-combinations.md) for the core idea.
-    2. The trick part in the solution is to initiate a list of letters: parse empty strings to 0 and 1, so that the rest index correspond to letters shown on the keys.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 21, 2026 |
 
 ---
 

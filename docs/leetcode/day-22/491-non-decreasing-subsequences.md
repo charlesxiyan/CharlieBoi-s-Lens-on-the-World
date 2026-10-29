@@ -15,34 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Recall [90. Subsets II](../day-21/90-subsets-ii.md) for the core idea. This question does not allow duplicates. Thus, within the same level of recurrence, we need to deal with duplicates here. For example, nums = [4, 7, 7, 1]. The 1st level generates [4], the recurrence makes the program dive into the 2nd level, which generates [4, 7], [4, 7] and [4, 1], and these three subsets will be sent to the 3rd level by the recurrence to generate [4, 7, 7], [4, 7, 1]; [4, 7, 1]. The 4th level will generate [4, 7, 7, 1] by the first subset in the 3rd level. We can see how the duplicates occur. Hence, we prune within each recurrence.
-
-## Python solution
-
-```python
-class Solution:
-    def findSubsequences(self, nums: List[int]) -> List[List[int]]:
-        result = []
-        self.backtrack(nums, 0, [], result)
-        return result
-
-    def backtrack(self, nums, startIndex, path, result):
-        if len(path) >= 2:
-            result.append(path[:])
-
-        uset = set()
-        for i in range(startIndex, len(nums)):
-            if (path and path[-1] > nums[i]) or nums[i] in uset:
-                continue
-            uset.add(nums[i])
-            path.append(nums[i])
-            self.backtrack(nums, i + 1, path, result)
-            path.pop()
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recall [90. Subsets II](../day-21/90-subsets-ii.md) for the core idea. This question does not allow duplicates. Thus, within the same level of recurrence, we need to deal with duplicates here. For example, nums = [4, 7, 7, 1]. The 1st level generates [4], the recurrence makes the program dive into the 2nd level, which generates [4, 7], [4, 7] and [4, 1], and these three subsets will be sent to the 3rd level by the recurrence to generate [4, 7, 7], [4, 7, 1]; [4, 7, 1]. The 4th level will generate [4, 7, 7, 1] by the first subset in the 3rd level. We can see how the duplicates occur. Hence, we prune within each recurrence.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -103,6 +80,29 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 24, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def findSubsequences(self, nums: List[int]) -> List[List[int]]:
+        result = []
+        self.backtrack(nums, 0, [], result)
+        return result
+
+    def backtrack(self, nums, startIndex, path, result):
+        if len(path) >= 2:
+            result.append(path[:])
+
+        uset = set()
+        for i in range(startIndex, len(nums)):
+            if (path and path[-1] > nums[i]) or nums[i] in uset:
+                continue
+            uset.add(nums[i])
+            path.append(nums[i])
+            self.backtrack(nums, i + 1, path, result)
+            path.pop()
+```
 
 ---
 

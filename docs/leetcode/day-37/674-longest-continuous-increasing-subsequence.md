@@ -15,31 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given an integer array `nums`, find the length of the **Longest Continuous Increasing Subsequence (LCIS)**.
-
-    Unlike **Longest Increasing Subsequence (LIS)**, the elements in LCIS **must be contiguous**.
-
-## Python solution
-
-```python
-class Solution:
-    def findLengthOfLCIS(self, nums: List[int]) -> int:
-        l = len(nums)
-
-        dp = [1] * l
-        res = 1
-
-        for i in range(1, l):
-            if nums[i] > nums[i - 1]:
-                dp[i] = dp[i - 1] + 1
-            res = max(res, dp[i])
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given an integer array `nums`, find the length of the **Longest Continuous Increasing Subsequence (LCIS)**.
+
+        Unlike **Longest Increasing Subsequence (LIS)**, the elements in LCIS **must be contiguous**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -327,6 +309,24 @@ class Solution:
     | --- | --- |
     | Attempts | 1 |
     | Mastery | ❚ |
+
+## Python solution
+
+```python
+class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
+        l = len(nums)
+
+        dp = [1] * l
+        res = 1
+
+        for i in range(1, l):
+            if nums[i] > nums[i - 1]:
+                dp[i] = dp[i - 1] + 1
+            res = max(res, dp[i])
+
+        return res
+```
 
 ---
 

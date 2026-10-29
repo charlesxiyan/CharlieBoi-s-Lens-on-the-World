@@ -45,31 +45,11 @@ hide:
     - `1 <= k < 10000`
     - `1 <= s.length < 10000`
 
-!!! tip "Core idea"
-
-    Move the last `k` characters to the front with slicing. Reduce `k` modulo the string length to support rotations larger than the string.
-
-## Python solution
-
-```python
-def rotate_right(s: str, k: int) -> str:
-    if not s:
-        return s
-    k %= len(s)
-    return s[-k:] + s[:-k]
-
-
-if __name__ == "__main__":
-    k = int(input())
-    s = input()
-    print(rotate_right(s, k))
-```
-
-!!! note "Import correction"
-
-    The main implementation turns the original slicing idea into a runnable function, with modulo handling for large rotations. The original sketch is retained below.
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Move the last `k` characters to the front with slicing. Reduce `k` modulo the string length to support rotations larger than the string.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -83,6 +63,10 @@ if __name__ == "__main__":
     ```python
     s = s[-k:] + s[:-k]
     ```
+
+    !!! note "Import correction"
+
+        The main implementation turns the original slicing idea into a runnable function, with modulo handling for large rotations. The original sketch is retained below.
 
 ??? note "Original implementation draft"
 
@@ -100,6 +84,22 @@ if __name__ == "__main__":
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 7, 2026 |
+
+## Python solution
+
+```python
+def rotate_right(s: str, k: int) -> str:
+    if not s:
+        return s
+    k %= len(s)
+    return s[-k:] + s[:-k]
+
+
+if __name__ == "__main__":
+    k = int(input())
+    s = input()
+    print(rotate_right(s, k))
+```
 
 ---
 

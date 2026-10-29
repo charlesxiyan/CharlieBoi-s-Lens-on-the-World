@@ -15,30 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    DP Steps:
-
-    **Step 1**: Define DP array states
-
-## Python solution
-
-```python
-class Solution:
-    def fib(self, n: int) -> int:
-        if n == 0 or n == 1:
-            return n
-
-        dp = [0] * (n + 1)
-        dp[1] = 1
-
-        for i in range(2, n + 1):
-            dp[i] = dp[i - 1] + dp[i - 2]
-
-        return dp[-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        DP Steps:
+
+        **Step 1**: Define DP array states
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -74,6 +57,23 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 31, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def fib(self, n: int) -> int:
+        if n == 0 or n == 1:
+            return n
+
+        dp = [0] * (n + 1)
+        dp[1] = 1
+
+        for i in range(2, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+
+        return dp[-1]
+```
 
 ---
 

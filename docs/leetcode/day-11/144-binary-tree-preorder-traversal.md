@@ -15,44 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Note (middle, left, right):
-
-    The very typical traversal way in the binary tree. For a tree [6, 5, 2, 4, 3, null, null, null, null, 9, null],
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-class Solution:
-    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        if not root:
-            return []
-
-        stack = []
-        result = []
-        cur = root
-
-        while cur or stack:
-            if cur:
-                stack.append(root.val)
-                cur = cur.left
-            else:
-                cur = stack.pop()
-                result.append(node.val)
-                cur = cur.right
-
-        return result
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Note (middle, left, right):
+
+        The very typical traversal way in the binary tree. For a tree [6, 5, 2, 4, 3, null, null, null, null, 9, null],
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -141,6 +110,37 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 12, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+
+        stack = []
+        result = []
+        cur = root
+
+        while cur or stack:
+            if cur:
+                stack.append(root.val)
+                cur = cur.left
+            else:
+                cur = stack.pop()
+                result.append(node.val)
+                cur = cur.right
+
+        return result
+```
 
 ---
 

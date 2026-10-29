@@ -15,9 +15,26 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Define an output linked list, dummy, with the head’s value 0 by default and the next linked node as the head of the given linked list. Define a pointer, cur, pointing to the head of dummy.
+    !!! tip "Core idea"
+
+        Define an output linked list, dummy, with the head’s value 0 by default and the next linked node as the head of the given linked list. Define a pointer, cur, pointing to the head of dummy.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    1. Define an output linked list, dummy, with the head’s value 0 by default and the next linked node as the head of the given linked list.
+    2. Define a pointer, cur, pointing to the head of dummy.
+    3. Start a while loop at cur.next. If its value is val, jump to cur.next.next. If not, link the cursor’s next to the current cursor.
+    4. Since the head of the output linked list is still 0, use the head’s next as the head of the final output.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 4 |
+    | Mastery | ❚❚❚❚ |
+    | The Latest Attempt | January 3, 2026 |
 
 ## Python solution
 
@@ -48,23 +65,6 @@ class Solution:
 
         return dummy.next
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    1. Define an output linked list, dummy, with the head’s value 0 by default and the next linked node as the head of the given linked list.
-    2. Define a pointer, cur, pointing to the head of dummy.
-    3. Start a while loop at cur.next. If its value is val, jump to cur.next.next. If not, link the cursor’s next to the current cursor.
-    4. Since the head of the output linked list is still 0, use the head’s next as the head of the final output.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 4 |
-    | Mastery | ❚❚❚❚ |
-    | The Latest Attempt | January 3, 2026 |
 
 ---
 

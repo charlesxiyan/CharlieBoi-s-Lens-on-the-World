@@ -15,58 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem can be treated as a **shortest path problem on a grid**.
-
-## Python solution
-
-```python
-import heapq
-
-class Solution:
-    def minimumEffortPath(self, heights: List[List[int]]) -> int:
-        m, n = len(heights), len(heights[0])
-        Directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-
-        minEffort = [[float('inf')] * n for _ in range(m)]
-        minEffort[0][0] = 0
-
-        minHeap = [(0, 0, 0)]
-
-        while minHeap:
-            curEffort, curRow, curCol = heapq.heappop(minHeap)
-
-            if curEffort > minEffort[curRow][curCol]:
-                continue
-
-            if curRow == m - 1 and curCol == n - 1:
-                break
-
-            for rowDelta, colDelta in Directions:
-                nextRow = curRow + rowDelta
-                nextCol = curCol + colDelta
-
-                if 0 <= nextRow < m and 0 <= nextCol < n:
-                    newEffort = max(
-                        abs(
-                            heights[nextRow][nextCol]
-                            - heights[curRow][curCol]
-                        ),
-                        curEffort
-                    )
-
-                    if newEffort < minEffort[nextRow][nextCol]:
-                        minEffort[nextRow][nextCol] = newEffort
-                        heapq.heappush(
-                            minHeap,
-                            (newEffort, nextRow, nextCol)
-                        )
-
-        return minEffort[-1][-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem can be treated as a **shortest path problem on a grid**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -400,6 +353,53 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 28, 2026 |
+
+## Python solution
+
+```python
+import heapq
+
+class Solution:
+    def minimumEffortPath(self, heights: List[List[int]]) -> int:
+        m, n = len(heights), len(heights[0])
+        Directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+
+        minEffort = [[float('inf')] * n for _ in range(m)]
+        minEffort[0][0] = 0
+
+        minHeap = [(0, 0, 0)]
+
+        while minHeap:
+            curEffort, curRow, curCol = heapq.heappop(minHeap)
+
+            if curEffort > minEffort[curRow][curCol]:
+                continue
+
+            if curRow == m - 1 and curCol == n - 1:
+                break
+
+            for rowDelta, colDelta in Directions:
+                nextRow = curRow + rowDelta
+                nextCol = curCol + colDelta
+
+                if 0 <= nextRow < m and 0 <= nextCol < n:
+                    newEffort = max(
+                        abs(
+                            heights[nextRow][nextCol]
+                            - heights[curRow][curCol]
+                        ),
+                        curEffort
+                    )
+
+                    if newEffort < minEffort[nextRow][nextCol]:
+                        minEffort[nextRow][nextCol] = newEffort
+                        heapq.heappush(
+                            minHeap,
+                            (newEffort, nextRow, nextCol)
+                        )
+
+        return minEffort[-1][-1]
+```
 
 ---
 

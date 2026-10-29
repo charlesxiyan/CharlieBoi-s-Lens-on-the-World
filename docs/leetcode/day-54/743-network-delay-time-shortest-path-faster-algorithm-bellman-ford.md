@@ -15,58 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    SPFA is a queue-based optimization of the **Bellman-Ford algorithm**.
-
-    In standard Bellman-Ford, we repeatedly iterate through **all edges** and perform relaxation.
-
-## Python solution
-
-```python
-from collections import deque
-
-class Solution:
-    def networkDelayTime(
-        self,
-        times: List[List[int]],
-        n: int,
-        k: int
-    ) -> int:
-
-        queue = deque([k])
-
-        minDist = [float('inf')] * (n + 1)
-        minDist[k] = 0
-
-        inQueue = [False] * (n + 1)
-        inQueue[k] = True
-
-        graph = [[] for _ in range(n + 1)]
-
-        for u, v, w in times:
-            graph[u].append((w, v))
-
-        while queue:
-            curNode = queue.popleft()
-            inQueue[curNode] = False
-
-            for nextDist, nextNode in graph[curNode]:
-                newDist = minDist[curNode] + nextDist
-
-                if newDist < minDist[nextNode]:
-                    minDist[nextNode] = newDist
-
-                    if not inQueue[nextNode]:
-                        queue.append(nextNode)
-                        inQueue[nextNode] = True
-
-        res = max(minDist[1:])
-
-        return -1 if res == float('inf') else res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        SPFA is a queue-based optimization of the **Bellman-Ford algorithm**.
+
+        In standard Bellman-Ford, we repeatedly iterate through **all edges** and perform relaxation.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -554,6 +509,51 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 31, 2026 |
+
+## Python solution
+
+```python
+from collections import deque
+
+class Solution:
+    def networkDelayTime(
+        self,
+        times: List[List[int]],
+        n: int,
+        k: int
+    ) -> int:
+
+        queue = deque([k])
+
+        minDist = [float('inf')] * (n + 1)
+        minDist[k] = 0
+
+        inQueue = [False] * (n + 1)
+        inQueue[k] = True
+
+        graph = [[] for _ in range(n + 1)]
+
+        for u, v, w in times:
+            graph[u].append((w, v))
+
+        while queue:
+            curNode = queue.popleft()
+            inQueue[curNode] = False
+
+            for nextDist, nextNode in graph[curNode]:
+                newDist = minDist[curNode] + nextDist
+
+                if newDist < minDist[nextNode]:
+                    minDist[nextNode] = newDist
+
+                    if not inQueue[nextNode]:
+                        queue.append(nextNode)
+                        inQueue[nextNode] = True
+
+        res = max(minDist[1:])
+
+        return -1 if res == float('inf') else res
+```
 
 ---
 

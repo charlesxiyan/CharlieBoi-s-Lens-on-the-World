@@ -15,58 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem can be solved using a modified version of **Dijkstra's algorithm**.
-
-    In standard Dijkstra, we try to find the **minimum distance** from the source node to every other node.
-
-## Python solution
-
-```python
-import heapq
-
-class Solution:
-    def maxProbability(
-        self,
-        n: int,
-        edges: List[List[int]],
-        succProb: List[float],
-        start_node: int,
-        end_node: int
-    ) -> float:
-
-        maxProb = [0] * n
-        maxProb[start_node] = 1
-
-        graph = [[] for _ in range(n)]
-
-        for (u, v), prob in zip(edges, succProb):
-            graph[u].append((prob, v))
-            graph[v].append((prob, u))
-
-        maxHeap = [(-1, start_node)]
-
-        while maxHeap:
-            curProb, curNode = heapq.heappop(maxHeap)
-
-            if -curProb < maxProb[curNode]:
-                continue
-
-            if curNode == end_node:
-                return maxProb[end_node]
-
-            for nextProb, nextNode in graph[curNode]:
-                newProb = maxProb[curNode] * nextProb
-
-                if newProb > maxProb[nextNode]:
-                    maxProb[nextNode] = newProb
-                    heapq.heappush(maxHeap, (-newProb, nextNode))
-
-        return 0.0
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem can be solved using a modified version of **Dijkstra's algorithm**.
+
+        In standard Dijkstra, we try to find the **minimum distance** from the source node to every other node.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -366,6 +321,51 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 28, 2026 |
+
+## Python solution
+
+```python
+import heapq
+
+class Solution:
+    def maxProbability(
+        self,
+        n: int,
+        edges: List[List[int]],
+        succProb: List[float],
+        start_node: int,
+        end_node: int
+    ) -> float:
+
+        maxProb = [0] * n
+        maxProb[start_node] = 1
+
+        graph = [[] for _ in range(n)]
+
+        for (u, v), prob in zip(edges, succProb):
+            graph[u].append((prob, v))
+            graph[v].append((prob, u))
+
+        maxHeap = [(-1, start_node)]
+
+        while maxHeap:
+            curProb, curNode = heapq.heappop(maxHeap)
+
+            if -curProb < maxProb[curNode]:
+                continue
+
+            if curNode == end_node:
+                return maxProb[end_node]
+
+            for nextProb, nextNode in graph[curNode]:
+                newProb = maxProb[curNode] * nextProb
+
+                if newProb > maxProb[nextNode]:
+                    maxProb[nextNode] = newProb
+                    heapq.heappush(maxHeap, (-newProb, nextNode))
+
+        return 0.0
+```
 
 ---
 

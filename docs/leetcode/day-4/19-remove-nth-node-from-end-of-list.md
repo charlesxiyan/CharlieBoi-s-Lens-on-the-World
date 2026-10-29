@@ -15,9 +15,28 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    In order to know the Nth node from the end, we have to know the size of the linked list. Define a virtual head to connect the true head, since the question requires to return the whole adjusted list. Define a pointer current, with its next as the true head.
+    !!! tip "Core idea"
+
+        In order to know the Nth node from the end, we have to know the size of the linked list. Define a virtual head to connect the true head, since the question requires to return the whole adjusted list. Define a pointer current, with its next as the true head.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    1. In order to know the Nth node from the end, we have to know the size of the linked list.
+    2. Define a virtual head to connect the true head, since the question requires to return the whole adjusted list. Define a pointer current, with its next as the true head.
+    3. Iterate the whole list to count the size.
+    4. Reset the pointer current to the virtual head.
+    5. Iterate the list for size - n times (Python is 0-indexed) to find the node exactly in front of the target node.
+    6. Redirect the [current.next](http://current.next) to current.next.next.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 2 |
+    | Mastery | ❚❚ |
+    | The Latest Attempt | January 5, 2026 |
 
 ## Python solution
 
@@ -45,25 +64,6 @@ class Solution:
 
         return dummy.next
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    1. In order to know the Nth node from the end, we have to know the size of the linked list.
-    2. Define a virtual head to connect the true head, since the question requires to return the whole adjusted list. Define a pointer current, with its next as the true head.
-    3. Iterate the whole list to count the size.
-    4. Reset the pointer current to the virtual head.
-    5. Iterate the list for size - n times (Python is 0-indexed) to find the node exactly in front of the target node.
-    6. Redirect the [current.next](http://current.next) to current.next.next.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 2 |
-    | Mastery | ❚❚ |
-    | The Latest Attempt | January 5, 2026 |
 
 ---
 

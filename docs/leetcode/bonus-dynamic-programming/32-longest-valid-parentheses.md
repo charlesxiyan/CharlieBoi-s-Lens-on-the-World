@@ -15,50 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given a string `s` containing only:
-
-    return the length of the **longest valid parentheses substring**.
-
-## Python solution
-
-```python
-class Solution:
-    def longestValidParentheses(self, s: str) -> int:
-        n = len(s)
-
-        if n == 0:
-            return 0
-
-        dp = [0] * n
-        res = 0
-
-        for i in range(1, n):
-            if s[i] == ')':
-
-                # Case 1: ...()
-                if s[i - 1] == '(':
-                    dp[i] = (dp[i - 2] if i >= 2 else 0) + 2
-
-                # Case 2: ...))
-                else:
-                    j = i - dp[i - 1] - 1
-
-                    if j >= 0 and s[j] == '(':
-		                    # Case (())
-                        dp[i] = dp[i - 1] + 2
-
-                        if j >= 1:
-                        # Case ()(())
-                            dp[i] += dp[j - 1]
-
-                res = max(res, dp[i])
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given a string `s` containing only:
+
+        return the length of the **longest valid parentheses substring**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -913,6 +876,43 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 17, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def longestValidParentheses(self, s: str) -> int:
+        n = len(s)
+
+        if n == 0:
+            return 0
+
+        dp = [0] * n
+        res = 0
+
+        for i in range(1, n):
+            if s[i] == ')':
+
+                # Case 1: ...()
+                if s[i - 1] == '(':
+                    dp[i] = (dp[i - 2] if i >= 2 else 0) + 2
+
+                # Case 2: ...))
+                else:
+                    j = i - dp[i - 1] - 1
+
+                    if j >= 0 and s[j] == '(':
+		                    # Case (())
+                        dp[i] = dp[i - 1] + 2
+
+                        if j >= 1:
+                        # Case ()(())
+                            dp[i] += dp[j - 1]
+
+                res = max(res, dp[i])
+
+        return res
+```
 
 ---
 

@@ -15,9 +15,23 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Refer to [62. Unique Paths](../day-29/62-unique-paths.md) for the same idea.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     Refer to [62. Unique Paths](../day-29/62-unique-paths.md) for the same idea.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | September 17, 2026 |
 
 ## Python solution
 
@@ -41,20 +55,6 @@ class Solution:
 
         return dp[-1][-1]
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Refer to [62. Unique Paths](../day-29/62-unique-paths.md) for the same idea.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | September 17, 2026 |
 
 ---
 

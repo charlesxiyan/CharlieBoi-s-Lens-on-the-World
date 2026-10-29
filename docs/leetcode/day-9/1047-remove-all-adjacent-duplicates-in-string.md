@@ -15,28 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This question is quite similar to [20. Valid Parentheses](20-valid-parentheses.md). Iterate the whole string.
-
-## Python solution
-
-```python
-class Solution:
-    def removeDuplicates(self, s: str) -> str:
-        n = len(s)
-        stack = [s[0]]
-
-        for i in range(1, n):
-            if not stack or s[i] != stack[-1]:
-                stack.append(s[i])
-            else:
-                stack.pop()
-
-        return ''.join(stack)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This question is quite similar to [20. Valid Parentheses](20-valid-parentheses.md). Iterate the whole string.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -54,6 +37,23 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 9, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def removeDuplicates(self, s: str) -> str:
+        n = len(s)
+        stack = [s[0]]
+
+        for i in range(1, n):
+            if not stack or s[i] != stack[-1]:
+                stack.append(s[i])
+            else:
+                stack.pop()
+
+        return ''.join(stack)
+```
 
 ---
 

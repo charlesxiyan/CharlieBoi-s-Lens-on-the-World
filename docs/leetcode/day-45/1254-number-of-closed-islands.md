@@ -15,51 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem is similar to **LeetCode 200. Number of Islands**, but there are two important differences:
-
-    Also, we only want to count **closed islands**.
-
-## Python solution
-
-```python
-class Solution:
-    def closedIsland(self, grid: List[List[int]]) -> int:
-        m, n = len(grid), len(grid[0])
-        res = 0
-
-        def dfs(i, j):
-            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == 1:
-                return
-            grid[i][j] = 1
-            dfs(i - 1, j)
-            dfs(i + 1, j)
-            dfs(i, j - 1)
-            dfs(i, j + 1)
-
-        for i in range(m):
-            if grid[i][0] == 0:
-                dfs(i, 0)
-            if grid[i][n - 1] == 0:
-                dfs(i, n - 1)
-
-        for j in range(n):
-            if grid[0][j] == 0:
-                dfs(0, j)
-            if grid[m - 1][j] == 0:
-                dfs(m - 1, j)
-
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == 0:
-                    dfs(i, j)
-                    res += 1
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem is similar to **LeetCode 200. Number of Islands**, but there are two important differences:
+
+        Also, we only want to count **closed islands**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -334,6 +296,44 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 19, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def closedIsland(self, grid: List[List[int]]) -> int:
+        m, n = len(grid), len(grid[0])
+        res = 0
+
+        def dfs(i, j):
+            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == 1:
+                return
+            grid[i][j] = 1
+            dfs(i - 1, j)
+            dfs(i + 1, j)
+            dfs(i, j - 1)
+            dfs(i, j + 1)
+
+        for i in range(m):
+            if grid[i][0] == 0:
+                dfs(i, 0)
+            if grid[i][n - 1] == 0:
+                dfs(i, n - 1)
+
+        for j in range(n):
+            if grid[0][j] == 0:
+                dfs(0, j)
+            if grid[m - 1][j] == 0:
+                dfs(m - 1, j)
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 0:
+                    dfs(i, j)
+                    res += 1
+
+        return res
+```
 
 ---
 

@@ -15,9 +15,28 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Apply priority queue. In Python, it is package heapq. heapq.heappush push a tuple to the priority queue in min-heap order.
+    !!! tip "Core idea"
+
+        Apply priority queue. In Python, it is package heapq. heapq.heappush push a tuple to the priority queue in min-heap order.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. Apply priority queue. In Python, it is package heapq.
+    2. heapq.heappush push a tuple to the priority queue in min-heap order.
+    3. Once the length of the priority queue is greater than k, heapq.heappop to pop the top node of the heap from the queue.
+    4. The format saved in the queue is (frequency, key), and thus we retrieve keys from queues in the reverse order, since the top node is the least frequent element.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 9, 2026 |
 
 ## Python solution
 
@@ -45,25 +64,6 @@ class Solution:
 
         return result
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. Apply priority queue. In Python, it is package heapq.
-    2. heapq.heappush push a tuple to the priority queue in min-heap order.
-    3. Once the length of the priority queue is greater than k, heapq.heappop to pop the top node of the heap from the queue.
-    4. The format saved in the queue is (frequency, key), and thus we retrieve keys from queues in the reverse order, since the top node is the least frequent element.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 9, 2026 |
 
 ---
 

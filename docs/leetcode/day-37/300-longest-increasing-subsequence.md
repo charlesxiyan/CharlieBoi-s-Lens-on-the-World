@@ -15,35 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given an integer array `nums`, find the length of the **Longest Increasing Subsequence (LIS)**.
-
-    Note that a **subsequence** does **not** need to be contiguous. It only needs to preserve the relative order of the elements.
-
-## Python solution
-
-```python
-class Solution:
-    def lengthOfLIS(self, nums: List[int]) -> int:
-        l = len(nums)
-
-        if l == 1:
-            return 1
-
-        dp = [1 for _ in range(l)]
-        res = 1
-
-        for i in range(1, l):
-            for j in range(i):
-                if nums[i] > nums[j]:
-                    dp[i] = max(dp[i], dp[j] + 1)
-            res = max(res, dp[i])
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given an integer array `nums`, find the length of the **Longest Increasing Subsequence (LIS)**.
+
+        Note that a **subsequence** does **not** need to be contiguous. It only needs to preserve the relative order of the elements.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -338,6 +316,28 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 9, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        l = len(nums)
+
+        if l == 1:
+            return 1
+
+        dp = [1 for _ in range(l)]
+        res = 1
+
+        for i in range(1, l):
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    dp[i] = max(dp[i], dp[j] + 1)
+            res = max(res, dp[i])
+
+        return res
+```
 
 ---
 

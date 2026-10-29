@@ -15,55 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Inorder traversal visits BST values in sorted order. Count consecutive equal values and retain every value matching the highest frequency.
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def __init__(self):
-        self.modes = []
-        self.maxFreq = 0
-        self.count = 0
-        self.prev = None
-
-    def findMode(self, root: Optional[TreeNode]) -> List[int]:
-        self.traverse(root)
-        return self.modes
-
-    def traverse(self, node):
-        if not node:
-            return
-
-        self.traverse(node.left)
-
-        if not self.prev:
-            self.count = 1
-        elif node.val == self.prev.val:
-            self.count += 1
-        else:
-            self.count = 1
-
-        if self.count > self.maxFreq:
-            self.modes = [node.val]
-            self.maxFreq = self.count
-        elif self.count == self.maxFreq:
-            self.modes.append(node.val)
-
-        self.prev = node
-
-        self.traverse(node.right)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Inorder traversal visits BST values in sorted order. Count consecutive equal values and retain every value matching the highest frequency.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -125,6 +81,50 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 16, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def __init__(self):
+        self.modes = []
+        self.maxFreq = 0
+        self.count = 0
+        self.prev = None
+
+    def findMode(self, root: Optional[TreeNode]) -> List[int]:
+        self.traverse(root)
+        return self.modes
+
+    def traverse(self, node):
+        if not node:
+            return
+
+        self.traverse(node.left)
+
+        if not self.prev:
+            self.count = 1
+        elif node.val == self.prev.val:
+            self.count += 1
+        else:
+            self.count = 1
+
+        if self.count > self.maxFreq:
+            self.modes = [node.val]
+            self.maxFreq = self.count
+        elif self.count == self.maxFreq:
+            self.modes.append(node.val)
+
+        self.prev = node
+
+        self.traverse(node.right)
+```
 
 ---
 

@@ -15,9 +15,38 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    There are only 4 states for each node and we decode these states by numbers: The basic logic is we need to check states from leaves up to the root. That is, we check left and right nodes so that we know the state of the current node.
+    !!! tip "Core idea"
+
+        There are only 4 states for each node and we decode these states by numbers: The basic logic is we need to check states from leaves up to the root. That is, we check left and right nodes so that we know the state of the current node.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. There are only 4 states for each node and we decode these states by numbers:
+        1. -1: None
+        2. 0: Uncover
+        3. 1: Cover
+        4. 2: Camera
+    2. The basic logic is we need to check states from leaves up to the root. That is, we check left and right nodes so that we know the state of the current node.
+        1. left and right are both None.
+            1. If the current node is a leaf (it has a parent), return the state: 0 Uncover.
+            2. if the current node is the root (it does not have a parent), return the state: 2, since there is no other nodes to cover the current node. Update the counter of cameras.
+        2. either left or right is uncovered. Then, we need a camera to cover the uncovered child(ren). Return the state: 2. Update the counter of cameras.
+        3. either left or right is set a camera. That is, the current node is under the coverage. Return the state: 1.
+        4. the only left case: both left and right are covered.
+            1. if the current node has a parent, return the state: 0, and logically the parent will be set camera.
+            2. if the current node is the root, return the state: 2, since an extra camera is needed for the root. Update the counter of cameras.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 30, 2026 |
 
 ## Python solution
 
@@ -75,35 +104,6 @@ class Solution:
             self.result += 1
             return 2
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. There are only 4 states for each node and we decode these states by numbers:
-        1. -1: None
-        2. 0: Uncover
-        3. 1: Cover
-        4. 2: Camera
-    2. The basic logic is we need to check states from leaves up to the root. That is, we check left and right nodes so that we know the state of the current node.
-        1. left and right are both None.
-            1. If the current node is a leaf (it has a parent), return the state: 0 Uncover.
-            2. if the current node is the root (it does not have a parent), return the state: 2, since there is no other nodes to cover the current node. Update the counter of cameras.
-        2. either left or right is uncovered. Then, we need a camera to cover the uncovered child(ren). Return the state: 2. Update the counter of cameras.
-        3. either left or right is set a camera. That is, the current node is under the coverage. Return the state: 1.
-        4. the only left case: both left and right are covered.
-            1. if the current node has a parent, return the state: 0, and logically the parent will be set camera.
-            2. if the current node is the root, return the state: 2, since an extra camera is needed for the root. Update the counter of cameras.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 30, 2026 |
 
 ---
 

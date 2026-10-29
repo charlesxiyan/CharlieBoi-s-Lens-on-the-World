@@ -15,39 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given an integer array `nums`, find a contiguous non-empty subarray that has the largest product, and return the product.
-
-## Python solution
-
-```python
-class Solution:
-    def maxProduct(self, nums: list[int]) -> int:
-        l = len(nums)
-
-        minDp = [-float('inf')] * l
-        maxDp = [-float('inf')] * l
-
-        minDp[0], maxDp[0] = nums[0], nums[0]
-
-        for i in range(1, l):
-            minDp[i] = min(
-                maxDp[i - 1] * nums[i],
-                minDp[i - 1] * nums[i],
-                nums[i]
-            )
-
-            maxDp[i] = max(
-                maxDp[i - 1] * nums[i],
-                minDp[i - 1] * nums[i],
-                nums[i]
-            )
-
-        return max(maxDp)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given an integer array `nums`, find a contiguous non-empty subarray that has the largest product, and return the product.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -851,6 +823,34 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 18, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def maxProduct(self, nums: list[int]) -> int:
+        l = len(nums)
+
+        minDp = [-float('inf')] * l
+        maxDp = [-float('inf')] * l
+
+        minDp[0], maxDp[0] = nums[0], nums[0]
+
+        for i in range(1, l):
+            minDp[i] = min(
+                maxDp[i - 1] * nums[i],
+                minDp[i - 1] * nums[i],
+                nums[i]
+            )
+
+            maxDp[i] = max(
+                maxDp[i - 1] * nums[i],
+                minDp[i - 1] * nums[i],
+                nums[i]
+            )
+
+        return max(maxDp)
+```
 
 ---
 

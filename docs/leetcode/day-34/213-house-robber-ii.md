@@ -15,47 +15,17 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    - Houses are arranged in a **circle**.
-    - Therefore, the **first and last houses cannot both be robbed**.
-    - Convert the circular problem into two linear House Robber (198) problems.
-
-    Case 1:
-    Rob from house `0` to `n-2`
-    (Exclude the last house.)
-
-## Python solution
-
-```python
-class Solution:
-    def rob(self, nums: List[int]) -> int:
-        l = len(nums)
-        if l < 3:
-            return max(nums)
-
-        max1 = self.robBasic(nums[:-1])
-        max2 = self.robBasic(nums[1:])
-
-        return max(max1, max2)
-
-
-    def robBasic(self, nums):
-        l = len(nums)
-        dp = [[0] * 2 for _ in range(l)]
-        dp[0][0] = nums[0]
-
-        for i in range(1, l):
-            # 抢劫第i个房屋，最大金额为前一个房屋不抢劫的最大金额加上当前房屋的金额
-            # max(dp[i - 1][1] + nums[i], dp[i - 1][1]) = dp[i][0] = dp[i - 1][1] + nums[i]
-            dp[i][0] = dp[i - 1][1] + nums[i]
-            # 不抢劫第i个房屋，最大金额为前一个房屋抢劫和不抢劫的最大值
-            dp[i][1] = max(dp[i - 1][0], dp[i - 1][1])
-
-        return max(dp[-1])
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        - Houses are arranged in a **circle**.
+        - Therefore, the **first and last houses cannot both be robbed**.
+        - Convert the circular problem into two linear House Robber (198) problems.
+
+        Case 1:
+        Rob from house `0` to `n-2`
+        (Exclude the last house.)
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -120,6 +90,36 @@ class Solution:
     | --- | --- |
     | Attempts | 1 |
     | Mastery | ❚ |
+
+## Python solution
+
+```python
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        l = len(nums)
+        if l < 3:
+            return max(nums)
+
+        max1 = self.robBasic(nums[:-1])
+        max2 = self.robBasic(nums[1:])
+
+        return max(max1, max2)
+
+
+    def robBasic(self, nums):
+        l = len(nums)
+        dp = [[0] * 2 for _ in range(l)]
+        dp[0][0] = nums[0]
+
+        for i in range(1, l):
+            # 抢劫第i个房屋，最大金额为前一个房屋不抢劫的最大金额加上当前房屋的金额
+            # max(dp[i - 1][1] + nums[i], dp[i - 1][1]) = dp[i][0] = dp[i - 1][1] + nums[i]
+            dp[i][0] = dp[i - 1][1] + nums[i]
+            # 不抢劫第i个房屋，最大金额为前一个房屋抢劫和不抢劫的最大值
+            dp[i][1] = max(dp[i - 1][0], dp[i - 1][1])
+
+        return max(dp[-1])
+```
 
 ---
 

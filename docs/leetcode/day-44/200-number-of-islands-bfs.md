@@ -15,41 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given a 2D grid consisting of `'1'` (land) and `'0'` (water), count the number of islands.
-
-    An island is formed by **horizontally or vertically adjacent** land cells. The grid is completely surrounded by water.
-
-## Python solution
-
-```python
-from collections import deque
-
-class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
-        m, n = len(grid), len(grid[0])
-        res = 0
-
-        visit = [[False] * n for _ in range(m)]
-
-        def bfs(i, j):
-            queue = deque([(i, j)])
-            while queue:
-                p, q = queue.popleft()
-                if 0 <= p < m and 0 <= q < n and grid[p][q] == '1' and not visit[p][q]:
-                    visit[p][q] = True
-                    queue.extend([(p - 1, q), (p + 1, q), (p, q - 1), (p, q + 1)])
-
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == '1' and not visit[i][j]:
-                    res += 1
-                    bfs(i, j)
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given a 2D grid consisting of `'1'` (land) and `'0'` (water), count the number of islands.
+
+        An island is formed by **horizontally or vertically adjacent** land cells. The grid is completely surrounded by water.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -448,6 +420,34 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 18, 2026 |
+
+## Python solution
+
+```python
+from collections import deque
+
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        m, n = len(grid), len(grid[0])
+        res = 0
+
+        visit = [[False] * n for _ in range(m)]
+
+        def bfs(i, j):
+            queue = deque([(i, j)])
+            while queue:
+                p, q = queue.popleft()
+                if 0 <= p < m and 0 <= q < n and grid[p][q] == '1' and not visit[p][q]:
+                    visit[p][q] = True
+                    queue.extend([(p - 1, q), (p + 1, q), (p, q - 1), (p, q + 1)])
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '1' and not visit[i][j]:
+                    res += 1
+                    bfs(i, j)
+        return res
+```
 
 ---
 

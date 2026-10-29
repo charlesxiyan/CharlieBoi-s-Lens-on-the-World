@@ -15,47 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem asks whether there exists a valid path from `source` to `destination` in an **undirected graph**.
-
-    We can solve it using **Union Find (Disjoint Set Union / DSU)**.
-
-## Python solution
-
-```python
-class UnionFind:
-    def __init__(self, size):
-        self.parent = list(range(size))
-
-    def find(self, node):
-        if self.parent[node] != node:
-            self.parent[node] = self.find(self.parent[node])
-        return self.parent[node]
-
-    def union(self, node1, node2):
-        root1 = self.find(node1)
-        root2 = self.find(node2)
-
-        if root1 == root2:
-            return
-
-        self.parent[root1] = root2
-
-    def isSame(self, node1, node2):
-        return self.find(node1) == self.find(node2)
-
-class Solution:
-    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
-        uf = UnionFind(n)
-
-        for u, v in edges:
-            uf.union(u, v)
-
-        return uf.isSame(source, destination)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem asks whether there exists a valid path from `source` to `destination` in an **undirected graph**.
+
+        We can solve it using **Union Find (Disjoint Set Union / DSU)**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -621,6 +587,40 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 23, 2026 |
+
+## Python solution
+
+```python
+class UnionFind:
+    def __init__(self, size):
+        self.parent = list(range(size))
+
+    def find(self, node):
+        if self.parent[node] != node:
+            self.parent[node] = self.find(self.parent[node])
+        return self.parent[node]
+
+    def union(self, node1, node2):
+        root1 = self.find(node1)
+        root2 = self.find(node2)
+
+        if root1 == root2:
+            return
+
+        self.parent[root1] = root2
+
+    def isSame(self, node1, node2):
+        return self.find(node1) == self.find(node2)
+
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        uf = UnionFind(n)
+
+        for u, v in edges:
+            uf.union(u, v)
+
+        return uf.isSame(source, destination)
+```
 
 ---
 

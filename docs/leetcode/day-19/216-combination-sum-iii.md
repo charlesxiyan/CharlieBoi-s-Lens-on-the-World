@@ -15,9 +15,28 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Backtrack over digits 1 through 9, increasing the starting digit after each choice. Keep only combinations with exactly `k` numbers and the required sum.
+    !!! tip "Core idea"
+
+        Backtrack over digits 1 through 9, increasing the starting digit after each choice. Keep only combinations with exactly `k` numbers and the required sum.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Recall [77. Combinations](77-combinations.md) for backtracking 3 steps.
+
+    The backtrack in this solution will reflect on two variables:
+
+    1. path
+    2. current summation
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 21, 2026 |
 
 ## Python solution
 
@@ -47,25 +66,6 @@ class Solution:
             curSum -= i
             path.pop()
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Recall [77. Combinations](77-combinations.md) for backtracking 3 steps.
-
-    The backtrack in this solution will reflect on two variables:
-
-    1. path
-    2. current summation
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 21, 2026 |
 
 ---
 

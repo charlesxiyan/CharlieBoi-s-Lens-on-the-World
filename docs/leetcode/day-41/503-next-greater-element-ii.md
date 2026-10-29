@@ -15,38 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given a **circular array** `nums`, return the next greater element for every element.
-
-    The **next greater element** is the first element to the right that is strictly greater than the current element. Since the array is circular, after reaching the end, the search continues from the beginning.
-
-## Python solution
-
-```python
-class Solution:
-    def nextGreaterElements(self, nums: List[int]) -> List[int]:
-        l = len(nums)
-        res = [-1] * l
-        stack = []
-
-        for i in range(l):
-            while stack and nums[i] > nums[stack[-1]]:
-                res[stack[-1]] = nums[i]
-                stack.pop()
-            stack.append(i)
-
-        for i in range(l):
-            if not stack:
-                return res
-            while stack and nums[i] > nums[stack[-1]]:
-                res[stack[-1]] = nums[i]
-                stack.pop()
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given a **circular array** `nums`, return the next greater element for every element.
+
+        The **next greater element** is the first element to the right that is strictly greater than the current element. Since the array is circular, after reaching the end, the search continues from the beginning.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -385,6 +360,31 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 13, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def nextGreaterElements(self, nums: List[int]) -> List[int]:
+        l = len(nums)
+        res = [-1] * l
+        stack = []
+
+        for i in range(l):
+            while stack and nums[i] > nums[stack[-1]]:
+                res[stack[-1]] = nums[i]
+                stack.pop()
+            stack.append(i)
+
+        for i in range(l):
+            if not stack:
+                return res
+            while stack and nums[i] > nums[stack[-1]]:
+                res[stack[-1]] = nums[i]
+                stack.pop()
+
+        return res
+```
 
 ---
 

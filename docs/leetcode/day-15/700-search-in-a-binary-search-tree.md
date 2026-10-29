@@ -15,40 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Recursion:
-
-    Only attention is the tree in this question is a binary search tree, i.e. left node value is less than the parent node and the right node value is greater than the parent node.
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        stack = [root]
-
-        while stack:
-            node = stack.pop()
-
-            if node.val == val:
-                return node
-
-            if node.left:
-                stack.append(node.left)
-            if node.right:
-                stack.append(node.right)
-
-        return None
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recursion:
+
+        Only attention is the tree in this question is a binary search tree, i.e. left node value is less than the parent node and the right node value is greater than the parent node.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -87,6 +60,33 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 15, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        stack = [root]
+
+        while stack:
+            node = stack.pop()
+
+            if node.val == val:
+                return node
+
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+
+        return None
+```
 
 ---
 

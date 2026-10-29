@@ -15,32 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    At each position, either extend the previous subarray or start a new one. Track the largest ending-here sum seen so far.
-
-## Python solution
-
-```python
-class Solution:
-    def maxSubArray(self, nums: List[int]) -> int:
-        l = len(nums)
-        if l == 0:
-            return 0
-
-        dp = [0] * l
-        dp[0] = nums[0]
-        result = dp[0]
-
-        for i in range(1, l):
-            dp[i] = max(dp[i - 1] + nums[i], nums[i])
-            if dp[i] > result:
-                result = dp[i]
-
-        return result
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        At each position, either extend the previous subarray or start a new one. Track the largest ending-here sum seen so far.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -64,6 +43,27 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 26, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        l = len(nums)
+        if l == 0:
+            return 0
+
+        dp = [0] * l
+        dp[0] = nums[0]
+        result = dp[0]
+
+        for i in range(1, l):
+            dp[i] = max(dp[i - 1] + nums[i], nums[i])
+            if dp[i] > result:
+                result = dp[i]
+
+        return result
+```
 
 ---
 

@@ -15,50 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Assume the input is [1, 2, 3] in order, and 3 now is the top of the stack. For pop(), we need to move 3 to the left and 1, 2 reinput to the queue from right.
-
-## Python solution
-
-```python
-# from collections import deque
-class MyStack:
-    from collections import deque
-    # q1 = [ ]
-    # q2 = [ ]
-    def __init__(self):
-        self.q1 = deque()
-        self.q2 = deque()
-
-    def push(self, x: int) -> None:
-        self.q2.append(x)
-        while self.q1:
-            self.q2.append(self.q1.popleft())
-        self.q1,self.q2 = self.q2, self.q1
-
-    def pop(self) -> int:
-        return self.q1.popleft()
-        # self.q1.popleft()
-    # push(4), push(8)
-    # q1 = [4]
-    # q2 = []
-    # q1 = [8, 4]
-    def top(self) -> int:
-        return self.q1[0]
-
-    def empty(self) -> bool:
-        return not self.q1 and not self.q2
-
-# Your MyStack object will be instantiated and called as such:
-# obj = MyStack()
-# obj.push(x)
-# param_2 = obj.pop()
-# param_3 = obj.top()
-# param_4 = obj.empty()
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Assume the input is [1, 2, 3] in order, and 3 now is the top of the stack. For pop(), we need to move 3 to the left and 1, 2 reinput to the queue from right.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -114,6 +75,45 @@ class MyStack:
     | Mastery | ❚ |
     | The Latest Attempt | January 9, 2026 |
     | Feedback | Strongly Recommended for Multiple Attempts |
+
+## Python solution
+
+```python
+# from collections import deque
+class MyStack:
+    from collections import deque
+    # q1 = [ ]
+    # q2 = [ ]
+    def __init__(self):
+        self.q1 = deque()
+        self.q2 = deque()
+
+    def push(self, x: int) -> None:
+        self.q2.append(x)
+        while self.q1:
+            self.q2.append(self.q1.popleft())
+        self.q1,self.q2 = self.q2, self.q1
+
+    def pop(self) -> int:
+        return self.q1.popleft()
+        # self.q1.popleft()
+    # push(4), push(8)
+    # q1 = [4]
+    # q2 = []
+    # q1 = [8, 4]
+    def top(self) -> int:
+        return self.q1[0]
+
+    def empty(self) -> bool:
+        return not self.q1 and not self.q2
+
+# Your MyStack object will be instantiated and called as such:
+# obj = MyStack()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.empty()
+```
 
 ---
 

@@ -15,9 +15,21 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    See the Python implementation and detailed notes below.
+    !!! tip "Core idea"
+
+        See the Python implementation and detailed notes below.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 7, 2026 |
 
 ## Python solution
 
@@ -57,20 +69,6 @@ class Solution:
 
         return False
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 7, 2026 |
 
 ---
 

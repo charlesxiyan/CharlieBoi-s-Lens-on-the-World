@@ -15,37 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Recall [55. Jump Game](55-jump-game.md) for the core idea of the maximum coverage. Take nums = [3, 2, 1, 1, 2] as an example.
-
-    i = 0: far = 0 → 3, base = 0 → 3, steps = 0 → 1 since the current maximum coverage is 0 = 0. i = 1: far = 3, base = 3, unchanged since the current maximum coverage is 3 ≠ 1.
-
-## Python solution
-
-```python
-class Solution:
-    def jump(self, nums: List[int]) -> int:
-
-        l = r = 0
-        n = len(nums)
-        res = 0
-        fur = 0
-        if n == 1:
-            return 0
-        while True:
-            for i in range(l,r+1):
-                fur = max(fur,nums[i] + i)
-            # 更新下一轮循环的区间
-            l = r + 1
-            r = fur
-            # 计数res
-            res += 1
-            if r >= n - 1:
-                return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recall [55. Jump Game](55-jump-game.md) for the core idea of the maximum coverage. Take nums = [3, 2, 1, 1, 2] as an example.
+
+        i = 0: far = 0 → 3, base = 0 → 3, steps = 0 → 1 since the current maximum coverage is 0 = 0. i = 1: far = 3, base = 3, unchanged since the current maximum coverage is 3 ≠ 1.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -88,6 +64,30 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 27, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def jump(self, nums: List[int]) -> int:
+
+        l = r = 0
+        n = len(nums)
+        res = 0
+        fur = 0
+        if n == 1:
+            return 0
+        while True:
+            for i in range(l,r+1):
+                fur = max(fur,nums[i] + i)
+            # 更新下一轮循环的区间
+            l = r + 1
+            r = fur
+            # 计数res
+            res += 1
+            if r >= n - 1:
+                return res
+```
 
 ---
 

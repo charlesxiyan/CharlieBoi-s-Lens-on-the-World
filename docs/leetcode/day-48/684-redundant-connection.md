@@ -15,46 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem is a classic **Union Find (Disjoint Set Union)** problem.
-
-    We are given an undirected graph that originally forms a tree, but one extra edge has been added.
-
-## Python solution
-
-```python
-class UnionFind:
-    def __init__(self, size):
-        self.parent = list(range(1 + size))
-
-    def find(self, node):
-        if self.parent[node] != node:
-            self.parent[node] = self.find(self.parent[node])
-        return self.parent[node]
-
-    def union(self, node1, node2):
-        root1 = self.find(node1)
-        root2 = self.find(node2)
-
-        if root1 != root2:
-            self.parent[root1] = root2
-
-    def isSame(self, node1, node2):
-        return self.find(node1) == self.find(node2)
-
-class Solution:
-    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        uf = UnionFind(len(edges))
-
-        for u, v in edges:
-            if uf.isSame(u, v):
-                return [u, v]
-
-            uf.union(u, v)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem is a classic **Union Find (Disjoint Set Union)** problem.
+
+        We are given an undirected graph that originally forms a tree, but one extra edge has been added.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -575,6 +542,39 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 25, 2026 |
+
+## Python solution
+
+```python
+class UnionFind:
+    def __init__(self, size):
+        self.parent = list(range(1 + size))
+
+    def find(self, node):
+        if self.parent[node] != node:
+            self.parent[node] = self.find(self.parent[node])
+        return self.parent[node]
+
+    def union(self, node1, node2):
+        root1 = self.find(node1)
+        root2 = self.find(node2)
+
+        if root1 != root2:
+            self.parent[root1] = root2
+
+    def isSame(self, node1, node2):
+        return self.find(node1) == self.find(node2)
+
+class Solution:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+        uf = UnionFind(len(edges))
+
+        for u, v in edges:
+            if uf.isSame(u, v):
+                return [u, v]
+
+            uf.union(u, v)
+```
 
 ---
 

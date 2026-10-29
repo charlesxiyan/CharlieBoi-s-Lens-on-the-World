@@ -197,11 +197,25 @@ hide:
     - The knight may only move according to standard chess knight movement.
     - Every move must stay inside the chessboard.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    You are given a chessboard of size `1000 x 1000`.
+    !!! tip "Core idea"
 
-    The coordinates of the chessboard range from `1` to `1000` on both the `x`-axis and the `y`-axis.
+        You are given a chessboard of size `1000 x 1000`.
+
+        The coordinates of the chessboard range from `1` to `1000` on both the `x`-axis and the `y`-axis.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    ## Starter Code
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | September 3, 2026 |
 
 ## Python solution
 
@@ -243,20 +257,6 @@ class Solution:
             acc += (p1[i] - p2[i]) ** 2
         return acc ** 0.5
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    ## Starter Code
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | September 3, 2026 |
 
 ---
 

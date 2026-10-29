@@ -15,35 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Preorder Traverse. Reference to [144. Binary Tree Preorder Traversal](../day-11/144-binary-tree-preorder-traversal.md)
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-		def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
-				if not root:
-						return 0
-
-				leftVal = 0
-				leftSum = self.sumOfLeftLeaves(root.left)
-				rightSum = self.sumOfLeftLeaves(root.right)
-
-				if root.left and not root.left.left and not root.left.right:
-						leftVal = root.left.val
-
-				return leftVal + leftSum + rightSum
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Preorder Traverse. Reference to [144. Binary Tree Preorder Traversal](../day-11/144-binary-tree-preorder-traversal.md)
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -93,6 +69,30 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 13, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+		def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
+				if not root:
+						return 0
+
+				leftVal = 0
+				leftSum = self.sumOfLeftLeaves(root.left)
+				rightSum = self.sumOfLeftLeaves(root.right)
+
+				if root.left and not root.left.left and not root.left.right:
+						leftVal = root.left.val
+
+				return leftVal + leftSum + rightSum
+```
 
 ---
 

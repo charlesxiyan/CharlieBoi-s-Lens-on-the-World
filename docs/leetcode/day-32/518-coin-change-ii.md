@@ -15,27 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    A complete knapsack problem. The core idea is the same as [494. Target Sum](../day-31/494-target-sum.md).
-
-## Python solution
-
-```python
-class Solution:
-    def change(self, amount: int, coins: List[int]) -> int:
-        n = len(coins)
-
-        dp = [0] * (amount + 1)
-        dp[0] = 1
-        for i in range(n):
-            for j in range(coins[i], amount + 1):
-                dp[j] += dp[j - coins[i]]
-
-        return dp[-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        A complete knapsack problem. The core idea is the same as [494. Target Sum](../day-31/494-target-sum.md).
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -52,6 +36,22 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | February 6, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def change(self, amount: int, coins: List[int]) -> int:
+        n = len(coins)
+
+        dp = [0] * (amount + 1)
+        dp[0] = 1
+        for i in range(n):
+            for j in range(coins[i], amount + 1):
+                dp[j] += dp[j - coins[i]]
+
+        return dp[-1]
+```
 
 ---
 

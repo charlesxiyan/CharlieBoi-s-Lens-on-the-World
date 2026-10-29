@@ -15,36 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given an integer `numRows`, return the first `numRows` rows of Pascal's Triangle.
-
-## Python solution
-
-```python
-class Solution:
-    def generate(self, numRows: int) -> list[list[int]]:
-        if numRows == 1:
-            return [[1]]
-
-        dp = [[] for _ in range(numRows)]
-        dp[0] = [1]
-        dp[1] = [1, 1]
-
-        for i in range(2, numRows):
-            dp[i] = (
-                [1]
-                + [
-                    dp[i - 1][j] + dp[i - 1][j - 1]
-                    for j in range(1, len(dp[i - 1]))
-                ]
-                + [1]
-            )
-
-        return dp
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given an integer `numRows`, return the first `numRows` rows of Pascal's Triangle.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -612,6 +587,31 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 18, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def generate(self, numRows: int) -> list[list[int]]:
+        if numRows == 1:
+            return [[1]]
+
+        dp = [[] for _ in range(numRows)]
+        dp[0] = [1]
+        dp[1] = [1, 1]
+
+        for i in range(2, numRows):
+            dp[i] = (
+                [1]
+                + [
+                    dp[i - 1][j] + dp[i - 1][j - 1]
+                    for j in range(1, len(dp[i - 1]))
+                ]
+                + [1]
+            )
+
+        return dp
+```
 
 ---
 

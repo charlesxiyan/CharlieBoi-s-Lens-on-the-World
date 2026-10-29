@@ -15,9 +15,32 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Search recursively for the key. Handle zero or one child directly; with two children, reconnect the subtrees while preserving BST order.
+    !!! tip "Core idea"
+
+        Search recursively for the key. Handle zero or one child directly; with two children, reconnect the subtrees while preserving BST order.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Recursion:
+
+    5 cases:
+
+    1. No such a node with this key value. Return None. (Nothing happens, i.e. no node change)
+    2. There exists such a node.
+        1. this node is a leaf, i.e. left and right children are None. Return None to the last recursion, i.e. redefine the child node as None (Delete the current node!).
+        2. the node only has a left subtree. Return the left child node, i.e. redefine the child node as the current’s left child node.
+        3. the node only has a right subtree. Return the right child node, i.e. redefine the child node as the current’s right child node.
+        4. the node has both subtrees. Recall [701. Insert into a Binary Search Tree](701-insert-into-a-binary-search-tree.md). Delete the current node, connect the current node’s right subtree with the the node in the last recursion and zip the current node’s left subtree to the leftmost leaf of the right subtree. (Use the property of BST!)
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 18, 2026 |
 
 ## Python solution
 
@@ -55,29 +78,6 @@ class Solution:
 
         return root
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Recursion:
-
-    5 cases:
-
-    1. No such a node with this key value. Return None. (Nothing happens, i.e. no node change)
-    2. There exists such a node.
-        1. this node is a leaf, i.e. left and right children are None. Return None to the last recursion, i.e. redefine the child node as None (Delete the current node!).
-        2. the node only has a left subtree. Return the left child node, i.e. redefine the child node as the current’s left child node.
-        3. the node only has a right subtree. Return the right child node, i.e. redefine the child node as the current’s right child node.
-        4. the node has both subtrees. Recall [701. Insert into a Binary Search Tree](701-insert-into-a-binary-search-tree.md). Delete the current node, connect the current node’s right subtree with the the node in the last recursion and zip the current node’s left subtree to the leftmost leaf of the right subtree. (Use the property of BST!)
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 18, 2026 |
 
 ---
 

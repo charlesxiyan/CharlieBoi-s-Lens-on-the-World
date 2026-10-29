@@ -15,33 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given two strings `s` and `t`, determine whether `s` is a subsequence of `t`.
-
-    A **subsequence** is formed by deleting some (or no) characters from the original string without changing the relative order of the remaining characters.
-
-## Python solution
-
-```python
-# Naive
-class Solution:
-    def isSubsequence(self, s: str, t: str) -> bool:
-        n = len(s)
-        m = len(t)
-        if n == 0:
-            return True
-
-        ps = 0
-        for i in t:
-            if i == s[ps]:
-                ps += 1
-                if ps == len(s):
-                    return True
-        return False
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given two strings `s` and `t`, determine whether `s` is a subsequence of `t`.
+
+        A **subsequence** is formed by deleting some (or no) characters from the original string without changing the relative order of the remaining characters.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -336,6 +316,26 @@ class Solution:
     | --- | --- |
     | Attempts | 1 |
     | Mastery | ❚ |
+
+## Python solution
+
+```python
+# Naive
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        n = len(s)
+        m = len(t)
+        if n == 0:
+            return True
+
+        ps = 0
+        for i in t:
+            if i == s[ps]:
+                ps += 1
+                if ps == len(s):
+                    return True
+        return False
+```
 
 ---
 

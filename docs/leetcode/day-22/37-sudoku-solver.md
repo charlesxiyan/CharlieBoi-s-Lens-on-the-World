@@ -15,74 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    We use **backtracking** to fill the empty cells one by one.
-
-    For each empty cell, we try digits `'1'` through `'9'`. A digit can be placed only if it does not already exist in the corresponding row, column, or `3 × 3` sub-box.
-
-## Python solution
-
-```python
-from collections import defaultdict
-
-class Solution:
-    def solveSudoku(self, board: list[list[str]]) -> None:
-        rows = defaultdict(set)
-        cols = defaultdict(set)
-        boxes = defaultdict(set)
-        empty = []
-
-        # Initialize
-        for i in range(9):
-            for j in range(9):
-                num = board[i][j]
-
-                if num == '.':
-                    empty.append((i, j))
-                    continue
-
-                block = (i // 3, j // 3)
-
-                rows[i].add(num)
-                cols[j].add(num)
-                boxes[block].add(num)
-
-        def backtrack(index):
-            # Base case: all empty cells are filled
-            if index == len(empty):
-                return True
-
-            i, j = empty[index]
-            block = (i // 3, j // 3)
-
-            for num in '123456789':
-                # Check validity
-                if num in rows[i] or num in cols[j] or num in boxes[block]:
-                    continue
-
-                # Make choice
-                board[i][j] = num
-                rows[i].add(num)
-                cols[j].add(num)
-                boxes[block].add(num)
-
-                # Explore
-                if backtrack(index + 1):
-                    return True
-
-                # Undo choice
-                board[i][j] = '.'
-                rows[i].remove(num)
-                cols[j].remove(num)
-                boxes[block].remove(num)
-
-            return False
-
-        backtrack(0)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        We use **backtracking** to fill the empty cells one by one.
+
+        For each empty cell, we try digits `'1'` through `'9'`. A digit can be placed only if it does not already exist in the corresponding row, column, or `3 × 3` sub-box.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -331,6 +270,67 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | October 24, 2026 |
+
+## Python solution
+
+```python
+from collections import defaultdict
+
+class Solution:
+    def solveSudoku(self, board: list[list[str]]) -> None:
+        rows = defaultdict(set)
+        cols = defaultdict(set)
+        boxes = defaultdict(set)
+        empty = []
+
+        # Initialize
+        for i in range(9):
+            for j in range(9):
+                num = board[i][j]
+
+                if num == '.':
+                    empty.append((i, j))
+                    continue
+
+                block = (i // 3, j // 3)
+
+                rows[i].add(num)
+                cols[j].add(num)
+                boxes[block].add(num)
+
+        def backtrack(index):
+            # Base case: all empty cells are filled
+            if index == len(empty):
+                return True
+
+            i, j = empty[index]
+            block = (i // 3, j // 3)
+
+            for num in '123456789':
+                # Check validity
+                if num in rows[i] or num in cols[j] or num in boxes[block]:
+                    continue
+
+                # Make choice
+                board[i][j] = num
+                rows[i].add(num)
+                cols[j].add(num)
+                boxes[block].add(num)
+
+                # Explore
+                if backtrack(index + 1):
+                    return True
+
+                # Undo choice
+                board[i][j] = '.'
+                rows[i].remove(num)
+                cols[j].remove(num)
+                boxes[block].remove(num)
+
+            return False
+
+        backtrack(0)
+```
 
 ---
 

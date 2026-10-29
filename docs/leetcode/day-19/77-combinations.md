@@ -15,33 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Recall [113. Path Sum II](../day-14/113-path-sum-ii.md). The reason why we have result.append(path[:]) is that path[:] works the same as list() in [113. Path Sum II](../day-14/113-path-sum-ii.md) so that path.pop() later would not influence the lists that have already been appended in result. Backtrack solution: 3 Steps
-
-## Python solution
-
-```python
-class Solution:
-    def combine(self, n: int, k: int) -> List[List[int]]:
-        result = []
-        self.backtrack(n, k, 1, [], result)
-        return result
-
-    def backtrack(self, n, k, startIndex, path, result):
-        if len(path) == k:
-            result.append(path[:])
-            return
-				# Pruning: n - i + 1 >= k - len(path)
-				# there are n - (i - 1) numbers as options to choose; now we have k - len(path) numbers left to be filled.
-				# We need to make sure n - (i - 1) >= k - len(path)
-        for i in range(startIndex, n + 2 - (k - len(path))):
-            path.append(i)
-            self.backtrack(n, k, i + 1, path, result)
-            path.pop()
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recall [113. Path Sum II](../day-14/113-path-sum-ii.md). The reason why we have result.append(path[:]) is that path[:] works the same as list() in [113. Path Sum II](../day-14/113-path-sum-ii.md) so that path.pop() later would not influence the lists that have already been appended in result. Backtrack solution: 3 Steps
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -66,6 +44,28 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 21, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        result = []
+        self.backtrack(n, k, 1, [], result)
+        return result
+
+    def backtrack(self, n, k, startIndex, path, result):
+        if len(path) == k:
+            result.append(path[:])
+            return
+				# Pruning: n - i + 1 >= k - len(path)
+				# there are n - (i - 1) numbers as options to choose; now we have k - len(path) numbers left to be filled.
+				# We need to make sure n - (i - 1) >= k - len(path)
+        for i in range(startIndex, n + 2 - (k - len(path))):
+            path.append(i)
+            self.backtrack(n, k, i + 1, path, result)
+            path.pop()
+```
 
 ---
 

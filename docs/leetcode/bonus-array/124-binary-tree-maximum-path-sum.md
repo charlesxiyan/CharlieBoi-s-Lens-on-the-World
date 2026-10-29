@@ -15,39 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given the `root` of a binary tree, return the **maximum path sum** of any non-empty path.
-
-    A path is a sequence of nodes where each pair of adjacent nodes has an edge connecting them.
-
-## Python solution
-
-```python
-class Solution:
-    def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        self.res = float('-inf')
-
-        def dfs(node):
-            if not node:
-                return 0
-
-            left = max(0, dfs(node.left))
-            right = max(0, dfs(node.right))
-
-            self.res = max(
-                self.res,
-                node.val + left + right
-            )
-
-            return node.val + max(left, right)
-
-        dfs(root)
-
-        return self.res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given the `root` of a binary tree, return the **maximum path sum** of any non-empty path.
+
+        A path is a sequence of nodes where each pair of adjacent nodes has an edge connecting them.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -712,6 +686,32 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 9, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def maxPathSum(self, root: Optional[TreeNode]) -> int:
+        self.res = float('-inf')
+
+        def dfs(node):
+            if not node:
+                return 0
+
+            left = max(0, dfs(node.left))
+            right = max(0, dfs(node.right))
+
+            self.res = max(
+                self.res,
+                node.val + left + right
+            )
+
+            return node.val + max(left, right)
+
+        dfs(root)
+
+        return self.res
+```
 
 ---
 

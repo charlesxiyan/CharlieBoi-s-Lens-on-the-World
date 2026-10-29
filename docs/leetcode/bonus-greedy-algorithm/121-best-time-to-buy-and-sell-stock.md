@@ -15,28 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    You are given an array `prices` where:
-
-    is the price of a given stock on day `i`.
-
-## Python solution
-
-```python
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        minPrice = prices[0]
-        res = 0
-
-        for price in prices[1:]:
-            res = max(res, price - minPrice)
-            minPrice = min(minPrice, price)
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        You are given an array `prices` where:
+
+        is the price of a given stock on day `i`.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -684,6 +669,21 @@ class Solution:
     | Attempts | 5 |
     | Mastery | ❚❚❚❚❚ |
     | The Latest Attempt | September 18, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        minPrice = prices[0]
+        res = 0
+
+        for price in prices[1:]:
+            res = max(res, price - minPrice)
+            minPrice = min(minPrice, price)
+
+        return res
+```
 
 ---
 

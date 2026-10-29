@@ -15,31 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given an array `heights`, where each element represents the height of a histogram bar, return the area of the largest rectangle that can be formed.
-
-## Python solution
-
-```python
-class Solution:
-    def largestRectangleArea(self, heights: List[int]) -> int:
-        heights.insert(0, 0)
-        heights.append(0)
-        stack = [0]
-        res = 0
-
-        for i in range(1, len(heights)):
-            while stack and heights[i] < heights[stack[-1]]:
-                mid = heights[stack.pop()]
-                if stack:
-                    res = max(res, (i - stack[-1] - 1) * mid)
-            stack.append(i)
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given an array `heights`, where each element represents the height of a histogram bar, return the area of the largest rectangle that can be formed.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -560,6 +540,26 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 15, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        heights.insert(0, 0)
+        heights.append(0)
+        stack = [0]
+        res = 0
+
+        for i in range(1, len(heights)):
+            while stack and heights[i] < heights[stack[-1]]:
+                mid = heights[stack.pop()]
+                if stack:
+                    res = max(res, (i - stack[-1] - 1) * mid)
+            stack.append(i)
+
+        return res
+```
 
 ---
 

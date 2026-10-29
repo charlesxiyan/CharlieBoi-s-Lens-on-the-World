@@ -15,33 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Solution: DP
-
-    **Step 1**: Define DP array states
-
-## Python solution
-
-```python
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        l = len(prices)
-
-        # Initiate
-        dp = [[0] * 4 for _ in range(l)]
-        dp[0][0] = -prices[0]
-
-        for i in range(1, l):
-            dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] - prices[i], dp[i - 1][3] - prices[i])
-            dp[i][1] = max(dp[i - 1][1], dp[i - 1][3])
-            dp[i][2] = dp[i - 1][0] + prices[i]
-            dp[i][3] = dp[i - 1][2]
-
-        return max(dp[-1][1:])
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Solution: DP
+
+        **Step 1**: Define DP array states
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -139,6 +119,26 @@ class Solution:
     | Mastery | ❚❚ |
     | The Latest Attempt | November 6, 2025 |
     | Feedback | An extension of 122 but need to be very clear of all states |
+
+## Python solution
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        l = len(prices)
+
+        # Initiate
+        dp = [[0] * 4 for _ in range(l)]
+        dp[0][0] = -prices[0]
+
+        for i in range(1, l):
+            dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] - prices[i], dp[i - 1][3] - prices[i])
+            dp[i][1] = max(dp[i - 1][1], dp[i - 1][3])
+            dp[i][2] = dp[i - 1][0] + prices[i]
+            dp[i][3] = dp[i - 1][2]
+
+        return max(dp[-1][1:])
+```
 
 ---
 

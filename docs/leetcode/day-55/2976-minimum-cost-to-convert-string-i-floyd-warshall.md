@@ -15,57 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    The key observation is that each lowercase English letter can be considered a **node in a directed weighted graph**.
-
-## Python solution
-
-```python
-class Solution:
-    def minimumCost(
-        self,
-        source: str,
-        target: str,
-        original: List[str],
-        changed: List[str],
-        cost: List[int]
-    ) -> int:
-
-        dp = [[float('inf')] * 26 for _ in range(26)]
-
-        for i in range(26):
-            dp[i][i] = 0
-
-        for org, cgd, c in zip(original, changed, cost):
-            u = ord(org) - ord('a')
-            v = ord(cgd) - ord('a')
-            dp[u][v] = min(dp[u][v], c)
-
-        # Floyd-Warshall
-        for k in range(26):
-            for i in range(26):
-                for j in range(26):
-                    dp[i][j] = min(
-                        dp[i][k] + dp[k][j],
-                        dp[i][j]
-                    )
-
-        res = 0
-
-        for charS, charT in zip(source, target):
-            u = ord(charS) - ord('a')
-            v = ord(charT) - ord('a')
-
-            if dp[u][v] == float('inf'):
-                return -1
-
-            res += dp[u][v]
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        The key observation is that each lowercase English letter can be considered a **node in a directed weighted graph**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -643,6 +597,52 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 3, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def minimumCost(
+        self,
+        source: str,
+        target: str,
+        original: List[str],
+        changed: List[str],
+        cost: List[int]
+    ) -> int:
+
+        dp = [[float('inf')] * 26 for _ in range(26)]
+
+        for i in range(26):
+            dp[i][i] = 0
+
+        for org, cgd, c in zip(original, changed, cost):
+            u = ord(org) - ord('a')
+            v = ord(cgd) - ord('a')
+            dp[u][v] = min(dp[u][v], c)
+
+        # Floyd-Warshall
+        for k in range(26):
+            for i in range(26):
+                for j in range(26):
+                    dp[i][j] = min(
+                        dp[i][k] + dp[k][j],
+                        dp[i][j]
+                    )
+
+        res = 0
+
+        for charS, charT in zip(source, target):
+            u = ord(charS) - ord('a')
+            v = ord(charT) - ord('a')
+
+            if dp[u][v] == float('inf'):
+                return -1
+
+            res += dp[u][v]
+
+        return res
+```
 
 ---
 

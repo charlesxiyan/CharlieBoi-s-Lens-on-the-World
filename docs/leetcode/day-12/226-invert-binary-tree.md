@@ -15,41 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Recursion:
-
-    simply swap the left node and the right node. traverse to the left node and the right node.
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if not root:
-            return None
-
-        stack = [root]
-
-        while stack:
-            node = stack.pop()
-            node.left, node.right = node.right, node.left
-
-            if node.right:
-                stack.append(node.right)
-            if node.left:
-                stack.append(node.left)
-
-        return root
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recursion:
+
+        simply swap the left node and the right node. traverse to the left node and the right node.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -90,6 +62,34 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 13, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+
+        stack = [root]
+
+        while stack:
+            node = stack.pop()
+            node.left, node.right = node.right, node.left
+
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+
+        return root
+```
 
 ---
 

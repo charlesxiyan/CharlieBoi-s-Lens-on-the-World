@@ -15,9 +15,49 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    This is an application of 0-1 knapsack problem. Consider the number as both the weight and the value.
+    !!! tip "Core idea"
+
+        This is an application of 0-1 knapsack problem. Consider the number as both the weight and the value.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. This is an application of 0-1 knapsack problem.
+    2. Consider the number as both the weight and the value.
+        1. the weight ranges from 0 to sum/2.
+        2. dp is the array of max values with maximum weight nums[i].
+        3. the list can be divided into equal subsets if sum/2 == dp[sum/2].
+    3. Tips: if the summation of nums is not even, then it is impossible to partition equal subsets.
+
+    ```python
+    class Solution:
+        def canPartition(self, nums: List[int]) -> bool:
+            n = len(nums)
+            total = sum(nums)
+
+            if total % 2:
+                return False
+
+            target = total // 2
+            dp = [0] * (target + 1)
+
+            for i in range(n):
+                for j in range(target, nums[i] - 1, -1):
+                    dp[j] = max(dp[j], dp[j - nums[i]] + nums[i])
+
+            return dp[-1] == target
+    ```
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | February 4, 2026 |
 
 ## Python solution
 
@@ -68,46 +108,6 @@ class Solution:
         # 最终答案:用全部n个数,能否凑出和为s(即target)
         return f[n][s]
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. This is an application of 0-1 knapsack problem.
-    2. Consider the number as both the weight and the value.
-        1. the weight ranges from 0 to sum/2.
-        2. dp is the array of max values with maximum weight nums[i].
-        3. the list can be divided into equal subsets if sum/2 == dp[sum/2].
-    3. Tips: if the summation of nums is not even, then it is impossible to partition equal subsets.
-
-    ```python
-    class Solution:
-        def canPartition(self, nums: List[int]) -> bool:
-            n = len(nums)
-            total = sum(nums)
-
-            if total % 2:
-                return False
-
-            target = total // 2
-            dp = [0] * (target + 1)
-
-            for i in range(n):
-                for j in range(target, nums[i] - 1, -1):
-                    dp[j] = max(dp[j], dp[j - nums[i]] + nums[i])
-
-            return dp[-1] == target
-    ```
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | February 4, 2026 |
 
 ---
 

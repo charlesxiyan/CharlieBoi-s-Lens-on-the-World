@@ -15,62 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    You are given an `m × n` grid where:
-
-    Every minute, any fresh orange that is **4-directionally adjacent** to a rotten orange becomes rotten.
-
-## Python solution
-
-```python
-from collections import deque
-
-class Solution:
-    def orangesRotting(self, grid: list[list[int]]) -> int:
-        m, n = len(grid), len(grid[0])
-        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-
-        queue = deque()
-        time = -1
-
-        # Add all initially rotten oranges
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == 2:
-                    queue.append((i, j))
-
-        # Multi-Source + Level-Order BFS
-        while queue:
-            for _ in range(len(queue)):
-                curNode = queue.popleft()
-
-                for move in dirs:
-                    nextNode = (
-                        curNode[0] + move[0],
-                        curNode[1] + move[1]
-                    )
-
-                    if (
-                        0 <= nextNode[0] < m
-                        and 0 <= nextNode[1] < n
-                        and grid[nextNode[0]][nextNode[1]] == 1
-                    ):
-                        grid[nextNode[0]][nextNode[1]] = 2
-                        queue.append(nextNode)
-
-            time += 1
-
-        # Check whether any fresh orange is unreachable
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == 1:
-                    return -1
-
-        return max(time, 0)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        You are given an `m × n` grid where:
+
+        Every minute, any fresh orange that is **4-directionally adjacent** to a rotten orange becomes rotten.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -897,6 +848,55 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 21, 2026 |
+
+## Python solution
+
+```python
+from collections import deque
+
+class Solution:
+    def orangesRotting(self, grid: list[list[int]]) -> int:
+        m, n = len(grid), len(grid[0])
+        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+
+        queue = deque()
+        time = -1
+
+        # Add all initially rotten oranges
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 2:
+                    queue.append((i, j))
+
+        # Multi-Source + Level-Order BFS
+        while queue:
+            for _ in range(len(queue)):
+                curNode = queue.popleft()
+
+                for move in dirs:
+                    nextNode = (
+                        curNode[0] + move[0],
+                        curNode[1] + move[1]
+                    )
+
+                    if (
+                        0 <= nextNode[0] < m
+                        and 0 <= nextNode[1] < n
+                        and grid[nextNode[0]][nextNode[1]] == 1
+                    ):
+                        grid[nextNode[0]][nextNode[1]] = 2
+                        queue.append(nextNode)
+
+            time += 1
+
+        # Check whether any fresh orange is unreachable
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    return -1
+
+        return max(time, 0)
+```
 
 ---
 

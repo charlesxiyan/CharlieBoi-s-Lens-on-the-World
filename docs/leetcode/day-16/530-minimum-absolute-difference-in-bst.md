@@ -15,44 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Iteration:
-
-    Reference to [98. Validate Binary Search Tree](../day-15/98-validate-binary-search-tree.md) for the core idea in an order traversal.
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def __init__(self):
-        self.minDiff = float('inf')
-        self.pre = None
-
-    def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
-        self.traverse(root)
-        return self.minDiff
-
-    def traverse(self, node):
-        if not node:
-            return
-
-        self.traverse(node.left)
-
-        if self.pre:
-            self.minDiff = min(self.minDiff, node.val - self.pre.val)
-        self.pre = node
-
-        self.traverse(node.right)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Iteration:
+
+        Reference to [98. Validate Binary Search Tree](../day-15/98-validate-binary-search-tree.md) for the core idea in an order traversal.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -100,6 +69,37 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 16, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def __init__(self):
+        self.minDiff = float('inf')
+        self.pre = None
+
+    def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
+        self.traverse(root)
+        return self.minDiff
+
+    def traverse(self, node):
+        if not node:
+            return
+
+        self.traverse(node.left)
+
+        if self.pre:
+            self.minDiff = min(self.minDiff, node.val - self.pre.val)
+        self.pre = node
+
+        self.traverse(node.right)
+```
 
 ---
 

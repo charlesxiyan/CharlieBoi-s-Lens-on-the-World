@@ -15,11 +15,27 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recursion
+
+        Reference to [104. Maximum Depth of Binary Tree](../day-12/104-maximum-depth-of-binary-tree.md)
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     Recursion
 
     Reference to [104. Maximum Depth of Binary Tree](../day-12/104-maximum-depth-of-binary-tree.md)
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 13, 2026 |
 
 ## Python solution
 
@@ -50,22 +66,6 @@ class Solution:
 
         return 1 + max(leftHeight, rightHeight)
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Recursion
-
-    Reference to [104. Maximum Depth of Binary Tree](../day-12/104-maximum-depth-of-binary-tree.md)
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 13, 2026 |
 
 ---
 

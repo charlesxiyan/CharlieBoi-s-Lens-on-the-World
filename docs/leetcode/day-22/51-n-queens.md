@@ -15,62 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    See the Python implementation and detailed notes below.
-
-## Python solution
-
-```python
-class Solution:
-    def solveNQueens(self, n: int) -> List[List[str]]:
-        self.res = []
-        self.backtrack(0, n, [['.'] * n for _ in range(n)])
-        return self.res
-
-    def backtrack(self, row, n, board):
-        if row == n:
-            self.res.append([''.join(r) for r in board])
-            return
-
-        for j in range(n):
-            if self.isValid(row, j, board, n):
-                board[row][j] = 'Q'
-
-                self.backtrack(row + 1, n, board)
-
-                board[row][j] = '.'
-
-    def isValid(self, row, col, board, n):
-        # 1. Check the same column
-        for i in range(n):
-            if board[i][col] == 'Q':
-                return False
-
-        # 2. Check upper-left diagonal
-        rowIdx, colIdx = row - 1, col - 1
-
-        while rowIdx >= 0 and colIdx >= 0:
-            if board[rowIdx][colIdx] == 'Q':
-                return False
-
-            rowIdx -= 1
-            colIdx -= 1
-
-        # 3. Check upper-right diagonal
-        rowIdx, colIdx = row - 1, col + 1
-
-        while rowIdx >= 0 and colIdx < n:
-            if board[rowIdx][colIdx] == 'Q':
-                return False
-
-            rowIdx -= 1
-            colIdx += 1
-
-        return True
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        See the Python implementation and detailed notes below.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -722,6 +671,57 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 5, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        self.res = []
+        self.backtrack(0, n, [['.'] * n for _ in range(n)])
+        return self.res
+
+    def backtrack(self, row, n, board):
+        if row == n:
+            self.res.append([''.join(r) for r in board])
+            return
+
+        for j in range(n):
+            if self.isValid(row, j, board, n):
+                board[row][j] = 'Q'
+
+                self.backtrack(row + 1, n, board)
+
+                board[row][j] = '.'
+
+    def isValid(self, row, col, board, n):
+        # 1. Check the same column
+        for i in range(n):
+            if board[i][col] == 'Q':
+                return False
+
+        # 2. Check upper-left diagonal
+        rowIdx, colIdx = row - 1, col - 1
+
+        while rowIdx >= 0 and colIdx >= 0:
+            if board[rowIdx][colIdx] == 'Q':
+                return False
+
+            rowIdx -= 1
+            colIdx -= 1
+
+        # 3. Check upper-right diagonal
+        rowIdx, colIdx = row - 1, col + 1
+
+        while rowIdx >= 0 and colIdx < n:
+            if board[rowIdx][colIdx] == 'Q':
+                return False
+
+            rowIdx -= 1
+            colIdx += 1
+
+        return True
+```
 
 ---
 

@@ -15,40 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem can be viewed as a **shortest path problem in an unweighted graph**.
-
-## Python solution
-
-```python
-from collections import deque
-
-class Solution:
-    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
-        wordSet = set(wordList)
-
-        if endWord not in wordSet:
-            return 0
-
-        queue = deque([(beginWord, 1)])
-
-        while queue:
-            word, step = queue.popleft()
-            if word == endWord:
-                return step
-
-            for i in range(len(word)):
-                for char in string.ascii_lowercase:
-                    newWord = word[: i] + char + word[i + 1:]
-                    if newWord in wordSet:
-                        wordSet.remove(newWord)
-                        queue.append((newWord, step + 1))
-
-        return 0
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem can be viewed as a **shortest path problem in an unweighted graph**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -495,6 +466,35 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 20, 2026 |
+
+## Python solution
+
+```python
+from collections import deque
+
+class Solution:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        wordSet = set(wordList)
+
+        if endWord not in wordSet:
+            return 0
+
+        queue = deque([(beginWord, 1)])
+
+        while queue:
+            word, step = queue.popleft()
+            if word == endWord:
+                return step
+
+            for i in range(len(word)):
+                for char in string.ascii_lowercase:
+                    newWord = word[: i] + char + word[i + 1:]
+                    if newWord in wordSet:
+                        wordSet.remove(newWord)
+                        queue.append((newWord, step + 1))
+
+        return 0
+```
 
 ---
 

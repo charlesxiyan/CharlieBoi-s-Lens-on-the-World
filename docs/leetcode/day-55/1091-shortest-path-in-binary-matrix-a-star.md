@@ -15,85 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    See the Python implementation and detailed notes below.
-
-## Python solution
-
-```python
-import heapq
-
-class Solution:
-    def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
-        self.l = len(grid)
-
-        if grid[0][0] or grid[self.l - 1][self.l - 1]:
-            return -1
-
-        moves = [
-            (-1, 0),
-            (1, 0),
-            (1, 1),
-            (-1, -1),
-            (0, 1),
-            (0, -1),
-            (1, -1),
-            (-1, 1)
-        ]
-
-        minHeap = [
-            (1 + self.dist((0, 0)), 1, (0, 0))
-        ]
-
-        minDist = [
-            [float('inf')] * self.l
-            for _ in range(self.l)
-        ]
-        minDist[0][0] = 1
-
-        while minHeap:
-            curDist, steps, curNode = heapq.heappop(minHeap)
-
-            if steps > minDist[curNode[0]][curNode[1]]:
-                continue
-
-            if curNode == (self.l - 1, self.l - 1):
-                return steps
-
-            for move in moves:
-                nextNode = (
-                    curNode[0] + move[0],
-                    curNode[1] + move[1]
-                )
-
-                if (
-                    0 <= nextNode[0] < self.l
-                    and 0 <= nextNode[1] < self.l
-                    and not grid[nextNode[0]][nextNode[1]]
-                ):
-                    newSteps = steps + 1
-
-                    if newSteps < minDist[nextNode[0]][nextNode[1]]:
-                        minDist[nextNode[0]][nextNode[1]] = newSteps
-
-                        newLen = newSteps + self.dist(nextNode)
-
-                        heapq.heappush(
-                            minHeap,
-                            (newLen, newSteps, nextNode)
-                        )
-
-        return -1
-
-    def dist(self, point):
-        return max(
-            abs(self.l - 1 - point[0]),
-            abs(self.l - 1 - point[1])
-        )
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        See the Python implementation and detailed notes below.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -976,6 +902,80 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 3, 2026 |
+
+## Python solution
+
+```python
+import heapq
+
+class Solution:
+    def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
+        self.l = len(grid)
+
+        if grid[0][0] or grid[self.l - 1][self.l - 1]:
+            return -1
+
+        moves = [
+            (-1, 0),
+            (1, 0),
+            (1, 1),
+            (-1, -1),
+            (0, 1),
+            (0, -1),
+            (1, -1),
+            (-1, 1)
+        ]
+
+        minHeap = [
+            (1 + self.dist((0, 0)), 1, (0, 0))
+        ]
+
+        minDist = [
+            [float('inf')] * self.l
+            for _ in range(self.l)
+        ]
+        minDist[0][0] = 1
+
+        while minHeap:
+            curDist, steps, curNode = heapq.heappop(minHeap)
+
+            if steps > minDist[curNode[0]][curNode[1]]:
+                continue
+
+            if curNode == (self.l - 1, self.l - 1):
+                return steps
+
+            for move in moves:
+                nextNode = (
+                    curNode[0] + move[0],
+                    curNode[1] + move[1]
+                )
+
+                if (
+                    0 <= nextNode[0] < self.l
+                    and 0 <= nextNode[1] < self.l
+                    and not grid[nextNode[0]][nextNode[1]]
+                ):
+                    newSteps = steps + 1
+
+                    if newSteps < minDist[nextNode[0]][nextNode[1]]:
+                        minDist[nextNode[0]][nextNode[1]] = newSteps
+
+                        newLen = newSteps + self.dist(nextNode)
+
+                        heapq.heappush(
+                            minHeap,
+                            (newLen, newSteps, nextNode)
+                        )
+
+        return -1
+
+    def dist(self, point):
+        return max(
+            abs(self.l - 1 - point[0]),
+            abs(self.l - 1 - point[1])
+        )
+```
 
 ---
 

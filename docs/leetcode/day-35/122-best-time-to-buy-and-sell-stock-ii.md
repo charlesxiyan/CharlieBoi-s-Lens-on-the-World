@@ -15,33 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Solution 1: DP
-
-    **Step 1**: Define DP array states
-
-## Python solution
-
-```python
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        # Initialize dp array and the states
-        l = len(prices)
-        if l == 0:
-          return 0
-        ##############################################
-        max = 0
-
-        for i in range(1, l):
-            daily_profit = prices[i] - prices[i - 1]
-            if daily_profit > 0:
-                max += daily_profit
-
-        return max
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Solution 1: DP
+
+        **Step 1**: Define DP array states
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -129,6 +109,26 @@ class Solution:
     | Mastery | ❚❚ |
     | The Latest Attempt | November 3, 2025 |
     | Feedback | Pay attention to multiple transaction is allowed but there has to be only one share at hand. |
+
+## Python solution
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # Initialize dp array and the states
+        l = len(prices)
+        if l == 0:
+          return 0
+        ##############################################
+        max = 0
+
+        for i in range(1, l):
+            daily_profit = prices[i] - prices[i - 1]
+            if daily_profit > 0:
+                max += daily_profit
+
+        return max
+```
 
 ---
 

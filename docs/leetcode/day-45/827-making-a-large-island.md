@@ -15,56 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    You are given an `n x n` binary grid where:
-
-    You may change **at most one `0` into `1`**.
-
-## Python solution
-
-```python
-class Solution:
-    def largestIsland(self, grid: List[List[int]]) -> int:
-        m = len(grid)
-        islands = {}
-        res = 0
-        island_id = 2
-
-        def dfs(i, j, island_id):
-            if i < 0 or i >= m or j < 0 or j >= m or grid[i][j] != 1:
-                return 0
-            grid[i][j] = island_id
-            return 1 + dfs(i - 1, j, island_id) + dfs(i + 1, j, island_id) + dfs(i, j - 1, island_id) + dfs(i, j + 1, island_id)
-
-        for i in range(m):
-            for j in range(m):
-                if grid[i][j] == 1:
-                    area = dfs(i, j, island_id)
-                    islands[island_id] = area
-                    res = max(res, area)
-                    island_id += 1
-
-        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-
-        for i in range(m):
-            for j in range(m):
-                if grid[i][j] == 0:
-                    neighbors = set()
-                    temp_area = 1
-                    for p, q in directions:
-                        if 0 <= i + p < m and 0 <= j + q < m and grid[i + p][j + q] > 1:
-                            neighbors.add(grid[i + p][j + q])
-
-                    for neighbor in neighbors:
-                        temp_area += islands[neighbor]
-
-                    res = max(res, temp_area)
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        You are given an `n x n` binary grid where:
+
+        You may change **at most one `0` into `1`**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -510,6 +467,49 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 19, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def largestIsland(self, grid: List[List[int]]) -> int:
+        m = len(grid)
+        islands = {}
+        res = 0
+        island_id = 2
+
+        def dfs(i, j, island_id):
+            if i < 0 or i >= m or j < 0 or j >= m or grid[i][j] != 1:
+                return 0
+            grid[i][j] = island_id
+            return 1 + dfs(i - 1, j, island_id) + dfs(i + 1, j, island_id) + dfs(i, j - 1, island_id) + dfs(i, j + 1, island_id)
+
+        for i in range(m):
+            for j in range(m):
+                if grid[i][j] == 1:
+                    area = dfs(i, j, island_id)
+                    islands[island_id] = area
+                    res = max(res, area)
+                    island_id += 1
+
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+        for i in range(m):
+            for j in range(m):
+                if grid[i][j] == 0:
+                    neighbors = set()
+                    temp_area = 1
+                    for p, q in directions:
+                        if 0 <= i + p < m and 0 <= j + q < m and grid[i + p][j + q] > 1:
+                            neighbors.add(grid[i + p][j + q])
+
+                    for neighbor in neighbors:
+                        temp_area += islands[neighbor]
+
+                    res = max(res, temp_area)
+
+        return res
+```
 
 ---
 

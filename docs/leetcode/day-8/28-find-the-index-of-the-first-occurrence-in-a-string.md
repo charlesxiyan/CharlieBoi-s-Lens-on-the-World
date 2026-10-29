@@ -17,12 +17,44 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        **Problem Title: Implement strStr()**
+
+        **Description:**
+        Implement the `strStr()` function.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     **Problem Title: Implement strStr()**
 
     **Description:**
     Implement the `strStr()` function.
+
+    Given two strings, `haystack` and `needle`, find the first occurrence of the `needle` string in the `haystack` string (starting from index 0). If `needle` is not part of `haystack`, return `-1`.
+
+    **Example 1:**
+
+    - **Input**: `haystack = "hello"`, `needle = "ll"`
+    - **Output**: `2`
+
+    **Example 2:**
+
+    - **Input**: `haystack = "aaaaa"`, `needle = "bba"`
+    - **Output**: `-1`
+
+    **Clarification:**
+    What should we return when `needle` is an empty string? This is a great question to ask during an interview. For the purpose of this problem, we will return `0` when `needle` is an empty string. This is consistent with C's `strstr()` and Java's `indexOf()`.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 7, 2026 |
 
 ## Python solution
 
@@ -67,38 +99,6 @@ class Solution:
 
 						next[i] = j
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    **Problem Title: Implement strStr()**
-
-    **Description:**
-    Implement the `strStr()` function.
-
-    Given two strings, `haystack` and `needle`, find the first occurrence of the `needle` string in the `haystack` string (starting from index 0). If `needle` is not part of `haystack`, return `-1`.
-
-    **Example 1:**
-
-    - **Input**: `haystack = "hello"`, `needle = "ll"`
-    - **Output**: `2`
-
-    **Example 2:**
-
-    - **Input**: `haystack = "aaaaa"`, `needle = "bba"`
-    - **Output**: `-1`
-
-    **Clarification:**
-    What should we return when `needle` is an empty string? This is a great question to ask during an interview. For the purpose of this problem, we will return `0` when `needle` is an empty string. This is consistent with C's `strstr()` and Java's `indexOf()`.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 7, 2026 |
 
 ---
 

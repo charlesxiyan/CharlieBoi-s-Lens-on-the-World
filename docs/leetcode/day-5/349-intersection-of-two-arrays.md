@@ -15,9 +15,26 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Create two sets of distinctive numbers in nums1 and nums2 respectively. Initialize the result list.
+    !!! tip "Core idea"
+
+        Create two sets of distinctive numbers in nums1 and nums2 respectively. Initialize the result list.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    1. Create two sets of distinctive numbers in nums1 and nums2 respectively.
+    2. Initialize the result list.
+    3. Iterate one array and check if the current element is in the set created by nums2, meanwhile check if the element is in the result list (no duplicate).
+    4. Since the result is initialized in the form of a list, we need to check duplicate values. If we initialize the result in the form of a set, we do not need to worry about duplication.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 5, 2026 |
 
 ## Python solution
 
@@ -48,23 +65,6 @@ class Solution:
 
         return list(res)
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    1. Create two sets of distinctive numbers in nums1 and nums2 respectively.
-    2. Initialize the result list.
-    3. Iterate one array and check if the current element is in the set created by nums2, meanwhile check if the element is in the result list (no duplicate).
-    4. Since the result is initialized in the form of a list, we need to check duplicate values. If we initialize the result in the form of a set, we do not need to worry about duplication.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 5, 2026 |
 
 ---
 

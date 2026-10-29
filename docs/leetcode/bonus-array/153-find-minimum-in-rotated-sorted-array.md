@@ -15,29 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    You are given a sorted array of unique elements that has been rotated between `1` and `n` times.
-
-## Python solution
-
-```python
-class Solution:
-    def findMin(self, nums: List[int]) -> int:
-        left, right = 0, len(nums) - 1
-
-        while left < right:
-            mid = (left + right) // 2
-
-            if nums[mid] > nums[right]:
-                left = mid + 1
-            else:
-                right = mid
-
-        return nums[left]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        You are given a sorted array of unique elements that has been rotated between `1` and `n` times.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -550,6 +532,24 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 9, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        left, right = 0, len(nums) - 1
+
+        while left < right:
+            mid = (left + right) // 2
+
+            if nums[mid] > nums[right]:
+                left = mid + 1
+            else:
+                right = mid
+
+        return nums[left]
+```
 
 ---
 

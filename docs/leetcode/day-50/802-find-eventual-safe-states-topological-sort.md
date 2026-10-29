@@ -15,51 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Use **Reverse Graph + Kahn's Algorithm**.
-
-    A node is an **eventual safe node** if every possible path starting from it eventually reaches a terminal node and never enters a cycle.
-
-## Python solution
-
-```python
-from collections import deque
-
-class Solution:
-    def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
-        l = len(graph)
-        revGraph = [[] for _ in range(l)]
-        outdegree = [0] * l
-
-        for i in range(l):
-            outdegree[i] = len(graph[i])
-
-            for nextNode in graph[i]:
-                revGraph[nextNode].append(i)
-
-        queue = deque()
-
-        for i in range(l):
-            if outdegree[i] == 0:
-                queue.append(i)
-
-        res = []
-
-        while queue:
-            node = queue.popleft()
-            res.append(node)
-
-            for preNode in revGraph[node]:
-                outdegree[preNode] -= 1
-
-                if outdegree[preNode] == 0:
-                    queue.append(preNode)
-
-        return sorted(res)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Use **Reverse Graph + Kahn's Algorithm**.
+
+        A node is an **eventual safe node** if every possible path starting from it eventually reaches a terminal node and never enters a cycle.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -322,6 +284,44 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 27, 2026 |
+
+## Python solution
+
+```python
+from collections import deque
+
+class Solution:
+    def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
+        l = len(graph)
+        revGraph = [[] for _ in range(l)]
+        outdegree = [0] * l
+
+        for i in range(l):
+            outdegree[i] = len(graph[i])
+
+            for nextNode in graph[i]:
+                revGraph[nextNode].append(i)
+
+        queue = deque()
+
+        for i in range(l):
+            if outdegree[i] == 0:
+                queue.append(i)
+
+        res = []
+
+        while queue:
+            node = queue.popleft()
+            res.append(node)
+
+            for preNode in revGraph[node]:
+                outdegree[preNode] -= 1
+
+                if outdegree[preNode] == 0:
+                    queue.append(preNode)
+
+        return sorted(res)
+```
 
 ---
 

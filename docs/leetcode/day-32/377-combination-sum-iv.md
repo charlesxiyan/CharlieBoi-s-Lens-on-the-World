@@ -15,28 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Simialr to [518. Coin Change II](518-coin-change-ii.md). However, it should be noted that the iteration order in this solution is fixed, i.e.
-
-## Python solution
-
-```python
-class Solution:
-    def combinationSum4(self, nums: List[int], target: int) -> int:
-        n = len(nums)
-        dp = [0] * (target + 1)
-        dp[0] = 1
-
-        for i in range(1, target + 1):
-            for j in range(n):
-                if i - nums[j] >= 0:
-                    dp[i] += dp[i - nums[j]]
-
-        return dp[-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Simialr to [518. Coin Change II](518-coin-change-ii.md). However, it should be noted that the iteration order in this solution is fixed, i.e.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -55,6 +38,23 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | February 6, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def combinationSum4(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        dp = [0] * (target + 1)
+        dp[0] = 1
+
+        for i in range(1, target + 1):
+            for j in range(n):
+                if i - nums[j] >= 0:
+                    dp[i] += dp[i - nums[j]]
+
+        return dp[-1]
+```
 
 ---
 

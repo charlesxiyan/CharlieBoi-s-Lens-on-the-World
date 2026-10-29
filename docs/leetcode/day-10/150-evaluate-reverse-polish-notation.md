@@ -15,9 +15,27 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    The operator always comes when the stack has enough numbers to calculate. Iterate the whole list, append the element to the stack if it is a digit character; else, pop two elements out and complete the calculation.
+    !!! tip "Core idea"
+
+        The operator always comes when the stack has enough numbers to calculate. Iterate the whole list, append the element to the stack if it is a digit character; else, pop two elements out and complete the calculation.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. The operator always comes when the stack has enough numbers to calculate.
+    2. Iterate the whole list, append the element to the stack if it is a digit character; else, pop two elements out and complete the calculation.
+    3. For the division, use int(a / b) to make sure the result is the integer part.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 9, 2026 |
 
 ## Python solution
 
@@ -48,24 +66,6 @@ class Solution:
 
         return stack.pop()
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. The operator always comes when the stack has enough numbers to calculate.
-    2. Iterate the whole list, append the element to the stack if it is a digit character; else, pop two elements out and complete the calculation.
-    3. For the division, use int(a / b) to make sure the result is the integer part.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 9, 2026 |
 
 ---
 

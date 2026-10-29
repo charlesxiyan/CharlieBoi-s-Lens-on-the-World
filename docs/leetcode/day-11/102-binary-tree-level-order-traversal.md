@@ -15,47 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Solution: length
-
-    To retrieve nodes in the binary tree, we need to use deque. Fill the root node in the deque.
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-from collections import deque
-
-class Solution:
-    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        if not root:
-            return []
-
-        result = []
-
-        def traverse(node, i):
-            if not node:
-                return
-
-            if len(result) == i:
-                result.append([])
-
-            result[i].append(node.val)
-            traverse(node.left, i + 1)
-            traverse(node.right, i + 1)
-
-        traverse(root, 0)
-
-        return result
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Solution: length
+
+        To retrieve nodes in the binary tree, we need to use deque. Fill the root node in the deque.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -119,6 +85,40 @@ class Solution:
     | Mastery | ❚ |
     | The Latest Attempt | January 12, 2026 |
     | Feedback | Strongly Recommended for Multiple Attempts! |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+from collections import deque
+
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return []
+
+        result = []
+
+        def traverse(node, i):
+            if not node:
+                return
+
+            if len(result) == i:
+                result.append([])
+
+            result[i].append(node.val)
+            traverse(node.left, i + 1)
+            traverse(node.right, i + 1)
+
+        traverse(root, 0)
+
+        return result
+```
 
 ---
 

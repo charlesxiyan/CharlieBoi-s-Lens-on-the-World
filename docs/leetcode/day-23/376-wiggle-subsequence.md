@@ -15,34 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    If the input has only length 1, then return 1 by default. Consider cases where the current number is equal to the previous number. This could happen in the halfway of going upwards/downwards, and could also happen between a going upwards and going downwards. For example.
-
-## Python solution
-
-```python
-class Solution:
-    def wiggleMaxLength(self, nums: List[int]) -> int:
-        n = len(nums)
-
-        if n == 1:
-            return n
-
-        prediff = 0
-        result = 1
-
-        for i in range(n - 1):
-            curdiff = nums[i + 1] - nums[i]
-
-            if (prediff >= 0 and curdiff < 0) or (prediff <= 0  and curdiff > 0):
-                result += 1
-                prediff = curdiff
-
-        return result
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        If the input has only length 1, then return 1 by default. Consider cases where the current number is equal to the previous number. This could happen in the halfway of going upwards/downwards, and could also happen between a going upwards and going downwards. For example.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -68,6 +45,29 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 26, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def wiggleMaxLength(self, nums: List[int]) -> int:
+        n = len(nums)
+
+        if n == 1:
+            return n
+
+        prediff = 0
+        result = 1
+
+        for i in range(n - 1):
+            curdiff = nums[i + 1] - nums[i]
+
+            if (prediff >= 0 and curdiff < 0) or (prediff <= 0  and curdiff > 0):
+                result += 1
+                prediff = curdiff
+
+        return result
+```
 
 ---
 

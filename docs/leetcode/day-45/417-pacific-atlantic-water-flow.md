@@ -15,45 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    We need to find all cells where water can flow to **both the Pacific Ocean and the Atlantic Ocean**.
-
-## Python solution
-
-```python
-class Solution:
-    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
-        m, n = len(heights), len(heights[0])
-        res = []
-
-        pacific = [[False] * n for _ in range(m)]
-        atlantic = [[False] * n for _ in range(m)]
-
-        def dfs(i, j, ocean):
-            ocean[i][j] = True
-            directions = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
-            for p, q in directions:
-                if 0 <= p < m and 0 <= q < n and not ocean[p][q] and heights[p][q] >= heights[i][j]:
-                    dfs(p, q, ocean)
-
-        for i in range(m):
-            dfs(i, 0, pacific)
-            dfs(i, n - 1, atlantic)
-
-        for j in range(n):
-            dfs(0, j, pacific)
-            dfs(m - 1, j, atlantic)
-
-        for i in range(m):
-            for j in range(n):
-                if pacific[i][j] and atlantic[i][j]:
-                    res.append([i, j])
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        We need to find all cells where water can flow to **both the Pacific Ocean and the Atlantic Ocean**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -421,6 +387,40 @@ class Solution:
     | Attempts | 2 |
     | Mastery | ❚❚ |
     | The Latest Attempt | August 19, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        m, n = len(heights), len(heights[0])
+        res = []
+
+        pacific = [[False] * n for _ in range(m)]
+        atlantic = [[False] * n for _ in range(m)]
+
+        def dfs(i, j, ocean):
+            ocean[i][j] = True
+            directions = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
+            for p, q in directions:
+                if 0 <= p < m and 0 <= q < n and not ocean[p][q] and heights[p][q] >= heights[i][j]:
+                    dfs(p, q, ocean)
+
+        for i in range(m):
+            dfs(i, 0, pacific)
+            dfs(i, n - 1, atlantic)
+
+        for j in range(n):
+            dfs(0, j, pacific)
+            dfs(m - 1, j, atlantic)
+
+        for i in range(m):
+            for j in range(n):
+                if pacific[i][j] and atlantic[i][j]:
+                    res.append([i, j])
+
+        return res
+```
 
 ---
 

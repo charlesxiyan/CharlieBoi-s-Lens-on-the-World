@@ -15,43 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Use **Dijkstra's Algorithm** to find the shortest distance from the starting node `k` to every other node.
-
-## Python solution
-
-```python
-# Deque
-class Solution:
-    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        graph = defaultdict(list)
-        for u,v,w in times:
-            graph[u].append((v,w))
-
-        distance = [inf] * (n+1)
-        distance[k] = 0
-        # visited = [k]
-        in_queue = [False] * (n+1)
-        in_queue[k] = True
-
-
-        queue = deque()
-        queue.append(k)
-        while queue:
-            cur = queue.popleft()
-            in_queue[cur] = False
-            for nxt,w in graph[cur]:
-                if distance[cur] + w < distance[nxt]:
-                    distance[nxt] = distance[cur] + w
-                    if not in_queue[nxt]:
-                        queue.append(nxt)
-                        in_queue[nxt] = True
-        ans = max(distance[1:])
-        return ans if ans < inf else -1
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Use **Dijkstra's Algorithm** to find the shortest distance from the starting node `k` to every other node.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -718,6 +686,38 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 28, 2026 |
+
+## Python solution
+
+```python
+# Deque
+class Solution:
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        graph = defaultdict(list)
+        for u,v,w in times:
+            graph[u].append((v,w))
+
+        distance = [inf] * (n+1)
+        distance[k] = 0
+        # visited = [k]
+        in_queue = [False] * (n+1)
+        in_queue[k] = True
+
+
+        queue = deque()
+        queue.append(k)
+        while queue:
+            cur = queue.popleft()
+            in_queue[cur] = False
+            for nxt,w in graph[cur]:
+                if distance[cur] + w < distance[nxt]:
+                    distance[nxt] = distance[cur] + w
+                    if not in_queue[nxt]:
+                        queue.append(nxt)
+                        in_queue[nxt] = True
+        ans = max(distance[1:])
+        return ans if ans < inf else -1
+```
 
 ---
 

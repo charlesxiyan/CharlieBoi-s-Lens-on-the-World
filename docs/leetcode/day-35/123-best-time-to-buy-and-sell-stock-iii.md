@@ -15,37 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Solution: DP
-
-    **Step 1**: Define DP array states
-
-## Python solution
-
-```python
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-      l = len(prices)
-      if l == 0:
-         return 0
-
-      # Initiate states
-      dp = [[0] * 5 for _ in range(l)]
-      dp[0] = [0, -prices[0], 0, -prices[0], 0]
-
-      # Iteration sequentially
-      for i in range(1, l):
-          dp[i][0] = dp[i - 1][0]
-          dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i])
-          dp[i][2] = max(dp[i - 1][2], dp[i - 1][1] + prices[i])
-          dp[i][3] = max(dp[i - 1][3], dp[i - 1][2] - prices[i])
-          dp[i][4] = max(dp[i - 1][4], dp[i - 1][3] + prices[i])
-
-      return dp[-1][4]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Solution: DP
+
+        **Step 1**: Define DP array states
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -172,6 +148,30 @@ class Solution:
     | Mastery | ❚❚ |
     | The Latest Attempt | November 3, 2025 |
     | Feedback | Basically an extension of 121 and 122, but need more attention to understanding the chain effect of 1st buy, 1st sell, 2nd buy, and 2nd sell. |
+
+## Python solution
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+      l = len(prices)
+      if l == 0:
+         return 0
+
+      # Initiate states
+      dp = [[0] * 5 for _ in range(l)]
+      dp[0] = [0, -prices[0], 0, -prices[0], 0]
+
+      # Iteration sequentially
+      for i in range(1, l):
+          dp[i][0] = dp[i - 1][0]
+          dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i])
+          dp[i][2] = max(dp[i - 1][2], dp[i - 1][1] + prices[i])
+          dp[i][3] = max(dp[i - 1][3], dp[i - 1][2] - prices[i])
+          dp[i][4] = max(dp[i - 1][4], dp[i - 1][3] + prices[i])
+
+      return dp[-1][4]
+```
 
 ---
 

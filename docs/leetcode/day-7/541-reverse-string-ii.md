@@ -15,9 +15,31 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    This solution is based on the solution to [344. Reverse String](344-reverse-string.md) We need to  convert the string into a list of characters in the string.
+    !!! tip "Core idea"
+
+        This solution is based on the solution to [344. Reverse String](344-reverse-string.md) We need to  convert the string into a list of characters in the string.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. This solution is based on the solution to [344. Reverse String](344-reverse-string.md)
+    2. We need to  convert the string into a list of characters in the string.
+    3. Iterate the whole list every 2*k step and only operate reversing on first k elements.
+
+
+
+    ![image.png](../assets/day-7-string-i/541-reverse-string-ii/image.png)
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 6, 2026 |
 
 ## Python solution
 
@@ -43,28 +65,6 @@ class Solution:
 
         return s
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. This solution is based on the solution to [344. Reverse String](344-reverse-string.md)
-    2. We need to  convert the string into a list of characters in the string.
-    3. Iterate the whole list every 2*k step and only operate reversing on first k elements.
-
-
-
-    ![image.png](../assets/day-7-string-i/541-reverse-string-ii/image.png)
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 6, 2026 |
 
 ---
 

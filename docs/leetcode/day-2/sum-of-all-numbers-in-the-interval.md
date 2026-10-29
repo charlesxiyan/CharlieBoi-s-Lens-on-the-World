@@ -25,9 +25,21 @@ hide:
 
     The first row is the length of the integer array, n. The following n rows are elements of the array. Then, the interval start and end indices in the array are given. For example, (0, 1) → [1, 2] → 3; (1, 3) → [2, 3, 4] → 9.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Given an array of integers, calculate the sum of numbers in the input interval.
+    !!! tip "Core idea"
+
+        Given an array of integers, calculate the sum of numbers in the input interval.
+
+    The problem statement is available in the **Problem** block above.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 4 |
+    | Mastery | ❚❚❚❚ |
+    | The Latest Attempt | January 3, 2026 |
 
 ## Python solution
 
@@ -71,18 +83,6 @@ def IntervalSum():
     for result in results:
         print(result)
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    The problem statement is available in the **Problem** block above.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 4 |
-    | Mastery | ❚❚❚❚ |
-    | The Latest Attempt | January 3, 2026 |
 
 ---
 

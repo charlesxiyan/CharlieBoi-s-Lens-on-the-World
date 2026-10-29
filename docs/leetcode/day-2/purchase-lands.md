@@ -55,49 +55,17 @@ hide:
 
     A vertical partition.
 
-!!! tip "Core idea"
-
-    Compute row and column totals, then scan each valid horizontal and vertical cut. If one side sums to `s` and the total is `T`, the difference is `abs(T - 2 * s)`.
-
-## Python solution
-
-```python
-import sys
-
-
-def purchase_lands(n, m, values):
-    rows = [0] * n
-    cols = [0] * m
-    for i in range(n):
-        for j in range(m):
-            value = values[i * m + j]
-            rows[i] += value
-            cols[j] += value
-
-    total = sum(rows)
-    best = float("inf")
-    for totals in (rows, cols):
-        prefix = 0
-        for value in totals[:-1]:  # Both regions must be nonempty.
-            prefix += value
-            best = min(best, abs(total - 2 * prefix))
-    return best
-
-
-if __name__ == "__main__":
-    data = list(map(int, sys.stdin.read().split()))
-    if data:
-        n, m = data[:2]
-        print(purchase_lands(n, m, data[2:]))
-```
-
-!!! note "Import correction"
-
-    The main implementation repairs an incomplete source draft: input parsing, missing initialization, and cuts that would leave an empty region. The original draft is retained below.
-
 ??? note "Explanation, examples & other approaches"
 
+    !!! tip "Core idea"
+
+        Compute row and column totals, then scan each valid horizontal and vertical cut. If one side sums to `s` and the total is `T`, the difference is `abs(T - 2 * s)`.
+
     The problem statement is available in the **Problem** block above.
+
+    !!! note "Import correction"
+
+        The main implementation repairs an incomplete source draft: input parsing, missing initialization, and cuts that would leave an empty region. The original draft is retained below.
 
 ??? note "Original implementation draft"
 
@@ -154,6 +122,38 @@ if __name__ == "__main__":
     | Attempts | 3 |
     | Mastery | ❚❚❚ |
     | The Latest Attempt | January 3, 2026 |
+
+## Python solution
+
+```python
+import sys
+
+
+def purchase_lands(n, m, values):
+    rows = [0] * n
+    cols = [0] * m
+    for i in range(n):
+        for j in range(m):
+            value = values[i * m + j]
+            rows[i] += value
+            cols[j] += value
+
+    total = sum(rows)
+    best = float("inf")
+    for totals in (rows, cols):
+        prefix = 0
+        for value in totals[:-1]:  # Both regions must be nonempty.
+            prefix += value
+            best = min(best, abs(total - 2 * prefix))
+    return best
+
+
+if __name__ == "__main__":
+    data = list(map(int, sys.stdin.read().split()))
+    if data:
+        n, m = data[:2]
+        print(purchase_lands(n, m, data[2:]))
+```
 
 ---
 

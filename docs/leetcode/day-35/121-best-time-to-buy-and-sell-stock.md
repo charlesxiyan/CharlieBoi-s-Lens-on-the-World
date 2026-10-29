@@ -15,25 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Solution 1: DP
-
-    **Step 1**: Define DP array states
-
-## Python solution
-
-```python
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        cost, profit = float('+inf'), 0
-        for price in prices:
-            cost = min(cost, price)
-            profit = max(profit, price - cost)
-        return profit
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Solution 1: DP
+
+        **Step 1**: Define DP array states
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -115,6 +103,18 @@ class Solution:
     | Mastery | ❚❚ |
     | The Latest Attempt | November 3, 2025 |
     | Feedback | Initialization of dp array (2-dimensional) in Python |
+
+## Python solution
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        cost, profit = float('+inf'), 0
+        for price in prices:
+            cost = min(cost, price)
+            profit = max(profit, price - cost)
+        return profit
+```
 
 ---
 

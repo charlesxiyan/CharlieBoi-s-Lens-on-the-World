@@ -9,8 +9,6 @@ hide:
 
 **Medium · Python · Graph · BFS & HashMap**
 
-## 1. Problem Description
-
 ??? question "Problem"
 
     [Read the original problem on LeetCode](https://leetcode.com/problems/clone-graph/description/).
@@ -22,109 +20,118 @@ hide:
     No cloned neighbor reference should point into the original graph.
     For an empty graph, return `None`.
 
-## 2. Approach and Core Idea
+??? note "Explanation, examples & other approaches"
 
-!!! tip "Clone each node once; copy every neighbor relationship"
-    Use BFS to visit original nodes and a dictionary `copies` to map each original
-    node object to its one cloned node object.
+    ## Approach and Core Idea
 
-The dictionary solves two problems at once:
+    !!! tip "Clone each node once; copy every neighbor relationship"
+        Use BFS to visit original nodes and a dictionary `copies` to map each original
+        node object to its one cloned node object.
 
-1. **Identity:** it tells us which clone corresponds to a given original node.
-2. **Discovery:** a key already present means we have created that node's clone
-   and do not need to enqueue the original again.
+    The dictionary solves two problems at once:
 
-A cycle makes naive repeated copying fail: following `A → B → A` would create
-new copies forever. Reusing `copies[A]` closes the cycle in the cloned graph.
+    1. **Identity:** it tells us which clone corresponds to a given original node.
+    2. **Discovery:** a key already present means we have created that node's clone
+       and do not need to enqueue the original again.
 
-**Why it works:** every discovered original node receives exactly one clone.
-When processing a node, we append the corresponding clone of every neighbor.
-Thus all reachable nodes and their adjacency lists are reproduced without
-sharing any original nodes.
+    A cycle makes naive repeated copying fail: following `A → B → A` would create
+    new copies forever. Reusing `copies[A]` closes the cycle in the cloned graph.
 
-## 3. Algorithm Steps
+    **Why it works:** every discovered original node receives exactly one clone.
+    When processing a node, we append the corresponding clone of every neighbor.
+    Thus all reachable nodes and their adjacency lists are reproduced without
+    sharing any original nodes.
 
-1. If the input node is `None`, return `None`.
-2. Create its clone, record the mapping, and put the original node into a `deque`.
-3. Pop an original node from the queue.
-4. For each original neighbor:
-   - If it has no clone yet, create one, record it, and enqueue the original neighbor.
-   - **Always** append the neighbor's clone to the current node's cloned neighbor list.
-5. Repeat until the queue is empty, then return the clone of the input node.
+    ## Algorithm Steps
 
-## 4. Hand Simulation
+    1. If the input node is `None`, return `None`.
+    2. Create its clone, record the mapping, and put the original node into a `deque`.
+    3. Pop an original node from the queue.
+    4. For each original neighbor:
+       - If it has no clone yet, create one, record it, and enqueue the original neighbor.
+       - **Always** append the neighbor's clone to the current node's cloned neighbor list.
+    5. Repeat until the queue is empty, then return the clone of the input node.
 
-Use a triangle, which contains a cycle. Letters name node identities:
+    ## Hand Simulation
 
-```text
-A(1) ----- B(2)
-  \       /
-    C(3)
+    Use a triangle, which contains a cycle. Letters name node identities:
 
-A.neighbors = [B, C]
-B.neighbors = [A, C]
-C.neighbors = [A, B]
-```
+    ```text
+    A(1) ----- B(2)
+      \       /
+        C(3)
 
-Let `A'`, `B'`, and `C'` denote the new nodes.
+    A.neighbors = [B, C]
+    B.neighbors = [A, C]
+    C.neighbors = [A, B]
+    ```
 
-| Step | Queue after processing | New clones | Connections appended |
-| --- | --- | --- | --- |
-| Initialize | `[A]` | `A'` | None yet |
-| Process A | `[B, C]` | `B'`, `C'` | `A' → B'`, `A' → C'` |
-| Process B | `[C]` | None | `B' → A'`, `B' → C'` |
-| Process C | `[]` | None | `C' → A'`, `C' → B'` |
+    Let `A'`, `B'`, and `C'` denote the new nodes.
 
-When processing B, both A and C are already in `copies`. We do not enqueue them
-again, but their edges must still be appended. The result has the same triangle
-structure, using three entirely new objects.
+    | Step | Queue after processing | New clones | Connections appended |
+    | --- | --- | --- | --- |
+    | Initialize | `[A]` | `A'` | None yet |
+    | Process A | `[B, C]` | `B'`, `C'` | `A' → B'`, `A' → C'` |
+    | Process B | `[C]` | None | `B' → A'`, `B' → C'` |
+    | Process C | `[]` | None | `C' → A'`, `C' → B'` |
 
-## 5. Important Implementation Details
+    When processing B, both A and C are already in `copies`. We do not enqueue them
+    again, but their edges must still be appended. The result has the same triangle
+    structure, using three entirely new objects.
 
-### A visited neighbor still needs an edge
+    ## Important Implementation Details
 
-These two operations have different conditions:
+    ### A visited neighbor still needs an edge
 
-```python
-if neighbor not in copies:
-    copies[neighbor] = Node(neighbor.val)
-    queue.append(neighbor)
+    These two operations have different conditions:
 
-copies[current].neighbors.append(copies[neighbor])
-```
+    ```python
+    if neighbor not in copies:
+        copies[neighbor] = Node(neighbor.val)
+        queue.append(neighbor)
 
-The `if` controls **node creation and queueing**, not edge creation. Moving the
-append inside the `if` would skip B's connection back to A and B's connection to
-C in the example. Discovering a node once is enough; copying only discovery edges
-would lose part of the graph.
+    copies[current].neighbors.append(copies[neighbor])
+    ```
 
-### Use original node objects as dictionary keys
+    The `if` controls **node creation and queueing**, not edge creation. Moving the
+    append inside the `if` would skip B's connection back to A and B's connection to
+    C in the example. Discovering a node once is enough; copying only discovery edges
+    would lose part of the graph.
 
-The mapping describes object identity, not just values. LeetCode gives unique
-values for this problem, but object keys directly express the cloning relationship
-and also work when applying this pattern to graphs with repeated values.
+    ### Use original node objects as dictionary keys
 
-The supplied/default `Node` class is hashable by identity. If adapting this code
-to a custom class that overrides equality, preserve compatible identity hashing.
+    The mapping describes object identity, not just values. LeetCode gives unique
+    values for this problem, but object keys directly express the cloning relationship
+    and also work when applying this pattern to graphs with repeated values.
 
-### Give each clone its own neighbor list
+    The supplied/default `Node` class is hashable by identity. If adapting this code
+    to a custom class that overrides equality, preserve compatible identity hashing.
 
-Do not assign `clone.neighbors = original.neighbors`: that would share the old
-list and old nodes. The constructor below creates a fresh empty list per clone.
-`deque.popleft()` removes the next BFS item efficiently.
+    ### Give each clone its own neighbor list
 
-## 6. Time and Space Complexity
+    Do not assign `clone.neighbors = original.neighbors`: that would share the old
+    list and old nodes. The constructor below creates a fresh empty list per clone.
+    `deque.popleft()` removes the next BFS item efficiently.
 
-Let $V$ be the number of reachable nodes and $E$ the number of undirected edges.
-Each undirected edge appears in two neighbor lists, which only changes the constant.
+    ## Time and Space Complexity
 
-| Resource | Complexity | Reason |
-| --- | --- | --- |
-| Time | $O(V+E)$ | Each node is processed once and every adjacency entry is copied. |
-| Auxiliary space | $O(V)$ | The dictionary and queue store original/clone references. |
-| Output space | $O(V+E)$ | The new graph contains all cloned nodes and adjacency entries. |
+    Let $V$ be the number of reachable nodes and $E$ the number of undirected edges.
+    Each undirected edge appears in two neighbor lists, which only changes the constant.
 
-## 7. Complete Python Solution
+    | Resource | Complexity | Reason |
+    | --- | --- | --- |
+    | Time | $O(V+E)$ | Each node is processed once and every adjacency entry is copied. |
+    | Auxiliary space | $O(V)$ | The dictionary and queue store original/clone references. |
+    | Output space | $O(V+E)$ | The new graph contains all cloned nodes and adjacency entries. |
+
+    ## Key Takeaways
+
+    - A deep copy preserves relationships, not object identities.
+    - The original-to-clone dictionary prevents duplicate clones and endless cycles.
+    - Create each node once, but copy every adjacency entry.
+    - BFS controls traversal order; the dictionary preserves the graph's structure.
+
+## Python solution
 
 LeetCode already supplies `Node`; its definition is included here so the example
 can also be run locally.
@@ -160,13 +167,6 @@ class Solution:
 
         return copies[node]
 ```
-
-## 8. Key Takeaways
-
-- A deep copy preserves relationships, not object identities.
-- The original-to-clone dictionary prevents duplicate clones and endless cycles.
-- Create each node once, but copy every adjacency entry.
-- BFS controls traversal order; the dictionary preserves the graph's structure.
 
 ---
 

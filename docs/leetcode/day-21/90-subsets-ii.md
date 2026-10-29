@@ -15,13 +15,36 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Recall [40. Combination Sum II](../day-20/40-combination-sum-ii.md) and [78. Subsets](78-subsets.md) for the core ideas. The below condition
+    !!! tip "Core idea"
 
-    ```python
-    i > startIndex and nums[i] == nums[i - 1]:
-    ```
+        Recall [40. Combination Sum II](../day-20/40-combination-sum-ii.md) and [78. Subsets](78-subsets.md) for the core ideas. The below condition
+
+        ```python
+        i > startIndex and nums[i] == nums[i - 1]:
+        ```
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. Recall [40. Combination Sum II](../day-20/40-combination-sum-ii.md) and [78. Subsets](78-subsets.md) for the core ideas.
+    2. The below condition
+
+        ```python
+        i > startIndex and nums[i] == nums[i - 1]:
+        ```
+
+        ensures, within the for loop, duplicates are checked, for example, [1, 2, 2] with startIndex = 0, the current possible paths are [1, 2], [1, 2], if we do not consider the deeper recurrence with parsing i + 1 to startIndex.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 24, 2026 |
 
 ## Python solution
 
@@ -44,29 +67,6 @@ class Solution:
             self.backtrack(nums, i + 1, path, result)
             path.pop()
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. Recall [40. Combination Sum II](../day-20/40-combination-sum-ii.md) and [78. Subsets](78-subsets.md) for the core ideas.
-    2. The below condition
-
-        ```python
-        i > startIndex and nums[i] == nums[i - 1]:
-        ```
-
-        ensures, within the for loop, duplicates are checked, for example, [1, 2, 2] with startIndex = 0, the current possible paths are [1, 2], [1, 2], if we do not consider the deeper recurrence with parsing i + 1 to startIndex.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 24, 2026 |
 
 ---
 

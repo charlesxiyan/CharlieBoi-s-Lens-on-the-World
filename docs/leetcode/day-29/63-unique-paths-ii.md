@@ -15,49 +15,19 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Recall [62. Unique Paths](62-unique-paths.md) for the core idea. Then we need to deal with paths that connect the obstacles.
-
-    ```python
-    ### Boundary Example
-    obstacleGrid[0][1] = [0, 0, 1, 0, 0]
-    ### Initialization
-    grid[0][0] = 1
-    ### Boundary Values
-    grid[0][1] = grid[0][0] = 1
-
-## Python solution
-
-```python
-class Solution:
-    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
-        if obstacleGrid[0][0] == 1 or obstacleGrid[-1][-1] == 1:
-            return 0
-
-        m, n = len(obstacleGrid), len(obstacleGrid[0])
-        grid = [[0] * n for _ in range(m)]
-        grid[0][0] = 1
-
-        for i in range(1, m):
-            if obstacleGrid[i][0] == 0:
-                grid[i][0] = grid[i - 1][0]
-
-        for j in range(1, n):
-            if obstacleGrid[0][j] == 0:
-                grid[0][j] = grid[0][j - 1]
-
-        for i in range(1, m):
-            for j in range(1, n):
-                if obstacleGrid[i][j] == 1:
-                    continue
-
-                grid[i][j] = grid[i - 1][j] + grid[i][j - 1]
-
-        return grid[-1][-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recall [62. Unique Paths](62-unique-paths.md) for the core idea. Then we need to deal with paths that connect the obstacles.
+
+        ```python
+        ### Boundary Example
+        obstacleGrid[0][1] = [0, 0, 1, 0, 0]
+        ### Initialization
+        grid[0][0] = 1
+        ### Boundary Values
+        grid[0][1] = grid[0][0] = 1
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -95,6 +65,36 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | February 2, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+        if obstacleGrid[0][0] == 1 or obstacleGrid[-1][-1] == 1:
+            return 0
+
+        m, n = len(obstacleGrid), len(obstacleGrid[0])
+        grid = [[0] * n for _ in range(m)]
+        grid[0][0] = 1
+
+        for i in range(1, m):
+            if obstacleGrid[i][0] == 0:
+                grid[i][0] = grid[i - 1][0]
+
+        for j in range(1, n):
+            if obstacleGrid[0][j] == 0:
+                grid[0][j] = grid[0][j - 1]
+
+        for i in range(1, m):
+            for j in range(1, n):
+                if obstacleGrid[i][j] == 1:
+                    continue
+
+                grid[i][j] = grid[i - 1][j] + grid[i][j - 1]
+
+        return grid[-1][-1]
+```
 
 ---
 

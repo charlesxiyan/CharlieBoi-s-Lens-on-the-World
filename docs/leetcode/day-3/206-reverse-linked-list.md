@@ -15,11 +15,33 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Main logic:
+
+        Define two pointers: previous and current. Current points to the head and previous points to None.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     Main logic:
 
-    Define two pointers: previous and current. Current points to the head and previous points to None.
+    1. Define two pointers: previous and current.
+    2. Current points to the head and previous points to None.
+    3. Iterate the whole linked list:
+        1. define temp to save current.next, since we need current to move forward after making the current node point to the previous.
+        2. let [current.next](http://current.next) be previous (reversion is done)
+        3. let previous be current (move both previous and current)
+        4. let current be temp
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 3 |
+    | Mastery | ❚❚❚ |
+    | The Latest Attempt | January 4, 2026 |
 
 ## Python solution
 
@@ -41,28 +63,6 @@ class Solution:
 
         return previous
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Main logic:
-
-    1. Define two pointers: previous and current.
-    2. Current points to the head and previous points to None.
-    3. Iterate the whole linked list:
-        1. define temp to save current.next, since we need current to move forward after making the current node point to the previous.
-        2. let [current.next](http://current.next) be previous (reversion is done)
-        3. let previous be current (move both previous and current)
-        4. let current be temp
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 3 |
-    | Mastery | ❚❚❚ |
-    | The Latest Attempt | January 4, 2026 |
 
 ---
 

@@ -15,38 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given two strings `word1` and `word2`, return the **minimum number of deletions** required to make the two strings equal.
-
-    Unlike **LeetCode 115 (Distinct Subsequences)**, where only one string can delete characters, this problem allows **both strings** to delete characters.
-
-## Python solution
-
-```python
-class Solution:
-    def minDistance(self, word1: str, word2: str) -> int:
-        l1 = len(word1)
-        l2 = len(word2)
-
-        dp = [[0] * (1 + l2) for _ in range(1 + l1)]
-
-        for i in range(l1 + 1):
-            dp[i][0] = i
-        for j in range(l2 + 1):
-            dp[0][j] = j
-
-        for i in range(1, l1 + 1):
-            for j in range(1, l2 + 1):
-                if word1[i - 1] == word2[j - 1]:
-                    dp[i][j] = dp[i - 1][j - 1]
-                else:
-                    dp[i][j] = min(dp[i - 1][j - 1] + 2, dp[i - 1][j] + 1, dp[i][j - 1] + 1)
-
-        return dp[-1][-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given two strings `word1` and `word2`, return the **minimum number of deletions** required to make the two strings equal.
+
+        Unlike **LeetCode 115 (Distinct Subsequences)**, where only one string can delete characters, this problem allows **both strings** to delete characters.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -384,6 +359,31 @@ class Solution:
     | --- | --- |
     | Attempts | 1 |
     | Mastery | ❚ |
+
+## Python solution
+
+```python
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        l1 = len(word1)
+        l2 = len(word2)
+
+        dp = [[0] * (1 + l2) for _ in range(1 + l1)]
+
+        for i in range(l1 + 1):
+            dp[i][0] = i
+        for j in range(l2 + 1):
+            dp[0][j] = j
+
+        for i in range(1, l1 + 1):
+            for j in range(1, l2 + 1):
+                if word1[i - 1] == word2[j - 1]:
+                    dp[i][j] = dp[i - 1][j - 1]
+                else:
+                    dp[i][j] = min(dp[i - 1][j - 1] + 2, dp[i - 1][j] + 1, dp[i][j - 1] + 1)
+
+        return dp[-1][-1]
+```
 
 ---
 

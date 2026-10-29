@@ -15,39 +15,14 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given a binary matrix `grid`, where
-
-    - `1` represents land,
-    - `0` represents water,
-
-## Python solution
-
-```python
-class Solution:
-    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-        m, n = len(grid), len(grid[0])
-        res = 0
-
-        def dfs(i, j):
-            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == 0:
-                return 0
-
-            grid[i][j] = 0
-
-            return 1 + dfs(i - 1, j) + dfs(i + 1, j) + dfs(i, j - 1) + dfs(i, j + 1)
-
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == 1:
-                    area = dfs(i, j)
-                    res = max(res, area)
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given a binary matrix `grid`, where
+
+        - `1` represents land,
+        - `0` represents water,
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -403,6 +378,31 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 18, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        m, n = len(grid), len(grid[0])
+        res = 0
+
+        def dfs(i, j):
+            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == 0:
+                return 0
+
+            grid[i][j] = 0
+
+            return 1 + dfs(i - 1, j) + dfs(i + 1, j) + dfs(i, j - 1) + dfs(i, j + 1)
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    area = dfs(i, j)
+                    res = max(res, area)
+
+        return res
+```
 
 ---
 

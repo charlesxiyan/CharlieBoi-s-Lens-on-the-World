@@ -15,39 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Maintain a closed search interval. Compare the middle value with the target and discard the half that cannot contain it.
-
-## Python solution
-
-```python
-# Simplify
-class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        l = len(nums)
-
-        left, right, middle = 0, l - 1, (l - 1) // 2
-
-        while left <= right:
-            if nums[left] == target:
-                return left
-            elif nums[right] == target:
-                return right
-            elif nums[middle] == target:
-                return middle
-
-            if nums[middle] < target:
-                left = middle + 1
-            else:
-                right = middle - 1
-
-            middle = (left + right) // 2
-
-        return -1
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Maintain a closed search interval. Compare the middle value with the target and discard the half that cannot contain it.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -109,6 +81,34 @@ class Solution:
     | Mastery | ❚❚❚❚ |
     | The Latest Attempt | December 31, 2025 |
     | Feedback | 标准二分法搜索 |
+
+## Python solution
+
+```python
+# Simplify
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l = len(nums)
+
+        left, right, middle = 0, l - 1, (l - 1) // 2
+
+        while left <= right:
+            if nums[left] == target:
+                return left
+            elif nums[right] == target:
+                return right
+            elif nums[middle] == target:
+                return middle
+
+            if nums[middle] < target:
+                left = middle + 1
+            else:
+                right = middle - 1
+
+            middle = (left + right) // 2
+
+        return -1
+```
 
 ---
 

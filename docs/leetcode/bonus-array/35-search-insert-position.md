@@ -15,35 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Use **Binary Search**.
-
-    If `target` exists in the sorted array, return its index.
-
-## Python solution
-
-```python
-class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
-        left, right = 0, len(nums) - 1
-        mid = (left + right) // 2
-
-        while left <= right:
-            if nums[mid] == target:
-                return mid
-
-            if nums[mid] > target:
-                right = mid - 1
-            else:
-                left = mid + 1
-
-            mid = (left + right) // 2
-
-        return left
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Use **Binary Search**.
+
+        If `target` exists in the sorted array, return its index.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -306,6 +284,28 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 8, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        left, right = 0, len(nums) - 1
+        mid = (left + right) // 2
+
+        while left <= right:
+            if nums[mid] == target:
+                return mid
+
+            if nums[mid] > target:
+                right = mid - 1
+            else:
+                left = mid + 1
+
+            mid = (left + right) // 2
+
+        return left
+```
 
 ---
 

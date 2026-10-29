@@ -15,76 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem asks us to connect all points while minimizing the total connection cost.
-
-## Python solution
-
-```python
-from typing import List
-
-class UnionFind:
-    def __init__(self, size):
-        self.parent = list(range(size))
-
-    def find(self, node):
-        if node != self.parent[node]:
-            self.parent[node] = self.find(self.parent[node])
-        return self.parent[node]
-
-    def union(self, node1, node2):
-        root1 = self.find(node1)
-        root2 = self.find(node2)
-
-        # Different components:
-        # this edge can be safely added to the MST
-        if root1 != root2:
-            self.parent[root1] = root2
-            return True
-
-        # Same component:
-        # adding this edge would create a cycle
-        return False
-
-class Solution:
-    def minCostConnectPoints(self, points: List[List[int]]) -> int:
-        n = len(points)
-        edges = []
-
-        # Build all possible edges
-        for i in range(n):
-            for j in range(i + 1, n):
-                x1, y1 = points[i]
-                x2, y2 = points[j]
-
-                dist = abs(x1 - x2) + abs(y1 - y2)
-
-                edges.append((dist, i, j))
-
-        # Kruskal: process edges from smallest to largest
-        edges.sort()
-
-        uf = UnionFind(n)
-
-        res = 0
-        edgeCounter = 0
-
-        for dist, u, v in edges:
-            # Only select the edge if it connects
-            # two different components
-            if uf.union(u, v):
-                res += dist
-                edgeCounter += 1
-
-                # An MST with n nodes contains exactly n - 1 edges
-                if edgeCounter == n - 1:
-                    break
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem asks us to connect all points while minimizing the total connection cost.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -879,6 +814,71 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 25, 2026 |
+
+## Python solution
+
+```python
+from typing import List
+
+class UnionFind:
+    def __init__(self, size):
+        self.parent = list(range(size))
+
+    def find(self, node):
+        if node != self.parent[node]:
+            self.parent[node] = self.find(self.parent[node])
+        return self.parent[node]
+
+    def union(self, node1, node2):
+        root1 = self.find(node1)
+        root2 = self.find(node2)
+
+        # Different components:
+        # this edge can be safely added to the MST
+        if root1 != root2:
+            self.parent[root1] = root2
+            return True
+
+        # Same component:
+        # adding this edge would create a cycle
+        return False
+
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        n = len(points)
+        edges = []
+
+        # Build all possible edges
+        for i in range(n):
+            for j in range(i + 1, n):
+                x1, y1 = points[i]
+                x2, y2 = points[j]
+
+                dist = abs(x1 - x2) + abs(y1 - y2)
+
+                edges.append((dist, i, j))
+
+        # Kruskal: process edges from smallest to largest
+        edges.sort()
+
+        uf = UnionFind(n)
+
+        res = 0
+        edgeCounter = 0
+
+        for dist, u, v in edges:
+            # Only select the edge if it connects
+            # two different components
+            if uf.union(u, v):
+                res += dist
+                edgeCounter += 1
+
+                # An MST with n nodes contains exactly n - 1 edges
+                if edgeCounter == n - 1:
+                    break
+
+        return res
+```
 
 ---
 

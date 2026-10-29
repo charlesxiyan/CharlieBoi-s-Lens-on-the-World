@@ -15,37 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    You are given two arrays `nums1` and `nums2`, where `nums1` is a subset of `nums2`.
-
-    For each element in `nums1`, find its **next greater element** in `nums2`.
-
-## Python solution
-
-```python
-class Solution:
-    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        l1 = len(nums1)
-        l2 = len(nums2)
-
-        res = [-1] * l1
-        stack = [0]
-
-        for i in range(1, l2):
-            if nums2[i] <= nums2[stack[-1]]:
-                stack.append(i)
-            else:
-                while len(stack) != 0 and nums2[i] > nums2[stack[-1]]:
-                    if nums2[stack[-1]] in nums1:
-                        idx = nums1.index(nums2[stack[-1]])
-                        res[idx] = nums2[i]
-                    stack.pop()
-                stack.append(i)
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        You are given two arrays `nums1` and `nums2`, where `nums1` is a subset of `nums2`.
+
+        For each element in `nums1`, find its **next greater element** in `nums2`.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -420,6 +396,30 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 13, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        l1 = len(nums1)
+        l2 = len(nums2)
+
+        res = [-1] * l1
+        stack = [0]
+
+        for i in range(1, l2):
+            if nums2[i] <= nums2[stack[-1]]:
+                stack.append(i)
+            else:
+                while len(stack) != 0 and nums2[i] > nums2[stack[-1]]:
+                    if nums2[stack[-1]] in nums1:
+                        idx = nums1.index(nums2[stack[-1]])
+                        res[idx] = nums2[i]
+                    stack.pop()
+                stack.append(i)
+        return res
+```
 
 ---
 

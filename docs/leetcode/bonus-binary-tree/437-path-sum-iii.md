@@ -15,41 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given the `root` of a binary tree and an integer `targetSum`, return the number of paths where the sum of the values along the path equals `targetSum`.
-
-## Python solution
-
-```python
-class Solution:
-    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
-        if not root:
-            return 0
-
-        return (
-            self.backtrack(root, targetSum)
-            + self.pathSum(root.left, targetSum)
-            + self.pathSum(root.right, targetSum)
-        )
-
-    def backtrack(self, node, targetSum):
-        if not node:
-            return 0
-
-        count = 0
-
-        if node.val == targetSum:
-            count += 1
-
-        return (
-            count
-            + self.backtrack(node.left, targetSum - node.val)
-            + self.backtrack(node.right, targetSum - node.val)
-        )
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given the `root` of a binary tree and an integer `targetSum`, return the number of paths where the sum of the values along the path equals `targetSum`.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -752,6 +722,36 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 14, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
+        if not root:
+            return 0
+
+        return (
+            self.backtrack(root, targetSum)
+            + self.pathSum(root.left, targetSum)
+            + self.pathSum(root.right, targetSum)
+        )
+
+    def backtrack(self, node, targetSum):
+        if not node:
+            return 0
+
+        count = 0
+
+        if node.val == targetSum:
+            count += 1
+
+        return (
+            count
+            + self.backtrack(node.left, targetSum - node.val)
+            + self.backtrack(node.right, targetSum - node.val)
+        )
+```
 
 ---
 

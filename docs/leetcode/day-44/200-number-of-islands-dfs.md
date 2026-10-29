@@ -15,40 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given a 2D grid consisting of `'1'` (land) and `'0'` (water), count the number of islands.
-
-    An island is formed by **horizontally or vertically adjacent** land cells. The grid is completely surrounded by water.
-
-## Python solution
-
-```python
-class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
-        m, n = len(grid), len(grid[0])
-        res = 0
-
-        def dfs(i, j):
-            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == '0':
-                return
-
-            grid[i][j] = '0'
-            dfs(i - 1, j)
-            dfs(i, j - 1)
-            dfs(i + 1, j)
-            dfs(i, j + 1)
-
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == '1':
-                    dfs(i, j)
-                    res += 1
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given a 2D grid consisting of `'1'` (land) and `'0'` (water), count the number of islands.
+
+        An island is formed by **horizontally or vertically adjacent** land cells. The grid is completely surrounded by water.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -371,6 +344,33 @@ class Solution:
     | Attempts | 2 |
     | Mastery | ❚❚ |
     | The Latest Attempt | August 18, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        m, n = len(grid), len(grid[0])
+        res = 0
+
+        def dfs(i, j):
+            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == '0':
+                return
+
+            grid[i][j] = '0'
+            dfs(i - 1, j)
+            dfs(i, j - 1)
+            dfs(i + 1, j)
+            dfs(i, j + 1)
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '1':
+                    dfs(i, j)
+                    res += 1
+
+        return res
+```
 
 ---
 

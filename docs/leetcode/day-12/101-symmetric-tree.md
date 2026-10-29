@@ -15,52 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Recursion:
-
-    ultimate checks postorder traversal
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-from collections import deque
-
-class Solution:
-    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        dq = deque()
-        dq.append(root.left)
-        dq.append(root.right)
-
-        while dq:
-            left = dq.popleft()
-            right = dq.popleft()
-
-            if not left and not right:
-                continue
-
-            if not left and right:
-                return False
-            if left and not right:
-                return False
-            if left.val != right.val:
-                return False
-
-            dq.append(left.left)
-            dq.append(right.right)
-            dq.append(left.right)
-            dq.append(right.left)
-
-        return True
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recursion:
+
+        ultimate checks postorder traversal
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -120,6 +81,45 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 13, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+from collections import deque
+
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        dq = deque()
+        dq.append(root.left)
+        dq.append(root.right)
+
+        while dq:
+            left = dq.popleft()
+            right = dq.popleft()
+
+            if not left and not right:
+                continue
+
+            if not left and right:
+                return False
+            if left and not right:
+                return False
+            if left.val != right.val:
+                return False
+
+            dq.append(left.left)
+            dq.append(right.right)
+            dq.append(left.right)
+            dq.append(right.left)
+
+        return True
+```
 
 ---
 

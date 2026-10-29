@@ -15,11 +15,29 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recursion:
+
+        if root1 and root2 are both None, then the new tree does not have the child at this position. if either root1 or root2 exists while the other is None, make the existing node as the new node.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     Recursion:
 
-    if root1 and root2 are both None, then the new tree does not have the child at this position. if either root1 or root2 exists while the other is None, make the existing node as the new node.
+    1. if root1 and root2 are both None, then the new tree does not have the child at this position.
+    2. if either root1 or root2 exists while the other is None, make the existing node as the new node.
+    3. if both two are valid, merge them by adding the values up and make a new node.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 15, 2026 |
 
 ## Python solution
 
@@ -45,24 +63,6 @@ class Solution:
 
         return root
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Recursion:
-
-    1. if root1 and root2 are both None, then the new tree does not have the child at this position.
-    2. if either root1 or root2 exists while the other is None, make the existing node as the new node.
-    3. if both two are valid, merge them by adding the values up and make a new node.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 15, 2026 |
 
 ---
 

@@ -15,26 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    The logic is once the right digit ‘r’ is less than the left digit ‘l’, change them locally to digits ‘(l - 1)9’. There pops up a problem. Take 332 as an example. If we iterate digits from left to right. For digits ‘33’, we do nothing; for digits ‘32’, we update it to ‘29’. Thus, iteration from left to right does not work properly since it sometimes sabotages the well-adjusted-and-iterated digit pairs.
-
-## Python solution
-
-```python
-class Solution:
-    def monotoneIncreasingDigits(self, n: int) -> int:
-        s = str(n)
-        l = len(s)
-
-        for i in range(l - 1, 0, -1):
-            if s[i - 1] > s[i]:
-                s = s[: i - 1] + str(int(s[i - 1]) - 1) + '9' * (l - i)
-
-        return int(s)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        The logic is once the right digit ‘r’ is less than the left digit ‘l’, change them locally to digits ‘(l - 1)9’. There pops up a problem. Take 332 as an example. If we iterate digits from left to right. For digits ‘33’, we do nothing; for digits ‘32’, we update it to ‘29’. Thus, iteration from left to right does not work properly since it sometimes sabotages the well-adjusted-and-iterated digit pairs.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -52,6 +37,21 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 30, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def monotoneIncreasingDigits(self, n: int) -> int:
+        s = str(n)
+        l = len(s)
+
+        for i in range(l - 1, 0, -1):
+            if s[i - 1] > s[i]:
+                s = s[: i - 1] + str(int(s[i - 1]) - 1) + '9' * (l - i)
+
+        return int(s)
+```
 
 ---
 

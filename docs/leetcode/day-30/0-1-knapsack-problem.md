@@ -22,26 +22,11 @@ hide:
     | Item 2 | 2 | 20 |
     | Item 3 | 3 | 30 |
 
-!!! tip "Core idea"
-
-    Let `dp[j]` be the best value with capacity `j`. Process each item once and update capacities in descending order so the same item cannot be reused.
-
-## Python solution
-
-```python
-def zero_one_knapsack(size, w, v):
-    dp = [0] * (size + 1)
-    for weight, value in zip(w, v):
-        for capacity in range(size, weight - 1, -1):
-            dp[capacity] = max(dp[capacity], dp[capacity - weight] + value)
-    return dp[-1]
-```
-
-!!! note "Import correction"
-
-    The main implementation uses the original rolling-array approach, with explicit parameters instead of undefined default variables. Earlier drafts are retained below.
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Let `dp[j]` be the best value with capacity `j`. Process each item once and update capacities in descending order so the same item cannot be reused.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -192,6 +177,10 @@ def zero_one_knapsack(size, w, v):
     5. Why the second for-loop has to be the descending order, instead of the ascending order?
     6. Why the second for-loop in 2-dimensional array is not required to iterate in the descending order?
 
+    !!! note "Import correction"
+
+        The main implementation uses the original rolling-array approach, with explicit parameters instead of undefined default variables. Earlier drafts are retained below.
+
 ??? note "Original implementation draft"
 
     ```text
@@ -214,6 +203,17 @@ def zero_one_knapsack(size, w, v):
     | Mastery | ❚ |
     | The Latest Attempt | February 26, 2026 |
     | Feedback | Multiple Attempts |
+
+## Python solution
+
+```python
+def zero_one_knapsack(size, w, v):
+    dp = [0] * (size + 1)
+    for weight, value in zip(w, v):
+        for capacity in range(size, weight - 1, -1):
+            dp[capacity] = max(dp[capacity], dp[capacity - weight] + value)
+    return dp[-1]
+```
 
 ---
 

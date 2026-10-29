@@ -15,56 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    See the Python implementation and detailed notes below.
-
-## Python solution
-
-```python
-class Solution:
-    def findTheCity(
-        self,
-        n: int,
-        edges: List[List[int]],
-        distanceThreshold: int
-    ) -> int:
-
-        dp = [[float('inf')] * n for _ in range(n)]
-
-        for i in range(n):
-            dp[i][i] = 0
-
-        for u, v, w in edges:
-            dp[u][v] = w
-            dp[v][u] = w
-
-        # Floyd-Warshall
-        for k in range(n):
-            for i in range(n):
-                for j in range(n):
-                    dp[i][j] = min(
-                        dp[i][k] + dp[k][j],
-                        dp[i][j]
-                    )
-
-        minCount, res = float('inf'), -1
-
-        for i in range(n):
-            count = 0
-
-            for j in range(n):
-                if i != j and dp[i][j] <= distanceThreshold:
-                    count += 1
-
-            if count <= minCount:
-                minCount = count
-                res = i
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        See the Python implementation and detailed notes below.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -547,6 +502,51 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 3, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def findTheCity(
+        self,
+        n: int,
+        edges: List[List[int]],
+        distanceThreshold: int
+    ) -> int:
+
+        dp = [[float('inf')] * n for _ in range(n)]
+
+        for i in range(n):
+            dp[i][i] = 0
+
+        for u, v, w in edges:
+            dp[u][v] = w
+            dp[v][u] = w
+
+        # Floyd-Warshall
+        for k in range(n):
+            for i in range(n):
+                for j in range(n):
+                    dp[i][j] = min(
+                        dp[i][k] + dp[k][j],
+                        dp[i][j]
+                    )
+
+        minCount, res = float('inf'), -1
+
+        for i in range(n):
+            count = 0
+
+            for j in range(n):
+                if i != j and dp[i][j] <= distanceThreshold:
+                    count += 1
+
+            if count <= minCount:
+                minCount = count
+                res = i
+
+        return res
+```
 
 ---
 

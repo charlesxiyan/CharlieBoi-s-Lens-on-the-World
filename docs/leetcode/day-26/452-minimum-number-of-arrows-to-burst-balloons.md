@@ -15,9 +15,29 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Unlike [135. Candy](../day-25/135-candy.md) or [406. Queue Reconstruction by Height](../day-25/406-queue-reconstruction-by-height.md), there is no need to consider two dimensions in sorting. As the photo below, reorder points by the end so that once there is a point with the start on the right of the current recorded end, one more arrow is needed.
+    !!! tip "Core idea"
+
+        Unlike [135. Candy](../day-25/135-candy.md) or [406. Queue Reconstruction by Height](../day-25/406-queue-reconstruction-by-height.md), there is no need to consider two dimensions in sorting. As the photo below, reorder points by the end so that once there is a point with the start on the right of the current recorded end, one more arrow is needed.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. Unlike [135. Candy](../day-25/135-candy.md) or [406. Queue Reconstruction by Height](../day-25/406-queue-reconstruction-by-height.md), there is no need to consider two dimensions in sorting.
+    2. As the photo below, reorder points by the end so that once there is a point with the start on the right of the current recorded end, one more arrow is needed.
+    3. Since the list is reordered by the ends, intervals/points that overlap with the current interval/point must include the current end.
+
+        ![image.png](../assets/day-26-greedy-algorithm-iv/452-minimum-number-of-arrows-to-burst-balloons/image.png)
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 29, 2026 |
 
 ## Python solution
 
@@ -37,26 +57,6 @@ class Solution:
 
         return arrows
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. Unlike [135. Candy](../day-25/135-candy.md) or [406. Queue Reconstruction by Height](../day-25/406-queue-reconstruction-by-height.md), there is no need to consider two dimensions in sorting.
-    2. As the photo below, reorder points by the end so that once there is a point with the start on the right of the current recorded end, one more arrow is needed.
-    3. Since the list is reordered by the ends, intervals/points that overlap with the current interval/point must include the current end.
-
-        ![image.png](../assets/day-26-greedy-algorithm-iv/452-minimum-number-of-arrows-to-burst-balloons/image.png)
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 29, 2026 |
 
 ---
 

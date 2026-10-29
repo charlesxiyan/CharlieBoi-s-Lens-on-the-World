@@ -15,36 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given a Directed Acyclic Graph (DAG), return **all possible paths** from node `0` (the source) to node `n - 1` (the target).
-
-## Python solution
-
-```python
-from collections import deque
-
-class Solution:
-    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
-        n = len(graph)
-        queue = deque([[0]])
-        res = []
-
-        while queue:
-            for _ in range(len(queue)):
-                curPath = queue.popleft()
-
-                for nextNode in graph[curPath[-1]]:
-                    newPath = curPath + [nextNode]
-                    if nextNode == n - 1:
-                        res.append(newPath[:])
-                    else:
-                        queue.append(newPath[:])
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given a Directed Acyclic Graph (DAG), return **all possible paths** from node `0` (the source) to node `n - 1` (the target).
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -452,6 +427,31 @@ class Solution:
     | Attempts | 2 |
     | Mastery | ❚❚ |
     | The Latest Attempt | August 16, 2026 |
+
+## Python solution
+
+```python
+from collections import deque
+
+class Solution:
+    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
+        n = len(graph)
+        queue = deque([[0]])
+        res = []
+
+        while queue:
+            for _ in range(len(queue)):
+                curPath = queue.popleft()
+
+                for nextNode in graph[curPath[-1]]:
+                    newPath = curPath + [nextNode]
+                    if nextNode == n - 1:
+                        res.append(newPath[:])
+                    else:
+                        queue.append(newPath[:])
+
+        return res
+```
 
 ---
 

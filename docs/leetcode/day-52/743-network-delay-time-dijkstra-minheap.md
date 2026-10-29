@@ -15,48 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This is a **single-source shortest path** problem.
-
-    We need to find the shortest distance from the starting node `k` to every other node. Since all edge weights are positive, we can use **Dijkstra's algorithm**.
-
-## Python solution
-
-```python
-import heapq
-
-class Solution:
-    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        graph = [[] for _ in range(n + 1)]
-
-        for u, v, w in times:
-            graph[u].append((w, v))
-
-        minDist = [float('inf')] * (n + 1)
-        minDist[k] = 0
-
-        minHeap = [(0, k)]
-
-        while minHeap:
-            curDist, curNode = heapq.heappop(minHeap)
-
-            if curDist > minDist[curNode]:
-                continue
-
-            for nextDist, nextNode in graph[curNode]:
-                newDist = curDist + nextDist
-
-                if newDist < minDist[nextNode]:
-                    minDist[nextNode] = newDist
-                    heapq.heappush(minHeap, (newDist, nextNode))
-
-        res = max(minDist[1:])
-
-        return res if res != float('inf') else -1
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This is a **single-source shortest path** problem.
+
+        We need to find the shortest distance from the starting node `k` to every other node. Since all edge weights are positive, we can use **Dijkstra's algorithm**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -314,6 +279,41 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 28, 2026 |
+
+## Python solution
+
+```python
+import heapq
+
+class Solution:
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        graph = [[] for _ in range(n + 1)]
+
+        for u, v, w in times:
+            graph[u].append((w, v))
+
+        minDist = [float('inf')] * (n + 1)
+        minDist[k] = 0
+
+        minHeap = [(0, k)]
+
+        while minHeap:
+            curDist, curNode = heapq.heappop(minHeap)
+
+            if curDist > minDist[curNode]:
+                continue
+
+            for nextDist, nextNode in graph[curNode]:
+                newDist = curDist + nextDist
+
+                if newDist < minDist[nextNode]:
+                    minDist[nextNode] = newDist
+                    heapq.heappush(minHeap, (newDist, nextNode))
+
+        res = max(minDist[1:])
+
+        return res if res != float('inf') else -1
+```
 
 ---
 

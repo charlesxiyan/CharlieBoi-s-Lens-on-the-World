@@ -15,9 +15,27 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Recall [452. Minimum Number of Arrows to Burst Balloons](452-minimum-number-of-arrows-to-burst-balloons.md) to count the non-overlapping intervals. It should be noted that, in this question, the interval with start equal to some interval’s end is not counted as an overlapped interval.
+    !!! tip "Core idea"
+
+        Recall [452. Minimum Number of Arrows to Burst Balloons](452-minimum-number-of-arrows-to-burst-balloons.md) to count the non-overlapping intervals. It should be noted that, in this question, the interval with start equal to some interval’s end is not counted as an overlapped interval.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. Recall [452. Minimum Number of Arrows to Burst Balloons](452-minimum-number-of-arrows-to-burst-balloons.md) to count the non-overlapping intervals.
+    2. It should be noted that, in this question, the interval with start equal to some interval’s end is not counted as an overlapped interval.
+    3. Thus, the outcome of the solution is #intervals - #non-overlapping intervals.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 29, 2026 |
 
 ## Python solution
 
@@ -36,24 +54,6 @@ class Solution:
 
         return n - count
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. Recall [452. Minimum Number of Arrows to Burst Balloons](452-minimum-number-of-arrows-to-burst-balloons.md) to count the non-overlapping intervals.
-    2. It should be noted that, in this question, the interval with start equal to some interval’s end is not counted as an overlapped interval.
-    3. Thus, the outcome of the solution is #intervals - #non-overlapping intervals.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 29, 2026 |
 
 ---
 

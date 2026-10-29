@@ -15,37 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Solution: DP
-
-    An extension or an abstract version of Q123.
-
-## Python solution
-
-```python
-class Solution:
-    def maxProfit(self, k: int, prices: List[int]) -> int:
-      l = len(prices)
-      if l == 0:
-        return 0
-
-      # Initiate
-      dp = [[0] * (2 * k + 1) for _ in range(l)]
-      dp[0][1:] = [-prices[0], 0] * k
-
-      for i in range(1, l):
-        for j in range(1, 2 * k + 1):
-          if j % 2 == 1:
-            dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - 1] - prices[i])
-          else:
-            dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - 1] + prices[i])
-
-
-      return dp[-1][-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Solution: DP
+
+        An extension or an abstract version of Q123.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -80,6 +56,30 @@ class Solution:
     | Mastery | ❚ |
     | The Latest Attempt | November 4, 2025 |
     | Feedback | An extension of 123, but be careful of the recursive formula when it comes to k transactions. |
+
+## Python solution
+
+```python
+class Solution:
+    def maxProfit(self, k: int, prices: List[int]) -> int:
+      l = len(prices)
+      if l == 0:
+        return 0
+
+      # Initiate
+      dp = [[0] * (2 * k + 1) for _ in range(l)]
+      dp[0][1:] = [-prices[0], 0] * k
+
+      for i in range(1, l):
+        for j in range(1, 2 * k + 1):
+          if j % 2 == 1:
+            dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - 1] - prices[i])
+          else:
+            dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - 1] + prices[i])
+
+
+      return dp[-1][-1]
+```
 
 ---
 

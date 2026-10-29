@@ -15,28 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    - This is a **Complete Knapsack** problem.
-    - Each perfect square (`1, 4, 9, ...`) can be used **unlimited times**.
-    - Goal: find the minimum number of perfect squares whose sum equals `n`.
-
-## Python solution
-
-```python
-class Solution:
-    def numSquares(self, n: int) -> int:
-        dp = [float('inf')] * (n + 1)
-        dp[0] = 0
-
-        for i in range(1, int(n ** 0.5) + 1):
-            for j in range(i * i, n + 1):
-                dp[j] = min(dp[j - i * i] + 1, dp[j])
-
-        return dp[-1]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        - This is a **Complete Knapsack** problem.
+        - Each perfect square (`1, 4, 9, ...`) can be used **unlimited times**.
+        - Goal: find the minimum number of perfect squares whose sum equals `n`.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -100,6 +85,21 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | February 9, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def numSquares(self, n: int) -> int:
+        dp = [float('inf')] * (n + 1)
+        dp[0] = 0
+
+        for i in range(1, int(n ** 0.5) + 1):
+            for j in range(i * i, n + 1):
+                dp[j] = min(dp[j - i * i] + 1, dp[j])
+
+        return dp[-1]
+```
 
 ---
 

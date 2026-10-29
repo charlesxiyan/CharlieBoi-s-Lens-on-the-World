@@ -15,28 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    The solution is quite tricky!
-
-    **Note** that the question already assume that each input would have exactly one solution, and there is no duplicate.
-
-## Python solution
-
-```python
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        dict = {}
-        n = len(nums)
-
-        for i in range(n):
-            if nums[i] not in dict:
-                dict[target - nums[i]] = i
-            else:
-                return [dict[nums[i]], i]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        The solution is quite tricky!
+
+        **Note** that the question already assume that each input would have exactly one solution, and there is no duplicate.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -59,6 +44,21 @@ class Solution:
     | Attempts | 4 |
     | Mastery | ❚❚❚❚ |
     | The Latest Attempt | January 5, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dict = {}
+        n = len(nums)
+
+        for i in range(n):
+            if nums[i] not in dict:
+                dict[target - nums[i]] = i
+            else:
+                return [dict[nums[i]], i]
+```
 
 ---
 

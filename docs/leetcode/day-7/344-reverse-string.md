@@ -15,9 +15,27 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    The input is a list. Double pointers is the source code idea of built-in function reverse.
+    !!! tip "Core idea"
+
+        The input is a list. Double pointers is the source code idea of built-in function reverse.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. The input is a list.
+    2. Double pointers is the source code idea of built-in function reverse.
+    3. In Python we can also use [::-1] to reverse.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 6, 2026 |
 
 ## Python solution
 
@@ -35,24 +53,6 @@ class Solution:
             left += 1
             right -= 1
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. The input is a list.
-    2. Double pointers is the source code idea of built-in function reverse.
-    3. In Python we can also use [::-1] to reverse.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 6, 2026 |
 
 ---
 

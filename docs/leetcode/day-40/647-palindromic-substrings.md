@@ -15,36 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given a string `s`, return the total number of **palindromic substrings** in `s`.
-
-    A palindrome reads the same forward and backward.
-
-## Python solution
-
-```python
-class Solution:
-    def countSubstrings(self, s: str) -> int:
-        l = len(s)
-
-        dp = [[False] * l for _ in range(l)]
-        res = 0
-
-        for i in range(l - 1, -1, -1):
-            for j in range(i, l):
-                if s[i] == s[j]:
-                    if j - i <= 1:
-                        res += 1
-                        dp[i][j] = True
-                    elif dp[i + 1][j - 1]:
-                        res += 1
-                        dp[i][j] = True
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given a string `s`, return the total number of **palindromic substrings** in `s`.
+
+        A palindrome reads the same forward and backward.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -559,6 +536,29 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 12, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        l = len(s)
+
+        dp = [[False] * l for _ in range(l)]
+        res = 0
+
+        for i in range(l - 1, -1, -1):
+            for j in range(i, l):
+                if s[i] == s[j]:
+                    if j - i <= 1:
+                        res += 1
+                        dp[i][j] = True
+                    elif dp[i + 1][j - 1]:
+                        res += 1
+                        dp[i][j] = True
+
+        return res
+```
 
 ---
 

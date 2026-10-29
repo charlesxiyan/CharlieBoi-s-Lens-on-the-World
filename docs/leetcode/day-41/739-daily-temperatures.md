@@ -15,34 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given an array `temperatures`, return an array `answer` where:
-
-    is the number of days you have to wait after day `i` to get a warmer temperature.
-
-## Python solution
-
-```python
-class Solution:
-    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
-        l = len(temperatures)
-        stack = [0]
-        res = [0] * l
-
-        for i in range(1, l):
-            if temperatures[i] <= temperatures[stack[-1]]:
-                stack.append(i)
-            else:
-                while len(stack) != 0 and temperatures[i] > temperatures[stack[-1]]:
-                    idx = stack.pop()
-                    res[idx] = i - idx
-                stack.append(i)
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given an array `temperatures`, return an array `answer` where:
+
+        is the number of days you have to wait after day `i` to get a warmer temperature.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -457,6 +436,27 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 13, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        l = len(temperatures)
+        stack = [0]
+        res = [0] * l
+
+        for i in range(1, l):
+            if temperatures[i] <= temperatures[stack[-1]]:
+                stack.append(i)
+            else:
+                while len(stack) != 0 and temperatures[i] > temperatures[stack[-1]]:
+                    idx = stack.pop()
+                    res[idx] = i - idx
+                stack.append(i)
+
+        return res
+```
 
 ---
 

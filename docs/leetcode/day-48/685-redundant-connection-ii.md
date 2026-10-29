@@ -15,63 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem is an extension of **LeetCode 684. Redundant Connection**.
-
-    In LeetCode 684, the graph is undirected, so the main problem is detecting a **cycle**.
-
-## Python solution
-
-```python
-class UnionFind:
-    def __init__(self, size):
-        self.parent = list(range(1 + size))
-
-    def find(self, node):
-        if node != self.parent[node]:
-            self.parent[node] = self.find(self.parent[node])
-        return self.parent[node]
-
-    def union(self, node1, node2):
-        root1 = self.find(node1)
-        root2 = self.find(node2)
-
-        if root1 != root2:
-            self.parent[root2] = root1
-
-    def isSame(self, node1, node2):
-        return self.find(node1) == self.find(node2)
-
-class Solution:
-    def findRedundantDirectedConnection(self, edges: List[List[int]]) -> List[int]:
-        parent = [0] * (len(edges) + 1)
-        candidate1 = None
-        candidate2 = None
-
-        for u, v in edges:
-            if parent[v] == 0:
-                parent[v] = u
-            else:
-                candidate1 = [parent[v], v]
-                candidate2 = [u, v]
-                break
-
-        uf = UnionFind(len(edges))
-
-        for u, v in edges:
-            if candidate2 == [u, v]:
-                continue
-            if uf.isSame(u, v):
-                if not candidate1:
-                    return [u, v]
-                return candidate1
-            uf.union(u, v)
-
-        return candidate2
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem is an extension of **LeetCode 684. Redundant Connection**.
+
+        In LeetCode 684, the graph is undirected, so the main problem is detecting a **cycle**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -738,6 +688,56 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 25, 2026 |
+
+## Python solution
+
+```python
+class UnionFind:
+    def __init__(self, size):
+        self.parent = list(range(1 + size))
+
+    def find(self, node):
+        if node != self.parent[node]:
+            self.parent[node] = self.find(self.parent[node])
+        return self.parent[node]
+
+    def union(self, node1, node2):
+        root1 = self.find(node1)
+        root2 = self.find(node2)
+
+        if root1 != root2:
+            self.parent[root2] = root1
+
+    def isSame(self, node1, node2):
+        return self.find(node1) == self.find(node2)
+
+class Solution:
+    def findRedundantDirectedConnection(self, edges: List[List[int]]) -> List[int]:
+        parent = [0] * (len(edges) + 1)
+        candidate1 = None
+        candidate2 = None
+
+        for u, v in edges:
+            if parent[v] == 0:
+                parent[v] = u
+            else:
+                candidate1 = [parent[v], v]
+                candidate2 = [u, v]
+                break
+
+        uf = UnionFind(len(edges))
+
+        for u, v in edges:
+            if candidate2 == [u, v]:
+                continue
+            if uf.isSame(u, v):
+                if not candidate1:
+                    return [u, v]
+                return candidate1
+            uf.union(u, v)
+
+        return candidate2
+```
 
 ---
 

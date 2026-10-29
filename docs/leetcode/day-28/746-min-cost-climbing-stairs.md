@@ -15,33 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    DP Steps:
-
-    Attention!!! The target of the question is to iterate all the elements and pass them. For example, the length of the list is n, and thus the target is to find the minimum cost to reach index n, although there is no element in index n.
-
-## Python solution
-
-```python
-class Solution:
-    def minCostClimbingStairs(self, cost: List[int]) -> int:
-        n = len(cost)
-
-        if n == 1:
-            return cost[0]
-
-        dp = [[float('inf')] * 2 for _ in range(n)]
-        dp[0] = [cost[0], 0]
-
-        for i in range(1, n):
-            dp[i][0] = min(dp[i - 1][0] + cost[i], dp[i - 1][1] + cost[i])
-            dp[i][1] = dp[i - 1][0]
-
-        return min(dp[-1])
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        DP Steps:
+
+        Attention!!! The target of the question is to iterate all the elements and pass them. For example, the length of the list is n, and thus the target is to find the minimum cost to reach index n, although there is no element in index n.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -85,6 +65,26 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 31, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        n = len(cost)
+
+        if n == 1:
+            return cost[0]
+
+        dp = [[float('inf')] * 2 for _ in range(n)]
+        dp[0] = [cost[0], 0]
+
+        for i in range(1, n):
+            dp[i][0] = min(dp[i - 1][0] + cost[i], dp[i - 1][1] + cost[i])
+            dp[i][1] = dp[i - 1][0]
+
+        return min(dp[-1])
+```
 
 ---
 

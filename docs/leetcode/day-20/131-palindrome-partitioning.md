@@ -15,9 +15,30 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Recall [77. Combinations](../day-19/77-combinations.md) for the core idea of backtracking. The only difference is in the for loop, we need to check if the new substring is a palindrome.
+    !!! tip "Core idea"
+
+        Recall [77. Combinations](../day-19/77-combinations.md) for the core idea of backtracking. The only difference is in the for loop, we need to check if the new substring is a palindrome.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. Recall [77. Combinations](../day-19/77-combinations.md) for the core idea of backtracking.
+    2. The only difference is in the for loop, we need to check if the new substring is a palindrome.
+    3. Take ‘aab’ as an example.
+        1. startIndex = 0, i = startIndex = 0, the new substring is s[0: 1] = ‘a’, palindrome check, Tick!
+        2. backtrack recurrence but startIndex = i + 1 = 1 (the beginning of the next substring). Within the next recurrence, the new substring is s[1: 2] = ‘a’.
+        3. ……
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 22, 2026 |
 
 ## Python solution
 
@@ -40,27 +61,6 @@ class Solution:
                 self.backtrack(s, i + 1, path, result)
                 path.pop()
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. Recall [77. Combinations](../day-19/77-combinations.md) for the core idea of backtracking.
-    2. The only difference is in the for loop, we need to check if the new substring is a palindrome.
-    3. Take ‘aab’ as an example.
-        1. startIndex = 0, i = startIndex = 0, the new substring is s[0: 1] = ‘a’, palindrome check, Tick!
-        2. backtrack recurrence but startIndex = i + 1 = 1 (the beginning of the next substring). Within the next recurrence, the new substring is s[1: 2] = ‘a’.
-        3. ……
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 22, 2026 |
 
 ---
 

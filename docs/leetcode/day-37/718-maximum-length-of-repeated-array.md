@@ -15,33 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given two integer arrays `nums1` and `nums2`, return the length of the longest common **contiguous** subarray.
-
-    Unlike the **Longest Common Subsequence (LCS)** problem, the matching elements in this problem **must be contiguous** in both arrays.
-
-## Python solution
-
-```python
-class Solution:
-    def findLength(self, nums1: List[int], nums2: List[int]) -> int:
-        l1 = len(nums1)
-        l2 = len(nums2)
-
-        dp = [[0] * (l2 + 1) for _ in range(l1 + 1)]
-        res = 0
-
-        for i in range(1, l1 + 1):
-            for j in range(1, l2 + 1):
-                if nums1[i - 1] == nums2[j - 1]:
-                    dp[i][j] = dp[i - 1][j - 1] + 1
-                res = max(res, dp[i][j])
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given two integer arrays `nums1` and `nums2`, return the length of the longest common **contiguous** subarray.
+
+        Unlike the **Longest Common Subsequence (LCS)** problem, the matching elements in this problem **must be contiguous** in both arrays.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -324,6 +304,26 @@ class Solution:
     | --- | --- |
     | Attempts | 1 |
     | Mastery | ❚ |
+
+## Python solution
+
+```python
+class Solution:
+    def findLength(self, nums1: List[int], nums2: List[int]) -> int:
+        l1 = len(nums1)
+        l2 = len(nums2)
+
+        dp = [[0] * (l2 + 1) for _ in range(l1 + 1)]
+        res = 0
+
+        for i in range(1, l1 + 1):
+            for j in range(1, l2 + 1):
+                if nums1[i - 1] == nums2[j - 1]:
+                    dp[i][j] = dp[i - 1][j - 1] + 1
+                res = max(res, dp[i][j])
+
+        return res
+```
 
 ---
 

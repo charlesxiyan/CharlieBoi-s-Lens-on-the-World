@@ -15,28 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Count the available characters in `magazine`. Every character required by `ransomNote` must have a sufficient count.
-
-## Python solution
-
-```python
-class Solution:
-    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        set_r = {char: ransomNote.count(char) for char in set(ransomNote)}
-        set_m = {char: magazine.count(char) for char in set(magazine)}
-
-        for char in set_r:
-            if char in set_m and set_r[char] <= set_m[char]:
-                continue
-            else:
-                return False
-
-        return True
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Count the available characters in `magazine`. Every character required by `ransomNote` must have a sufficient count.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -56,6 +39,23 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 5, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        set_r = {char: ransomNote.count(char) for char in set(ransomNote)}
+        set_m = {char: magazine.count(char) for char in set(magazine)}
+
+        for char in set_r:
+            if char in set_m and set_r[char] <= set_m[char]:
+                continue
+            else:
+                return False
+
+        return True
+```
 
 ---
 

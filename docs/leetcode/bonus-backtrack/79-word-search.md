@@ -15,62 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Use **DFS + Backtracking**.
-
-    Each cell in the board can be the starting point of the word.
-
-## Python solution
-
-```python
-class Solution:
-    def exist(self, board: List[List[str]], word: str) -> bool:
-        self.directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
-        self.m, self.n = len(board), len(board[0])
-        self.res = False
-
-        for i in range(self.m):
-            for j in range(self.n):
-                if board[i][j] == word[0]:
-                    temp, board[i][j] = board[i][j], '.'
-                    self.backtrack(i, j, 1, board, word)
-                    board[i][j] = temp
-
-                    if self.res:
-                        return True
-
-        return False
-
-    def backtrack(self, row, col, startIndex, board, word):
-        if startIndex == len(word):
-            self.res = True
-            return
-
-        for dir in self.directions:
-            nextRow = row + dir[0]
-            nextCol = col + dir[1]
-
-            if (
-                0 <= nextRow < self.m
-                and 0 <= nextCol < self.n
-                and board[nextRow][nextCol] != '.'
-                and board[nextRow][nextCol] == word[startIndex]
-            ):
-                temp, board[nextRow][nextCol] = board[nextRow][nextCol], '.'
-
-                self.backtrack(
-                    nextRow,
-                    nextCol,
-                    startIndex + 1,
-                    board,
-                    word
-                )
-
-                board[nextRow][nextCol] = temp
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Use **DFS + Backtracking**.
+
+        Each cell in the board can be the starting point of the word.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -304,6 +255,55 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 7, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        self.directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        self.m, self.n = len(board), len(board[0])
+        self.res = False
+
+        for i in range(self.m):
+            for j in range(self.n):
+                if board[i][j] == word[0]:
+                    temp, board[i][j] = board[i][j], '.'
+                    self.backtrack(i, j, 1, board, word)
+                    board[i][j] = temp
+
+                    if self.res:
+                        return True
+
+        return False
+
+    def backtrack(self, row, col, startIndex, board, word):
+        if startIndex == len(word):
+            self.res = True
+            return
+
+        for dir in self.directions:
+            nextRow = row + dir[0]
+            nextCol = col + dir[1]
+
+            if (
+                0 <= nextRow < self.m
+                and 0 <= nextCol < self.n
+                and board[nextRow][nextCol] != '.'
+                and board[nextRow][nextCol] == word[startIndex]
+            ):
+                temp, board[nextRow][nextCol] = board[nextRow][nextCol], '.'
+
+                self.backtrack(
+                    nextRow,
+                    nextCol,
+                    startIndex + 1,
+                    board,
+                    word
+                )
+
+                board[nextRow][nextCol] = temp
+```
 
 ---
 

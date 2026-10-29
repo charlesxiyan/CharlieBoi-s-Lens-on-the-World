@@ -15,36 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Track the counts of $5 and $10 bills. Give change as each customer arrives, using a $10 bill before spending three $5 bills when possible.
-
-## Python solution
-
-```python
-class Solution:
-    def lemonadeChange(self, bills: List[int]) -> bool:
-        five = ten = 0
-        for b in bills:
-            if b == 5:
-                five += 1
-            elif b == 10:
-                five -= 1
-                ten += 1
-
-            # b = 20 case
-            elif ten > 0:
-                five -= 1
-                ten -= 1
-            else:
-                five -= 3
-
-            if five < 0:
-                return False
-        return True
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Track the counts of $5 and $10 bills. Give change as each customer arrives, using a $10 bill before spending three $5 bills when possible.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -100,6 +75,31 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 28, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def lemonadeChange(self, bills: List[int]) -> bool:
+        five = ten = 0
+        for b in bills:
+            if b == 5:
+                five += 1
+            elif b == 10:
+                five -= 1
+                ten += 1
+
+            # b = 20 case
+            elif ten > 0:
+                five -= 1
+                ten -= 1
+            else:
+                five -= 3
+
+            if five < 0:
+                return False
+        return True
+```
 
 ---
 

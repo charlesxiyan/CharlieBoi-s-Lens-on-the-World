@@ -15,32 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Exceptions: 2 → 1 + 1 → product 1; 3 → 1 + 2 → product 2. DP Steps:
-
-    dp[i]: the maximum value of products by adding components.
-
-## Python solution
-
-```python
-class Solution:
-    def integerBreak(self, n: int) -> int:
-        if n == 2:
-            return 1
-        if n == 3:
-            return 2
-        dp = [0] * (n + 1)
-        dp[2], dp[3] = 1, 2
-
-        for i in range(4, n + 1):
-            for j in range(1, i // 2 + 1):
-                dp[i] = max(dp[i], j * (i - j), j * dp[i - j])
-
-        return dp[n]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Exceptions: 2 → 1 + 1 → product 1; 3 → 1 + 2 → product 2. DP Steps:
+
+        dp[i]: the maximum value of products by adding components.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -89,6 +70,25 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | February 2, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def integerBreak(self, n: int) -> int:
+        if n == 2:
+            return 1
+        if n == 3:
+            return 2
+        dp = [0] * (n + 1)
+        dp[2], dp[3] = 1, 2
+
+        for i in range(4, n + 1):
+            for j in range(1, i // 2 + 1):
+                dp[i] = max(dp[i], j * (i - j), j * dp[i - j])
+
+        return dp[n]
+```
 
 ---
 

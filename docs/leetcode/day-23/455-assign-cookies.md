@@ -15,9 +15,27 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Start feeding from the child with the largest greed factor. Thus, sort g and s first. The logic is if the largest cookie cannot meet the current child’s greed. Iterate backwards to the child with the second largest greed until the greed is fulfilled.
+    !!! tip "Core idea"
+
+        Start feeding from the child with the largest greed factor. Thus, sort g and s first. The logic is if the largest cookie cannot meet the current child’s greed. Iterate backwards to the child with the second largest greed until the greed is fulfilled.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. Start feeding from the child with the largest greed factor. Thus, sort g and s first.
+    2. The logic is if the largest cookie cannot meet the current child’s greed. Iterate backwards to the child with the second largest greed until the greed is fulfilled.
+    3. The terminal condition of the pointers to children and cookies are both of them have to be non-negative.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 26, 2026 |
 
 ## Python solution
 
@@ -41,24 +59,6 @@ class Solution:
 
         return result
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. Start feeding from the child with the largest greed factor. Thus, sort g and s first.
-    2. The logic is if the largest cookie cannot meet the current child’s greed. Iterate backwards to the child with the second largest greed until the greed is fulfilled.
-    3. The terminal condition of the pointers to children and cookies are both of them have to be non-negative.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 26, 2026 |
 
 ---
 

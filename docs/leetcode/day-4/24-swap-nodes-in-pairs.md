@@ -15,37 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This question requires to return a whole linked list, and thus a virtual head is needed. The pointer current should start from the virtual head, since the next and the [next.next](http://next.next) are two objects for swapping.
-
-## Python solution
-
-```python
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution:
-    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = ListNode(next = head)
-        current = dummy
-
-        while current.next and current.next.next:
-            slow = current.next
-            fast = current.next.next.next
-
-            current.next = current.next.next
-            current.next.next = slow
-            slow.next = fast
-
-            current = current.next.next
-
-        return dummy.next
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This question requires to return a whole linked list, and thus a virtual head is needed. The pointer current should start from the virtual head, since the next and the [next.next](http://next.next) are two objects for swapping.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -83,6 +57,32 @@ class Solution:
     | Attempts | 2 |
     | Mastery | ❚❚ |
     | The Latest Attempt | January 4, 2026 |
+
+## Python solution
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode(next = head)
+        current = dummy
+
+        while current.next and current.next.next:
+            slow = current.next
+            fast = current.next.next.next
+
+            current.next = current.next.next
+            current.next.next = slow
+            slow.next = fast
+
+            current = current.next.next
+
+        return dummy.next
+```
 
 ---
 

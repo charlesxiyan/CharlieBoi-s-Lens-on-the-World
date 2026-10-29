@@ -15,9 +15,27 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    Recall [452. Minimum Number of Arrows to Burst Balloons](../day-26/452-minimum-number-of-arrows-to-burst-balloons.md) and [435. Non-overlapping Intervals](../day-26/435-non-overlapping-intervals.md) for the core idea of the following solution. The sorting in the solution is based on the head of each interval, i.e. an ascending order by heads.
+    !!! tip "Core idea"
+
+        Recall [452. Minimum Number of Arrows to Burst Balloons](../day-26/452-minimum-number-of-arrows-to-burst-balloons.md) and [435. Non-overlapping Intervals](../day-26/435-non-overlapping-intervals.md) for the core idea of the following solution. The sorting in the solution is based on the head of each interval, i.e. an ascending order by heads.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. Recall [452. Minimum Number of Arrows to Burst Balloons](../day-26/452-minimum-number-of-arrows-to-burst-balloons.md) and [435. Non-overlapping Intervals](../day-26/435-non-overlapping-intervals.md) for the core idea of the following solution.
+    2. The sorting in the solution is based on the head of each interval, i.e. an ascending order by heads.
+    3. **Attention**: the endpoints of the merged intervals are updated by parsing the interval (a list) to an object, which actually share the same address as the merged interval. Thus, any adjustment on the object is also reflected on the interval. The reason why it works is data structures like a list, a dictionary, etc are mutable.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 30, 2026 |
 
 ## Python solution
 
@@ -41,24 +59,6 @@ class Solution:
 
         return result
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. Recall [452. Minimum Number of Arrows to Burst Balloons](../day-26/452-minimum-number-of-arrows-to-burst-balloons.md) and [435. Non-overlapping Intervals](../day-26/435-non-overlapping-intervals.md) for the core idea of the following solution.
-    2. The sorting in the solution is based on the head of each interval, i.e. an ascending order by heads.
-    3. **Attention**: the endpoints of the merged intervals are updated by parsing the interval (a list) to an object, which actually share the same address as the merged interval. Thus, any adjustment on the object is also reflected on the interval. The reason why it works is data structures like a list, a dictionary, etc are mutable.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 30, 2026 |
 
 ---
 

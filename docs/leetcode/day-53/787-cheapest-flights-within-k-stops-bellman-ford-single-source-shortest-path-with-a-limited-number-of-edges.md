@@ -15,32 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem can be solved using a modified **Bellman-Ford algorithm**.
-
-    The key difference from standard Bellman-Ford is that we are only allowed to use at most `k` stops.
-
-## Python solution
-
-```python
-class Solution:
-    def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
-        INF = float('inf')
-        dist = [INF] * n
-        dist[src] = 0
-
-        for _ in range(k + 1):
-            new = dist[:]
-            for u, v, w in flights:
-                if dist[u] + w < new[v]:
-                    new[v] = dist[u] + w
-            dist = new
-
-        return dist[dst] if dist[dst] != INF else -1
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem can be solved using a modified **Bellman-Ford algorithm**.
+
+        The key difference from standard Bellman-Ford is that we are only allowed to use at most `k` stops.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -639,6 +620,25 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 31, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
+        INF = float('inf')
+        dist = [INF] * n
+        dist[src] = 0
+
+        for _ in range(k + 1):
+            new = dist[:]
+            for u, v, w in flights:
+                if dist[u] + w < new[v]:
+                    new[v] = dist[u] + w
+            dist = new
+
+        return dist[dst] if dist[dst] != INF else -1
+```
 
 ---
 

@@ -15,9 +15,23 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recall [416. Partition Equal Subset Sum](../day-30/416-partition-equal-subset-sum.md) for the core idea. The solution in this question partition the list into two subsets with equal values or closest difference.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     Recall [416. Partition Equal Subset Sum](../day-30/416-partition-equal-subset-sum.md) for the core idea. The solution in this question partition the list into two subsets with equal values or closest difference.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | February 5, 2026 |
 
 ## Python solution
 
@@ -37,20 +51,6 @@ class Solution:
 
         return total - 2 * dp[-1]
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Recall [416. Partition Equal Subset Sum](../day-30/416-partition-equal-subset-sum.md) for the core idea. The solution in this question partition the list into two subsets with equal values or closest difference.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | February 5, 2026 |
 
 ---
 

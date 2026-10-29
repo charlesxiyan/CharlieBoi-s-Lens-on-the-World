@@ -15,47 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Use **Kahn's Algorithm (BFS Topological Sort)**.
-
-    Unlike LeetCode 207, which only checks whether all courses can be completed, this problem requires us to **return a valid course order**.
-
-## Python solution
-
-```python
-from collections import deque
-
-class Solution:
-    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        graph = [[] for _ in range(numCourses)]
-        indegree = [0] * numCourses
-
-        for nextCourse, preCourse in prerequisites:
-            graph[preCourse].append(nextCourse)
-            indegree[nextCourse] += 1
-
-        queue = deque()
-        for i in range(numCourses):
-            if indegree[i] == 0:
-                queue.append(i)
-
-        order = []
-
-        while queue:
-            course = queue.popleft()
-            order.append(course)
-
-            for nextCourse in graph[course]:
-                indegree[nextCourse] -= 1
-
-                if indegree[nextCourse] == 0:
-                    queue.append(nextCourse)
-
-        return order if len(order) == numCourses else []
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Use **Kahn's Algorithm (BFS Topological Sort)**.
+
+        Unlike LeetCode 207, which only checks whether all courses can be completed, this problem requires us to **return a valid course order**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -207,6 +173,40 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 27, 2026 |
+
+## Python solution
+
+```python
+from collections import deque
+
+class Solution:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        graph = [[] for _ in range(numCourses)]
+        indegree = [0] * numCourses
+
+        for nextCourse, preCourse in prerequisites:
+            graph[preCourse].append(nextCourse)
+            indegree[nextCourse] += 1
+
+        queue = deque()
+        for i in range(numCourses):
+            if indegree[i] == 0:
+                queue.append(i)
+
+        order = []
+
+        while queue:
+            course = queue.popleft()
+            order.append(course)
+
+            for nextCourse in graph[course]:
+                indegree[nextCourse] -= 1
+
+                if indegree[nextCourse] == 0:
+                    queue.append(nextCourse)
+
+        return order if len(order) == numCourses else []
+```
 
 ---
 

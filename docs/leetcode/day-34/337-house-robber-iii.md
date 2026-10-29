@@ -15,44 +15,15 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    - This is a **Tree DP** problem.
-    - For each node, there are only **two states**:
-    - Rob this node.
-    - Do not rob this node.
-    - Compute these two states for every node using **postorder traversal**.
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def rob(self, root: Optional[TreeNode]) -> int:
-        res = self.traverse(root)
-        return max(res)
-
-    def traverse(self, node):
-        if not node:
-            return [0, 0] # [偷,不偷]
-
-        left = self.traverse(node.left)
-        right = self.traverse(node.right)
-
-        # 偷当前节点, 不偷子节点
-        robVal = node.val + left[1] + right[1]
-        # 不偷当前节点, 偷子节点
-        noVal = max(left) + max(right)
-
-        return [robVal, noVal]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        - This is a **Tree DP** problem.
+        - For each node, there are only **two states**:
+        - Rob this node.
+        - Do not rob this node.
+        - Compute these two states for every node using **postorder traversal**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -122,6 +93,35 @@ class Solution:
     | --- | --- |
     | Attempts | 1 |
     | Mastery | ❚ |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rob(self, root: Optional[TreeNode]) -> int:
+        res = self.traverse(root)
+        return max(res)
+
+    def traverse(self, node):
+        if not node:
+            return [0, 0] # [偷,不偷]
+
+        left = self.traverse(node.left)
+        right = self.traverse(node.right)
+
+        # 偷当前节点, 不偷子节点
+        robVal = node.val + left[1] + right[1]
+        # 不偷当前节点, 偷子节点
+        noVal = max(left) + max(right)
+
+        return [robVal, noVal]
+```
 
 ---
 

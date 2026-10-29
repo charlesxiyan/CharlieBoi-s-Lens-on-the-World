@@ -15,43 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Recursion
-
-    stack and pathStack are updated simultaneously.
-
-## Python solution
-
-```python
-# 递归
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
-        self.res = []
-        def c(n,path=''):
-            if n and n.left is None and n.right is None:
-                cur = path + ' ' + str(n.val)
-                self.res.append(cur)
-                return
-            if n:
-                cur = path + ' ' + str(n.val)
-                c(n.left,cur)
-                c(n.right,cur)
-
-        c(root)
-        for i in range(len(self.res)):
-            self.res[i] = "->".join(self.res[i].split())
-        return self.res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recursion
+
+        stack and pathStack are updated simultaneously.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -136,6 +106,36 @@ class Solution:
     | Mastery | ❚ |
     | The Latest Attempt | January 13, 2026 |
     | Feedback | This question requires multiple reviews! The logic look similar but the detail of dealing with paths needs more attention. |
+
+## Python solution
+
+```python
+# 递归
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
+        self.res = []
+        def c(n,path=''):
+            if n and n.left is None and n.right is None:
+                cur = path + ' ' + str(n.val)
+                self.res.append(cur)
+                return
+            if n:
+                cur = path + ' ' + str(n.val)
+                c(n.left,cur)
+                c(n.right,cur)
+
+        c(root)
+        for i in range(len(self.res)):
+            self.res[i] = "->".join(self.res[i].split())
+        return self.res
+```
 
 ---
 

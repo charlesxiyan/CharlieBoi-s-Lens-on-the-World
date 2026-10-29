@@ -157,51 +157,13 @@ hide:
     - Multiple paths may exist between two cities.
     - City `n` may be unreachable from city `1`.
 
-!!! tip "Core idea"
-
-    SPFA (Shortest Path Faster Algorithm) is a queue-based optimization of the Bellman-Ford algorithm.
-
-    In standard Bellman-Ford, we repeatedly scan **all edges** and try to relax them.
-
-## Python solution
-
-```python
-from typing import List
-from collections import deque
-
-class Solution:
-    def minimumCost(self, n: int, roads: List[List[int]]):
-        graph = [[] for _ in range(n + 1)]
-
-        for u, v, w in roads:
-            graph[u].append((w, v))
-
-        minCost = [float('inf')] * (n + 1)
-        minCost[1] = 0
-
-        queue = deque([1])
-
-        inQueue = [False] * (n + 1)
-        inQueue[1] = True
-
-        while queue:
-            curNode = queue.popleft()
-            inQueue[curNode] = False
-
-            for nextCost, nextNode in graph[curNode]:
-                newCost = minCost[curNode] + nextCost
-
-                if newCost < minCost[nextNode]:
-                    minCost[nextNode] = newCost
-
-                    if not inQueue[nextNode]:
-                        queue.append(nextNode)
-                        inQueue[nextNode] = True
-
-        return 'unconnected' if minCost[n] == float('inf') else minCost[n]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        SPFA (Shortest Path Faster Algorithm) is a queue-based optimization of the Bellman-Ford algorithm.
+
+        In standard Bellman-Ford, we repeatedly scan **all edges** and try to relax them.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -678,6 +640,44 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 1, 2026 |
+
+## Python solution
+
+```python
+from typing import List
+from collections import deque
+
+class Solution:
+    def minimumCost(self, n: int, roads: List[List[int]]):
+        graph = [[] for _ in range(n + 1)]
+
+        for u, v, w in roads:
+            graph[u].append((w, v))
+
+        minCost = [float('inf')] * (n + 1)
+        minCost[1] = 0
+
+        queue = deque([1])
+
+        inQueue = [False] * (n + 1)
+        inQueue[1] = True
+
+        while queue:
+            curNode = queue.popleft()
+            inQueue[curNode] = False
+
+            for nextCost, nextNode in graph[curNode]:
+                newCost = minCost[curNode] + nextCost
+
+                if newCost < minCost[nextNode]:
+                    minCost[nextNode] = newCost
+
+                    if not inQueue[nextNode]:
+                        queue.append(nextNode)
+                        inQueue[nextNode] = True
+
+        return 'unconnected' if minCost[n] == float('inf') else minCost[n]
+```
 
 ---
 

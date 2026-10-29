@@ -9,8 +9,6 @@ hide:
 
 **Medium · Python · Graph · Boundary DFS**
 
-## 1. Problem Description
-
 ??? question "Problem"
 
     [Read the original problem on LeetCode](https://leetcode.com/problems/surrounded-regions/description/).
@@ -22,102 +20,111 @@ hide:
     exactly when none of its cells can reach an `O` on the boundary.
     Return nothing; keep boundary-connected regions unchanged.
 
-## 2. Approach and Core Idea
+??? note "Explanation, examples & other approaches"
 
-!!! tip "Protect the cells that cannot be captured"
-    Start DFS at every boundary `O`. Mark every reachable `O` as `T`.
-    Afterward, an `O` that is still unmarked must be enclosed.
+    ## Approach and Core Idea
 
-Think of a boundary `O` as an escape route. Every `O` connected to it also has
-an escape route, even if that cell is far from the boundary.
+    !!! tip "Protect the cells that cannot be captured"
+        Start DFS at every boundary `O`. Mark every reachable `O` as `T`.
+        Afterward, an `O` that is still unmarked must be enclosed.
 
-This gives a useful reversal: instead of searching for every enclosed region,
-find all the cells that are **not enclosed** first.
+    Think of a boundary `O` as an escape route. Every `O` connected to it also has
+    an escape route, even if that cell is far from the boundary.
 
-Counting connected components alone cannot tell us which cells to capture:
-we need to know whether each component touches the boundary. A component-by-component
-solution can work, but it needs that extra tracking. Boundary DFS directly marks
-all safe cells, and the board itself stores the classification.
+    This gives a useful reversal: instead of searching for every enclosed region,
+    find all the cells that are **not enclosed** first.
 
-**Why it works:** DFS marks exactly the `O` cells reachable from boundary `O`s.
-Those cells cannot be surrounded. Every remaining `O` belongs to a region with
-no boundary connection, so it must be captured.
+    Counting connected components alone cannot tell us which cells to capture:
+    we need to know whether each component touches the boundary. A component-by-component
+    solution can work, but it needs that extra tracking. Boundary DFS directly marks
+    all safe cells, and the board itself stores the classification.
 
-## 3. Algorithm Steps
+    **Why it works:** DFS marks exactly the `O` cells reachable from boundary `O`s.
+    Those cells cannot be surrounded. Every remaining `O` belongs to a region with
+    no boundary connection, so it must be captured.
 
-1. If the board is empty, stop.
-2. Scan the first and last columns, then the first and last rows.
-3. Whenever a boundary cell is `O`, run DFS and change its entire reachable
-   `O` region to `T`.
-4. Scan every cell once more:
-   - Remaining `O` → `X`: capture it.
-   - `T` → `O`: restore the protected region.
-   - `X` stays unchanged.
+    ## Algorithm Steps
 
-## 4. Hand Simulation
+    1. If the board is empty, stop.
+    2. Scan the first and last columns, then the first and last rows.
+    3. Whenever a boundary cell is `O`, run DFS and change its entire reachable
+       `O` region to `T`.
+    4. Scan every cell once more:
+       - Remaining `O` → `X`: capture it.
+       - `T` → `O`: restore the protected region.
+       - `X` stays unchanged.
 
-Consider this board; coordinates are zero-based:
+    ## Hand Simulation
 
-```text
-X X X X
-X O O X
-X X O X
-X O X X
-```
+    Consider this board; coordinates are zero-based:
 
-**Boundary scan:** the only boundary `O` is at `(3, 1)`. Its four neighbors
-either lie outside the board or contain `X`, so DFS marks only that cell:
+    ```text
+    X X X X
+    X O O X
+    X X O X
+    X O X X
+    ```
 
-```text
-X X X X
-X O O X
-X X O X
-X T X X
-```
+    **Boundary scan:** the only boundary `O` is at `(3, 1)`. Its four neighbors
+    either lie outside the board or contain `X`, so DFS marks only that cell:
 
-**Capture:** `(1, 1)`, `(1, 2)`, and `(2, 2)` still contain `O`.
-They are connected to each other but cannot reach any boundary `O`, so all three
-become `X`.
+    ```text
+    X X X X
+    X O O X
+    X X O X
+    X T X X
+    ```
 
-**Restore:** change `(3, 1)` from `T` back to `O`:
+    **Capture:** `(1, 1)`, `(1, 2)`, and `(2, 2)` still contain `O`.
+    They are connected to each other but cannot reach any boundary `O`, so all three
+    become `X`.
 
-```text
-X X X X
-X X X X
-X X X X
-X O X X
-```
+    **Restore:** change `(3, 1)` from `T` back to `O`:
 
-The method protects whole regions, not just boundary cells: if the bottom `O`
-had an adjacent chain of `O`s leading inward, DFS would mark that entire chain.
+    ```text
+    X X X X
+    X X X X
+    X X X X
+    X O X X
+    ```
 
-## 5. Important Implementation Details
+    The method protects whole regions, not just boundary cells: if the bottom `O`
+    had an adjacent chain of `O`s leading inward, DFS would mark that entire chain.
 
-- **Mark before pushing onto the stack.** This prevents a cell from being
-  scheduled repeatedly through different neighbors.
-- **Use a stack for iterative DFS.** A long region can exceed Python's default
-  recursion depth. An explicit stack keeps the same DFS idea without recursive calls.
-- **Do not mark `X` cells.** They block connectivity.
-- **Repeated corner checks are harmless.** A previously visited cell is already
-  `T`, so a later boundary check skips it.
-- **Restore only after all boundary searches finish.** Restoring early would
-  discard the visited markers.
-- **One-row or one-column boards work too.** Every `O` is boundary-connected,
-  so no `O` is captured.
+    ## Important Implementation Details
 
-## 6. Time and Space Complexity
+    - **Mark before pushing onto the stack.** This prevents a cell from being
+      scheduled repeatedly through different neighbors.
+    - **Use a stack for iterative DFS.** A long region can exceed Python's default
+      recursion depth. An explicit stack keeps the same DFS idea without recursive calls.
+    - **Do not mark `X` cells.** They block connectivity.
+    - **Repeated corner checks are harmless.** A previously visited cell is already
+      `T`, so a later boundary check skips it.
+    - **Restore only after all boundary searches finish.** Restoring early would
+      discard the visited markers.
+    - **One-row or one-column boards work too.** Every `O` is boundary-connected,
+      so no `O` is captured.
 
-Let $m$ be the number of rows and $n$ the number of columns.
+    ## Time and Space Complexity
 
-| Resource | Complexity | Reason |
-| --- | --- | --- |
-| Time | $O(mn)$ | Each cell is marked at most once; the final scan visits all cells. |
-| Auxiliary space | $O(mn)$ worst case | The explicit DFS stack can contain a linear number of cells. |
+    Let $m$ be the number of rows and $n$ the number of columns.
 
-The board is updated in place, but **in-place mutation does not mean constant
-auxiliary space**: the stack still uses memory.
+    | Resource | Complexity | Reason |
+    | --- | --- | --- |
+    | Time | $O(mn)$ | Each cell is marked at most once; the final scan visits all cells. |
+    | Auxiliary space | $O(mn)$ worst case | The explicit DFS stack can contain a linear number of cells. |
 
-## 7. Complete Python Solution
+    The board is updated in place, but **in-place mutation does not mean constant
+    auxiliary space**: the stack still uses memory.
+
+    ## Key Takeaways
+
+    - Boundary connectivity determines whether a region is safe; its size does not.
+    - Mark safe cells first, then capture everything left over.
+    - A temporary marker can serve as both visited state and classification.
+    - Iterative DFS is useful when a recursive search could become too deep.
+
+## Python solution
 
 ```python
 from typing import List
@@ -165,13 +172,6 @@ class Solution:
                 elif board[row][col] == "T":
                     board[row][col] = "O"
 ```
-
-## 8. Key Takeaways
-
-- Boundary connectivity determines whether a region is safe; its size does not.
-- Mark safe cells first, then capture everything left over.
-- A temporary marker can serve as both visited state and classification.
-- Iterative DFS is useful when a recursive search could become too deep.
 
 ---
 

@@ -15,31 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Quick Recap: n = 0, only one BST; n = 1, only one BST. n = 2, 2 BSTs. Explore n = 3:
-
-    dp[i]: the number of unique BSTs.
-
-## Python solution
-
-```python
-class Solution:
-    def numTrees(self, n: int) -> int:
-        if n <= 1:
-            return 1
-
-        dp = [0] * (n + 1)
-        dp[0] = 1
-
-        for i in range(1, n + 1):
-            for j in range(1, i + 1):
-                dp[i] += dp[i - j] * dp[j - 1]
-
-        return dp[n]
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Quick Recap: n = 0, only one BST; n = 1, only one BST. n = 2, 2 BSTs. Explore n = 3:
+
+        dp[i]: the number of unique BSTs.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -88,6 +70,24 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | February 2, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def numTrees(self, n: int) -> int:
+        if n <= 1:
+            return 1
+
+        dp = [0] * (n + 1)
+        dp[0] = 1
+
+        for i in range(1, n + 1):
+            for j in range(1, i + 1):
+                dp[i] += dp[i - j] * dp[j - 1]
+
+        return dp[n]
+```
 
 ---
 

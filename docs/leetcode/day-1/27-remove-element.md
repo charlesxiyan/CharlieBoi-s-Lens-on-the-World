@@ -15,30 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    **Dual Pointers from the Start**: Consider using two pointers that both start from the beginning of the array. **Element Overwriting**: The goal is to keep only the elements that are not equal to `val`. This means we are not "swapping" elements, but rather "overwriting" them. Elements equal to `val` will be covered (overwritten) by subsequent elements that are not equal to `val`.
-
-## Python solution
-
-```python
-class Solution:
-    def removeElement(self, nums: List[int], val: int) -> int:
-        n = len(nums)
-        s = 0
-
-        for f in range(n):
-            # nums[i] == val
-            #   pass and let record stay
-            # nums[i] != val
-            #   replace and let record iterate
-            if nums[f] != val:
-                nums[s] = nums[f]
-                s += 1
-        return s
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        **Dual Pointers from the Start**: Consider using two pointers that both start from the beginning of the array. **Element Overwriting**: The goal is to keep only the elements that are not equal to `val`. This means we are not "swapping" elements, but rather "overwriting" them. Elements equal to `val` will be covered (overwritten) by subsequent elements that are not equal to `val`.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -61,6 +42,25 @@ class Solution:
     | Mastery | ❚❚❚❚ |
     | The Latest Attempt | December 31, 2025 |
     | Feedback | 一开始想到了双指针，但是总是想前后双指针解决问题，同时起步的双指针要多练习！ |
+
+## Python solution
+
+```python
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        n = len(nums)
+        s = 0
+
+        for f in range(n):
+            # nums[i] == val
+            #   pass and let record stay
+            # nums[i] != val
+            #   replace and let record iterate
+            if nums[f] != val:
+                nums[s] = nums[f]
+                s += 1
+        return s
+```
 
 ---
 

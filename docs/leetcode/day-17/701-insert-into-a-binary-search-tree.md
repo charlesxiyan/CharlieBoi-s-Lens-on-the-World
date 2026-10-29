@@ -15,46 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Recursion:
-
-    The core idea of the solution is, in BST, any node can be inserted as a leaf of the tree. For example, [4, 3, 7] and insert 5.
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        if not root:
-            return TreeNode(val = val)
-
-        cur = root
-
-        while cur:
-            pre = cur
-            if cur.val < val:
-                cur = cur.right
-            elif cur.val > val:
-                cur = cur.left
-
-        node = TreeNode(val = val)
-
-        if val < pre.val:
-            pre.left = node
-        else:
-            pre.right = node
-
-        return root
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Recursion:
+
+        The core idea of the solution is, in BST, any node can be inserted as a leaf of the tree. For example, [4, 3, 7] and insert 5.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -96,6 +63,39 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 18, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        if not root:
+            return TreeNode(val = val)
+
+        cur = root
+
+        while cur:
+            pre = cur
+            if cur.val < val:
+                cur = cur.right
+            elif cur.val > val:
+                cur = cur.left
+
+        node = TreeNode(val = val)
+
+        if val < pre.val:
+            pre.left = node
+        else:
+            pre.right = node
+
+        return root
+```
 
 ---
 

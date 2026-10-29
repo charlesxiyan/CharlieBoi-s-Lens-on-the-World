@@ -15,43 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given the `root` of a binary tree, imagine yourself standing on the **right side** of the tree.
-
-    Return the values of the nodes that you can see, ordered from top to bottom.
-
-## Python solution
-
-```python
-from collections import deque
-
-class Solution:
-    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        if not root:
-            return []
-
-        res = []
-        queue = deque([root])
-
-        while queue:
-
-            for i in range(len(queue)):
-                curNode = queue.popleft()
-
-                if i == 0:
-                    res.append(curNode.val)
-
-                if curNode.right:
-                    queue.append(curNode.right)
-
-                if curNode.left:
-                    queue.append(curNode.left)
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given the `root` of a binary tree, imagine yourself standing on the **right side** of the tree.
+
+        Return the values of the nodes that you can see, ordered from top to bottom.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -524,6 +494,36 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 10, 2026 |
+
+## Python solution
+
+```python
+from collections import deque
+
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+
+        res = []
+        queue = deque([root])
+
+        while queue:
+
+            for i in range(len(queue)):
+                curNode = queue.popleft()
+
+                if i == 0:
+                    res.append(curNode.val)
+
+                if curNode.right:
+                    queue.append(curNode.right)
+
+                if curNode.left:
+                    queue.append(curNode.left)
+
+        return res
+```
 
 ---
 

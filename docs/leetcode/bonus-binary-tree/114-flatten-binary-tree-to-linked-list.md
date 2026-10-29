@@ -15,36 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given the `root` of a binary tree, flatten the tree into a linked list **in-place**.
-
-## Python solution
-
-```python
-class Solution:
-    def flatten(self, root: Optional[TreeNode]) -> None:
-        if not root:
-            return
-
-        self.flatten(root.left)
-        self.flatten(root.right)
-
-        left = root.left
-        right = root.right
-
-        root.left = None
-        root.right = left
-
-        cur = root
-
-        while cur.right:
-            cur = cur.right
-
-        cur.right = right
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given the `root` of a binary tree, flatten the tree into a linked list **in-place**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -610,6 +585,31 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 10, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def flatten(self, root: Optional[TreeNode]) -> None:
+        if not root:
+            return
+
+        self.flatten(root.left)
+        self.flatten(root.right)
+
+        left = root.left
+        right = root.right
+
+        root.left = None
+        root.right = left
+
+        cur = root
+
+        while cur.right:
+            cur = cur.right
+
+        cur.right = right
+```
 
 ---
 

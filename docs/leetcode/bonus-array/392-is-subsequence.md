@@ -15,30 +15,14 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Use two pointers:
-
-    - `i` points to the current character in `s`
-    - `j` points to the current character in `t`
-
-## Python solution
-
-```python
-class Solution:
-    def isSubsequence(self, s: str, t: str) -> bool:
-        i, j = 0, 0
-
-        while i < len(s) and j < len(t):
-            if s[i] == t[j]:
-                i += 1
-
-            j += 1
-
-        return i == len(s)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Use two pointers:
+
+        - `i` points to the current character in `s`
+        - `j` points to the current character in `t`
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -262,6 +246,22 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | October 3, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        i, j = 0, 0
+
+        while i < len(s) and j < len(t):
+            if s[i] == t[j]:
+                i += 1
+
+            j += 1
+
+        return i == len(s)
+```
 
 ---
 

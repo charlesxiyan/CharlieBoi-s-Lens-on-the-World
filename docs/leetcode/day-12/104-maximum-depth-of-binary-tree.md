@@ -15,36 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Iteration:
-
-    Reference to [102. Binary Tree Level Order Traversal](../day-11/102-binary-tree-level-order-traversal.md)
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
-        return self.traverse(root)
-
-    def traverse(self, node):
-        if not node:
-            return 0
-
-        leftHeight = self.traverse(node.left)
-        rightHeight = self.traverse(node.right)
-
-        return 1 + max(leftHeight, rightHeight)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Iteration:
+
+        Reference to [102. Binary Tree Level Order Traversal](../day-11/102-binary-tree-level-order-traversal.md)
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -97,6 +74,29 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 13, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        return self.traverse(root)
+
+    def traverse(self, node):
+        if not node:
+            return 0
+
+        leftHeight = self.traverse(node.left)
+        rightHeight = self.traverse(node.right)
+
+        return 1 + max(leftHeight, rightHeight)
+```
 
 ---
 

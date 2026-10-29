@@ -15,43 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Use **Binary Search**.
-
-    Although the rotated array is not completely sorted, after splitting the current interval at `mid`, **at least one half must be sorted**.
-
-## Python solution
-
-```python
-class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        left, right = 0, len(nums) - 1
-
-        while left <= right:
-            mid = (left + right) // 2
-
-            if nums[mid] == target:
-                return mid
-
-            # Left half is sorted
-            if nums[left] <= nums[mid]:
-                if nums[left] <= target < nums[mid]:
-                    right = mid - 1
-                else:
-                    left = mid + 1
-
-            # Right half is sorted
-            else:
-                if nums[mid] < target <= nums[right]:
-                    left = mid + 1
-                else:
-                    right = mid - 1
-
-        return -1
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Use **Binary Search**.
+
+        Although the rotated array is not completely sorted, after splitting the current interval at `mid`, **at least one half must be sorted**.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -499,6 +469,36 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 8, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        left, right = 0, len(nums) - 1
+
+        while left <= right:
+            mid = (left + right) // 2
+
+            if nums[mid] == target:
+                return mid
+
+            # Left half is sorted
+            if nums[left] <= nums[mid]:
+                if nums[left] <= target < nums[mid]:
+                    right = mid - 1
+                else:
+                    left = mid + 1
+
+            # Right half is sorted
+            else:
+                if nums[mid] < target <= nums[right]:
+                    left = mid + 1
+                else:
+                    right = mid - 1
+
+        return -1
+```
 
 ---
 

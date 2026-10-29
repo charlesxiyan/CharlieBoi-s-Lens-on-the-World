@@ -15,9 +15,25 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        The core idea of the solution is, even though the value of the root is less than low, the right subtree may still meet the requirement; similarly, even though the value of the root is greater than high, the left subtree may still work.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
 
     The core idea of the solution is, even though the value of the root is less than low, the right subtree may still meet the requirement; similarly, even though the value of the root is greater than high, the left subtree may still work.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 21, 2026 |
 
 ## Python solution
 
@@ -42,22 +58,6 @@ class Solution:
 
         return root
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    The core idea of the solution is, even though the value of the root is less than low, the right subtree may still meet the requirement; similarly, even though the value of the root is greater than high, the left subtree may still work.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 21, 2026 |
 
 ---
 

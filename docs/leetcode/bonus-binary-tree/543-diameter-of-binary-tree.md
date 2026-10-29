@@ -15,39 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Given the `root` of a binary tree, return the **diameter** of the tree.
-
-    The diameter is the length of the longest path between any two nodes in the tree.
-
-## Python solution
-
-```python
-class Solution:
-    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        self.res = 0
-
-        self.traverse(root)
-
-        return self.res
-
-    def traverse(self, node):
-        if not node:
-            return 0
-
-        leftDepth = self.traverse(node.left)
-        rightDepth = self.traverse(node.right)
-
-        self.res = max(
-            self.res,
-            leftDepth + rightDepth
-        )
-
-        return 1 + max(leftDepth, rightDepth)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Given the `root` of a binary tree, return the **diameter** of the tree.
+
+        The diameter is the length of the longest path between any two nodes in the tree.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -762,6 +736,32 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 14, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        self.res = 0
+
+        self.traverse(root)
+
+        return self.res
+
+    def traverse(self, node):
+        if not node:
+            return 0
+
+        leftDepth = self.traverse(node.left)
+        rightDepth = self.traverse(node.right)
+
+        self.res = max(
+            self.res,
+            leftDepth + rightDepth
+        )
+
+        return 1 + max(leftDepth, rightDepth)
+```
 
 ---
 

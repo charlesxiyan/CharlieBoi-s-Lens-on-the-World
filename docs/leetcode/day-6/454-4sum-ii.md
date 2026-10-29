@@ -15,11 +15,27 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        The idea of the solution is counting how many times/combinations num1 (in nums1) + num2 (in nums2) pops up and save them in a dictionary.
+
+        Then iterate all combinations of num3 and num4 in nums3 and nums4. If the opposite number exists in the dictionary, let count be added by the combination number in the dictionary.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     The idea of the solution is counting how many times/combinations num1 (in nums1) + num2 (in nums2) pops up and save them in a dictionary.
 
     Then iterate all combinations of num3 and num4 in nums3 and nums4. If the opposite number exists in the dictionary, let count be added by the combination number in the dictionary.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 5, 2026 |
 
 ## Python solution
 
@@ -44,22 +60,6 @@ class Solution:
 
         return count
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    The idea of the solution is counting how many times/combinations num1 (in nums1) + num2 (in nums2) pops up and save them in a dictionary.
-
-    Then iterate all combinations of num3 and num4 in nums3 and nums4. If the opposite number exists in the dictionary, let count be added by the combination number in the dictionary.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 5, 2026 |
 
 ---
 

@@ -22,45 +22,11 @@ hide:
     Initially, each of the `n` elements belongs to its own set. The note covers
     path compression and union by rank, with examples of connectivity queries.
 
-!!! tip "Core idea"
-
-    Union Find, also called **Disjoint Set Union (DSU)**, is a data structure used to manage multiple disjoint sets.
-
-## Python solution
-
-```python
-class UnionFind:
-    def __init__(self, n):
-        self.parent = list(range(n))
-        self.rank = [1] * n
-
-    def find(self, x):
-        if x != self.parent[x]:
-            self.parent[x] = self.find(self.parent[x])
-        return self.parent[x]
-
-    def union(self, x, y):
-        root_x = self.find(x)
-        root_y = self.find(y)
-
-        if root_x == root_y:
-            return False
-
-        if self.rank[root_x] < self.rank[root_y]:
-            root_x, root_y = root_y, root_x
-
-        self.parent[root_y] = root_x
-
-        if self.rank[root_x] == self.rank[root_y]:
-            self.rank[root_x] += 1
-
-        return True
-
-    def is_same(self, x, y):
-        return self.find(x) == self.find(y)
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Union Find, also called **Disjoint Set Union (DSU)**, is a data structure used to manage multiple disjoint sets.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -670,6 +636,40 @@ class UnionFind:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 23, 2026 |
+
+## Python solution
+
+```python
+class UnionFind:
+    def __init__(self, n):
+        self.parent = list(range(n))
+        self.rank = [1] * n
+
+    def find(self, x):
+        if x != self.parent[x]:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union(self, x, y):
+        root_x = self.find(x)
+        root_y = self.find(y)
+
+        if root_x == root_y:
+            return False
+
+        if self.rank[root_x] < self.rank[root_y]:
+            root_x, root_y = root_y, root_x
+
+        self.parent[root_y] = root_x
+
+        if self.rank[root_x] == self.rank[root_y]:
+            self.rank[root_x] += 1
+
+        return True
+
+    def is_same(self, x, y):
+        return self.find(x) == self.find(y)
+```
 
 ---
 

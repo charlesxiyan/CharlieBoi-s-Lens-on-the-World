@@ -40,10 +40,26 @@ hide:
 
     **Constraints:**`1 <= s.length < 10000`
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
 
-    **Goal:**
-    Given a string `s` containing lowercase letters and digits, write a function that keeps the alphabetical characters unchanged but replaces every numeric character with the word **"number"**.
+    !!! tip "Core idea"
+
+        **Goal:**
+        Given a string `s` containing lowercase letters and digits, write a function that keeps the alphabetical characters unchanged but replaces every numeric character with the word **"number"**.
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
+
+    Note:
+
+    1. The reason why we substitute digits into “number” from the end of the string to the start is that if we do it from start, the time complexity is $O(n^2)$.
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 7, 2026 |
 
 ## Python solution
 
@@ -71,22 +87,6 @@ class Solution:
 
 				return ''.join(result)
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Note:
-
-    1. The reason why we substitute digits into “number” from the end of the string to the start is that if we do it from start, the time complexity is $O(n^2)$.
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 7, 2026 |
 
 ---
 

@@ -15,9 +15,23 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
+??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Reference to [144. Binary Tree Preorder Traversal](144-binary-tree-preorder-traversal.md) (Preorder, Postorder and Inorder are all listed!)
+
+    Original study notes follow, including intermediate snippets and earlier attempts.
 
     Reference to [144. Binary Tree Preorder Traversal](144-binary-tree-preorder-traversal.md) (Preorder, Postorder and Inorder are all listed!)
+
+??? note "Study record"
+
+    | Field | Value |
+    | --- | --- |
+    | Attempts | 1 |
+    | Mastery | ❚ |
+    | The Latest Attempt | January 12, 2026 |
 
 ## Python solution
 
@@ -48,20 +62,6 @@ class Solution:
 
         return result
 ```
-
-??? note "Explanation, examples & other approaches"
-
-    Original study notes follow, including intermediate snippets and earlier attempts.
-
-    Reference to [144. Binary Tree Preorder Traversal](144-binary-tree-preorder-traversal.md) (Preorder, Postorder and Inorder are all listed!)
-
-??? note "Study record"
-
-    | Field | Value |
-    | --- | --- |
-    | Attempts | 1 |
-    | Mastery | ❚ |
-    | The Latest Attempt | January 12, 2026 |
 
 ---
 

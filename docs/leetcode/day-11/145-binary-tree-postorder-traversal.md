@@ -15,45 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    Reference to [144. Binary Tree Preorder Traversal](144-binary-tree-preorder-traversal.md)
-
-## Python solution
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-
-        def preorder(node):
-            if node is None:
-                return
-
-            # 写在这里是Preorder
-            # res.append(node.val)
-
-            preorder(node.left)
-
-            # Inorder
-            # res.append(node.val)
-
-            preorder(node.right)
-
-            # Postorder
-            res.append(node.val)
-
-        res = []
-        preorder(root)
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        Reference to [144. Binary Tree Preorder Traversal](144-binary-tree-preorder-traversal.md)
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -93,6 +59,40 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 12, 2026 |
+
+## Python solution
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+
+        def preorder(node):
+            if node is None:
+                return
+
+            # 写在这里是Preorder
+            # res.append(node.val)
+
+            preorder(node.left)
+
+            # Inorder
+            # res.append(node.val)
+
+            preorder(node.right)
+
+            # Postorder
+            res.append(node.val)
+
+        res = []
+        preorder(root)
+        return res
+```
 
 ---
 

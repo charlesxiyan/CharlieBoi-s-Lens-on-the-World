@@ -15,40 +15,13 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    You are given an `m x n` integer matrix with the following properties:
-
-    Each row is sorted in ascending order. The first integer of each row is greater than the last integer of the previous row.
-
-## Python solution
-
-```python
-class Solution:
-    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        m, n = len(matrix), len(matrix[0])
-
-        left, right = 0, m * n - 1
-
-        while left <= right:
-            mid = (left + right) // 2
-
-            row = mid // n
-            col = mid % n
-
-            if matrix[row][col] == target:
-                return True
-
-            elif matrix[row][col] < target:
-                left = mid + 1
-
-            else:
-                right = mid - 1
-
-        return False
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        You are given an `m x n` integer matrix with the following properties:
+
+        Each row is sorted in ascending order. The first integer of each row is greater than the last integer of the previous row.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -416,6 +389,33 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | September 9, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        m, n = len(matrix), len(matrix[0])
+
+        left, right = 0, m * n - 1
+
+        while left <= right:
+            mid = (left + right) // 2
+
+            row = mid // n
+            col = mid % n
+
+            if matrix[row][col] == target:
+                return True
+
+            elif matrix[row][col] < target:
+                left = mid + 1
+
+            else:
+                right = mid - 1
+
+        return False
+```
 
 ---
 

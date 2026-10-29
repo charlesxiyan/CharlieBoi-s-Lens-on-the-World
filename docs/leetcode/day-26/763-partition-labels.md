@@ -15,33 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    As the following photo shows, create a dictionary to record the index of the last occurence for every character. Iterate the whole string, in each iteration, update the end of substring by
-
-## Python solution
-
-```python
-class Solution:
-    def partitionLabels(self, s: str) -> List[int]:
-        letters = {}
-        start = 0
-        end = 0
-        result = []
-
-        for idx, char in enumerate(s):
-            letters[char] = idx
-
-        for idx, char in enumerate(s):
-            end = max(end, letters[char])
-            if end == idx:
-                result.append(end - start + 1)
-                start = end + 1
-
-        return result
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        As the following photo shows, create a dictionary to record the index of the last occurence for every character. Iterate the whole string, in each iteration, update the end of substring by
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -67,6 +45,28 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | January 29, 2026 |
+
+## Python solution
+
+```python
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        letters = {}
+        start = 0
+        end = 0
+        result = []
+
+        for idx, char in enumerate(s):
+            letters[char] = idx
+
+        for idx, char in enumerate(s):
+            end = max(end, letters[char])
+            if end == idx:
+                result.append(end - start + 1)
+                start = end + 1
+
+        return result
+```
 
 ---
 

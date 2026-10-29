@@ -15,54 +15,11 @@ hide:
 
     The official page contains the problem statement, examples, and constraints.
 
-!!! tip "Core idea"
-
-    This problem asks us to connect all points with the minimum possible total cost.
-
-## Python solution
-
-```python
-from typing import List
-
-class Solution:
-    def minCostConnectPoints(self, points: List[List[int]]) -> int:
-        n = len(points)
-
-        visit = [False] * n
-        minDist = [float('inf')] * n
-        minDist[0] = 0
-
-        res = 0
-
-        for _ in range(n):
-            # No node has been selected in this round
-            u = -1
-
-            # Find the unvisited node with the smallest minDist
-            for i in range(n):
-                if not visit[i] and (u == -1 or minDist[i] < minDist[u]):
-                    u = i
-
-            # Add u to the MST
-            visit[u] = True
-            res += minDist[u]
-
-            # Update minDist for all unvisited nodes
-            x, y = points[u]
-
-            for v in range(n):
-                if not visit[v]:
-                    a, b = points[v]
-
-                    minDist[v] = min(
-                        minDist[v],
-                        abs(x - a) + abs(y - b)
-                    )
-
-        return res
-```
-
 ??? note "Explanation, examples & other approaches"
+
+    !!! tip "Core idea"
+
+        This problem asks us to connect all points with the minimum possible total cost.
 
     Original study notes follow, including intermediate snippets and earlier attempts.
 
@@ -601,6 +558,49 @@ class Solution:
     | Attempts | 1 |
     | Mastery | ❚ |
     | The Latest Attempt | August 25, 2026 |
+
+## Python solution
+
+```python
+from typing import List
+
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        n = len(points)
+
+        visit = [False] * n
+        minDist = [float('inf')] * n
+        minDist[0] = 0
+
+        res = 0
+
+        for _ in range(n):
+            # No node has been selected in this round
+            u = -1
+
+            # Find the unvisited node with the smallest minDist
+            for i in range(n):
+                if not visit[i] and (u == -1 or minDist[i] < minDist[u]):
+                    u = i
+
+            # Add u to the MST
+            visit[u] = True
+            res += minDist[u]
+
+            # Update minDist for all unvisited nodes
+            x, y = points[u]
+
+            for v in range(n):
+                if not visit[v]:
+                    a, b = points[v]
+
+                    minDist[v] = min(
+                        minDist[v],
+                        abs(x - a) + abs(y - b)
+                    )
+
+        return res
+```
 
 ---
 
