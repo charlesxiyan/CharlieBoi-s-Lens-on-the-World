@@ -44,18 +44,14 @@ hide:
     `s + 1` through `min(s + 6, n²)`. But we still need a matrix position to
     check whether each landing square has a jump.
 
-    First make the label zero-based:
+    In `getPosition(num)`, first subtract one from `num` to make it zero-based.
+    Then compute `row = num // n` and `col = num % n`.
 
-    $$
-    q,\;t=\operatorname{divmod}(s-1,n).
-    $$
+    At this point, `row` counts from the bottom:
 
-    Here `q` is the row number **counted from the bottom**, and `t` is the
-    position along that row before adjusting its direction.
-
-    - Matrix row: `row = n - 1 - q`, because Python indexes from the top.
-    - If `q` is even, labels run left to right: `col = t`.
-    - If `q` is odd, labels run right to left: `col = n - 1 - t`.
+    - If `row % 2` is true, reverse the column with `col = n - 1 - col`.
+    - Otherwise, leave `col` unchanged.
+    - Finally set `row = n - 1 - row` to convert to Python's top-based row index.
 
     For a `3 × 3` board, the numbering is:
 
@@ -65,7 +61,8 @@ hide:
     1  2  3
     ```
 
-    For square `6`, `divmod(5, 3)` gives `(1, 2)`. Thus `row = 1` and
+    For square `6`, `num` becomes 5, so `row = 5 // 3 = 1` and
+    `col = 5 % 3 = 2`. The row is odd, so the column reverses:
     `col = 3 - 1 - 2 = 0`, matching the middle-left cell.
 
     **Use the row counted from the bottom for parity.** Using the top-indexed
@@ -74,14 +71,15 @@ hide:
     ## Algorithm Steps
 
     1. Put `(1, 0)` in a `deque`: square 1 reached with zero rolls.
-    2. Mark square 1 visited.
-    3. Pop `(square, rolls)` from the front of the queue.
-    4. If `square == n²`, return `rolls`.
-    5. For each legal landing label within six steps:
-        - Convert it to `(row, col)`.
-        - If the board contains a jump, use its destination; otherwise use the landing label.
-        - If that final destination is unvisited, mark it and enqueue
-          `(destination, rolls + 1)`.
+    2. Initialize `record = {1}` to mark the starting square visited.
+    3. Pop `(cur, steps)` from the front of the queue.
+    4. If `cur == n * n`, return `steps`.
+    5. Try `dice` values from 1 through 6:
+        - Set `nxt = cur + dice`; stop the loop if it exceeds `n * n`.
+        - Convert `nxt` to `(row, col)` using `getPosition(nxt)`.
+        - If the cell starts a jump, update `nxt` to `board[row][col]` once.
+        - If this final `nxt` is not in `record`, record it and enqueue
+          `(nxt, steps + 1)`.
     6. If the queue empties without reaching the goal, return `-1`.
 
     ## Hand Simulation
@@ -99,7 +97,7 @@ hide:
     The numbering diagram above shows that this represents a ladder `2 → 8`
     and a snake `7 → 3`. The goal is square 9.
 
-    **Start:** queue `[(1, 0)]`, visited `{1}`.
+    **Start:** `queue = deque([(1, 0)])`, `record = {1}`.
 
     From square 1, inspect all six possible landing squares:
 
@@ -141,12 +139,13 @@ hide:
     create repeated visits or cycles.
 
     **Bound rolls by the goal.** There is no transition for an overshoot. The
-    range's upper bound needs `+1` because Python excludes the endpoint.
+    loop uses `range(1, 7)` to include all six dice values. Once `nxt > n * n`,
+    `break` is safe because every later dice value would overshoot too.
 
     **The start requires zero rolls.** A snake or ladder reached during a turn
-    is part of that same turn. Every queued successor therefore uses `rolls + 1`.
+    is part of that same turn. Every queued successor therefore uses `steps + 1`.
 
-    **Do not mutate the board.** A separate visited set tracks search state;
+    **Do not mutate the board.** The separate `record` set tracks visited end-of-turn squares;
     the board continues to describe the original jumps.
 
     ## Why BFS Gives the Minimum
@@ -184,36 +183,46 @@ hide:
 
 ```python
 from collections import deque
-from typing import List
-
 
 class Solution:
-    def snakesAndLadders(self, board: List[List[int]]) -> int:
+    def snakesAndLadders(self, board: list[list[int]]) -> int:
         n = len(board)
-        goal = n * n
+        queue = deque([(1, 0)])
+        record = {1}
 
-        def coordinates(square: int):
-            row_from_bottom, offset = divmod(square - 1, n)
-            row = n - 1 - row_from_bottom
-            col = offset if row_from_bottom % 2 == 0 else n - 1 - offset
+        def getPosition(num):
+            num -= 1
+
+            row = num // n
+            col = num % n
+
+            if row % 2:
+                col = n - 1 - col
+
+            row = n - 1 - row
+
             return row, col
 
-        queue = deque([(1, 0)])
-        visited = {1}
-
         while queue:
-            square, rolls = queue.popleft()
-            if square == goal:
-                return rolls
+            cur, steps = queue.popleft()
 
-            for landing in range(square + 1, min(square + 6, goal) + 1):
-                row, col = coordinates(landing)
-                jump = board[row][col]
-                destination = landing if jump == -1 else jump
+            if cur == n * n:
+                return steps
 
-                if destination not in visited:
-                    visited.add(destination)
-                    queue.append((destination, rolls + 1))
+            for dice in range(1, 7):
+                nxt = cur + dice
+                if nxt > n * n:
+                    break
+
+                row, col = getPosition(nxt)
+
+                if board[row][col] != -1:
+                    # 跳转nxt
+                    nxt = board[row][col]
+
+                if nxt not in record:
+                    record.add(nxt)
+                    queue.append((nxt, steps + 1))
 
         return -1
 ```
