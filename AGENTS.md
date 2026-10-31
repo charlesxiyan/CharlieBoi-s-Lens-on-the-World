@@ -11,7 +11,8 @@ Personal knowledge base and blog for CharlieBoi, built with MkDocs Material.
   same-problem variants in their original modules. Assets are in `assets/`.
 - `docs/quant-finance/`: landing page for `study-plan/` and `projects/`.
   The interview plan links to the existing `day-N/` modules (keep their URLs);
-  each has an overview and four `question-N.md` pages. Register new days,
+  each has an overview and numbered `question-N.md` pages. Day labels stay
+  topic-neutral; list categories per question. Register new days,
   questions, and projects under the corresponding `nav` section.
 - `docs/notes/`: supporting technical references.
 - `docs/blog/posts/`: dated posts for the Life section, with YAML front matter.

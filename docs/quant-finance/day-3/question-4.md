@@ -1,36 +1,55 @@
-# Day 3 · Question 4
+# Day 3 · Portfolio Manager
 
-!!! note "Not started"
-    This page is ready for a question. No problem or solution has been added yet.
+*Edited by Charles*
+
+**Combinatorics · Stars and bars · Minimum allocations**
+
+[Original question on OpenQuant](https://openquant.co/questions/portfolio-manager)
 
 ## Problem
 
-*Add the question here, including any constraints or assumptions.*
+Allocate a 75-million-dollar fund among five distinct asset classes in whole
+million-dollar units, investing the entire fund.
 
-## Source
+1. How many allocations are possible if a class may receive zero?
+2. How many remain if every class must receive at least five million dollars?
 
-*Record the source or link, if applicable.*
+!!! tip "Core idea"
+    Count nonnegative integer allocations. For minimum requirements, reserve
+    the mandatory amounts first and distribute the remainder.
 
-## My initial approach
+## Short solution
 
-*Capture the first attempt before consulting a solution.*
+**1. Allow zero allocations.** In million-dollar units,
 
-## Worked solution
+$$x_1+x_2+x_3+x_4+x_5=75,\qquad x_i\ge0.$$
 
-*Explain the reasoning step by step. Include equations or code where helpful.*
+Represent the money by 75 identical stars and separate the five labeled classes
+with four bars. Selecting the bar positions gives
 
-## Check the answer
+$$N_1=\binom{75+5-1}{5-1}=\binom{79}{4}=1{,}502{,}501.$$
 
-*Verify the result with a simple case, an alternative derivation, or a simulation.*
+**2. Reserve the minimum.** Set $z_i=x_i-5\ge0$. The five minimum allocations
+use $25$ units, leaving
 
-## Key takeaway
+$$z_1+z_2+z_3+z_4+z_5=50.$$
 
-*What is the main idea to remember?*
+Apply the same count:
 
-## Review notes
+$$N_2=\binom{50+5-1}{5-1}=\binom{54}{4}=316{,}251.$$
 
-*Record mistakes, open questions, or a follow-up attempt here.*
+!!! success "Answers"
+    $$\boxed{N_1=1{,}502{,}501,\qquad N_2=316{,}251}$$
+
+!!! warning "Watch out"
+    Investment units are indistinguishable; asset classes are labeled.
+    Adjacent bars correctly allow an allocation of zero. Part 1 does not
+    require a positive investment in every class.
+
+??? note "Small example: two units across three classes"
+    The six allocations are $(2,0,0)$, $(0,2,0)$, $(0,0,2)$, $(1,1,0)$,
+    $(1,0,1)$, and $(0,1,1)$. This matches $\binom42=6$.
 
 ---
 
-[Previous question](question-3.md) · [Day 3 overview](index.md)
+[Previous question](question-3.md) · [Day 3 overview](index.md) · [Next question](question-5.md)

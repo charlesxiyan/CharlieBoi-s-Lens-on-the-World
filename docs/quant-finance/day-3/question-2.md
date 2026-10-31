@@ -1,35 +1,55 @@
-# Day 3 · Question 2
+# Day 3 · Ascending Dice Rolls
 
-!!! note "Not started"
-    This page is ready for a question. No problem or solution has been added yet.
+*Edited by Charles*
+
+**Probability · Counting · Strict ordering**
+
+[Original question on OpenQuant](https://openquant.co/questions/ascending-dice-rolls)
 
 ## Problem
 
-*Add the question here, including any constraints or assumptions.*
+Roll a fair six-sided die three times independently. Find the probability that
+its results satisfy $D_1<D_2<D_3$.
 
-## Source
+!!! tip "Core idea"
+    Choose three distinct faces. Each choice has exactly one increasing order.
 
-*Record the source or link, if applicable.*
+## Short solution
 
-## My initial approach
+**1. Count all outcomes.** Order matters: $(1,2,3)$ and $(3,2,1)$ are different
+outcomes. Independence gives $6^3=216$ equally likely triples.
 
-*Capture the first attempt before consulting a solution.*
+**2. Count increasing triples.** Choose any three faces from the six available:
 
-## Worked solution
+$$
+\binom63=\frac{6\cdot5\cdot4}{3\cdot2\cdot1}=20.
+$$
 
-*Explain the reasoning step by step. Include equations or code where helpful.*
+For example, the set $\{2,4,6\}$ contributes only $(2,4,6)$.
+There is no additional permutation factor because the required order is fixed.
 
-## Check the answer
+**3. Divide favorable outcomes by all outcomes.**
 
-*Verify the result with a simple case, an alternative derivation, or a simulation.*
+$$
+P(D_1<D_2<D_3)=\frac{\binom63}{6^3}=\frac{20}{216}.
+$$
 
-## Key takeaway
+!!! success "Answer"
+    $$\boxed{\frac5{54}\approx9.26\%}$$
 
-*What is the main idea to remember?*
+!!! warning "Watch out"
+    The answer is not $1/3!$. That is the probability of increasing order
+    **conditional on all three rolls being distinct**. Ties are possible here.
 
-## Review notes
+??? note "Alternative check: first exclude ties"
+    The probability of three distinct results is
 
-*Record mistakes, open questions, or a follow-up attempt here.*
+    $$
+    1\cdot\frac56\cdot\frac46=\frac59.
+    $$
+
+    Conditional on distinct results, the six orderings are equally likely.
+    Thus $(5/9)(1/6)=5/54$.
 
 ---
 
