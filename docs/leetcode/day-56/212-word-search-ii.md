@@ -98,12 +98,10 @@ hide:
     all four recursive calls. Each recursive frame keeps its own `path` string:
     `path += char` creates a longer string, so no explicit string backtracking is needed.
 
-    The `search` helper is preserved from the supplied implementation but is not
-    called by `findWords`. DFS already carries its trie position; restarting a
-    full-word lookup at every step would repeat work. After a successful search,
-    terminal markers for found words have been removed, so this trie no longer
-    represents an unchanged dictionary for subsequent `search` calls. A new
-    `findWords` call rebuilds it.
+    DFS already carries its trie position in `curr`, so a separate `search`
+    helper is unnecessary. The child lookup checks the next prefix character,
+    and `'#' in curr` checks whether a complete word has been reached.
+    Each new `findWords` call rebuilds the trie and resets the results.
 
     **Why it works:** each explored path follows adjacent distinct board cells and
     valid trie prefixes. A terminal node certifies a dictionary word. DFS explores
@@ -193,13 +191,6 @@ class Solution:
             curr = curr[char]
         curr['#'] = True
 
-    def search(self, word):
-        curr = self.root
-        for char in word:
-            if char not in curr:
-                return False
-            curr = curr[char]
-        return '#' in curr
 ```
 
 ---
