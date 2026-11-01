@@ -11,7 +11,7 @@ my reasoning, and lessons to revisit.
 | [Day 1](../day-1/index.md) | 4 questions with solutions | Notes imported |
 | [Day 2](../day-2/index.md) | Questions 3–4 with solutions; 1–2 pending | In progress |
 | [Day 3](../day-3/index.md) | 5 questions with solutions | Available |
-| [Day 4](../day-4/index.md) | 1 interview question with 3 parts and answers | In progress |
+| [Day 4](../day-4/index.md) | 5 questions with solutions, including the 3-part regression interview | Available |
 
 ## How I will use this notebook
 
@@ -23,7 +23,8 @@ my reasoning, and lessons to revisit.
 Day 1 contains the questions and solutions imported from my Notion study notes.
 Day 2 includes two new worked solutions, with two more questions to come.
 Day 3 brings together estimation, probability, and combinatorics. Day 4 opens
-with return regressions, log transformations, and model comparison. Day numbers
+with return regressions, log transformations, and model comparison, followed by
+subset counting, cube geometry, spherical variance, and conditional probability. Day numbers
 describe study sessions rather than calendar dates; topics are listed per question.
 
 ## Mathematical references

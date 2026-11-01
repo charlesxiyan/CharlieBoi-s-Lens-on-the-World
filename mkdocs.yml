@@ -405,6 +405,10 @@ nav:
           - Day 4:
               - quant-finance/day-4/index.md
               - "1. Explaining Returns": quant-finance/day-4/question-1.md
+              - "2. Ten Topping Sundae": quant-finance/day-4/question-2.md
+              - "3. Painted Cube": quant-finance/day-4/question-3.md
+              - "4. Spherical Coordinate Variance": quant-finance/day-4/question-4.md
+              - "5. King of Hearts": quant-finance/day-4/question-5.md
       - Projects:
           - quant-finance/projects/index.md
   - Technical Notes:
