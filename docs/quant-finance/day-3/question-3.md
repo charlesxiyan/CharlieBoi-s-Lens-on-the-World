@@ -71,6 +71,46 @@ $$
 
     $$E=1+\frac56E\quad\Longrightarrow\quad E=6.$$
 
+??? note "State reduction: from six states to two"
+    **Original states.** The natural state is the running sum modulo $6$, giving six
+    residues $0,1,2,3,4,5$. From any residue $r$, the next roll $d\in\{1,\ldots,6\}$
+    sends the sum to $r+d \pmod 6$, which hits each residue exactly once.
+    So **every row of the transition matrix is the same**:
+
+    $$
+    P(r\to s)=\frac16\qquad\text{for all } r,s\in\{0,1,\ldots,5\}.
+    $$
+
+    **Merge the non-stopping states.** Only one distinction matters for the game:
+    residue $0$ means **stop**, and residues $1,\ldots,5$ mean **continue**.
+    Every continuing state moves in exactly the same way:
+
+    $$
+    P(\text{continue}\to 0)=\frac16,
+    \qquad
+    P(\text{continue}\to\{1,\ldots,5\})=\frac56.
+    $$
+
+    The starting state (sum $0$, no roll yet) behaves the same way, since we only
+    check for stopping after a roll. So it also belongs to "continue".
+
+    **The reduced chain.** Two states are enough:
+
+    | From \ To | Continue | Stop |
+    | --- | --- | --- |
+    | Continue | $5/6$ | $1/6$ |
+    | Stop | — | absorbing |
+
+    $T$ is the first time the chain enters **Stop**, so
+    $T\sim\text{Geometric}(1/6)$ and $E[T]=6$.
+
+    **Why merging is allowed.** States $1,\ldots,5$ can be lumped into one state
+    because they all have the **same probability of moving into each group**:
+    $1/6$ into Stop and $5/6$ back into Continue. Once in Continue, the exact residue
+    never changes the future of the game. If, for example, residue $3$ had a higher
+    chance of stopping than residue $1$, this merge would fail and we would have to
+    keep all six states.
+
 ---
 
 [Previous question](question-2.md) · [Day 3 overview](index.md) · [Next question](question-4.md)
