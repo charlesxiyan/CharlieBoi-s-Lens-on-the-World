@@ -7,8 +7,8 @@ worked solutions; questions 1 and 2 are reserved for Sophia's upcoming additions
 
 | Question | Topic | Status | Edited by |
 | --- | --- | --- | --- |
-| [Question 1](question-1.md) | To be added | Awaiting content | — |
-| [Question 2](question-2.md) | To be added | Awaiting content | — |
+| [1. Ten Floor Building](question-1.md) | Indicators & linearity of expectation | Solution available | Sophia |
+| [2. Conditional Die Rolls](question-2.md) | Conditioning & geometric distributions | Solution available | Sophia |
 | [3. First Steps](question-3.md) | Markov chains & stationary distributions | Solution available | Charles |
 | [4. Dice Game 1](question-4.md) | First-step recursion | Solution available | Charles |
 
