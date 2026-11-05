@@ -1,7 +1,7 @@
 # Day 2 · Probability
 
-Four question slots for this study session. Questions 3 and 4 contain Charles's
-worked solutions; questions 1 and 2 are reserved for Sophia's upcoming additions.
+Worked questions across probability, conditioning, and Markov chains. Each question has its
+own page with assumptions, reasoning, and a review takeaway.
 
 ## Questions
 
