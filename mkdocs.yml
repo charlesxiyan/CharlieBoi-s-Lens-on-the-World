@@ -75,6 +75,11 @@ nav:
               - "19. Remove Nth Node From End of List": leetcode/day-4/19-remove-nth-node-from-end-of-list.md
               - "142. Linked List Cycle II": leetcode/day-4/142-linked-list-cycle-ii.md
               - "160. Intersection of Two Linked Lists": leetcode/day-4/160-intersection-of-two-linked-lists.md
+          - "Bonus Linked List":
+              - leetcode/bonus-linked-list/index.md
+              - "148. Sort List": leetcode/bonus-linked-list/148-sort-list.md
+              - "23. Merge k Sorted Lists": leetcode/bonus-linked-list/23-merge-k-sorted-lists.md
+              - "427. Construct Quad Tree": leetcode/bonus-linked-list/427-construct-quad-tree.md
       - "Hash Tables":
           - "Day 5 Hash Table I":
               - leetcode/day-5/index.md

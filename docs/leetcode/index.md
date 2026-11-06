@@ -1,7 +1,7 @@
 # Algorithm
 
-My Python problem-solving notebook: **202 write-ups and study notes**,
-organized into **56 daily modules** and **6 bonus modules**.
+My Python problem-solving notebook: **205 write-ups and study notes**,
+organized into **56 daily modules** and **7 bonus modules**.
 
 Each page starts with collapsible **Problem** and **Explanation** blocks.
 Open them for the statement, core idea, reasoning, hand simulations, and
@@ -27,6 +27,7 @@ Use the site search to find a problem number, title, or algorithm.
 | --- | --- |
 | [Day 3 Linked List I](day-3/index.md) | 3 |
 | [Day 4 Linked List II](day-4/index.md) | 4 |
+| [Bonus Linked List](bonus-linked-list/index.md) | 3 |
 
 ## Hash Tables
 
