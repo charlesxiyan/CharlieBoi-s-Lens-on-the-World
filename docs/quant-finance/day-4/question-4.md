@@ -100,58 +100,61 @@ $Z^2=0$. Those different outcomes average to $1/3$ under uniform surface samplin
     per unit change in height is larger. The factors cancel, giving equal
     surface area for equal height intervals.
 
-??? note "Derivation by conditioning: integrate over the polar angle"
-    **1. Find the joint law of the angles.** Write a surface point as
-    $(X,Y,Z)=(\sin\Theta\cos\Phi,\ \sin\Theta\sin\Phi,\ \cos\Theta)$.
-    Uniform surface sampling means probability $=$ area $/\,4\pi$, and
-    $dA=\sin\theta\,d\theta\,d\phi$, so
+??? note "Derivation by conditioning: fix X and Y, then integrate"
+    **1. Given $(X,Y)$, what is $Z$?** Once $(X,Y)=(x,y)$ is known, the sphere
+    equation leaves only two possible heights:
 
     $$
-    f_{\Theta,\Phi}(\theta,\phi)=\frac{\sin\theta}{4\pi}
-    =\underbrace{\frac{\sin\theta}{2}}_{f_\Theta(\theta)}
-    \cdot\underbrace{\frac{1}{2\pi}}_{f_\Phi(\phi)},
-    \qquad 0\le\theta\le\pi,\ 0\le\phi<2\pi.
+    Z=\pm\sqrt{1-x^2-y^2}.
     $$
 
-    The density factorizes, so $\Theta$ and $\Phi$ are independent and
-    $\Phi\mid\Theta=\theta\sim\operatorname{Uniform}[0,2\pi)$.
-    As a check, the cap $\{\Theta\le t\}$ has probability
-    $\int_0^t\tfrac12\sin\theta\,d\theta=\tfrac{1-\cos t}{2}$, which goes from $0$ to $1$.
-
-    **2. Condition on the polar angle.** Given $\Theta=\theta$, the height is fixed:
-    $Z=\cos\theta$. Hence
+    Reflection through the plane $z=0$ preserves area, so the two signs are equally likely:
 
     $$
-    E[Z^2\mid\Theta=\theta]=\cos^2\theta.
+    P\!\left(Z=+\sqrt{1-x^2-y^2}\;\middle|\;X=x,Y=y\right)
+    =P\!\left(Z=-\sqrt{1-x^2-y^2}\;\middle|\;X=x,Y=y\right)=\frac12.
     $$
 
-    **3. Average over $\Theta$ (law of total expectation).**
+    Either way, $Z^2$ takes the same value, so
 
     $$
-    E[Z^2]=E\big[E[Z^2\mid\Theta]\big]
-    =\int_0^\pi\cos^2\theta\cdot\frac{\sin\theta}{2}\,d\theta.
+    E[Z^2\mid X=x,Y=y]=1-x^2-y^2.
     $$
 
-    Substitute $u=\cos\theta$, $du=-\sin\theta\,d\theta$:
+    **2. Find the density of $(X,Y)$.** Project the sphere onto the unit disk
+    $x^2+y^2\le1$. On the upper hemisphere $z=\sqrt{1-x^2-y^2}$, the surface element is
 
     $$
-    E[Z^2]=\frac12\int_{-1}^{1}u^2\,du=\frac12\cdot\frac23=\frac13.
+    dA=\sqrt{1+z_x^2+z_y^2}\;dx\,dy=\frac{dx\,dy}{\sqrt{1-x^2-y^2}}.
     $$
 
-    **4. Consistency check with $X$.** Conditioning matters more here, because $X$
-    still depends on $\Phi$ once $\Theta$ is fixed:
+    The lower hemisphere contributes the same amount. Dividing the total by $4\pi$ gives
 
     $$
-    E[X^2\mid\Theta=\theta]=\sin^2\theta\;E[\cos^2\Phi]=\frac{\sin^2\theta}{2},
+    f_{X,Y}(x,y)=\frac{2}{4\pi\sqrt{1-x^2-y^2}}
+    =\frac{1}{2\pi\sqrt{1-x^2-y^2}},\qquad x^2+y^2\le1.
     $$
 
+    This density blows up at the rim because the sphere is nearly vertical there:
+    a tiny patch $dx\,dy$ near the equator sits under a large piece of surface.
+
+    **3. Average over $(X,Y)$ (law of total expectation).**
+
     $$
-    E[X^2]=\int_0^\pi\frac{\sin^2\theta}{2}\cdot\frac{\sin\theta}{2}\,d\theta
-    =\frac14\int_0^\pi\sin^3\theta\,d\theta=\frac14\cdot\frac43=\frac13.
+    E[Z^2]=\iint_{x^2+y^2\le1}(1-x^2-y^2)\cdot\frac{1}{2\pi\sqrt{1-x^2-y^2}}\,dx\,dy
+    =\frac{1}{2\pi}\iint_{x^2+y^2\le1}\sqrt{1-x^2-y^2}\,dx\,dy.
     $$
 
-    This matches $E[Z^2]$, as the symmetry argument predicts, and
-    $E[X^2]+E[Y^2]+E[Z^2]=1$.
+    Switch to polar coordinates, $x^2+y^2=r^2$, $dx\,dy=r\,dr\,d\phi$:
+
+    $$
+    E[Z^2]=\frac{1}{2\pi}\cdot2\pi\int_0^1 r\sqrt{1-r^2}\,dr
+    =\left[-\frac{(1-r^2)^{3/2}}{3}\right]_0^1=\frac13.
+    $$
+
+    **Bonus.** The same conditioning gives $E[Z\mid X,Y]=0$, so $E[Z]=0$ as well.
+    As a sanity check, the density integrates to one:
+    $\int_0^1\frac{r}{\sqrt{1-r^2}}\,dr=1$.
 
 ??? note "Why a uniform polar angle gives the wrong experiment"
     If instead $\theta\sim\operatorname{Uniform}[0,\pi]$, then
