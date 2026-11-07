@@ -1,6 +1,6 @@
 # Day 4 · Spherical Coordinate Variance
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Statistics · Symmetry · Expectation · Variance**
 
