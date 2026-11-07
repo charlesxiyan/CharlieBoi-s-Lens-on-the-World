@@ -1,4 +1,4 @@
-# Algorithm
+# ![](../assets/images/Algorithm){ .heading-icon } Algorithm
 
 My Python problem-solving notebook: **205 write-ups and study notes**,
 organized into **56 daily modules** and **7 bonus modules**.
