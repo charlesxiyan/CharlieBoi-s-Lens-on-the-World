@@ -100,6 +100,59 @@ $Z^2=0$. Those different outcomes average to $1/3$ under uniform surface samplin
     per unit change in height is larger. The factors cancel, giving equal
     surface area for equal height intervals.
 
+??? note "Derivation by conditioning: integrate over the polar angle"
+    **1. Find the joint law of the angles.** Write a surface point as
+    $(X,Y,Z)=(\sin\Theta\cos\Phi,\ \sin\Theta\sin\Phi,\ \cos\Theta)$.
+    Uniform surface sampling means probability $=$ area $/\,4\pi$, and
+    $dA=\sin\theta\,d\theta\,d\phi$, so
+
+    $$
+    f_{\Theta,\Phi}(\theta,\phi)=\frac{\sin\theta}{4\pi}
+    =\underbrace{\frac{\sin\theta}{2}}_{f_\Theta(\theta)}
+    \cdot\underbrace{\frac{1}{2\pi}}_{f_\Phi(\phi)},
+    \qquad 0\le\theta\le\pi,\ 0\le\phi<2\pi.
+    $$
+
+    The density factorizes, so $\Theta$ and $\Phi$ are independent and
+    $\Phi\mid\Theta=\theta\sim\operatorname{Uniform}[0,2\pi)$.
+    As a check, the cap $\{\Theta\le t\}$ has probability
+    $\int_0^t\tfrac12\sin\theta\,d\theta=\tfrac{1-\cos t}{2}$, which goes from $0$ to $1$.
+
+    **2. Condition on the polar angle.** Given $\Theta=\theta$, the height is fixed:
+    $Z=\cos\theta$. Hence
+
+    $$
+    E[Z^2\mid\Theta=\theta]=\cos^2\theta.
+    $$
+
+    **3. Average over $\Theta$ (law of total expectation).**
+
+    $$
+    E[Z^2]=E\big[E[Z^2\mid\Theta]\big]
+    =\int_0^\pi\cos^2\theta\cdot\frac{\sin\theta}{2}\,d\theta.
+    $$
+
+    Substitute $u=\cos\theta$, $du=-\sin\theta\,d\theta$:
+
+    $$
+    E[Z^2]=\frac12\int_{-1}^{1}u^2\,du=\frac12\cdot\frac23=\frac13.
+    $$
+
+    **4. Consistency check with $X$.** Conditioning matters more here, because $X$
+    still depends on $\Phi$ once $\Theta$ is fixed:
+
+    $$
+    E[X^2\mid\Theta=\theta]=\sin^2\theta\;E[\cos^2\Phi]=\frac{\sin^2\theta}{2},
+    $$
+
+    $$
+    E[X^2]=\int_0^\pi\frac{\sin^2\theta}{2}\cdot\frac{\sin\theta}{2}\,d\theta
+    =\frac14\int_0^\pi\sin^3\theta\,d\theta=\frac14\cdot\frac43=\frac13.
+    $$
+
+    This matches $E[Z^2]$, as the symmetry argument predicts, and
+    $E[X^2]+E[Y^2]+E[Z^2]=1$.
+
 ??? note "Why a uniform polar angle gives the wrong experiment"
     If instead $\theta\sim\operatorname{Uniform}[0,\pi]$, then
 
