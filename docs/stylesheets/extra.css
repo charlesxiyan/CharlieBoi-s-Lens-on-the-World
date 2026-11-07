@@ -44,3 +44,9 @@
   border-color: currentColor;
   background: var(--md-accent-fg-color--transparent);
 }
+.md-typeset h1 .heading-icon {
+  height: 1.1em;
+  width: auto;
+  vertical-align: -0.15em;
+  margin-right: 0.3em;
+}
