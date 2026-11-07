@@ -1,4 +1,4 @@
-# Quant Finance
+    # ![](../assets/images/QuantFinance){ .heading-icon } Quant Finance
 
 A space for interview preparation and quantitative finance projects.
 
