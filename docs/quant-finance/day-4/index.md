@@ -10,8 +10,8 @@ questions; a day can contain more than one subject.
 | [1. Explaining Returns — Regression, Transformations, and Model Comparison](question-1.md) | Statistics · Linear Regression | Three parts with answers | Charles |
 | [2. Ten Topping Sundae](question-2.md) | Combinatorics · Subsets | Solution available | Charles |
 | [3. Painted Cube](question-3.md) | Combinatorics · Spatial Reasoning | Solution available | Charles |
-| [4. Spherical Coordinate Variance](question-4.md) | Statistics · Symmetry | Solution and second-moment derivation | Charles |
-| [5. King of Hearts](question-5.md) | Probability · Conditioning | Solution available | Charles |
+| [4. Spherical Coordinate Variance](question-4.md) | Statistics · Symmetry | Solution and second-moment derivation | Charles and Sophia |
+| [5. King of Hearts](question-5.md) | Probability · Conditioning | Solution available | Charles and Sophia |
 
 ## Ideas to revisit
 
