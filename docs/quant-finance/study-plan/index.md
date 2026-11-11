@@ -8,8 +8,8 @@ my reasoning, and lessons to revisit.
 
 | Module | Questions | Status |
 | --- | --- | --- |
-| [Day 1](../day-1/index.md) | 4 questions with solutions | Notes imported |
-| [Day 2](../day-2/index.md) | Questions 3–4 with solutions; 1–2 pending | In progress |
+| [Day 1](../day-1/index.md) | 4 questions with solutions | Available |
+| [Day 2](../day-2/index.md) | 4 questions with solutions | Available |
 | [Day 3](../day-3/index.md) | 5 questions with solutions | Available |
 | [Day 4](../day-4/index.md) | 5 questions with solutions, including the 3-part regression interview | Available |
 | [Day 5](../day-5/index.md) | 4 questions with solutions | Available |
