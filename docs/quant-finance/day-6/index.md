@@ -6,10 +6,10 @@ Probability, statistics, and reasoning exercises, with worked solutions by Charl
 
 | Question | Topic | Status | Edited by |
 | --- | --- | --- | --- |
-| [1. 3 Die Minimum](question-1.md) | Statistics · Order Statistics | Solution available | Charles and Sophia |
-| [2. Four of a Kind](question-2.md) | Probability · Combinatorics | Solution available | Charles and Sophia |
-| [3. Hungry Truck Driver](question-3.md) | Brainteaser · Optimization | Solution available | Charles and Sophia |
-| [4. More Heads](question-4.md) | Probability · Conditional Expectation | Solution available | Charles and Sophia |
+| [1. 3 Die Minimum](question-1.md) | Statistics · Order Statistics | Solution available | Charles |
+| [2. Four of a Kind](question-2.md) | Probability · Combinatorics | Solution available | Sophia |
+| [3. Hungry Truck Driver](question-3.md) | Brainteaser · Optimization | Solution available | Sophia |
+| [4. More Heads](question-4.md) | Probability · Conditional Expectation | Solution available | Charles |
 
 ## Ideas to revisit
 
