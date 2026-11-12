@@ -1,92 +1,98 @@
-# Day 5 · Three Rings
+# Day 6 · 3 Die Minimum
 
 *Edited by Charles and Sophia*
 
-**Probability · Area · Multinomial distribution**
+**Statistics · Order Statistics · Tail-sum formula**
 
-[Original question on OpenQuant](https://openquant.co/questions/three-rings)
+[Original question on OpenQuant](https://openquant.co/questions/3-die-minimum)
 
 ## Problem
 
-A circular target has three regions: an inner disk of radius 4 inches, a middle
-ring extending to radius 8, and an outer ring extending to radius 12.
-Arrows land independently and uniformly over the target's area.
-
-1. With three arrows, what is the probability of exactly one hit in each region?
-2. With $3n$ arrows, what is the probability of exactly $n$ hits in each region?
+Roll three independent fair 100-sided dice, each numbered from $1$ to $100$.
+Let $X$ be the smallest of the three results. Find $E[X]$.
 
 !!! tip "Core idea"
-    Hit probabilities depend on area, not radial width. Then count the possible
-    orders of the hits.
+    Count how many integer thresholds the minimum reaches. The minimum reaches
+    a threshold $k$ exactly when all three dice reach it.
 
 ## Short solution
 
-**1. Calculate the three probabilities.** The total area is $144\pi$:
+### 1. Explain why expectation becomes a sum of tail probabilities
 
-$$p_1=\frac{4^2}{12^2}=\frac19,\qquad
-p_2=\frac{8^2-4^2}{12^2}=\frac13,\qquad
-p_3=\frac{12^2-8^2}{12^2}=\frac59.$$
+If an outcome is $X=3$, it reaches exactly three positive integer thresholds:
+$1$, $2$, and $3$. More generally, for any outcome $X=x$, exactly $x$ of the
+statements $X\ge1, X\ge2,\ldots,X\ge100$ are true.
 
-**2. Include every ordering of three arrows.** One particular order, inner then
-middle then outer, has probability $p_1p_2p_3$. There are $3!=6$ such orders.
+Define an indicator $\mathbf{1}_{\{X\ge k\}}$ to be $1$ when $X\ge k$ and $0$
+otherwise. Then, for every possible outcome,
 
-!!! success "Part 1"
-    $$\boxed{P=3!\cdot\frac19\cdot\frac13\cdot\frac59
-    =\frac{10}{81}\approx12.35\%}$$
+$$X=\sum_{k=1}^{100}\mathbf{1}_{\{X\ge k\}}.$$
 
-**3. Count the valid assignments for $3n$ arrows.** Assign the arrows to regions one region at a time:
-
-- choose which $n$ of the $3n$ arrows land in the inner disk: $\binom{3n}{n}$ ways;
-- choose which $n$ of the remaining $2n$ land in the middle ring: $\binom{2n}{n}$ ways;
-- the last $n$ arrows all land in the outer ring: $\binom{n}{n}=1$ way.
+For example, $X=3$ makes the right side $1+1+1+0+\cdots+0=3$.
+Taking expectations and using linearity gives the missing intermediate step:
 
 $$
-\#\{\text{valid assignments}\}=\binom{3n}{n}\binom{2n}{n}\binom{n}{n}.
+\begin{aligned}
+E[X]
+&=E\left[\sum_{k=1}^{100}\mathbf{1}_{\{X\ge k\}}\right]\\
+&=\sum_{k=1}^{100}E\left[\mathbf{1}_{\{X\ge k\}}\right]\\
+&=\sum_{k=1}^{100}\left(1\cdot P(X\ge k)+0\cdot P(X<k)\right)\\
+&=\sum_{k=1}^{100}P(X\ge k).
+\end{aligned}
 $$
 
-**4. Find the probability of one assignment.** In any fixed valid assignment, $n$ arrows hit each region.
-By independence, every such assignment has the same probability:
+The indicators need not be independent. Linearity of expectation is enough.
+This tail-sum identity applies to nonnegative integer-valued variables; here
+the sum stops at 100 because larger thresholds cannot be reached.
+
+### 2. Calculate the probability of reaching each threshold
+
+Write $X=\min(D_1,D_2,D_3)$. The event $X\ge k$ means **all three dice** show
+at least $k$. A single die has $101-k$ qualifying faces, namely $k,\ldots,100$:
+
+$$P(D_j\ge k)=\frac{101-k}{100}.$$
+
+By independence of the three rolls,
+
+$$P(X\ge k)=\left(\frac{101-k}{100}\right)^3.$$
+
+As a check, $P(X\ge1)=1$, while $P(X\ge100)=1/100^3$ because all three dice
+must show 100.
+
+### 3. Sum the probabilities
+
+Substitute and reverse the summation order with $j=101-k$:
 
 $$
-p_1^{\,n}\,p_2^{\,n}\,p_3^{\,n}=(p_1p_2p_3)^n
-=\left(\frac19\cdot\frac13\cdot\frac59\right)^n
-=\left(\frac{15}{729}\right)^n.
+E[X]=\frac1{100^3}\sum_{j=1}^{100}j^3
+=\frac1{100^3}\left(\frac{100\cdot101}{2}\right)^2.
 $$
 
-**5. Multiply count by probability.**
+Here we used $\sum_{j=1}^{n}j^3=[n(n+1)/2]^2$.
 
-!!! success "Part 2"
-    $$\boxed{P=\binom{3n}{n}\binom{2n}{n}\binom{n}{n}\left(\frac{15}{729}\right)^n}$$
-
-**6. Check small cases.**
-
-| $n$ | Count $\binom{3n}{n}\binom{2n}{n}\binom{n}{n}$ | $\left(\frac{15}{729}\right)^n$ | $P$ |
-| --- | --- | --- | --- |
-| 1 | $3\cdot2\cdot1=6$ | $0.02058$ | $\tfrac{10}{81}\approx12.35\%$ |
-| 2 | $15\cdot6\cdot1=90$ | $0.0004233$ | $\approx3.81\%$ |
-| 3 | $84\cdot20\cdot1=1680$ | $0.000008711$ | $\approx1.46\%$ |
-
-The case $n=1$ reproduces Part 1 exactly.
+!!! success "Answer"
+    $$\boxed{E[X]=\frac{25{,}502{,}500}{1{,}000{,}000}=25.5025}$$
 
 !!! warning "Watch out"
-    Equal radial widths do not imply equal areas. Multiplying the probabilities
-    without the arrangement factor counts only one order.
+    $P(X\ge k)$ is not $P(X=k)$. An outcome $X=3$ contributes to three tail
+    events, and that is precisely how its value of three is counted. Also,
+    counting faces from $k$ through 100 requires the inclusive count $101-k$.
 
-??? note "Same count, multinomial form"
-    The product of binomials collapses to the multinomial coefficient:
+??? note "The same identity starting from the usual definition of expectation"
+    Expand each weight $x$ as a sum of $x$ ones and exchange the finite sums:
 
     $$
-    \binom{3n}{n}\binom{2n}{n}\binom{n}{n}
-    =\frac{(3n)!}{n!\,(2n)!}\cdot\frac{(2n)!}{n!\,n!}\cdot 1
-    =\frac{(3n)!}{(n!)^3}.
+    \begin{aligned}
+    E[X]&=\sum_{x=1}^{100}xP(X=x)\\
+    &=\sum_{x=1}^{100}\sum_{k=1}^{x}P(X=x)\\
+    &=\sum_{k=1}^{100}\sum_{x=k}^{100}P(X=x)\\
+    &=\sum_{k=1}^{100}P(X\ge k).
+    \end{aligned}
     $$
 
-    So the answer is the multinomial probability
-    $\dfrac{(3n)!}{(n!)^3}\,p_1^{\,n}p_2^{\,n}p_3^{\,n}$.
-    Because $P$ shrinks as $n$ grows, seeing an **exactly** even split becomes
-    increasingly unlikely, even though the expected counts are uneven anyway
-    ($p_3=5/9$ dominates).
+    For a fixed $k$, the inner sum adds the probabilities of all values
+    $k,k+1,\ldots,100$, which is exactly $P(X\ge k)$.
 
 ---
 
-[Day 5 overview](index.md) · [Next question](question-2.md)
+[Day 6 overview](index.md) · [Next question](question-2.md)
