@@ -1,6 +1,6 @@
 # Day 3 · Multiple of Six
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Probability · Modular arithmetic · Geometric waiting time**
 

@@ -1,6 +1,6 @@
 # Day 2 · Conditional Die Rolls
 
-*Edited by Sophia*
+*Edited by Charles and Sophia*
 
 **Probability · Conditioning & geometric distributions**
 

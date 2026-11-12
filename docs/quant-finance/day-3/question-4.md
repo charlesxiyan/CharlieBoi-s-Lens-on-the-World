@@ -1,6 +1,6 @@
 # Day 3 · Portfolio Manager
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Combinatorics · Stars and bars · Minimum allocations**
 

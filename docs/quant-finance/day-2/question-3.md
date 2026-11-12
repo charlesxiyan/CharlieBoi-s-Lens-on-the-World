@@ -1,6 +1,6 @@
 # Day 2 · First Steps
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Probability · Markov chains & stationary distributions**
 

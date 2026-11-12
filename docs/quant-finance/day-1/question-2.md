@@ -1,6 +1,6 @@
 # Day 1 · Race to Ace
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Probability · Symmetry & expectation**
 

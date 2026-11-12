@@ -7,10 +7,10 @@ own page with assumptions, reasoning, and a review takeaway.
 
 | Question | Topic | Status | Edited by |
 | --- | --- | --- | --- |
-| [1. Ten Floor Building](question-1.md) | Indicators & linearity of expectation | Solution available | Sophia |
-| [2. Conditional Die Rolls](question-2.md) | Conditioning & geometric distributions | Solution available | Sophia |
-| [3. First Steps](question-3.md) | Markov chains & stationary distributions | Solution available | Charles |
-| [4. Dice Game 1](question-4.md) | First-step recursion | Solution available | Charles |
+| [1. Ten Floor Building](question-1.md) | Indicators & linearity of expectation | Solution available | Charles and Sophia |
+| [2. Conditional Die Rolls](question-2.md) | Conditioning & geometric distributions | Solution available | Charles and Sophia |
+| [3. First Steps](question-3.md) | Markov chains & stationary distributions | Solution available | Charles and Sophia |
+| [4. Dice Game 1](question-4.md) | First-step recursion | Solution available | Charles and Sophia |
 
 ## Ideas to revisit
 

@@ -1,6 +1,6 @@
 # Day 2 · Ten Floor Building
 
-*Edited by Sophia*
+*Edited by Charles and Sophia*
 
 **Probability · Indicators & linearity of expectation**
 

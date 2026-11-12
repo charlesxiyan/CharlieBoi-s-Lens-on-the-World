@@ -1,6 +1,6 @@
 # Day 1 · Dot Placement
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Probability · Sequential counting**
 

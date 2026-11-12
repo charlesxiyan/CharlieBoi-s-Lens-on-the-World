@@ -7,11 +7,11 @@ Each question has its own page with assumptions, reasoning, and a review takeawa
 
 | Question | Topic | Status | Edited by |
 | --- | --- | --- | --- |
-| [1. Doubling Your Accuracy — Optimal Measurement Design and OLS](question-1.md) | Statistics · Experimental Design | Solution available | Charles |
-| [2. Ascending Dice Rolls](question-2.md) | Probability · Counting | Solution available | Charles |
-| [3. Multiple of Six](question-3.md) | Probability · Waiting Times | Solution available | Charles |
-| [4. Portfolio Manager](question-4.md) | Combinatorics · Stars and Bars | Both parts available | Charles |
-| [5. Digit Sum of 19](question-5.md) | Discrete Mathematics · Inclusion–Exclusion | Solution available | Charles |
+| [1. Doubling Your Accuracy — Optimal Measurement Design and OLS](question-1.md) | Statistics · Experimental Design | Solution available | Charles and Sophia |
+| [2. Ascending Dice Rolls](question-2.md) | Probability · Counting | Solution available | Charles and Sophia |
+| [3. Multiple of Six](question-3.md) | Probability · Waiting Times | Solution available | Charles and Sophia |
+| [4. Portfolio Manager](question-4.md) | Combinatorics · Stars and Bars | Both parts available | Charles and Sophia |
+| [5. Digit Sum of 19](question-5.md) | Discrete Mathematics · Inclusion–Exclusion | Solution available | Charles and Sophia |
 
 ## Ideas to revisit
 

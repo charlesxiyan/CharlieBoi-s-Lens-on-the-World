@@ -1,6 +1,6 @@
 # Day 1 · Highest Roll EV
 
-*Edited by Sophia*
+*Edited by Charles and Sophia*
 
 **Probability · Symmetry & expectation**
 

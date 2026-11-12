@@ -1,6 +1,6 @@
 # Day 5 · Burning Ropes
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Brainteaser · Timing · Invariants**
 

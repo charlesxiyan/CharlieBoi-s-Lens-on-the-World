@@ -1,6 +1,6 @@
 # Day 2 · Dice Game 1
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Probability · First-step recursion**
 

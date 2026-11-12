@@ -1,6 +1,6 @@
 # Day 5 · Fruit Basket
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Probability · Random permutations · Inclusion–exclusion**
 

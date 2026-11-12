@@ -1,6 +1,6 @@
 # Day 6 · Four of a Kind
 
-*Edited by Sophia*
+*Edited by Charles and Sophia*
 
 **Probability · Combinatorics · Counting poker hands**
 

@@ -1,6 +1,6 @@
 # Day 4 · Ten Topping Sundae
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Combinatorics · Subsets · Binomial coefficients**
 

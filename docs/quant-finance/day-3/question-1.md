@@ -12,7 +12,7 @@ tags:
 
 # Day 3 · Doubling Your Accuracy — Optimal Measurement Design and OLS
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Statistics · OLS · Experimental Design · Variance Reduction**
 

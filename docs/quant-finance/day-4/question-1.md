@@ -11,7 +11,7 @@ tags:
 
 # Day 4 · Explaining Returns
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Statistics · Linear Regression**
 

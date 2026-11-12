@@ -1,6 +1,6 @@
 # Day 1 · Even Before Odd
 
-*Edited by Sophia*
+*Edited by Charles and Sophia*
 
 **Probability · Symmetry & counting**
 

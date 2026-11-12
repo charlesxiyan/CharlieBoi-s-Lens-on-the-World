@@ -1,6 +1,6 @@
 # Day 4 · Painted Cube
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Combinatorics · Spatial reasoning**
 

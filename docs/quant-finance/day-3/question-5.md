@@ -1,6 +1,6 @@
 # Day 3 · Digit Sum of 19
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Discrete mathematics · Stars and bars · Inclusion–exclusion**
 

@@ -1,6 +1,6 @@
 # Day 6 · Hungry Truck Driver
 
-*Edited by Sophia*
+*Edited by Charles and Sophia*
 
 **Brainteaser · Optimization · Staged transport**
 

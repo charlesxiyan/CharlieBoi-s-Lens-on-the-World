@@ -1,6 +1,6 @@
 # Day 3 · Ascending Dice Rolls
 
-*Edited by Charles*
+*Edited by Charles and Sophia*
 
 **Probability · Counting · Strict ordering**
 

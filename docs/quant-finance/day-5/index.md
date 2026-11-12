@@ -1,6 +1,6 @@
 # Day 5
 
-Probability and reasoning exercises, with worked solutions by Charles.
+Probability and reasoning exercises, with worked solutions by Charles and Sophia.
 
 ## Questions
 
@@ -8,8 +8,8 @@ Probability and reasoning exercises, with worked solutions by Charles.
 | --- | --- | --- | --- |
 | [1. Three Rings](question-1.md) | Probability · Multinomial Distribution | Both parts available | Charles and Sophia |
 | [2. How Many Heads](question-2.md) | Probability · Bayesian Updating | Solution available | Charles and Sophia |
-| [3. Burning Ropes](question-3.md) | Brainteaser · Timing | Solution available | Charles |
-| [4. Fruit Basket](question-4.md) | Probability · Inclusion–Exclusion | Solution available | Charles |
+| [3. Burning Ropes](question-3.md) | Brainteaser · Timing | Solution available | Charles and Sophia |
+| [4. Fruit Basket](question-4.md) | Probability · Inclusion–Exclusion | Solution available | Charles and Sophia |
 
 ## Ideas to revisit
 
