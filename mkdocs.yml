@@ -426,6 +426,12 @@ nav:
               - "2. Four of a Kind": quant-finance/day-6/question-2.md
               - "3. Hungry Truck Driver": quant-finance/day-6/question-3.md
               - "4. More Heads": quant-finance/day-6/question-4.md
+          - Day 7:
+              - quant-finance/day-7/index.md
+              - "1. Drinking Dan": quant-finance/day-7/question-1.md
+              - "2. Samuel Flips": quant-finance/day-7/question-2.md
+              - "3. Biased Coin Sequence": quant-finance/day-7/question-3.md
+              - "4. Expected Value of Highest Die": quant-finance/day-7/question-4.md
       - Projects:
           - quant-finance/projects/index.md
   - Technical Notes:
