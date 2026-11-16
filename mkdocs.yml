@@ -63,6 +63,10 @@ nav:
               - "74. Search a 2D Matrix": leetcode/bonus-array/74-search-a-2d-matrix.md
               - "124. Binary Tree Maximum Path Sum": leetcode/bonus-array/124-binary-tree-maximum-path-sum.md
               - "392. Is Subsequence": leetcode/bonus-array/392-is-subsequence.md
+      - "Binary Search":
+          - "Bonus Binary Search":
+              - leetcode/bonus-binary-search/index.md
+              - "162. Find Peak Element": leetcode/bonus-binary-search/162-find-peak-element.md
       - "Linked Lists":
           - "Day 3 Linked List I":
               - leetcode/day-3/index.md
@@ -117,6 +121,11 @@ nav:
               - "239. Sliding Window Maximum": leetcode/day-10/239-sliding-window-maximum.md
               - "150. Evaluate Reverse Polish Notation": leetcode/day-10/150-evaluate-reverse-polish-notation.md
               - "347. Top K Frequent Elements": leetcode/day-10/347-top-k-frequent-elements.md
+          - "Bonus Stack & Queue":
+              - leetcode/bonus-stack-queue/index.md
+              - "502. IPO": leetcode/bonus-stack-queue/502-ipo.md
+              - "373. Find K Pairs with Smallest Sums": leetcode/bonus-stack-queue/373-find-k-pairs-with-smallest-sums.md
+              - "295. Find Median from Data Stream": leetcode/bonus-stack-queue/295-find-median-from-data-stream.md
       - "Binary Trees":
           - "Day 11 Binary Tree I":
               - leetcode/day-11/index.md
@@ -299,6 +308,8 @@ nav:
               - "64. Minimum Path Sum": leetcode/bonus-dynamic-programming/64-minimum-path-sum.md
               - "118. Pascal\u2019s Triangle": leetcode/bonus-dynamic-programming/118-pascals-triangle.md
               - "152. Maximum Product Subarray": leetcode/bonus-dynamic-programming/152-maximum-product-subarray.md
+              - "120. Triangle": leetcode/bonus-dynamic-programming/120-triangle.md
+              - "918. Maximum Sum Circular Subarray": leetcode/bonus-dynamic-programming/918-maximum-sum-circular-subarray.md
       - "Monotonic Stacks":
           - "Day 41 Monotonic Stack I":
               - leetcode/day-41/index.md
@@ -384,6 +395,27 @@ nav:
               - "208. Implement Trie (Prefix Tree)": leetcode/day-56/208-implement-trie-prefix-tree.md
               - "211. Design Add and Search Words Data Structure": leetcode/day-56/211-design-add-and-search-words-data-structure.md
               - "212. Word Search II": leetcode/day-56/212-word-search-ii.md
+      - Binary Manipulation:
+          - "Day 57":
+              - leetcode/day-57/index.md
+              - "67. Add Binary": leetcode/day-57/67-add-binary.md
+              - "190. Reverse Bits": leetcode/day-57/190-reverse-bits.md
+              - "191. Number of 1 Bits": leetcode/day-57/191-number-of-1-bits.md
+          - "Day 58":
+              - leetcode/day-58/index.md
+              - "136. Single Number": leetcode/day-58/136-single-number.md
+              - "137. Single Number II": leetcode/day-58/137-single-number-ii.md
+              - "201. Bitwise AND of Numbers Range": leetcode/day-58/201-bitwise-and-of-numbers-range.md
+      - Math:
+          - "Day 59":
+              - leetcode/day-59/index.md
+              - "66. Plus One": leetcode/day-59/66-plus-one.md
+              - "172. Factorial Trailing Zeroes": leetcode/day-59/172-factorial-trailing-zeroes.md
+              - "69. Sqrt(x)": leetcode/day-59/69-sqrtx.md
+          - "Day 60":
+              - leetcode/day-60/index.md
+              - "50. Pow(x, n)": leetcode/day-60/50-powx-n.md
+              - "149. Max Points on a Line": leetcode/day-60/149-max-points-on-a-line.md
   - Quant Finance:
       - quant-finance/index.md
       - Interview Self-Study Plan:

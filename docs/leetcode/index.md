@@ -1,7 +1,7 @@
 # ![](../assets/images/Algorithm.webp){ .heading-icon } Algorithm
 
-My Python problem-solving notebook: **205 write-ups and study notes**,
-organized into **56 daily modules** and **7 bonus modules**.
+My Python problem-solving notebook: **222 write-ups and study notes**,
+organized into **60 daily modules** and **9 bonus modules**.
 
 Each page starts with collapsible **Problem** and **Explanation** blocks.
 Open them for the statement, core idea, reasoning, hand simulations, and
@@ -20,6 +20,12 @@ Use the site search to find a problem number, title, or algorithm.
 | [Day 1 Array I](day-1/index.md) | 3 |
 | [Day 2 Array II](day-2/index.md) | 4 |
 | [Bonus Array](bonus-array/index.md) | 8 |
+
+## Binary Search
+
+| Module | Notes |
+| --- | --- |
+| [Bonus Binary Search](bonus-binary-search/index.md) | 1 |
 
 ## Linked Lists
 
@@ -49,6 +55,7 @@ Use the site search to find a problem number, title, or algorithm.
 | --- | --- |
 | [Day 9 Stack & Queue I](day-9/index.md) | 4 |
 | [Day 10 Stack & Queue II](day-10/index.md) | 3 |
+| [Bonus Stack & Queue](bonus-stack-queue/index.md) | 3 |
 
 ## Binary Trees
 
@@ -102,7 +109,7 @@ Use the site search to find a problem number, title, or algorithm.
 | [Day 38 Dynamic Programming XI](day-38/index.md) | 4 |
 | [Day 39 Dynamic Programming XII](day-39/index.md) | 3 |
 | [Day 40 Dynamic Programming XIII](day-40/index.md) | 2 |
-| [Bonus Dynamic Programming](bonus-dynamic-programming/index.md) | 5 |
+| [Bonus Dynamic Programming](bonus-dynamic-programming/index.md) | 7 |
 
 ## Monotonic Stacks
 
@@ -135,6 +142,20 @@ Use the site search to find a problem number, title, or algorithm.
 | Module | Notes |
 | --- | --- |
 | [Day 56](day-56/index.md) | 3 |
+
+## Binary Manipulation
+
+| Module | Notes |
+| --- | --- |
+| [Day 57](day-57/index.md) | 3 |
+| [Day 58](day-58/index.md) | 3 |
+
+## Math
+
+| Module | Notes |
+| --- | --- |
+| [Day 59](day-59/index.md) | 3 |
+| [Day 60](day-60/index.md) | 2 |
 
 ## Programming references
 

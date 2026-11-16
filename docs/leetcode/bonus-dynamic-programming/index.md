@@ -10,4 +10,7 @@ Python solutions and study notes by Charles.
 | [118. Pascal’s Triangle](118-pascals-triangle.md) | Easy |
 | [152. Maximum Product Subarray](152-maximum-product-subarray.md) | Medium |
 
+| [120. Triangle](120-triangle.md) | Medium |
+| [918. Maximum Sum Circular Subarray](918-maximum-sum-circular-subarray.md) | Medium |
+
 [All Algorithm notes](../index.md)
