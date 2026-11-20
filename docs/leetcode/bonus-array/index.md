@@ -12,5 +12,8 @@ Python solutions and study notes by Charles.
 | [74. Search a 2D Matrix](74-search-a-2d-matrix.md) | Medium |
 | [124. Binary Tree Maximum Path Sum](124-binary-tree-maximum-path-sum.md) | Hard |
 | [392. Is Subsequence](392-is-subsequence.md) | Easy |
+| [986. Interval List Intersections](986-interval-list-intersections.md) | Medium |
+| [57. Insert Interval](57-insert-interval.md) | Medium |
+| [729. My Calendar I](729-my-calendar-i.md) | Medium |
 
 [All Algorithm notes](../index.md)

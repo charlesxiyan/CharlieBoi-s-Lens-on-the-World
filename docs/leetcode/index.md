@@ -1,7 +1,7 @@
 # ![](../assets/images/Algorithm.webp){ .heading-icon } Algorithm
 
-My Python problem-solving notebook: **222 write-ups and study notes**,
-organized into **60 daily modules** and **9 bonus modules**.
+My Python problem-solving notebook: **229 write-ups and study notes**,
+organized into **60 daily modules** and **10 bonus modules**.
 
 Each page starts with collapsible **Problem** and **Explanation** blocks.
 Open them for the statement, core idea, reasoning, hand simulations, and
@@ -19,7 +19,7 @@ Use the site search to find a problem number, title, or algorithm.
 | --- | --- |
 | [Day 1 Array I](day-1/index.md) | 3 |
 | [Day 2 Array II](day-2/index.md) | 4 |
-| [Bonus Array](bonus-array/index.md) | 8 |
+| [Bonus Array](bonus-array/index.md) | 11 |
 
 ## Binary Search
 
@@ -41,6 +41,7 @@ Use the site search to find a problem number, title, or algorithm.
 | --- | --- |
 | [Day 5 Hash Table I](day-5/index.md) | 4 |
 | [Day 6 Hash Table II](day-6/index.md) | 4 |
+| [Bonus Hash Table](bonus-hash-table/index.md) | 3 |
 
 ## Strings
 
@@ -55,7 +56,7 @@ Use the site search to find a problem number, title, or algorithm.
 | --- | --- |
 | [Day 9 Stack & Queue I](day-9/index.md) | 4 |
 | [Day 10 Stack & Queue II](day-10/index.md) | 3 |
-| [Bonus Stack & Queue](bonus-stack-queue/index.md) | 3 |
+| [Bonus Stack & Queue](bonus-stack-queue/index.md) | 4 |
 
 ## Binary Trees
 

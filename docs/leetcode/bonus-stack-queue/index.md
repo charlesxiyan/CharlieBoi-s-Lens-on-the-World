@@ -7,5 +7,6 @@ Python solutions and study notes by Charles.
 | [502. IPO](502-ipo.md) | Hard |
 | [373. Find K Pairs with Smallest Sums](373-find-k-pairs-with-smallest-sums.md) | Medium |
 | [295. Find Median from Data Stream](295-find-median-from-data-stream.md) | Hard |
+| [2402. Meeting Rooms III](2402-meeting-rooms-iii.md) | Hard |
 
 [All Algorithm notes](../index.md)

@@ -63,6 +63,9 @@ nav:
               - "74. Search a 2D Matrix": leetcode/bonus-array/74-search-a-2d-matrix.md
               - "124. Binary Tree Maximum Path Sum": leetcode/bonus-array/124-binary-tree-maximum-path-sum.md
               - "392. Is Subsequence": leetcode/bonus-array/392-is-subsequence.md
+              - "986. Interval List Intersections": leetcode/bonus-array/986-interval-list-intersections.md
+              - "57. Insert Interval": leetcode/bonus-array/57-insert-interval.md
+              - "729. My Calendar I": leetcode/bonus-array/729-my-calendar-i.md
       - "Binary Search":
           - "Bonus Binary Search":
               - leetcode/bonus-binary-search/index.md
@@ -97,6 +100,11 @@ nav:
               - "15. 3Sum": leetcode/day-6/15-3sum.md
               - "18. 4Sum": leetcode/day-6/18-4sum.md
               - "383. Ransom Note": leetcode/day-6/383-ransom-note.md
+          - "Bonus Hash Table":
+              - leetcode/bonus-hash-table/index.md
+              - "253. Meeting Rooms II": leetcode/bonus-hash-table/253-meeting-rooms-ii.md
+              - "731. My Calendar II": leetcode/bonus-hash-table/731-my-calendar-ii.md
+              - "732. My Calendar III": leetcode/bonus-hash-table/732-my-calendar-iii.md
       - "Strings":
           - "Day 7 String I":
               - leetcode/day-7/index.md
@@ -126,6 +134,7 @@ nav:
               - "502. IPO": leetcode/bonus-stack-queue/502-ipo.md
               - "373. Find K Pairs with Smallest Sums": leetcode/bonus-stack-queue/373-find-k-pairs-with-smallest-sums.md
               - "295. Find Median from Data Stream": leetcode/bonus-stack-queue/295-find-median-from-data-stream.md
+              - "2402. Meeting Rooms III": leetcode/bonus-stack-queue/2402-meeting-rooms-iii.md
       - "Binary Trees":
           - "Day 11 Binary Tree I":
               - leetcode/day-11/index.md
