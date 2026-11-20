@@ -45,8 +45,8 @@
   background: var(--md-accent-fg-color--transparent);
 }
 .md-typeset h1 .heading-icon {
-  height: 1.1em;
+  height: 2.2em;
   width: auto;
-  vertical-align: -0.15em;
+  vertical-align: middle;
   margin-right: 0.3em;
 }
